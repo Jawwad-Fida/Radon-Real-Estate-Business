@@ -1,0 +1,35 @@
+# Main
+
+--> connect.php (includes)
+--> functions.php (includes)
+
+# Users
+
+--> forgot.php
+--> login.php
+
+
+# Contact(Feedback)
+
+
+# Checkout and Payment Gateway (2nd OTP system)
+
+--> checkout.php
+--> payment_dbconn.php (2nd database connection for payment gateway)
+--> checkout_hosted.php
+--> OrderTransaction.php
+--> all files in config directory
+--> all files in lib directory (SslCommerzNotification.php is the main file)
+--> all files in pg_redirection directory (success.php is the main file)
+
+# Payment Details
+
+--> payment_details.php
+
+
+# User Panel Dashboard
+
+
+
+# Graphical Dashboard for admin
+

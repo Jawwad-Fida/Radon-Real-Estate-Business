@@ -1,0 +1,47 @@
+body {
+    background: #f5f6ff;
+    padding: 3rem 0;
+}
+.print-button-container {
+    width: 100%;
+    text-align: center;
+}
+.print-button {
+    line-height: 27px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    background-color: #232936;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+    border-radius: 4px;
+    padding: 10px 20px;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    transition: .3s;
+    text-decoration: none!important;
+    outline: none!important;
+    width: auto;
+}
+.print-button:hover {
+    background: #2a41e8;
+    color: #fff;
+}
+.invoice {
+    background: #fff;
+    border-radius: 4px;
+}
+.bg-dark {
+    background: #232936 !important;
+    color: #fff !important;
+}
+.font-weight-bold {
+    color: #333;
+    font-weight: 600 !important;
+}
+@media only screen and (max-width: 575px) {
+    .the-five {
+    padding: 10px !important;
+    }
+}
+

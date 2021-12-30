@@ -1,0 +1,160 @@
+::selection {
+	background: #ff5a5f
+}
+::-moz-selection {
+background:#ff5a5f
+}
+::-webkit-selection {
+background:#ff5a5f
+}
+
+
+/*-----Background Color-----*/
+.get-in-touch-btn:hover::after,.nav-dark.header-nav .nav > li .sub-menu li:hover > a, .site-button, .sx-title-swip::before,.site-button-link::before,.testimonial-home.number-slider .owl-dots,.icon-count-2-outer::after,.footer-dark .social-icons li a:hover,.client-logo-pic span:hover,.number-block-two .figcaption::before,.number-block-two .figcaption::after,.filter-navigation li a.btn:hover::after,.counter-blocks .sx-icon-box-wraper:hover,.footer-light .social-icons li a:hover,.sx-bg-primary,.owl-carousel .owl-dots .owl-dot.active span, .owl-carousel .owl-dots .owl-dot:hover span{
+	background-color: transparent;
+    color: #fff;
+}
+
+
+
+/*-----Text Color-----*/
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, a:active, a:hover, a:focus, .header-nav .nav > li:hover > a, .header-nav .nav > li.active > a, .header-nav .nav > li.current-menu-item > a, .sx-text-primary,.testimonial-2 .fa-quote-right,.filter-pos-right .btn-filter-wrap li.btn-active,.filter-pos-right .btn-filter-wrap li:hover,.footer-dark .footer-top a:active, .footer-dark .footer-top a:focus, .footer-dark .footer-top a:hover,.site-footer .widget_services ul li a:hover,.filter-navigation li.active a,.our-team-3 .our-team-info .our-team-content a:hover,h1 a.sx-text-white:hover, h2 a.sx-text-white:hover, h3 a.sx-text-white:hover, h4 a.sx-text-white:hover, h5 a.sx-text-white:hover, h6 a.sx-text-white:hover,.testimonial-1 .fa-quote-right,.sx-breadcrumb li a,.sx-breadcrumb li a:hover,.widget_services ul li a:hover,.page-notfound span.title,.widget_tag_cloud a:hover{
+    color: #ff5a5f;
+}
+.our-story-year{
+    color: #ff5a5f !important;
+}
+
+
+/*-----Border Color-----*/
+.get-in-touch-btn.from-top::before,.about-home-left,.from-top::before, .image-effect-one .mfp-link{
+	border-color: #ff5a5f;
+}
+/*==== revolution slider Navigation====*/
+
+.home-rev-slider .metis.tparrows::before {
+    color: #fff;
+}
+.home-rev-slider .metis.tparrows {
+    background: #293046;
+}
+
+.home-rev-slider .metis.tparrows:hover {
+    background: #fff;
+}
+.home-rev-slider .metis.tparrows:hover:before {
+    color: #23252d;
+}
+
+#rev_slider_26_1 .tp-bannertimer{
+	height: 80px;
+	background-color: rgba(35, 37, 45, 0.1);
+	z-index: 20;
+	bottom: 0px;
+	position: absolute;
+	top: auto;
+	left: 0px;
+}
+
+@media (max-width: 778px) {
+.rev-slider-white-block{
+	display:none !important;
+}
+
+#rev_slider_26_1 .tparrows.metis {
+	width:40px;
+	height:40px;
+}
+#rev_slider_26_1 .tp-leftarrow{
+	-webkit-transform: matrix(1, 0, 0, 1, -100, -50) !important;
+	transform: matrix(1, 0, 0, 1, -100, -50) !important;	
+}
+#rev_slider_26_1 .tp-leftarrow{
+	-webkit-transform: matrix(1, 0, 0, 1, -100, -50) !important;
+	transform: matrix(1, 0, 0, 1, -100, -50) !important;	
+}
+
+#rev_slider_26_1 .tparrows::before	{
+	line-height:20px;
+}
+
+#rev_slider_three .tparrows{
+	display:none !important;
+}
+}
+.btn {
+	padding-top: 9px;
+	padding-bottom: 9px;
+}
+
+.site-button,
+.site-button-secondry {
+	position:relative;
+	padding: 15px 15px;
+	letter-spacing:8px;
+	font-weight:400;
+	display: inline-block;
+	font-size: 14px;
+	outline: none;
+	cursor: pointer;
+	outline: none;
+	border-width: 0;
+	border-style: solid;
+	border-color: transparent;
+	line-height: 1.42857;
+	margin-left: -1px;
+	text-decoration: none !important;
+}
+
+@media only screen and (max-width:768px){
+.site-button,
+.site-button-secondry {
+    padding: 10px 10px;
+    letter-spacing: 3px;
+	font-size:12px;
+}	
+}
+
+.rev-btn .site-button,
+.rev-btn .site-button-secondry {
+	letter-spacing:10px !important;
+}
+
+@media only screen and (max-width:480px){
+.rev-btn .site-button,
+.rev-btn .site-button-secondry {
+	letter-spacing:0px !important;
+	font-size:14px !important;
+}
+}
+
+.site-button {
+	background-color: #ff5a5f;
+	color: #fff;
+}
+
+.site-button:active,
+.site-button:hover,
+.site-button:focus,
+.active>.site-button {
+	background-color: #ff5a5f;
+	color: #fff;
+}
+
+.site-button:hover {
+	background-color: #222;
+	color: #fff;
+}
+
+.site-button-secondry {
+	background-color: #293046;
+	color: #fff;
+}
+
+.site-button-secondry:active,
+.site-button-secondry:hover,
+.site-button-secondry:focus,
+.active>.site-button-secondry {
+	background-color: #222;
+	color: #fff;
+}
