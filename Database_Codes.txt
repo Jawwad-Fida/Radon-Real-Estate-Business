@@ -148,6 +148,10 @@ ALTER TABLE apartment
 ALTER TABLE apartment
   ADD division varchar(25) NOT NULL;
 
+ALTER TABLE apartment
+  ADD client_id int(11) NOT NULL,
+  ADD client_username varchar(20) NOT NULL   
+
 INSERT INTO `building` (`building_name`, `no_of_flats`, `address`) VALUES
 ('Potato Podder Apartments', 50, 'Farmgate');
   
@@ -221,8 +225,6 @@ ALTER TABLE `clients`
 ALTER TABLE `clients`
   ADD CONSTRAINT `fk4` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE;
 
-Also,
 
-ALTER TABLE apartment
-  ADD client_id int(11) NOT NULL,
-  ADD client_username varchar(20) NOT NULL   
+
+
