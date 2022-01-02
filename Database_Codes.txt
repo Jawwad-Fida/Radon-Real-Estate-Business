@@ -1,3 +1,6 @@
+==================================== 25% Project Update =============================================
+
+
 =============================== Table 1: Users Table ===============================
 
 CREATE TABLE `users` (
@@ -182,20 +185,44 @@ ALTER TABLE appointment
 
 ======================================================================================
 
-
-
-
-
 Till now: (25 % of Project) 
 
 foreign keys used: fk1, fk2, fk3
 unique keys used: uk1, uk2, uk3, uk4
 
+==================================== 50% Project Update =============================================
 
 
+=============================== Table 7: Client Table ===============================
 
+CREATE TABLE `clients` (
+  `client_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `username` varchar(20) NOT NULL, 
+  `mobile_number` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `identity_num` char(5) NOT NULL,
+  `occupation` varchar(20) NOT NULL,
+  `present_address` text NOT NULL,
+  `permanent_address` text NOT NULL,
+  `gender` varchar(20) NOT NULL,
+  `nationality` varchar(25) NOT NULL
+);
 
+ALTER TABLE `clients`
+  ADD PRIMARY KEY (`client_id`),
+  ADD UNIQUE KEY `uk5` (`username`,`email`),
+  ADD KEY `fk4` (`user_id`); # foreign key connecting to user table
 
+ALTER TABLE `clients`
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT;
 
+ALTER TABLE `clients`
+  ADD CONSTRAINT `fk4` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE;
 
+Also,
 
+ALTER TABLE apartment
+  ADD client_id int(11) NOT NULL,
+  ADD client_username varchar(20) NOT NULL   
