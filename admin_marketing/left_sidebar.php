@@ -50,6 +50,11 @@
                     </ul>
                 </li>
                 <li>
+                    <a href="view_customers.php">
+                        <i class="fa fa-user-circle"></i>Customer List
+                    </a>
+                </li>
+                <li>
                     <a href="payment-method.html">
                         <i class="fas fa-credit-card"></i>Payments
                     </a>

@@ -37,43 +37,43 @@ if (isset($_POST['register_submit'])) {
 
     //Checking for errors
     if (empty($username) || empty($password) || empty($email) || empty($password_repeat) || empty($name) || empty($phone_no) || empty($present_address) || empty($occupation) || empty($age)) {
-        redirect("registration.php?error=emptyFields");
+        redirect("signup.php?error=emptyFields");
         exit();
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         //check if email is valid
-        redirect("registration.php?error=invalid_email");
+        redirect("signup.php?error=invalid_email");
         exit();
     } elseif (!preg_match("/^[a-zA-Z]*$/", $username)) {
         //check if input characters are valid
-        redirect("registration.php?error=invalid_username");
+        redirect("signup.php?error=invalid_username");
         exit();
     } elseif ($username_size <= 3) {
         //check if length of username is valid
-        redirect("registration.php?error=invalid_name_length");
+        redirect("signup.php?error=invalid_name_length");
         exit();
     } elseif ($password_size <= 4) {
         //check if length of password is valid
-        redirect("registration.php?error=invalid_pwd_length");
+        redirect("signup.php?error=invalid_pwd_length");
         exit();
     } elseif ($phone_no_size > 11) {
         //check if length of phone number is valid
-        redirect("registration.php?error=invalid_phone_length");
+        redirect("signup.php?error=invalid_phone_length");
         exit();
     } elseif ($password !== $password_repeat) {
         //check if password are same
-        redirect("registration.php?error=pwd_no_match");
+        redirect("signup.php?error=pwd_no_match");
         exit();
     }
 
     //CHECKING FOR DUPLICATE USERS AND EMAILS 
 
     if (username_exists($username) == 'true') {
-        redirect("registration.php?error=user_exists");
+        redirect("signup.php?error=user_exists");
         exit();
     }
 
     if (email_exists($email) == 'true') {
-        redirect("registration.php?error=email_exists");
+        redirect("signup.php?error=email_exists");
         exit();
     }
 

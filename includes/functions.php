@@ -246,7 +246,29 @@ function get_user_role()
     return isset($_SESSION['user_role']) ? $_SESSION['user_role'] : null;
 }
 
+//generate random username for client
+function generateClientUsername($username)
+{
+    $keyLength = 4; 
+    $str = "1234567890"; 
+    $shuffleStr = str_shuffle($str); 
 
+    $randStr = substr($shuffleStr, 0, $keyLength);
+
+    $new = $username.$randStr;
+    return $new;
+}
+
+//generate random password for password
+function generateClientPassword()
+{
+    $keyLength = 5; 
+    $str = "1234567890abcdefghijklmnopqrstuvwxyz@_#*^%"; 
+    $shuffleStr = str_shuffle($str); 
+
+    $passStr = substr($shuffleStr, 0, $keyLength);
+    return $passStr;
+}
 
 
 

@@ -111,6 +111,8 @@ ALTER TABLE building
   ADD division varchar(25) NOT NULL,
   ADD no_of_floors int(11) NOT NULL;
 
+ALTER TABLE building
+  ADD build_num varchar(25) NOT NULL;
 
 ================================= Table 5: Apartment Table ===============================
 
@@ -150,7 +152,10 @@ ALTER TABLE apartment
 
 ALTER TABLE apartment
   ADD client_id int(11) NOT NULL,
-  ADD client_username varchar(20) NOT NULL   
+  ADD client_username varchar(20) NOT NULL
+  
+ALTER TABLE apartment
+  ADD build_num varchar(25) NOT NULL;
 
 INSERT INTO `building` (`building_name`, `no_of_flats`, `address`) VALUES
 ('Potato Podder Apartments', 50, 'Farmgate');
