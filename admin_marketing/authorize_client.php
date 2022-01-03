@@ -1,58 +1,49 @@
 <?php
 
 declare(strict_types=1);
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 session_start();
 ob_start();
 
 include "../includes/connect.php";
 include "../includes/functions.php";
 
+include "../vendor/autoload.php";
+
+
 if (isset($_POST['update_submit'])) {
 
     $user_role = "client";
 
     $name = validate($_POST['name']);
-    // echo $name ."<br>";
     $username = validate($_POST['username']);
-    //echo $username ."<br>";
     $password = validate($_POST['password']);
-    //echo $password ."<br>";
     $flat_num = validate($_POST['flat_num']);
-    //echo $flat_num ."<br>";
     $building_num = validate($_POST['building_num']);
-    //echo $building_num ."<br>";
     $user_id = $_POST['user_id'];
     $customer_id = $_POST['customer_id'];
     $booking_status = $_POST['booking_status'];
-    //echo $booking_status ."<br>";
     $mobile_number = $_POST['mobile_number'];
-    //echo $mobile_number ."<br>";
     $email = $_POST['email'];
-    //echo $email ."<br>";
     $occupation = $_POST['occupation'];
-    //echo $occupation ."<br>";
-    $present_address = $_POST['present_address'];
-    //echo $present_address ."<br>";
+
+    $stmt = query("SELECT * FROM apartment WHERE (flat_no ='{$flat_num}' AND build_num = '{$building_num}')");
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $present_address =  $row['address'];
+    $apartment_status =  $row['apartment_status'];
+    $type =  $row['type'];
+
     $permanent_address = $_POST['permanent_address'];
-    //echo $permanent_address ."<br>";
     $gender = $_POST['gender'];
-    //echo $gender ."<br>";
     $nationality = $_POST['nationality'];
-    //echo $nationality ."<br>";
-    $age = $_POST['age'];
-    //echo $age ."<br>";
 
     //Checking for errors
     if (empty($flat_num) || empty($building_num) || empty($name) || empty($username) || empty($name) || empty($password)) {
         redirect("client_authorize.php?error=emptyFields&edit={$customer_id}&user_id={$user_id}");
-        exit();
-    } elseif ($username_size <= 3) {
-        //check if length of username is valid
-        redirect("signup.php?error=invalid_name_length&edit={$customer_id}&user_id={$user_id}");
-        exit();
-    } elseif ($password_size <= 4) {
-        //check if length of password is valid
-        redirect("signup.php?error=invalid_pwd_length&edit={$customer_id}&user_id={$user_id}");
         exit();
     }
 
@@ -96,9 +87,55 @@ if (isset($_POST['update_submit'])) {
 
 
     //------------ MailTrap (Mail)  Send Username and Password to Client Email   -------------
+    //Mail Section (Mailtrap API)
+    $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
+    $dotenv->load(); //works here
 
+    //Mailtrap Credentials
+    $SMTP_HOST = getenv('SMTP_HOST');
+    $SMTP_PORT = getenv('SMTP_PORT');
+    $SMTP_USER = getenv('SMTP_USER');
+    $SMTP_PASSWORD = getenv('SMTP_PASSWORD');
+    $SMTP_ENCRYPTION = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail = new PHPMailer(true);
 
+    $current_email = "admin@gmail.com";
+    $current_name = "Marketing Admin";
 
-    # redirect("view_clients.php?success=item_update");
-    redirect("view_customers.php?success=item_update");
+    try {
+        //access class
+
+        //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                   
+        $mail->isSMTP();
+        $mail->Host = $SMTP_HOST;
+        $mail->Username = $SMTP_USER;
+        $mail->Password = $SMTP_PASSWORD;
+        $mail->Port = $SMTP_PORT;
+        $mail->SMTPSecure = $SMTP_ENCRYPTION;
+        $mail->SMTPAuth = true;
+
+        //Recipients
+        $mail->setFrom($current_email, $current_name);
+        $mail->addAddress($email);
+
+        // Content
+        $mail->isHTML(true);
+        $mail->Subject = "Client Purchase Confirmation Email for {$name}";
+        $mail->Body = "<p>
+            Dear {$name},<br><br>
+            We are hereby confirming your purchase for the apartment {$flat_num}-{$building_num} at {$present_address}<br><br>
+            Apartment type - {$type}, Purchase type - {$apartment_status}<br><br>
+            Your new Client username is {$username} and your password is {$password}, you can change the password after logging in<br><br>
+            Thank you for choosing us, and please do contact us if you have any inquiries.<br><br>
+            Best Regards,<br>
+            Marketing Team
+            </p>";
+        $mail->send();
+
+        redirect("view_clients.php?success=item_update");
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+
+    
 }

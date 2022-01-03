@@ -50,10 +50,23 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="view_customers.php">
-                        <i class="fa fa-user-circle"></i>Customer List
-                    </a>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#demo4"><i class="fa fa-user-circle" aria-hidden="true"></i> Customer-Client<i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="demo4" class="collapse" class="active">
+                        <li>
+                            <a href="view_customers.php">
+                                <i></i>Customer List
+                            </a>
+                        </li>
+                        <li>
+                            <a href="view_clients.php">
+                                <i></i>Client List
+                            </a>
+                        </li>
+
+                    </ul>
                 </li>
+
+
                 <li>
                     <a href="payment-method.html">
                         <i class="fas fa-credit-card"></i>Payments

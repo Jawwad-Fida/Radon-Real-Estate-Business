@@ -23,12 +23,10 @@ if (isset($_GET['edit'])) {
     $mobile_number = $row['mobile_number'];
     $email = $row['email'];
     $occupation = $row['occupation'];
-    $present_address = $row['present_address'];
     $permanent_address = $row['permanent_address'];
     $gender = $row['gender'];
     $identity_num = ['identity_num'];
     $nationality = $row['nationality'];
-    $age = $row['age'];
 
     $stmt2 = query("SELECT * FROM users WHERE user_id ={$current_user_id}");
     $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
@@ -136,7 +134,7 @@ if (isset($_GET['edit'])) {
                                     <div class="row">
                                         <div class="col-lg-4 col-md-12">
                                             <p class="no-mb">
-                                                <label for="price">Building Name</label>
+                                                <label for="price">Building No.</label>
                                                 <input type="text" name="building_num" id="price">
                                             </p>
                                         </div>
@@ -166,11 +164,9 @@ if (isset($_GET['edit'])) {
                                     <input type="hidden" id="custId" name="mobile_number" value="<?php echo $mobile_number; ?>">
                                     <input type="hidden" id="custId" name="email" value="<?php echo $email; ?>">
                                     <input type="hidden" id="custId" name="occupation" value="<?php echo $occupation; ?>">
-                                    <input type="hidden" id="custId" name="present_address" value="<?php echo $present_address; ?>">
                                     <input type="hidden" id="custId" name="permanent_address" value="<?php echo $permanent_address; ?>">
                                     <input type="hidden" id="custId" name="gender" value="<?php echo $gender; ?>">
                                     <input type="hidden" id="custId" name="nationality" value="<?php echo $nationality; ?>">
-                                    <input type="hidden" id="custId" name="age" value="<?php echo $age; ?>">
 
 
 
