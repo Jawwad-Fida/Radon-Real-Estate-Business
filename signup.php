@@ -170,12 +170,12 @@ if (isset($_POST['register_submit'])) {
                 <div class="form-radio">
                     <label for="gender" class="radio-label">Gender :</label>
                     <div class="form-radio-item">
-                        <input type="radio" name="gender" id="male" checked required>
+                        <input type="radio" name="gender" value="male" id="male" checked required>
                         <label for="male">Male</label>
                         <span class="check"></span>
                     </div>
                     <div class="form-radio-item">
-                        <input type="radio" name="gender" id="female">
+                        <input type="radio" name="gender" value="female" id="female">
                         <label for="female">Female</label>
                         <span class="check"></span>
                     </div>

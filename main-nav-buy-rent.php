@@ -84,4 +84,10 @@
                                 <a href="admin_marketing/marketing_admin_dashboard.php">Admin Panel</a>
                             </div>
                         <?php endif; ?>
+
+                        <?php if (is_client() == true) : ?>
+                            <div class="header-widget sign-in">
+                                <a href="client_users/client_dashboard.php">Client Panel</a>
+                            </div>
+                        <?php endif; ?>
                         <!-- Right Side Content / End -->

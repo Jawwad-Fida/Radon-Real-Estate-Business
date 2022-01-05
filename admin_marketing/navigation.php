@@ -25,13 +25,13 @@
                             </li>
                             <li><a href="#">Property List</a>
                                 <ul>
-                                    <li><a href="properties-grid-1.html">For Rent</a></li>
-                                    <li><a href="properties-grid-2.html">For Buy</a></li>
+                                    <li><a href="#">For Rent</a></li>
+                                    <li><a href="#">For Buy</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">Review List</a></li>
                             <li><a href="view_appointment.php">Appointment</a></li>
-                            <li><a href="contact-us.html">Contact</a></li>
+                            <li><a href="#">Contact</a></li>
                         </ul>
                     </nav>
                     <div class="clearfix"></div>
@@ -53,7 +53,7 @@
                     </div>
                     <ul>
                         <li><a href="user-profile.php"> Edit profile</a></li>
-                        <li><a href="payment-method.html"> Payments</a></li>
+                        <li><a href="#"> Payments</a></li>
                         <li><a href="change_password.php"> Change Password</a></li>
                         <li><a href="../includes/logout.php">Log Out</a></li>
                     </ul>

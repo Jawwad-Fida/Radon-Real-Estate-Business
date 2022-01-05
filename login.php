@@ -59,6 +59,12 @@ if (isset($_POST['login_submit'])) {
 				# redirect("admin/index.php?success=login");
 				redirect("admin_marketing/marketing_admin_dashboard.php?success=login");
             }
+            elseif ($role == "client") {
+                $stmt = query("SELECT client_id FROM clients WHERE user_id = {$id}");
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                $_SESSION['client_id'] =  $row['client_id'];
+				redirect("client_users/client_dashboard.php?success=login");
+            }
         }
     }
 }

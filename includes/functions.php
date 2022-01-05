@@ -234,6 +234,17 @@ function is_customer(){
     }
 }
 
+//check if user is client
+function is_client(){
+    if(is_logged_in()){
+        if($_SESSION['user_role'] == 'client'){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
 //get username of the user logged in
 function get_username()
 {

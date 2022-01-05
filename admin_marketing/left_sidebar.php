@@ -68,7 +68,7 @@
 
 
                 <li>
-                    <a href="payment-method.html">
+                    <a href="#">
                         <i class="fas fa-credit-card"></i>Payments
                     </a>
                 </li>
