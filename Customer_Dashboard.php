@@ -95,7 +95,7 @@ include "includes/functions.php";
                                                         <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
                                                             <div class="rld-single-select">
                                                                 <select class="select single-select mr-0" name="bath" form="test">
-                                                                    <option value="0">Bathroom</option>
+                                                                    <option value="null">Bathroom</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
                                                                     <option value="3">3</option>
@@ -112,7 +112,7 @@ include "includes/functions.php";
                                                         <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
                                                             <div class="rld-single-select">
                                                                 <select class="select single-select mr-0" name="bed" form="test">
-                                                                    <option value="0">Bedroom</option>
+                                                                    <option value="null">Bedroom</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
                                                                     <option value="3">3</option>
@@ -126,10 +126,10 @@ include "includes/functions.php";
                                                     </div>
                                                     <div class="rld-single-select">
                                                         <select class="select single-select mr-0" name="addr" id="test">
-                                                            <option value="0">Location</option>
+                                                            <option value="null">Location</option>
                                                             <option value="Banani">Banani</option>
-                                                            <option value="Gulshan-2">Gulshan-2</option>
-                                                            <option value="Gulshan-1">Gulshan-1</option>
+                                                            <option value="Gulshan">Gulshan</option>
+                                                            
                                                             <option value="Dhanmondi">Dhanmondi</option>
                                                             <option value="Badda">Badda</option>
                                                             <option value="Baridhara">Baridhara</option>
@@ -185,7 +185,7 @@ include "includes/functions.php";
                                                     <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
                                                         <div class="rld-single-select">
                                                             <select class="select single-select mr-0" name="bath" form="test1">
-                                                                <option value="0">Bathroom</option>
+                                                                <option value="null">Bathroom</option>
                                                                 <option value="1">1</option>
                                                                 <option value="2">2</option>
                                                                 <option value="3">3</option>
@@ -202,7 +202,7 @@ include "includes/functions.php";
                                                     <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
                                                         <div class="rld-single-select">
                                                             <select class="select single-select mr-0" name="bed" form="test1">
-                                                                <option value="0">Bedroom</option>
+                                                                <option value="null">Bedroom</option>
                                                                 <option value="1">1</option>
                                                                 <option value="2">2</option>
                                                                 <option value="3">3</option>
@@ -216,17 +216,19 @@ include "includes/functions.php";
                                                 </div>
                                                 <div class="rld-single-select">
                                                     <select class="select single-select mr-0" name="addr" form="test1">
-                                                        <option value="">Area Address</option>
-                                                        <option value="Banani">Banani</option>
-                                                        <option value="Gulshan-2">Gulshan-2</option>
-                                                        <option value="Gulshan-1">Gulshan-1</option>
-                                                        <option value="Dhanmondi">Dhanmondi</option>
-                                                        <option value="Badda">Badda</option>
-                                                        <option value="6">Baridhara</option>
-                                                        <option value="Motijheel">Motijheel</option>
-                                                        <option value="Wari">Wari</option>
-                                                        <option value="Uttara">Uttara</option>
-                                                        <option value="Chittagong">Chittagong</option>
+                                                        <option value="null">Location</option>
+                                                            <option value="Banani">Banani</option>
+                                                            <option value="Gulshan">Gulshan</option>
+                                                            
+                                                            <option value="Dhanmondi">Dhanmondi</option>
+                                                            <option value="Badda">Badda</option>
+                                                            <option value="Baridhara">Baridhara</option>
+                                                            <option value="Motijheel">Motijheel</option>
+                                                            <option value="Wari">Wari</option>
+                                                            <option value="Uttara">Uttara</option>
+                                                            <option value="Farmgate">Farmgate</option>
+                                                            <option value="Mirpur">Mirpur</option>
+                                                            <option value="Chittagong">Chittagong</option>
                                                     </select>
 
                                                 </div>

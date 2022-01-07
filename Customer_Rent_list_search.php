@@ -93,7 +93,7 @@ include "includes/functions.php";
                                             <div class="rld-single-select">
                                             
                                                     <select class="select single-select mr-0" form="test3" name="bath">
-                                                        <option value="0">Bathroom</option>
+                                                        <option value="null">Bathroom</option>
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>
@@ -111,7 +111,7 @@ include "includes/functions.php";
                                            <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
                                             <div class="rld-single-select">
                                                     <select class="select single-select mr-0" name="bed" form="test3">
-                                                        <option value="0">Bedroom</option>
+                                                        <option value="null">Bedroom</option>
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>
@@ -126,7 +126,7 @@ include "includes/functions.php";
                                         <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
                                             <div class="rld-single-select">
                                             <select class="select single-select mr-0" name="addr" from="test3">
-                                                    <option value="1">Location</option>
+                                                    <option value="null">Location</option>
                                                     <option value="Banani">Banani</option>
                                                     <option value="Gulshan-2">Gulshan-2</option>
                                                     <option value="Gulshan-1">Gulshan-1</option>
@@ -177,22 +177,78 @@ include "includes/functions.php";
                 </div>
                 </form>
                 <!--/ End Search Form -->
-                <?php if((isset($_POST['bath']))&&(isset($_POST['bed']))&&(isset($_POST['addr']))){
-                
-                                    $search=$_POST['bath'];
-                                    //echo $search;
-            
-                                    $search1=$_POST['bed'];
-                                    //echo $search1;
+                <?php if ((isset($_POST['bath']))&& $_POST['bed']=='null' && $_POST['addr']=='null') {
+                    $search3= $_POST['bath'];
+                    $stmt= query("SELECT * 
+                        FROM apartment 
+                        WHERE (apartment_status='Rent' AND no_of_bathroom LIKE '%$search3%')");
+                    $row_count = count_records($stmt);
 
-                                    $search2=$_POST['addr'];
-                                    //echo $search2;
 
-                                    //Query for search
-                                    $stmt = query("SELECT * FROM apartment WHERE (apartment_status='Rent' AND no_of_bathroom LIKE '%$search%' AND no_of_bedroom LIKE '%$search1%' AND address LIKE '%$search2%')");
-                                    $row_count= count_records($stmt);
                 }
+                elseif((isset($_POST['bed']))&& $_POST['bath']=='null' && $_POST['addr']=='null'){
+                    $search4= $_POST['bed'];
+                    $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Rent'AND no_of_bedroom LIKE '%$search4%')");
+                    $row_count = count_records($stmt);
+
+
+                }
+                elseif((isset($_POST['addr'])) && $_POST['bath']=='null' && $_POST['bed']=='null'){
+                   $search5= $_POST['addr'];
+                   $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Rent' AND address LIKE '%$search5%')");
+                   $row_count = count_records($stmt);
+
+
+               }
+               elseif((isset($_POST['bath'])) && (isset($_POST['bed'])) && $_POST['addr']=='null'){
+                   $search5= $_POST['bath'];
+                   $search6= $_POST['bed'];
+                   $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Rent' AND no_of_bathroom LIKE '%$search5%' AND no_of_bedroom LIKE '%$search6%')");
+                   $row_count = count_records($stmt);
+
+
+               }
+               elseif((isset($_POST['bed'])) && (isset($_POST['addr'])) && $_POST['bath']=='null'){
+                   $search5= $_POST['bed'];
+                   $search6= $_POST['addr'];
+                   $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Rent' AND no_of_bedroom LIKE '%$search5%' address LIKE '%$search6%')");
+                   $row_count = count_records($stmt);
+
+
+               }elseif((isset($_POST['addr'])) && (isset($_POST['bath'])) && $_POST['bed']=='null'){
+                   $search5= $_POST['addr'];
+                   $search6= $_POST['bath'];
+                   $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Rent' AND address LIKE '%$search5%' AND no_of_bathroom LIKE '%$search6%')");
+                   $row_count = count_records($stmt);
+
+
+               }
+               elseif ((isset($_POST['bath'])) && (isset($_POST['bed'])) && (isset($_POST['addr']))){
+
+                    $search = $_POST['bath'];
+                    //echo $search;
+
+                    $search1 = $_POST['bed'];
+                    //echo $search1;
+
+                    $search2 = $_POST['addr'];
+                    //echo $search2;
+
+                    //$search3 = $_POST['price'];
+                    //$search4 = $_POST['size'];
                 
+
+                    //Query for search
+                    $stmt = query("SELECT * 
+                                   FROM apartment 
+                                   WHERE (apartment_status='Rent' 
+                                   AND no_of_bathroom LIKE '%$search%' 
+                                   AND no_of_bedroom LIKE '%$search1%' 
+                                   AND address LIKE '%$search2%')"
+                                   );
+                    $row_count = count_records($stmt);
+
+                } 
 
 
                  ?>

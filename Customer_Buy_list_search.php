@@ -93,7 +93,7 @@ include "includes/functions.php";
                                                     <div class="rld-single-select">
 
                                                         <select class="select single-select mr-0" name="bath" form="test4">
-                                                            <option value="0">Bathroom</option>
+                                                            <option value="null">Bathroom</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3</option>
@@ -111,7 +111,7 @@ include "includes/functions.php";
                                                 <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
                                                     <div class="rld-single-select">
                                                         <select class="select single-select mr-0" name="bed" form="test4">
-                                                            <option value="0">Bedroom</option>
+                                                            <option value="null">Bedroom</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3</option>
@@ -126,10 +126,10 @@ include "includes/functions.php";
                                             <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
                                                 <div class="rld-single-select">
                                                     <select class="select single-select mr-0" name="addr" form="test4">
-                                                        <option value="1">Location</option>
+                                                        <option value="null">Location</option>
                                                         <option value="Banani">Banani</option>
-                                                        <option value="Gulshan-2">Gulshan-2</option>
-                                                        <option value="Gulshan-1">Gulshan-1</option>
+                                                        <option value="Gulshan">Gulshan</option>
+                                                        
                                                         <option value="Dhanmondi">Dhanmondi</option>
                                                         <option value="Badda">Badda</option>
                                                         <option value="Baridhara">Baridhara</option>
@@ -177,7 +177,7 @@ include "includes/functions.php";
                     </div>
                 </form>
                 <!--/ End Search Form -->
-                <?php if ((isset($_POST['bath'])) && (isset($_POST['bed'])) && (isset($_POST['addr']))){
+                <?php /*if ((isset($_POST['bath'])) && (isset($_POST['bed'])) && (isset($_POST['addr']))){
 
                     $search = $_POST['bath'];
                     //echo $search;
@@ -201,17 +201,99 @@ include "includes/functions.php";
                                    AND address LIKE '%$search2%')"
                                    );
                     $row_count = count_records($stmt);
+
+                } */
+                if ((isset($_POST['bath']))&& $_POST['bed']=='null' && $_POST['addr']=='null') {
+                    $search3= $_POST['bath'];
+                    $stmt= query("SELECT * 
+                        FROM apartment 
+                        WHERE (apartment_status='Buy' AND no_of_bathroom LIKE '%$search3%')");
+                    $row_count = count_records($stmt);
+
+
                 }
+                elseif((isset($_POST['bed']))&& $_POST['bath']=='null' && $_POST['addr']=='null'){
+                    $search4= $_POST['bed'];
+                    $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Buy'AND no_of_bedroom LIKE '%$search4%')");
+                    $row_count = count_records($stmt);
 
 
+                }
+                elseif((isset($_POST['addr'])) && $_POST['bath']=='null' && $_POST['bed']=='null'){
+                   $search5= $_POST['addr'];
+                   $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Buy' AND address LIKE '%$search5%')");
+                   $row_count = count_records($stmt);
+
+
+               }
+
+
+
+
+               elseif((isset($_POST['bath'])) && (isset($_POST['bed'])) && $_POST['addr']=='null'){
+                   $search5= $_POST['bath'];
+                   $search6= $_POST['bed'];
+                   $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Buy' AND no_of_bathroom LIKE '%$search5%' AND no_of_bedroom LIKE '%$search6%')");
+                   $row_count = count_records($stmt);
+
+
+               }
+               elseif((isset($_POST['bed'])) && (isset($_POST['addr'])) && $_POST['bath']=='null'){
+                   $search5= $_POST['bed'];
+                   $search6= $_POST['addr'];
+                   $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Buy' AND no_of_bedroom LIKE '%$search5%' AND address LIKE '%$search6%')");
+                   $row_count = count_records($stmt);
+
+
+               }elseif((isset($_POST['addr'])) && (isset($_POST['bath'])) && $_POST['bed']=='null'){
+                   $search5= $_POST['addr'];
+                   $search6= $_POST['bath'];
+                   $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Buy' AND address LIKE '%$search5%' AND no_of_bathroom LIKE '%$search6%')");
+                   $row_count = count_records($stmt);
+
+
+               }
+               elseif ((isset($_POST['bath'])) && (isset($_POST['bed'])) && (isset($_POST['addr']))){
+
+                    $search = $_POST['bath'];
+                    //echo $search;
+
+                    $search1 = $_POST['bed'];
+                    //echo $search1;
+
+                    $search2 = $_POST['addr'];
+                    //echo $search2;
+
+                    //$search3 = $_POST['price'];
+                    //$search4 = $_POST['size'];
+                
+
+                    //Query for search
+                    $stmt = query("SELECT * 
+                                   FROM apartment 
+                                   WHERE (apartment_status='Buy' 
+                                   AND no_of_bathroom LIKE '%$search%' 
+                                   AND no_of_bedroom LIKE '%$search1%' 
+                                   AND address LIKE '%$search2%')"
+                                   );
+                    $row_count = count_records($stmt);
+
+                } 
 
                 ?>
+
+                
+
+
+
+
+                
                 <section class="headings-2 pt-0">
                     <div class="pro-wrapper">
                         <div class="detail-wrapper-body">
                             <div class="listing-title-bar">
                                 <div class="text-heading text-left">
-                                    <p class="font-weight-bold mb-0 mt-3"><?php echo $row_count . ' Search Results' ?></p>
+                                    <p class="font-weight-bold mb-0 mt-3"><?php echo $row_count . ' Search Results'; ?></p>
                                 </div>
                             </div>
                         </div>
@@ -262,7 +344,7 @@ include "includes/functions.php";
                                         <!-- homes img -->
                                         <a href="#" class="homes-img">
                                             <div class="homes-tag button alt featured">Featured</div>
-                                            <div class="homes-tag button alt sale"><?php echo $apart_status ?></div>
+                                            <div class="homes-tag button alt sale"><?php echo $apart_status; ?></div>
                                             <div class="homes-price">Family Home</div>
                                             <img src="admin_marketing/<?php echo $image; ?>" alt="home-1" class="img-responsive">
                                         </a>
@@ -276,31 +358,31 @@ include "includes/functions.php";
 
                         <div class="col-lg-8 col-md-12 homes-content pb-0 mb-44" data-aos="fade-up">
                             <!-- homes address -->
-                            <h3><a href="single_property.php?edit=<?php echo $apartment_id; ?>&apart_status=<?php echo $apart_status; ?>"><?php echo $building_name ?></a></h3>
+                            <h3><a href="single_property.php?edit=<?php echo $apartment_id; ?>&apart_status=<?php echo $apart_status; ?>"><?php echo $building_name; ?></a></h3>
                             <p class="homes-address mb-3">
 
-                                <i class="fa fa-map-marker"></i><span><?php echo $address ?></span>
+                                <i class="fa fa-map-marker"></i><span><?php echo $address ;?></span>
 
                             </p>
                             <!-- homes List -->
                             <ul class="homes-list clearfix pb-3">
                                 <li class="the-icons">
                                     <i class="flaticon-bed mr-2" aria-hidden="true"></i>
-                                    <span><?php echo $no_of_bedroom ?></span>
+                                    <span><?php echo $no_of_bedroom ;?></span>
                                 </li>
                                 <li class="the-icons">
                                     <i class="flaticon-bathtub mr-2" aria-hidden="true"></i>
-                                    <span><?php echo $no_of_bathroom ?></span>
+                                    <span><?php echo $no_of_bathroom; ?></span>
                                 </li>
                                 <li class="the-icons">
                                     <i class="flaticon-square mr-2" aria-hidden="true"></i>
-                                    <span><?php echo $area ?></span>
+                                    <span><?php echo $area ;?></span>
                                 </li>
                             </ul>
                             <!-- Price -->
                             <div class="price-properties">
                                 <h3 class="title mt-3">
-                                    <a><?php echo 'BDT ' . $Buy_price ?></a>
+                                    <a><?php echo 'BDT ' . $Buy_price; ?></a>
                                 </h3>
                                 <?php if (is_customer() == true) : ?>
                                 <div class="compare">
@@ -318,7 +400,7 @@ include "includes/functions.php";
 
                         <!--PHP TAG FOR ALL Buy LIST-->
 
-                    <?php   } ?>
+                    <?php   }  ?>
 
 
                     </div>
