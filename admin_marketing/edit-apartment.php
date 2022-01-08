@@ -20,7 +20,6 @@ if (isset($_GET['edit'])) {
 
     $building_id = $row['building_id'];
     $building_name = $row['building_name'];
-
     $flat_no = $row['flat_no'];
     $no_of_bedroom = $row['no_of_bedroom'];
     $no_of_bathroom = $row['no_of_bathroom'];

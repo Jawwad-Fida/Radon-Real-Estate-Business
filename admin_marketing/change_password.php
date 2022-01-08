@@ -18,7 +18,7 @@ if($_SESSION['username']){
 if (isset($_POST['reset_submit'])) {
     $password = validate($_POST['new-password']);
     $password_repeat = validate($_POST['confirm-new-password']);
-    //$username = "jawwad";
+    # $username = "rafi";
 
 
     $password_size = strlen($password);

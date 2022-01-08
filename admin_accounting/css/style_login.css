@@ -1,0 +1,103 @@
+body {
+	font-family: sans-serif;	
+	background-image: url(rz2.jpg);
+	background-repeat: no-repeat;
+	overflow: visible;
+	background-size: cover;
+}
+
+.container {
+	width: 380px;
+	margin:7% auto;
+	border-radius: 50px;
+	background-color: rgba(226, 224, 224, 0.795);
+	box-shadow: 0 0 50px rgba(211, 201, 193, 0.295);
+}
+
+.header {
+	text-align: center;
+	padding-top: 75px;
+}
+
+.header h1 {
+	color: #6e4105cc;
+	font-size: 45px;
+	margin-bottom: 30px;
+}
+
+.main {
+	text-align: center;
+
+}
+
+
+.main input, button {
+	width: 300px;
+	height: 40px;
+	border:none;
+	outline: none;
+	padding-left: 40px;
+	box-sizing: border-box;
+	font-size: 15px;
+	color: rgb(2, 2, 2);
+	margin-bottom: 40px;
+}
+
+.main button {
+	padding-left: 0;
+	background-color: #6e4105cc;
+	letter-spacing: 1px;
+	font-weight: bold;
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+	
+}
+
+.main button:hover {
+	box-shadow: 2px 2px 5px #555;
+	background-color: #d4d277;
+}
+.main input:hover {
+	box-shadow: 2px 2px 5px #555;
+	background-color: #ddd;
+}
+
+.main span {
+	position: relative;
+	margin: 2em auto;
+
+	
+}
+
+.main i {
+	position: absolute;
+	left: 15px;
+	color: #333;
+	font-size: 16px;
+	top: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

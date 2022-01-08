@@ -127,7 +127,8 @@ if (isset($_GET['delete'])) {
 
                                                     <tr>
                                                         <td><?php echo $building_name; ?></td>
-                                                        <td><?php echo $flat_no; ?></td>
+                                                        <td><input type="button" class="btn btn-link" value="<?php echo $flat_no?>" 
+                                                                   onclick="show_listfn('<?php echo $flat_no;?>');"></td>
                                                         <td><img width="200px" src="<?php echo $image; ?>"></td>
                                                         <td class="status"><span class=" active"><?php echo $rent_price; ?></span></td>
                                                         <td><?php echo $area; ?></td>

@@ -57,7 +57,12 @@ if (isset($_POST['login_submit'])) {
                 $_SESSION['admin_id'] =  $row['admin_id'];
                 $_SESSION['admin_type'] =  $row['admin_type'];
 				# redirect("admin/index.php?success=login");
-				redirect("admin_marketing/marketing_admin_dashboard.php?success=login");
+
+                if($_SESSION['admin_type'] == "marketing"){
+                    redirect("admin_marketing/marketing_admin_dashboard.php?success=login");
+                } elseif($_SESSION['admin_type'] == "finance_and_account"){
+                    redirect("admin_accounting/accounting_admin_dashboard.php?success=login");
+                } 
             }
             elseif ($role == "client") {
                 $stmt = query("SELECT client_id FROM clients WHERE user_id = {$id}");

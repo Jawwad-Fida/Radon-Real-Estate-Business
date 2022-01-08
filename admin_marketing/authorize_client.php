@@ -35,6 +35,7 @@ if (isset($_POST['update_submit'])) {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     $present_address =  $row['address'];
     $apartment_status =  $row['apartment_status'];
+    $building_name =  $row['building_name'];
     $type =  $row['type'];
 
     $permanent_address = $_POST['permanent_address'];
@@ -51,7 +52,9 @@ if (isset($_POST['update_submit'])) {
 
     //------------QUERY-------------
 
-    $stmt4 = prepare_query("INSERT INTO clients(user_id,name,username,mobile_number,email,occupation,present_address,permanent_address,gender,nationality) VALUES(?,?,?,?,?,?,?,?,?,?)");
+    $stmt4 = prepare_query("INSERT INTO clients(user_id,name,username,mobile_number,email,occupation,present_address,permanent_address,gender,nationality,building_name,flat_number,client_type) 
+    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+
     $stmt4->bindParam(1, $user_id, PDO::PARAM_INT);
     $stmt4->bindParam(2, $name, PDO::PARAM_STR);
     $stmt4->bindParam(3, $username, PDO::PARAM_STR);
@@ -62,6 +65,9 @@ if (isset($_POST['update_submit'])) {
     $stmt4->bindParam(8, $permanent_address, PDO::PARAM_STR);
     $stmt4->bindParam(9, $gender, PDO::PARAM_STR);
     $stmt4->bindParam(10, $nationality, PDO::PARAM_STR);
+    $stmt4->bindParam(11, $building_name, PDO::PARAM_STR);
+    $stmt4->bindParam(12, $flat_num, PDO::PARAM_STR);
+    $stmt4->bindParam(13, $apartment_status, PDO::PARAM_STR);
     $stmt4->execute();
 
     $stmt6 = prepare_query("UPDATE users SET user_role=?,username=?,user_password=? WHERE user_id=?");
