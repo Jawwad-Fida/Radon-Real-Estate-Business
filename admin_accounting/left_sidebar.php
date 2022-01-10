@@ -20,7 +20,7 @@
         <div class="detail clearfix">
             <ul class="mb-0">
                 <li>
-                    <a href="marketing_admin_dashboard.php">
+                    <a href="accounting_admin_dashboard.php">
                         <i class="fa fa-map-marker"></i> Dashboard
                     </a>
                 </li>
@@ -38,10 +38,10 @@
                     <ul id="demo4" class="collapse" class="active">
                         <li>
                             <a href="owner_building_list.php">
-                                <i class="fa fa-plus" ></i>Owner Client List
+                                <i class="fa fa-address-card-o" ></i>Owner Client List
                             </a>
                             <a href="rent_building_list.php">
-                                <i class="fa fa-plus" ></i>Rent Client List
+                                <i class="fa fa-address-card" ></i>Rent Client List
                             </a>
                         </li>
 
@@ -51,7 +51,8 @@
 
                 <li>
                     <a href="#">
-                        <i class="fas fa-credit-card"></i>Payments
+            
+                        <i class="far fa-credit-card"></i>Payments
                     </a>
                 </li>
             </ul>

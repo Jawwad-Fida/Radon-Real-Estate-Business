@@ -216,7 +216,7 @@ include "includes/functions.php";
                                                 </div>
                                                 <div class="rld-single-select">
                                                     <select class="select single-select mr-0" name="addr" form="test1">
-                                                        <option value="null">Area Address</option>
+                                                        <option value="null">Location</option>
                                                         <option value="Banani">Banani</option>
                                                         <option value="Gulshan-2">Gulshan-2</option>
                                                         <option value="Gulshan-1">Gulshan-1</option>
@@ -550,69 +550,7 @@ include "includes/functions.php";
     ?>
     <!-- END SECTION SERVICES -->
 
-    <!-- START SECTION POPULAR PLACES -->
-    <section class="popular-places">
-        <div class="container">
-            <div class="section-title">
-                <h3>Most Popular</h3>
-                <h2>Places</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-right">
-                    <!-- Image Box -->
-                    <a href="properties-map.html" class="img-box hover-effect">
-                        <img src="images/popular-places/12.jpg" class="img-responsive" alt="">
-                        <!-- Badge -->
-                        <div class="listing-badges">
-                            <span class="featured">Featured</span>
-                        </div>
-                        <div class="img-box-content visible">
-                            <h4>Dhaka</h4>
-                            <span>203 Properties</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-8 col-md-6" data-aos="fade-left">
-                    <!-- Image Box -->
-                    <a href="properties-map.html" class="img-box hover-effect">
-                        <img src="images/popular-places/13.jpg" class="img-responsive" alt="">
-                        <div class="img-box-content visible">
-                            <h4>Mymensingh</h4>
-                            <span>307 Properties</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-8 col-md-6" data-aos="fade-right">
-                    <!-- Image Box -->
-                    <a href="properties-map.html" class="img-box hover-effect no-mb">
-                        <img src="images/popular-places/14.jpg" class="img-responsive" alt="">
-                        <div class="img-box-content visible">
-                            <h4>Sylhet</h4>
-                            <span>409 Properties</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-left">
-                    <!-- Image Box -->
-                    <a href="properties-map.html" class="img-box hover-effect no-mb x3">
-                        <img src="images/popular-places/15.jpg" class="img-responsive" alt="">
-                        <!-- Badge -->
-                        <div class="listing-badges">
-                            <span class="featured">Featured</span>
-                        </div>
-                        <div class="img-box-content visible">
-                            <h4>Barisal</h4>
-                            <span>507 Properties</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END SECTION POPULAR PLACES -->
-
+    
     <!-- START SECTION AGENTS -->
     <section class="team bg-white-2">
         <div class="container">
