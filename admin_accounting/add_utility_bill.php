@@ -13,7 +13,6 @@ if (isset($_POST['add_submit']) && isset($_GET['d_building']) && isset($_GET['d_
     $building_name=$_GET['d_building'];
     $flat_no= $_GET['d_flat'] ;
     $flat_status= $_GET['d_status'] ;
-    $rent=$_POST['rent'];
     $month=$_POST['month'];
     $gas_bill=validate($_POST['gas_bill']);
     $water_bill=validate($_POST['water_bill']);
@@ -25,18 +24,17 @@ if (isset($_POST['add_submit']) && isset($_GET['d_building']) && isset($_GET['d_
     //------------QUERY-------------             
 
 
-    $stmt = prepare_query("INSERT INTO utility_bill(building_name,flat_no,month,flat_status,rent,water_bill,gas_bill,electricity_bill,additional_bill,service_charge) 
-VALUES(?,?,?,?,?,?,?,?,?,?)");
+    $stmt = prepare_query("INSERT INTO utility_bill(building_name,flat_no,month,flat_status,water_bill,gas_bill,electricity_bill,additional_bill,service_charge) 
+VALUES(?,?,?,?,?,?,?,?,?)");
     $stmt->bindParam(1, $building_name, PDO::PARAM_STR);
     $stmt->bindParam(2, $flat_no, PDO::PARAM_INT);
     $stmt->bindParam(3, $month, PDO::PARAM_STR);
     $stmt->bindParam(4, $flat_status, PDO::PARAM_STR);
-    $stmt->bindParam(5, $rent, PDO::PARAM_INT);
-    $stmt->bindParam(6, $water_bill, PDO::PARAM_INT);
-    $stmt->bindParam(7, $gas_bill, PDO::PARAM_INT);
-    $stmt->bindParam(8, $electricity_bill, PDO::PARAM_INT);
-    $stmt->bindParam(9, $additional_bill, PDO::PARAM_INT);
-    $stmt->bindParam(10, $service_charge, PDO::PARAM_INT);
+    $stmt->bindParam(5, $water_bill, PDO::PARAM_INT);
+    $stmt->bindParam(6, $gas_bill, PDO::PARAM_INT);
+    $stmt->bindParam(7, $electricity_bill, PDO::PARAM_INT);
+    $stmt->bindParam(8, $additional_bill, PDO::PARAM_INT);
+    $stmt->bindParam(9, $service_charge, PDO::PARAM_INT);
 
 
     $stmt->execute();
@@ -141,14 +139,6 @@ VALUES(?,?,?,?,?,?,?,?,?,?)");
                                     </div>
 
                                     <div class="row">
-
-                                        <div class="col-lg-4 col-md-12">
-                                            <p class="no-mb">
-                                                <label for="Rent_amount"> Rent Bill</label>
-                                                <input type="text" name="rent">
-                                            </p>
-                                        </div>
-
                                         <div class="col-lg-4 col-md-12">
                                             <p class="no-mb">
                                                 <label for="Additional_bill"> Additional Bill</label>

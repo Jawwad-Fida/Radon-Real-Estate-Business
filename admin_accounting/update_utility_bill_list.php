@@ -21,7 +21,6 @@ if (isset($_GET['edit'])) {
     $flat_no = $row['flat_no'];
     $billing_month=$row['month'];
     $flat_status=$row['flat_status'];
-    $rent=$row['rent'];
     $water_bill=$row['water_bill'];
     $electricity_bill=$row['electricity_bill'];
     $gas_bill=$row['gas_bill'];                                      
@@ -37,7 +36,6 @@ if (isset($_POST['update_submit'])) {
 
     
     $billing_month=$_POST['month'];
-    $rent=$_POST['rent'];
     $water_bill=$_POST['water_bill'];
     $electricity_bill=$_POST['electricity_bill'];
     $gas_bill=$_POST['gas_bill'];                                      
@@ -48,11 +46,10 @@ if (isset($_POST['update_submit'])) {
     //------------QUERY-------------
 
     $stmt = prepare_query("UPDATE utility_bill 
-                           SET  month = ?,rent = ?, water_bill = ?,electricity_bill = ?,gas_bill = ?,additional_bill = ?,service_charge = ? 
+                           SET  month = ?, water_bill = ?,electricity_bill = ?,gas_bill = ?,additional_bill = ?,service_charge = ? 
                            WHERE utility_id = ?");
     
     $stmt->bindParam(1, $billing_month, PDO::PARAM_STR);
-    $stmt->bindParam(2, $rent, PDO::PARAM_STR);
     $stmt->bindParam(3, $water_bill, PDO::PARAM_INT);
     $stmt->bindParam(4, $electricity_bill, PDO::PARAM_INT);
     $stmt->bindParam(5, $gas_bill, PDO::PARAM_INT);
@@ -167,14 +164,6 @@ if (isset($_POST['update_submit'])) {
                                     </div>
 
                                     <div class="row">
-
-                                        <div class="col-lg-4 col-md-12">
-                                            <p class="no-mb">
-                                                <label for="Rent_amount"> Rent Bill</label>
-                                                <input type="text" name="rent" value=" <?php echo $rent; ?>">
-                                            </p>
-                                        </div>
-
                                         <div class="col-lg-4 col-md-12">
                                             <p class="no-mb">
                                                 <label for="Additional_bill"> Additional Bill</label>

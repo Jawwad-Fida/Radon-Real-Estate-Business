@@ -93,7 +93,6 @@ if (isset($_GET['d_building']) && isset($_GET['d_flat']) && isset($_GET['d_usern
                                                     <th>Flat No</th> 
                                                     <th>Billing Month</th>
                                                     <th>Flat Status</th>  
-                                                    <th>Rent</th>  
                                                     <th>Water Bill</th>  
                                                     <th>Gas Bill</th>  
                                                     <th>Electricity Bill</th>  
@@ -121,7 +120,6 @@ if (isset($_GET['d_building']) && isset($_GET['d_flat']) && isset($_GET['d_usern
                                                     $flat_no = $row['flat_no'];
                                                     $billing_month=$row['month'];
                                                     $flat_status=$row['flat_status'];
-                                                    $rent=$row['rent'];
                                                     $water_bill=$row['water_bill'];
                                                     $electricity_bill=$row['electricity_bill'];
                                                     $gas_bill=$row['gas_bill'];                                      
@@ -137,7 +135,6 @@ if (isset($_GET['d_building']) && isset($_GET['d_flat']) && isset($_GET['d_usern
                                                         <td><?php echo $flat_no; ?></td> 
                                                         <td><?php echo $billing_month; ?></td> 
                                                         <td><?php echo $flat_status; ?></td> 
-                                                        <td><?php echo $rent; ?></td>
                                                         <td><?php echo $water_bill; ?></td> 
                                                         <td><?php echo $electricity_bill; ?></td> 
                                                         <td><?php echo $gas_bill; ?></td> 
