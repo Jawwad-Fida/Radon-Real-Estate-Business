@@ -99,7 +99,10 @@ if(isset($_GET['b_name']))
 
                                                 <?php
                                                 //JOIN query
-                                                $stmt = query("SELECT * FROM clients");   
+                                                $stmt = query("SELECT * 
+                                                               FROM clients
+                                                               where client_type='Rent' and building_name='$building_name'
+                                                               ");   
 
                                                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                     $customer_id = $row['client_id'];

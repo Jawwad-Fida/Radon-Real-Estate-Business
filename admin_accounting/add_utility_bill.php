@@ -8,16 +8,6 @@ include "../includes/connect.php";
 include "../includes/functions.php";
 
 
-$building_name="";
-$flat_no="";
-$flat_status="";
-
-// if (isset($_GET['d_building']) && isset($_GET['d_flat']) && isset($_GET['d_status'])) {
-//     $building_name=$_GET['d_building'];
-//     $flat_no= $_GET['d_flat'] ;
-//     $flat_status= $_GET['d_status'] ;
-// }
-//echo $building_name;
 
 if (isset($_POST['add_submit']) && isset($_GET['d_building']) && isset($_GET['d_flat']) && isset($_GET['d_status'])) {
     $building_name=$_GET['d_building'];
@@ -32,11 +22,7 @@ if (isset($_POST['add_submit']) && isset($_GET['d_building']) && isset($_GET['d_
     $service_charge=$_POST['service_charge'];
 
 
-    //------------QUERY-------------
-
-    // $stmt=prepare_query("INSERT INTO utility_bill(building_name,flat_no,month,flat_status,rent,water_bill,gas_bill,electricity_bill,additional_bill,service_charge)
-//              VALUES('$building_name','$flat_no','$month','$flat_status',$rent',$water_bill','$gas_bill','$electricity_bill','$additional_bill','$service_charge')");
-             
+    //------------QUERY-------------             
 
 
     $stmt = prepare_query("INSERT INTO utility_bill(building_name,flat_no,month,flat_status,rent,water_bill,gas_bill,electricity_bill,additional_bill,service_charge) 
@@ -57,7 +43,7 @@ VALUES(?,?,?,?,?,?,?,?,?,?)");
  
     unset($stmt);
 
-    redirect("add_utility_bill.php?success=item_add");
+    redirect("apartment_list.php?success=item_add"."&b_name=". $building_name );
 }
 
 

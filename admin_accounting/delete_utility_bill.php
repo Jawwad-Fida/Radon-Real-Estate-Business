@@ -19,6 +19,7 @@ if (isset($_GET['d_b'])&& isset($_GET['d_f'])&& isset($_GET['d_id'])) {
     WHERE building_name='$building_name'
     AND flat_no='$flat_no'
     AND utility_id='$utility_id'");
-    redirect("clients_utility_bill_list.php?success=item_delete");
+    $s= "clients_utility_bill_list.php?success=item_deleted"."&d_building=". $building_name ."&d_flat=". $flat_no ."&d_username=null";
+    redirect($s);
 }
 ?>

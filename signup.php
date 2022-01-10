@@ -9,9 +9,6 @@ include "includes/functions.php";
 ?>
 
 
-<!-- Display error messages -->
-<?php display_error_message(); ?>
-
 <?php
 
 if (isset($_POST['register_submit'])) {
@@ -132,10 +129,14 @@ if (isset($_POST['register_submit'])) {
     <link rel="stylesheet" type="text/css" href="css\style_signup.css">
 
     <div class="container">
-        <div class="signup-form">
+        
+        <div class="signup-form">    
 
             <form action="" method="post" class="register-form" id="register-form">
                 <h2>Registration Form</h2>
+
+                <!-- Display error messages -->
+                <?php display_error_message(); ?>
 
                 <div class="form-group">
                     <label for="address">Full Name :</label>

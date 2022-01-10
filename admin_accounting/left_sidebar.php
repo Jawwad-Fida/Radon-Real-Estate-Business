@@ -28,17 +28,20 @@
                     <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-list" aria-hidden="true"></i> Add Utility Bill <i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="demo1" class="collapse" class="active">
                         <li>
-                            <a href="property_list.php"><i class="fa fa-plus"></i>  Property List </a>
-                        </li>
+                            <a href="property_list.php"><i class="fa fa-plus"></i>Property List </a>
+                        </li>                      
                     </ul>
                 </li>
                 
                 <li>
-                    <a href="javascript:;" data-toggle="collapse" data-target="#demo4"><i class="fa fa-user-circle" aria-hidden="true"></i> Customer-Client<i class="fa fa-fw fa-caret-down"></i></a>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#demo4"><i class="fa fa-user-circle" aria-hidden="true"></i> Owner-Client<i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="demo4" class="collapse" class="active">
                         <li>
-                            <a href="building_list.php">
-                                <i></i>Client List
+                            <a href="owner_building_list.php">
+                                <i class="fa fa-plus" ></i>Owner Client List
+                            </a>
+                            <a href="rent_building_list.php">
+                                <i class="fa fa-plus" ></i>Rent Client List
                             </a>
                         </li>
 

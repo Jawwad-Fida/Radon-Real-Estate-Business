@@ -190,7 +190,7 @@ if (isset($_POST['update_submit'])) {
                                         <div class="col-lg-4 col-md-12">
                                             <p class="no-mb last">
                                                 <label for="billig_month">Billing Month</label>
-                                                <input type="Date" name="month" value=" <?php echo $billing_month; ?>">
+                                                <input type="date" name="month" value=" <?php echo $billing_month; ?>">
                                             </p>
                                         </div>
                                     </div>

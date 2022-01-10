@@ -7,12 +7,8 @@ ob_start();
 include "../includes/connect.php";
 include "../includes/functions.php";
 
-$building_name="";  
-if(isset($_GET['b_name'])) 
-   $building_name=$_GET['b_name'];
 
 ?>
-
 
 
 <!DOCTYPE html>
@@ -79,61 +75,51 @@ if(isset($_GET['b_name']))
                         <div class="dashborad-box stat bg-white">
 
                             <div class="dashborad-box">
-                                <h4 class="title">View Apartment List</h4>
+                                <h4 class="title">Rent building List</h4>
                                 <div class="section-body listing-table">
                                     <div class="table-responsive">
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>Flat No</th>
-                                                    <th>Action</th>
+                                                    <th>Building Name</th>
+                                                    <th>No.of Floors</th>
+                                                    <th>No.of Flats(Per Floor)</th>
+                                                    <th>Division</th>
+                                                    <th>Address</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
 
                                                 <?php
-                                                //JOIN query
-                                                $stmt = query("SELECT * 
-                                                               FROM apartment
-                                                               WHERE building_name='$building_name' ");
-                                                #$stmt = query("SELECT * FROM building WHERE building_name != 'Test Case 1' AND building_name != 'Test Case 2'
-                                                #AND building_name != 'Test Case 3' AND building_name != 'Test Case 4' AND building_name != 'Test Case 5' 
-                                                #AND building_name != 'Test Case 6' AND building_name != 'Test Case 7' AND building_name != 'Test Case 8'");       
+                                                // Query
+                                                $stmt = query("SELECT * FROM building");
 
                                                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                                    $flat_no = $row['flat_no'];
-                                                    $client_username = $row['client_username'];
-                                                    $apartment_status= $row['apartment_status'];                                                  
+                                                    
+                                                    $building_name = $row['building_name'];
+                                                    $no_of_flats = $row['no_of_flats'];
+                                                    $no_of_floors =  $row['no_of_floors'];
+                                                    $division =  $row['division'];
+                                                    $address =  $row['address'];
 
-                                                    //close php tag so that we can include some html inside the php while loop
                                                 ?>
-
-
-                                                    <tr>
-                                                        <td><input type="button" class="btn btn-link" value="<?php echo $flat_no;?>" 
-                                                                   onclick="list_of_utility_bill('<?php echo $building_name; ?>' , '<?php echo $flat_no; ?>', '<?php echo $client_username; ?>');"></td>
-                                                        <td>
-                                                            <input type="button" class="btn btn-info btn-rounded" value=" Add Utility " onclick="add_utility_func('<?php echo $building_name; ?>' , '<?php echo $flat_no; ?>', '<?php echo $apartment_status; ?>');">                    
-                                                        </td>
-                                                       
+                                                    <tr>                                                  
+                                                        <td><input type="button" class="btn btn-link" value="<?php echo $building_name;?>" 
+                                                                   onclick="show_listfn('<?php echo $building_name;?>');"></td>
+                                                        <td><?php echo $no_of_floors; ?></td>
+                                                        <td class="rating"><span><?php echo $no_of_flats; ?></span></td>
+                                                        <td class="status"><span class=" active"><?php echo $division; ?></span></td>
+                                                        <td><?php echo $address; ?></td>
                                                     </tr>
 
                                                 <?php } ?>
-
                                             </tbody>
                                         </table>
-
-
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
-
                     </div>
-
-
                 </div>
             </div>
         </section>
@@ -197,42 +183,15 @@ if(isset($_GET['b_name']))
                 $(this).toggleClass("hu-menu-visdec");
             });
 
-            function list_of_utility_bill(info_b,info_f,info_username)
-            {
-                var del_b=info_b
-                var del_f=info_f;
-                var del_username=info_username;
-                location.assign("clients_utility_bill_list.php?d_building="+ del_b+ "&d_flat="+del_f+"&d_username="+del_username);
-            }
-
-            function add_utility_func(info_b,info_f,info_status)
-            {
-                var del_b=info_b
-                var del_f=info_f;
-                var del_status=info_status;
-                location.assign("add_utility_bill.php?d_building="+ del_b+ "&d_flat="+del_f+"&d_status="+del_status);
-            }
+            function show_listfn(info_b)
+                {
+                   location.assign("rent_client_list.php?b_name="+info_b);
+                }
         </script>
 
     </div>
-
-
     <!-- Wrapper / End -->
 </body>
-
-
-<!-- Mirrored from code-theme.com/html/findhouses/add-property.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Dec 2021 10:32:33 GMT -->
-
-</html>
-
-<?php
-//close database connection - initialize object to null
-$pdo = null;
-ob_end_flush();
-?>
-
-<!-- Mirrored from code-theme.com/html/findhouses/add-property.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Dec 2021 10:32:33 GMT -->
-
 </html>
 
 <?php

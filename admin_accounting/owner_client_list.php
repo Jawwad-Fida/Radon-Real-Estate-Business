@@ -10,7 +10,7 @@ include "../includes/functions.php";
 $building_name="";  
 if(isset($_GET['b_name'])) 
    $building_name=$_GET['b_name'];
-
+   
 ?>
 
 
@@ -79,14 +79,20 @@ if(isset($_GET['b_name']))
                         <div class="dashborad-box stat bg-white">
 
                             <div class="dashborad-box">
-                                <h4 class="title">View Apartment List</h4>
+                                <h4 class="title">View Renter Information</h4>
                                 <div class="section-body listing-table">
                                     <div class="table-responsive">
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>Flat No</th>
-                                                    <th>Action</th>
+                                                    <th>Client ID</th>
+                                                    <th>Name</th>
+                                                    <th>Username</th>
+                                                    <th>Phone</th>
+                                                    <th>Email</th>
+                                                    <th>Occupation</>
+                                                    <th>Present Address</th>
+                                                    <th>Gender</th>                                               
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -94,28 +100,32 @@ if(isset($_GET['b_name']))
                                                 <?php
                                                 //JOIN query
                                                 $stmt = query("SELECT * 
-                                                               FROM apartment
-                                                               WHERE building_name='$building_name' ");
-                                                #$stmt = query("SELECT * FROM building WHERE building_name != 'Test Case 1' AND building_name != 'Test Case 2'
-                                                #AND building_name != 'Test Case 3' AND building_name != 'Test Case 4' AND building_name != 'Test Case 5' 
-                                                #AND building_name != 'Test Case 6' AND building_name != 'Test Case 7' AND building_name != 'Test Case 8'");       
+                                                               FROM clients
+                                                               where client_type='Buy' and building_name='$building_name' 
+                                                               ");   
 
                                                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                                    $flat_no = $row['flat_no'];
-                                                    $client_username = $row['client_username'];
-                                                    $apartment_status= $row['apartment_status'];                                                  
-
+                                                    $customer_id = $row['client_id'];
+                                                    $name = $row['name'];
+                                                    $username = $row['username'];
+                                                    $mobile_number = $row['mobile_number'];
+                                                    $email =  $row['email'];
+                                                    $occupation =  $row['occupation'];
+                                                    $present_address =  $row['present_address'];
+                                                    $gender =  $row['gender'];
                                                     //close php tag so that we can include some html inside the php while loop
                                                 ?>
 
 
                                                     <tr>
-                                                        <td><input type="button" class="btn btn-link" value="<?php echo $flat_no;?>" 
-                                                                   onclick="list_of_utility_bill('<?php echo $building_name; ?>' , '<?php echo $flat_no; ?>', '<?php echo $client_username; ?>');"></td>
-                                                        <td>
-                                                            <input type="button" class="btn btn-info btn-rounded" value=" Add Utility " onclick="add_utility_func('<?php echo $building_name; ?>' , '<?php echo $flat_no; ?>', '<?php echo $apartment_status; ?>');">                    
-                                                        </td>
-                                                       
+                                                        <td><?php echo $customer_id; ?></td>
+                                                        <td><?php echo $name; ?></td>
+                                                        <td><?php echo $username; ?></td>
+                                                        <td><?php echo $mobile_number; ?></td>
+                                                        <td class="rating"><span><?php echo $email; ?></span></td>
+                                                        <td class="status"><span class=" active"><?php echo $occupation; ?></span></td>
+                                                        <td><?php echo $present_address; ?></td>
+                                                        <td><?php echo $gender; ?></td>
                                                     </tr>
 
                                                 <?php } ?>
@@ -138,7 +148,6 @@ if(isset($_GET['b_name']))
             </div>
         </section>
         <!-- END SECTION USER PROFILE -->
-
 
         <a data-scroll href="#wrapper" class="go-up"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
         <!-- END FOOTER -->
@@ -196,40 +205,12 @@ if(isset($_GET['b_name']))
                 $(".header-user-menu ul").toggleClass("hu-menu-vis");
                 $(this).toggleClass("hu-menu-visdec");
             });
-
-            function list_of_utility_bill(info_b,info_f,info_username)
-            {
-                var del_b=info_b
-                var del_f=info_f;
-                var del_username=info_username;
-                location.assign("clients_utility_bill_list.php?d_building="+ del_b+ "&d_flat="+del_f+"&d_username="+del_username);
-            }
-
-            function add_utility_func(info_b,info_f,info_status)
-            {
-                var del_b=info_b
-                var del_f=info_f;
-                var del_status=info_status;
-                location.assign("add_utility_bill.php?d_building="+ del_b+ "&d_flat="+del_f+"&d_status="+del_status);
-            }
         </script>
 
     </div>
-
-
     <!-- Wrapper / End -->
 </body>
 
-
-<!-- Mirrored from code-theme.com/html/findhouses/add-property.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Dec 2021 10:32:33 GMT -->
-
-</html>
-
-<?php
-//close database connection - initialize object to null
-$pdo = null;
-ob_end_flush();
-?>
 
 <!-- Mirrored from code-theme.com/html/findhouses/add-property.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Dec 2021 10:32:33 GMT -->
 
