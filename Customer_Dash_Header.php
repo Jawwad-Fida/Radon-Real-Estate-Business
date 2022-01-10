@@ -8,6 +8,16 @@ include "includes/connect.php";
 include "includes/functions.php";
 ?>
 
+<?php
+
+if($_SESSION['admin_type'] != 'finance_and_account'){
+    session_unset();
+    session_destroy();
+    redirect("../login.php?error=not_login");
+}
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="zxx">

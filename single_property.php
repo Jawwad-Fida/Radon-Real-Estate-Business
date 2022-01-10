@@ -61,16 +61,22 @@ $_SESSION['name'] = $row['name'];
 
 */
 
-if (isset($_SESSION['user_id'])) {
+if (isset($_SESSION['customer_id'])) {
     $customer_id = $_SESSION['customer_id'];
+    $user_role = $_SESSION['user_role'];
+    $name = $_SESSION['name'];
+
+    $stmt2 = query("SELECT email FROM customers WHERE customer_id = {$customer_id}");
+    $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+    $email = $row2['email'];
+} elseif (isset($_SESSION['admin_id'])) {
+    $user_id = $_SESSION['user_id'];
     $user_role = $_SESSION['user_role'];
     $name = $_SESSION['name'];
 }
 
 
-$stmt2 = query("SELECT email FROM customers WHERE customer_id = {$customer_id}");
-$row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
-$email = $row2['email'];
+
 
 
 if (isset($_POST['appoint_submit'])) {

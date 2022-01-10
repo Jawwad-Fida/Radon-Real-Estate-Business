@@ -49,7 +49,7 @@
                             </ul>
                         </li>
                         <li><a href="about.php">About Us</a></li>
-                        <li><a href="contact-us.html">Contact</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
                 <!-- Main Navigation / End -->
@@ -57,7 +57,7 @@
             <!-- Left Side Content / End -->
 
             <?php
-            if (isset($_SESSION['user_id'])) {
+            if (isset($_SESSION['customer_id'])) {
                 $user_id = $_SESSION['user_id'];
                 $customer_id = $_SESSION['customer_id'];
                 $username = $_SESSION['username'];
@@ -67,6 +67,9 @@
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
                 $user_email = $row['user_email'];
                 $user_image = $row['user_image'];
+            } elseif(isset($_SESSION['admin_id'])) {
+                $user_id = $_SESSION['user_id'];
+                $name = $_SESSION['name'];
             }
 
             ?>

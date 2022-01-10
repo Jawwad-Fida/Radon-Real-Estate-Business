@@ -90,7 +90,7 @@ function display_error_message()
         } elseif ($_GET['error'] == 'sqlerror') {
             echo "<p style='color:red;font-size:25px;text-align:center'>SQL Error! Recheck statements<p>";
         } elseif ($_GET['error'] == 'not_login') {
-            echo "<p style='color:red;font-size:25px;text-align:center'>Not allowed! Must Log in<p>";
+            echo "<p style='color:red;font-size:25px;text-align:center'>Not allowed!<p>";
         } elseif ($_GET['error'] == 'pin_no_match') {
             echo "<p style='color:red;font-size:25px;text-align:center'>Pin code does not match!<p>";
         } elseif ($_GET['error'] == 'invalid_phone_length') {
