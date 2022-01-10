@@ -56,10 +56,25 @@
             </div>
             <!-- Left Side Content / End -->
 
+            <?php
+            if (isset($_SESSION['user_id'])) {
+                $user_id = $_SESSION['user_id'];
+                $customer_id = $_SESSION['customer_id'];
+                $username = $_SESSION['username'];
+                $name = $_SESSION['name'];
+
+                $stmt = query("SELECT user_email, user_image FROM users WHERE user_id={$user_id}");
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                $user_email = $row['user_email'];
+                $user_image = $row['user_image'];
+            }
+
+            ?>
+
             <?php if (is_customer() == true) : ?>
                 <div class="header-user-menu user-menu add">
                     <div class="header-user-name">
-                        <span><img src="images/testimonials/ts-1.jpg" alt=""></span>Hi, Mary!
+                        <span><img src="<?php echo $user_image; ?>" alt=""></span>Hi, <?php echo $username; ?>!
                     </div>
                     <ul>
                         <li><a href="Customer_user_profile.php"> Profile</a></li>

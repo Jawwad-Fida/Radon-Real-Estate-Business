@@ -49,63 +49,36 @@ include "includes/functions.php";
         <!-- START SECTION HEADINGS -->
         <!-- Header Container
         ================================================== -->
-        <header id="header-container" class="header head-tr">
+        <header id="header-container">
             <!-- Header -->
-            <div id="header" class="head-tr bottom">
+            <div id="header">
                 <div class="container container-header">
-                    <!-- Left Side Content -->
-                    <div class="left-side">
-                        <!-- Logo -->
-                        <div id="logo">
-                            <a href="Customer_Dashboard.php"><img src="images/logo-white-1.svg" data-sticky-logo="images/logo.svg" alt=""></a>
-                        </div>
-                        <!-- Mobile Navigation -->
-                        <div class="mmenu-trigger">
-                            <button class="hamburger hamburger--collapse" type="button">
-                                <span class="hamburger-box">
-                                    <span class="hamburger-inner"></span>
-                                </span>
-                            </button>
-                        </div>
-                        <!-- Main Navigation -->
-                        <nav id="navigation" class="style-1 head-tr">
-                            <ul id="responsive">
-                                <li><a href="Customer_Dashboard.php">Home</a></li>
-                                <li><a href="#">Property List</a>
-                                    <ul>
-                                        <li><a href="Customer_Sale_list.php">Buy List</a></li>
-                                        <li><a href="Customer_Rent_list .php">Rent List</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Property</a>
-                                    <ul>
-                                        <li><a href="single-property-1.html">Single Property</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="about.php">About Us</a></li>
-                                <li><a href="contact-us.html">Contact</a></li>
-                            </ul>
-                        </nav>
-                        <!-- Main Navigation / End -->
-                    </div>
-                    <!-- Left Side Content / End -->
-                    <div class="header-user-menu user-menu add">
-                        <div class="header-user-name">
-                            <span><img src="images/testimonials/ts-1.jpg" alt=""></span>Hi, Mary!
-                        </div>
-                        <ul>
-                            <li><a href="Customer_user_profile.php"> Profile</a></li>
-                            <li><a href="change-password.html"> Change Password</a></li>
-                            <li><a href="#">Log Out</a></li>
-                        </ul>
-                    </div>
-                    <!-- Right Side Content / End -->
+
+                    <?php include "main-nav-buy-rent.php" ?>
+
                 </div>
             </div>
             <!-- Header / End -->
 
         </header>
-        <!-- Header Container / End -->
+
+        <?php
+        if (isset($_SESSION['user_id'])) {
+            $user_id = $_SESSION['user_id'];
+            $customer_id = $_SESSION['customer_id'];
+            $username = $_SESSION['username'];
+            $name = $_SESSION['name'];
+
+            $stmt = query("SELECT user_email, user_image FROM users WHERE user_id={$user_id}");
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $user_email = $row['user_email'];
+            $user_image = $row['user_image'];
+        }
+
+        ?>
+
+
+
 
         <!-- START SECTION USER PROFILE -->
         <section class="user-page section-padding pt-5">
@@ -117,25 +90,15 @@ include "includes/functions.php";
                         </div>
                         <div class="sidebar-widget author-widget2">
                             <div class="author-box clearfix">
-                                <img src="images/testimonials/ts-1.jpg" alt="author-image" class="author__img">
-                                <h4 class="author__title">Lisa Clark</h4>
-                                <p class="author__meta">Agent of Property</p>
+                                <img src="<?php echo $user_image; ?>" alt="author-image" class="author__img">
+                                <h4 class="author__title"><?php echo $name; ?></h4>
                             </div>
                             <ul class="author__contact">
-                                <li><span class="la la-map-marker"><i class="fa fa-map-marker"></i></span>302 Av Park, New York</li>
-                                <li><span class="la la-phone"><i class="fa fa-phone" aria-hidden="true"></i></span><a href="#">(234) 0200 17813</a></li>
-                                <li><span class="la la-envelope-o"><i class="fa fa-envelope" aria-hidden="true"></i></span><a href="#">lisa@gmail.com</a></li>
+                                <li><span class="la la-map-marker"><i class="fa fa-user"></i></span>Username: <?php echo $username; ?></li>
+                                <li><span class="la la-phone"><i class="fa fa-circle" aria-hidden="true"></i></span>Customer ID: <?php echo $customer_id; ?></li>
+                                <li><span class="la la-envelope-o"><i class="fa fa-envelope" aria-hidden="true"></i></span><a href="#"><?php echo $user_email; ?></a></li>
                             </ul>
-                            <div class="agent-contact-form-sidebar">
-                                <h4>Request Inquiry</h4>
-                                <form name="contact_form" method="post" action="https://code-theme.com/html/findhouses/functions.php">
-                                    <input type="text" id="fname" name="full_name" placeholder="Full Name" required />
-                                    <input type="number" id="pnumber" name="phone_number" placeholder="Phone Number" required />
-                                    <input type="email" id="emailid" name="email_address" placeholder="Email Address" required />
-                                    <textarea placeholder="Message" name="message" required></textarea>
-                                    <input type="submit" name="sendmessage" class="multiple-send-message" value="Submit Request" />
-                                </form>
-                            </div>
+
                         </div>
                     </div>
                 </div>

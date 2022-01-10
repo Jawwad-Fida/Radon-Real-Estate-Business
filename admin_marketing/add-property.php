@@ -15,32 +15,33 @@ if (isset($_POST['add_submit'])) {
     $property_name = validate($_POST['name']);
     $property_info = validate($_POST['description']);
     $address = validate($_POST['address']);
+    $build_num = validate($_POST['build_num']);
     $Division = $_POST['Division'];
     $num_floors = $_POST['num_floors'];
     $num_flats = $_POST['num_flats'];
 
     //Check for errors
-    if (empty($property_name) || empty($property_info) || empty($address)) {
+    if (empty($property_name) || empty($property_info) || empty($address) || empty($build_num)) {
         redirect("add-property.php?error=emptyFields");
         exit();
     }
 
     //------------QUERY-------------
 
-    $stmt = prepare_query("INSERT INTO building(building_name,no_of_flats,address,build_info,division,no_of_floors) VALUES(?,?,?,?,?,?)");
+    $stmt = prepare_query("INSERT INTO building(building_name,no_of_flats,address,build_info,division,no_of_floors,build_num) VALUES(?,?,?,?,?,?,?)");
     $stmt->bindParam(1, $property_name, PDO::PARAM_STR);
     $stmt->bindParam(2, $num_flats, PDO::PARAM_INT);
     $stmt->bindParam(3, $address, PDO::PARAM_STR);
     $stmt->bindParam(4, $property_info, PDO::PARAM_STR);
     $stmt->bindParam(5, $Division, PDO::PARAM_STR);
     $stmt->bindParam(6, $num_floors, PDO::PARAM_INT);
+    $stmt->bindParam(7, $build_num, PDO::PARAM_INT);
 
     $stmt->execute();
     //$last_id = last_inserted_id();
     unset($stmt);
 
-    #redirect("add_fooditem.php?success=product_add&cat_id={$product_category}");
-    redirect("add-property.php?success=item_add");
+    redirect("view-property.php?success=item_add");
 }
 
 ?>
@@ -139,7 +140,14 @@ if (isset($_POST['add_submit'])) {
 
                                     <div class="row">
 
-                                        <div class="col-lg-6 col-md-12">
+                                        <div class="col-lg-4 col-md-12">
+                                            <p class="no-mb">
+                                                <label for="price">Building No.</label>
+                                                <input type="text" name="build_num" placeholder="enter building num" id="num">
+                                            </p>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-12">
                                             <p class="no-mb">
                                                 <label for="price">Address</label>
                                                 <input type="text" name="address" placeholder="enter address of building" id="address">
@@ -152,12 +160,6 @@ if (isset($_POST['add_submit'])) {
                                                 <select class="form-control" name="Division">
                                                     <option value="Dhaka">Dhaka</option>
                                                     <option value="Chittagong">Chittagong</option>
-                                                    <option value="Barisal">Barishal</option>
-                                                    <option value="Khulna">Khulna</option>
-                                                    <option value="Sylhet">Sylhet</option>
-                                                    <option value="Rajshahi">Rajshahi</option>
-                                                    <option value="Rangpur">Rangpur</option>
-                                                    <option value="Mymensingh">Mymensingh</option>
                                                 </select>
                                             </div>
                                         </div>

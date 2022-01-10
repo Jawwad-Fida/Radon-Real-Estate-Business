@@ -9,6 +9,53 @@ include "includes/functions.php";
 ?>
 
 
+<?php
+
+if($_SESSION['username']){
+    $username = $_SESSION['username'];
+}
+
+if (isset($_POST['reset_submit'])) {
+    $password = validate($_POST['new-password']);
+    $password_repeat = validate($_POST['confirm-new-password']);
+    # $username = "rafi";
+
+
+    $password_size = strlen($password);
+    //$stmt = query("SELECT username,user_email,token FROM users WHERE token='{$token}'");
+    //$row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    //Checking for errors
+    if (empty($password) || empty($password_repeat)) {
+        redirect("change_password.php?error=emptyFields");
+        exit();
+    } elseif ($password_size <= 4) {
+        //check if length of password is valid
+        redirect("change_password.php?error=invalid_pwd_length");
+        exit();
+    } elseif ($password !== $password_repeat) {
+        //check if password are same
+        redirect("change_password.php?error=pwd_no_match");
+        exit();
+    }
+
+    //------------QUERY-------------
+
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+    $stmt = prepare_query("UPDATE users SET user_password=? WHERE username=?");
+    $stmt->bindParam(1, $passwordHash, PDO::PARAM_STR);
+    $stmt->bindParam(2, $username, PDO::PARAM_STR);
+    $stmt->execute();
+    unset($stmt);
+
+    redirect("Customer_change_password.php?success=reset");
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -57,54 +104,9 @@ include "includes/functions.php";
                 <!-- Header -->
                 <div id="header">
                     <div class="container-fluid">
-                        <!-- Left Side Content -->
-                        <div class="left-side">
-                            <!-- Logo -->
-                            <div id="logo">
-                                <a href="Customer_Dashboard.php"><img src="images/logo.svg" alt=""></a>
-                            </div>
-                            <!-- Mobile Navigation -->
-                            <div class="mmenu-trigger">
-                                <button class="hamburger hamburger--collapse" type="button">
-                                    <span class="hamburger-box">
-                                        <span class="hamburger-inner"></span>
-                                    </span>
-                                </button>
-                            </div>
-                            <!-- Main Navigation -->
-                            <nav id="navigation" class="style-1 head-tr">
-                                <ul id="responsive">
-                                    <li><a href="Customer_Dashboard.php">Home</a></li>
-                                    <li><a href="#">Property List</a>
-                                        <ul>
-                                            <li><a href="Customer_Sale_list.php">Buy List</a></li>
-                                            <li><a href="Customer_Rent_list .php">Rent List</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Property</a>
-                                        <ul>
-                                            <li><a href="single-property-1.html">Single Property</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="about.php">About Us</a></li>
-                                    <li><a href="contact-us.html">Contact</a></li>
-                                </ul>
-                            </nav>
-                            <!-- Main Navigation / End -->
-                        </div>
-                        <!-- Left Side Content / End -->
-                        <!-- Right Side Content / -->
-                        <div class="header-user-menu user-menu add">
-                            <div class="header-user-name">
-                                <span><img src="images/testimonials/ts-1.jpg" alt=""></span>Hi, Mary!
-                            </div>
-                            <ul>
-                                <li><a href="Customer_user_profile.php"> Profile</a></li>
-                                <li><a href="change-password.html"> Change Password</a></li>
-                                <li><a href="#">Log Out</a></li>
-                            </ul>
-                        </div>
-                        <!-- Right Side Content / End -->
+
+                        <?php include "main-nav-buy-rent.php" ?>
+
                     </div>
                 </div>
                 <!-- Header / End -->
@@ -122,12 +124,6 @@ include "includes/functions.php";
                             <h3 class="heading pt-0">Change Password</h3>
                             <form>
                                 <div class="row">
-                                    <div class="col-lg-12 ">
-                                        <div class="form-group name">
-                                            <label>Current Password</label>
-                                            <input type="password" name="current-password" class="form-control" placeholder="Current Password">
-                                        </div>
-                                    </div>
                                     <div class="col-lg-12">
                                         <div class="form-group email">
                                             <label>New Password</label>

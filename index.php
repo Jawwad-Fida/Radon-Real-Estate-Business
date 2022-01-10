@@ -95,7 +95,7 @@ include "includes/functions.php";
                                                         <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
                                                             <div class="rld-single-select">
                                                                 <select class="select single-select mr-0" name="bath" form="test">
-                                                                    <option value="0">Bathroom</option>
+                                                                    <option value="null">Bathroom</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
                                                                     <option value="3">3</option>
@@ -112,7 +112,7 @@ include "includes/functions.php";
                                                         <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
                                                             <div class="rld-single-select">
                                                                 <select class="select single-select mr-0" name="bed" form="test">
-                                                                    <option value="0">Bedroom</option>
+                                                                    <option value="null">Bedroom</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
                                                                     <option value="3">3</option>
@@ -126,7 +126,7 @@ include "includes/functions.php";
                                                     </div>
                                                     <div class="rld-single-select">
                                                         <select class="select single-select mr-0" name="addr" id="test">
-                                                            <option value="0">Location</option>
+                                                            <option value="null">Location</option>
                                                             <option value="Banani">Banani</option>
                                                             <option value="Gulshan-2">Gulshan-2</option>
                                                             <option value="Gulshan-1">Gulshan-1</option>
@@ -185,7 +185,7 @@ include "includes/functions.php";
                                                     <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
                                                         <div class="rld-single-select">
                                                             <select class="select single-select mr-0" name="bath" form="test1">
-                                                                <option value="0">Bathroom</option>
+                                                                <option value="null">Bathroom</option>
                                                                 <option value="1">1</option>
                                                                 <option value="2">2</option>
                                                                 <option value="3">3</option>
@@ -202,7 +202,7 @@ include "includes/functions.php";
                                                     <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
                                                         <div class="rld-single-select">
                                                             <select class="select single-select mr-0" name="bed" form="test1">
-                                                                <option value="0">Bedroom</option>
+                                                                <option value="null">Bedroom</option>
                                                                 <option value="1">1</option>
                                                                 <option value="2">2</option>
                                                                 <option value="3">3</option>
@@ -216,7 +216,7 @@ include "includes/functions.php";
                                                 </div>
                                                 <div class="rld-single-select">
                                                     <select class="select single-select mr-0" name="addr" form="test1">
-                                                        <option value="">Area Address</option>
+                                                        <option value="null">Area Address</option>
                                                         <option value="Banani">Banani</option>
                                                         <option value="Gulshan-2">Gulshan-2</option>
                                                         <option value="Gulshan-1">Gulshan-1</option>
@@ -292,7 +292,7 @@ include "includes/functions.php";
 
                     <?php
 
-                    $stmt = query("SELECT * FROM apartment WHERE apartment_status='Buy' ORDER BY RAND() LIMIT 3");
+                    $stmt = query("SELECT * FROM apartment WHERE apartment_status='Buy' ORDER BY apartment_id DESC LIMIT 3");
                     while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                     $apartment_id = $row['apartment_id'];
                     $building_name = $row['building_name'];
@@ -328,7 +328,7 @@ include "includes/functions.php";
                                 <!-- homes content -->
                                 <div class="homes-content">
                                     <!-- homes address -->
-                                    <h3><a href="#"><?php echo $building_name ?></a></h3>
+                                    <h3><a href="#"><?php echo $building_name ;?></a></h3>
                                     <p class="homes-address mb-3">
 
                                         <i class="fa fa-map-marker"></i><span><?php echo $address; ?></span>
@@ -363,7 +363,7 @@ include "includes/functions.php";
                     <?php } ?>
 
                     <?php
-                    $stmt1 = query("SELECT * FROM apartment WHERE apartment_status='Rent' ORDER BY RAND() LIMIT 3");
+                    $stmt1 = query("SELECT * FROM apartment WHERE apartment_status='Rent' ORDER BY apartment_id DESC LIMIT 3");
                     while($row1 = $stmt1->fetch(PDO::FETCH_ASSOC)){
                     $building_name1 = $row1['building_name'];
                     $apartment_id1 = $row1['apartment_id'];
@@ -398,7 +398,7 @@ include "includes/functions.php";
                                 <!-- homes content -->
                                 <div class="homes-content">
                                     <!-- homes address -->
-                                    <h3><a href="#"><?php echo $building_name1  ?></a></h3>
+                                    <h3><a href="#"><?php echo $building_name1;  ?></a></h3>
                                     <p class="homes-address mb-3">
 
                                         <i class="fa fa-map-marker"></i><span></span>
@@ -408,15 +408,15 @@ include "includes/functions.php";
                                     <ul class="homes-list clearfix pb-3">
                                         <li class="the-icons">
                                             <i class="flaticon-bed mr-2" aria-hidden="true"></i>
-                                            <span><?php echo $no_of_bedroom1   ?></span>
+                                            <span><?php echo $no_of_bedroom1 ;  ?></span>
                                         </li>
                                         <li class="the-icons">
                                             <i class="flaticon-bathtub mr-2" aria-hidden="true"></i>
-                                            <span><?php echo $no_of_bathroom1   ?></span>
+                                            <span><?php echo $no_of_bathroom1;   ?></span>
                                         </li>
                                         <li class="the-icons">
                                             <i class="flaticon-square mr-2" aria-hidden="true"></i>
-                                            <span><?php echo $area1   ?></span>
+                                            <span><?php echo $area1;   ?></span>
                                         </li>
                                         <li class="the-icons">
                                             <i class="flaticon-car mr-2" aria-hidden="true"></i>
@@ -426,7 +426,7 @@ include "includes/functions.php";
                                     <!-- Price -->
                                     <div class="price-properties footer pt-3 pb-0">
                                         <h3 class="title mt-3">
-                                            <a href="single-property-1.html"><?php echo 'BDT ' . $buy_price1 ?></a>
+                                            <a href="single-property-1.html"><?php echo 'BDT ' . $buy_price1 ;?></a>
                                         </h3>
                                         <div class="compare">
                                             <a href="#" title="Compare">
@@ -461,52 +461,93 @@ include "includes/functions.php";
     <!-- END SECTION RECENTLY PROPERTIES -->
 
     <!-- START SECTION SERVICES -->
-    <section class="services-home">
+    <?php
+    $a=array("Banani","Gulshan-1","Gulshan-2","Dhanmondi","Badda","Baridhara","Motijheel","Wari","Uttara","Farmgate","Mirpur");
+    $random_keys=array_rand($a,4);
+    
+    $area1 = $a[$random_keys[0]];
+    $area2 = $a[$random_keys[1]];
+    $area3 = $a[$random_keys[2]];
+    $area4 = $a[$random_keys[3]];
+
+    $area1_query = query("SELECT * FROM apartment WHERE address = '$area1'");
+    $area2_query = query("SELECT * FROM apartment WHERE address = '$area2'");
+    $area3_query = query("SELECT * FROM apartment WHERE address = '$area3'");
+    $area4_query = query("SELECT * FROM apartment WHERE address = '$area4'");
+   
+    $row_count1 = count_records($area1_query);
+    $row_count2 = count_records($area2_query);
+    $row_count3 = count_records($area3_query);
+    $row_count4 = count_records($area4_query);
+
+    ?>
+
+    
+    <section class="popular-places">
         <div class="container">
             <div class="section-title">
-                <h3>Property</h3>
-                <h2>Services</h2>
+                <h3>Most Popular</h3>
+                <h2>Places</h2>
             </div>
+            
+
             <div class="row">
-                <div class="col-lg-4 col-md-12 m-top-0 m-bottom-40" data-aos="fade-up" data-aos-delay="150">
-                    <div class="service bg-light-2 border-1 border-light box-shadow-1 box-shadow-2-hover">
-                        <div class="media">
-                            <i class="fa fa-home bg-base text-white rounded-100 box-shadow-1 p-top-5 p-bottom-5 p-right-5 p-left-5"></i>
-                        </div>
-                        <div class="agent-section p-top-35 p-bottom-30 p-right-25 p-left-25">
-                            <h4 class="m-bottom-15 text-bold-700">Houses</h4>
-                            <p>Nonec pede justo fringilla vel aliquet nec vulputate eget arcu in enim justo rhoncus ut imperdiet venenatis vitae justo.</p>
-                            <a class="text-base text-base-dark-hover text-size-13" href="properties-full-list.html">Read More <i class="fa fa-long-arrow-right"></i></a>
-                        </div>
-                    </div>
+                <div class="col-md-12">
                 </div>
-                <div class="col-lg-4 col-md-12 m-top-40 m-bottom-40" data-aos="fade-up" data-aos-delay="250">
-                    <div class="service bg-light-2 border-1 border-light box-shadow-1 box-shadow-2-hover">
-                        <div class="media">
-                            <i class="fas fa-building bg-base text-white rounded-100 box-shadow-1 p-top-5 p-bottom-5 p-right-5 p-left-5"></i>
+                <div class="col-lg-4 col-md-6" data-aos="fade-right">
+                    <!-- Image Box -->
+                    <a  class="img-box hover-effect">
+                    <form action="Customer_Buy_list_search.php" id="test8" method="post">
+                        <img src="images/popular-places/12.jpg" class="img-responsive" alt="">
+                        <!-- Badge -->
+                        <div class="listing-badges">
+                            <span class="featured">Featured</span>
                         </div>
-                        <div class="agent-section p-top-35 p-bottom-30 p-right-25 p-left-25">
-                            <h4 class="m-bottom-15 text-bold-700">Apartments</h4>
-                            <p>Nonec pede justo fringilla vel aliquet nec vulputate eget arcu in enim justo rhoncus ut imperdiet venenatis vitae justo.</p>
-                            <a class="text-base text-base-dark-hover text-size-13" href="properties-full-list.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+                        <div class="img-box-content visible">
+                            <h4> <?php echo $area1; ?> </h4>
+                            <span><?php echo $row_count1; ?> Properties</span>
                         </div>
-                    </div>
+                    </form>
+                    </a>
                 </div>
-                <div class="col-lg-4 col-md-12 m-top-40 m-bottom-40 commercial" data-aos="fade-up" data-aos-delay="350">
-                    <div class="service bg-light-2 border-1 border-light box-shadow-1 box-shadow-2-hover">
-                        <div class="media">
-                            <i class="fas fa-warehouse bg-base text-white rounded-100 box-shadow-1 p-top-5 p-bottom-5 p-right-5 p-left-5"></i>
+                <div class="col-lg-8 col-md-6" data-aos="fade-left">
+                    <!-- Image Box -->
+                    <a  class="img-box hover-effect">
+                        <img src="images/popular-places/13.jpg" class="img-responsive" alt="">
+                        <div class="img-box-content visible">
+                            <h4><?php echo $area2; ?></h4>
+                            <span><?php echo $row_count2; ?> Properties</span>
                         </div>
-                        <div class="agent-section p-top-35 p-bottom-30 p-right-25 p-left-25">
-                            <h4 class="m-bottom-15 text-bold-700">Commercial</h4>
-                            <p>Nonec pede justo fringilla vel aliquet nec vulputate eget arcu in enim justo rhoncus ut imperdiet venenatis vitae justo.</p>
-                            <a class="text-base text-base-dark-hover text-size-13" href="properties-full-list.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+                    </a>
+                </div>
+                <div class="col-lg-8 col-md-6" data-aos="fade-right">
+                    <!-- Image Box -->
+                    <a class="img-box hover-effect no-mb">
+                        <img src="images/popular-places/14.jpg" class="img-responsive" alt="">
+                        <div class="img-box-content visible">
+                            <h4><?php echo $area3; ?></h4>
+                            <span><?php echo $row_count3; ?> Properties</span>
                         </div>
-                    </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-left">
+                    <!-- Image Box -->
+                    <a  class="img-box hover-effect no-mb x3">
+                        <img src="images/popular-places/15.jpg" class="img-responsive" alt="">
+                        <!-- Badge -->
+                        <div class="listing-badges">
+                            <span class="featured">Featured</span>
+                        </div>
+                        <div class="img-box-content visible">
+                            <h4><?php echo $area4; ?></h4>
+                            <span><?php echo $row_count4; ?> Properties</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
+    ?>
     <!-- END SECTION SERVICES -->
 
     <!-- START SECTION POPULAR PLACES -->

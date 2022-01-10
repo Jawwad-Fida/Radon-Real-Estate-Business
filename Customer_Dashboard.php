@@ -294,7 +294,7 @@ include "includes/functions.php";
 
                     <?php
 
-                    $stmt = query("SELECT * FROM apartment WHERE apartment_status='Buy' ORDER BY RAND() LIMIT 3");
+                    $stmt = query("SELECT * FROM apartment WHERE apartment_status='Buy' ORDER BY apartment_id DESC LIMIT 3");
                     while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                     $apartment_id = $row['apartment_id'];
                     $building_name = $row['building_name'];
@@ -365,7 +365,7 @@ include "includes/functions.php";
                     <?php } ?>
 
                     <?php
-                    $stmt1 = query("SELECT * FROM apartment WHERE apartment_status='Rent' ORDER BY RAND() LIMIT 3");
+                    $stmt1 = query("SELECT * FROM apartment WHERE apartment_status='Rent' ORDER BY apartment_id DESC LIMIT 3");
                     while($row1 = $stmt1->fetch(PDO::FETCH_ASSOC)){
                     $building_name1 = $row1['building_name'];
                     $apartment_id1 = $row1['apartment_id'];
@@ -512,66 +512,93 @@ include "includes/functions.php";
     <!-- END SECTION SERVICES -->
 
     <!-- START SECTION POPULAR PLACES -->
+    <?php
+    $a=array("Banani","Gulshan-1","Gulshan-2","Dhanmondi","Badda","Baridhara","Motijheel","Wari","Uttara","Farmgate","Mirpur");
+    $random_keys=array_rand($a,4);
+    
+    $area1 = $a[$random_keys[0]];
+    $area2 = $a[$random_keys[1]];
+    $area3 = $a[$random_keys[2]];
+    $area4 = $a[$random_keys[3]];
+
+    $area1_query = query("SELECT * FROM apartment WHERE address = '$area1'");
+    $area2_query = query("SELECT * FROM apartment WHERE address = '$area2'");
+    $area3_query = query("SELECT * FROM apartment WHERE address = '$area3'");
+    $area4_query = query("SELECT * FROM apartment WHERE address = '$area4'");
+   
+    $row_count1 = count_records($area1_query);
+    $row_count2 = count_records($area2_query);
+    $row_count3 = count_records($area3_query);
+    $row_count4 = count_records($area4_query);
+
+    ?>
+
+    
     <section class="popular-places">
         <div class="container">
             <div class="section-title">
                 <h3>Most Popular</h3>
                 <h2>Places</h2>
             </div>
+            
+
             <div class="row">
                 <div class="col-md-12">
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-right">
                     <!-- Image Box -->
-                    <a href="properties-map.html" class="img-box hover-effect">
+                    <a  class="img-box hover-effect">
+                    <form action="Customer_Buy_list_search.php" id="test8" method="post">
                         <img src="images/popular-places/12.jpg" class="img-responsive" alt="">
                         <!-- Badge -->
                         <div class="listing-badges">
                             <span class="featured">Featured</span>
                         </div>
                         <div class="img-box-content visible">
-                            <h4>Dhaka</h4>
-                            <span>203 Properties</span>
+                            <h4> <?php echo $area1; ?> </h4>
+                            <span><?php echo $row_count1; ?> Properties</span>
                         </div>
+                    </form>
                     </a>
                 </div>
                 <div class="col-lg-8 col-md-6" data-aos="fade-left">
                     <!-- Image Box -->
-                    <a href="properties-map.html" class="img-box hover-effect">
+                    <a  class="img-box hover-effect">
                         <img src="images/popular-places/13.jpg" class="img-responsive" alt="">
                         <div class="img-box-content visible">
-                            <h4>Mymensingh</h4>
-                            <span>307 Properties</span>
+                            <h4><?php echo $area2; ?></h4>
+                            <span><?php echo $row_count2; ?> Properties</span>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-8 col-md-6" data-aos="fade-right">
                     <!-- Image Box -->
-                    <a href="properties-map.html" class="img-box hover-effect no-mb">
+                    <a class="img-box hover-effect no-mb">
                         <img src="images/popular-places/14.jpg" class="img-responsive" alt="">
                         <div class="img-box-content visible">
-                            <h4>Sylhet</h4>
-                            <span>409 Properties</span>
+                            <h4><?php echo $area3; ?></h4>
+                            <span><?php echo $row_count3; ?> Properties</span>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-left">
                     <!-- Image Box -->
-                    <a href="properties-map.html" class="img-box hover-effect no-mb x3">
+                    <a  class="img-box hover-effect no-mb x3">
                         <img src="images/popular-places/15.jpg" class="img-responsive" alt="">
                         <!-- Badge -->
                         <div class="listing-badges">
                             <span class="featured">Featured</span>
                         </div>
                         <div class="img-box-content visible">
-                            <h4>Barisal</h4>
-                            <span>507 Properties</span>
+                            <h4><?php echo $area4; ?></h4>
+                            <span><?php echo $row_count4; ?> Properties</span>
                         </div>
                     </a>
                 </div>
             </div>
         </div>
     </section>
+    ?>
     <!-- END SECTION POPULAR PLACES -->
 
     <!-- START SECTION AGENTS -->

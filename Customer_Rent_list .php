@@ -260,11 +260,11 @@ include "includes/functions.php";
 
                         <div class="col-lg-8 col-md-12 homes-content pb-0 mb-44" data-aos="fade-up">
                             <!-- homes address -->
-                            <?php if (is_customer() == true) : ?>
+                            <?php if (is_logged_in() == true) : ?>
                             <h3><a href="single_property.php?edit=<?php echo $apartment_id; ?>&apart_status=<?php echo $apart_status; ?>"><?php echo $building_name ?></a></h3>
                             <?php endif; ?>
                             
-                            <?php if (is_customer() == false) : ?>
+                            <?php if (is_logged_in() == false) : ?>
                             <h3><a href="#"><?php echo $building_name ?></a></h3>
                             <?php endif; ?>
                             
@@ -295,13 +295,13 @@ include "includes/functions.php";
                                     <a><?php echo 'BDT ' . $rent_price; ?></a>
                                 </h3>
 
-                                <?php if (is_customer() == true) : ?>
+                                <?php if (is_logged_in() == true) : ?>
                                 <div class="compare">
                                     <h6><a href="single_property.php?edit=<?php echo $apartment_id; ?>&apart_status=<?php echo $apart_status; ?>">View Property</a></h6>
                                 </div>
                                 <?php endif; ?>
                                 
-                                <?php if (is_customer() == false) : ?>
+                                <?php if (is_logged_in() == false) : ?>
                                 <div class="compare">
                                     <h6><p style='color:blue;font: size 10px;'>Login to view more information regarding apartment</p></h6>
                                 </div>
