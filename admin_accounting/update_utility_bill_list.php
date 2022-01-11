@@ -50,12 +50,12 @@ if (isset($_POST['update_submit'])) {
                            WHERE utility_id = ?");
     
     $stmt->bindParam(1, $billing_month, PDO::PARAM_STR);
-    $stmt->bindParam(3, $water_bill, PDO::PARAM_INT);
-    $stmt->bindParam(4, $electricity_bill, PDO::PARAM_INT);
-    $stmt->bindParam(5, $gas_bill, PDO::PARAM_INT);
-    $stmt->bindParam(6, $additional_bill, PDO::PARAM_INT);
-    $stmt->bindParam(7, $service_charge, PDO::PARAM_INT);
-    $stmt->bindParam(8, $utility_id, PDO::PARAM_INT);
+    $stmt->bindParam(2, $water_bill, PDO::PARAM_INT);
+    $stmt->bindParam(3, $electricity_bill, PDO::PARAM_INT);
+    $stmt->bindParam(4, $gas_bill, PDO::PARAM_INT);
+    $stmt->bindParam(5, $additional_bill, PDO::PARAM_INT);
+    $stmt->bindParam(6, $service_charge, PDO::PARAM_INT);
+    $stmt->bindParam(7, $utility_id, PDO::PARAM_INT);
 
 
     $stmt->execute();
