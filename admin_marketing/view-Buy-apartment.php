@@ -109,7 +109,7 @@ if (isset($_GET['delete'])) {
                                                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                     $apart_status = 'Buy';
                                                     $apartment_id = $row['apartment_id'];
-                                                    $building_id = $row['building_id'];
+                                                    $build_num = $row['build_num'];
                                                     $building_name = $row['building_name'];
                                                     $flat_no = $row['flat_no'];
                                                     //$no_of_bedroom =  $row['no_of_bedroom'];
@@ -129,7 +129,7 @@ if (isset($_GET['delete'])) {
 
                                                     <tr>
                                                         <td><?php echo $building_name; ?></td>
-                                                        <td><?php echo $building_id; ?></td>
+                                                        <td><?php echo $build_num; ?></td>
                                                         <td><input type="button" class="btn btn-link" value="<?php echo $flat_no?>" 
                                                                    onclick="show_listfn('<?php echo $flat_no;?>');"></td>
                                                         <td><img width="300px" src="<?php echo $image; ?>"></td>

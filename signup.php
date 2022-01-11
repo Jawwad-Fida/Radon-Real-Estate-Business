@@ -221,7 +221,7 @@ if (isset($_POST['register_submit'])) {
                 </div>
                 <div class="form-group">
                     <label for="username">Username :</label>
-                    <input type="username" name="username" placeholder="Ex: name@1 (atleast 4 characters)" id="username" required />
+                    <input type="username" name="username" placeholder="Ex: johnson" id="username" required />
                 </div>
                 <div class="form-group">
                     <label for="password">Password :</label>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2022 at 07:12 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.1
+-- Generation Time: Jan 11, 2022 at 06:23 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -79,19 +79,19 @@ CREATE TABLE `apartment` (
 
 INSERT INTO `apartment` (`apartment_id`, `building_id`, `building_name`, `flat_no`, `no_of_bedroom`, `no_of_bathroom`, `image`, `buy_price`, `rent_price`, `area`, `status`, `type`, `apartment_status`, `features`, `division`, `address`, `client_username`, `build_num`) VALUES
 (3, 6, 'Rafi Kingdom', 'B2', 4, 5, 'images/apartment_images/fp-11.jpg', 6750000, 50000, '3600 sq ft', 'Booked', 'Commercial', 'Buy', 'Air Conditioning, Central Heating, Alarm', 'Dhaka', 'Badda', 'pranto0432', 'RAF5'),
-(6, 3, 'JawwadHarem', 'A3', 3, 3, 'images/apartment_images/p-3.jpg', 560000, 20000, '1300 sq ft', 'Booked', 'House', 'Rent', 'Air Conditioning,Window Covering,', 'Dhaka', 'Dhanmondi', 'pranto3719', 'JH1'),
+(6, 3, 'JawwadHarem', 'A3', 3, 3, 'images/apartment_images/p-3.jpg', 560000, 20000, '1300 sq ft', 'Booked', 'House', 'Rent', 'Air Conditioning,Window Covering,', 'Dhaka', 'Dhanmondi', 'arpon4182', 'JH1'),
 (8, 12, 'Kabir Apartments', 'A2', 3, 3, 'images/apartment_images/p-3.jpg', 250000, 50000, '1300 sq ft', 'Booked', 'House', 'Rent', 'Air Conditioning,Central Heating,Window Covering,TV Cable & WIFI,', 'Barisal', 'Farmgate', 'imran1111', 'KA64'),
-(9, 12, 'Kabir Apartments', 'D1', 4, 4, 'images/apartment_images/p-3.jpg', 3956000, 42000, '2200 sq ft', 'Not Booked', 'Commercial', 'Buy', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Chittagong', 'Farmgate', '', 'KA64'),
+(9, 12, 'Kabir Apartments', 'D1', 4, 4, 'images/apartment_images/p-3.jpg', 3956000, 42000, '2200 sq ft', 'Booked', 'Commercial', 'Buy', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Chittagong', 'Farmgate', 'shafi5081', 'KA64'),
 (10, 3, 'JawwadHarem', 'D4', 4, 4, 'images/apartment_images/p-3.jpg', 3956000, 42000, '2500 sq ft', 'Booked', 'Commercial', 'Buy', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Farmgate', 'afia7839', 'JH1'),
-(13, 8, 'Tarin Dream Home', 'D3', 2, 2, 'images/apartment_images/p-3.jpg', 1956000, 42000, '1500 sq ft', 'Not Booked', 'Commercial', 'Rent', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Chittagong', 'Chittagong ', '', 'TAR62'),
+(13, 8, 'Tarin Dream Home', 'D3', 2, 2, 'images/apartment_images/p-3.jpg', 1956000, 42000, '1500 sq ft', 'Booked', 'Commercial', 'Rent', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Chittagong', 'Chittagong ', 'pritul0621', 'TAR62'),
 (15, 7, 'Pranto Fanta sea', 'C1', 5, 4, 'images/apartment_images/fp-12.jpg', 9800000, 56000, '2400 sq ft', 'Not Booked', 'House', 'Buy', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Gulshan', '', 'POT65'),
 (17, 6, 'Rafi Kingdom', 'C5', 4, 4, 'images/apartment_images/fp-12.jpg', 8800000, 46000, '2200 sq ft', 'Not Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'dhanmondi', '', 'RAF5'),
-(19, 17, 'Mill Home', 'A2', 4, 4, 'images/apartment_images/fp-12.jpg', 8800000, 46000, '2200 sq ft', 'Not Booked', 'House', 'Buy', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'dhanmondi', '', ''),
-(20, 17, 'Mill Home', 'C2', 5, 4, 'images/apartment_images/fp-12.jpg', 7800000, 56000, '2400 sq ft', 'Not Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Dhanmondi ', '', ''),
-(21, 18, 'cottage Home', 'D1', 5, 4, 'images/apartment_images/p-3.jpg', 956000, 42000, '2200 sq ft', 'Not Booked', 'Commercial', 'Buy', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Badda', '', ''),
-(22, 18, 'cottage Home', 'D6', 5, 4, 'images/apartment_images/p-3.jpg', 856000, 42000, '2200 sq ft', 'Not Booked', 'Commercial', 'Rent', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Badda', '', ''),
-(23, 17, 'Mill Home', 'D4', 5, 4, 'images/apartment_images/fp-12.jpg', 7800000, 56000, '2400 sq ft', 'Not Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Dhanmondi ', '', ''),
-(24, 18, 'cottage Home', 'D8', 5, 4, 'images/apartment_images/p-3.jpg', 856000, 42000, '2200 sq ft', 'Not Booked', 'Commercial', 'Rent', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Badda', '', '');
+(19, 17, 'Mill Home', 'A2', 4, 4, 'images/apartment_images/fp-12.jpg', 8800000, 46000, '2200 sq ft', 'Not Booked', 'House', 'Buy', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'dhanmondi', '', 'MIL23'),
+(20, 17, 'Mill Home', 'C2', 5, 4, 'images/apartment_images/fp-12.jpg', 7800000, 56000, '2400 sq ft', 'Not Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Dhanmondi ', '', 'MIL45'),
+(21, 18, 'cottage Home', 'D1', 5, 4, 'images/apartment_images/p-3.jpg', 956000, 42000, '2200 sq ft', 'Not Booked', 'Commercial', 'Buy', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Badda', '', 'COT33'),
+(22, 18, 'cottage Home', 'D6', 5, 4, 'images/apartment_images/p-3.jpg', 856000, 42000, '2200 sq ft', 'Not Booked', 'Commercial', 'Rent', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Badda', '', 'COT55'),
+(23, 17, 'Mill Home', 'D4', 5, 4, 'images/apartment_images/fp-12.jpg', 7800000, 56000, '2400 sq ft', 'Not Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Dhanmondi ', '', 'MIL88'),
+(24, 18, 'cottage Home', 'D8', 5, 4, 'images/apartment_images/p-3.jpg', 856000, 42000, '2200 sq ft', 'Not Booked', 'Commercial', 'Rent', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Badda', '', 'COT11');
 
 -- --------------------------------------------------------
 
@@ -190,7 +190,10 @@ INSERT INTO `clients` (`client_id`, `user_id`, `name`, `username`, `mobile_numbe
 (12, 8, 'Pranto Podder', 'pranto3719', '01753699568', 'ppodder@gmail.com', '', 'House Husband', 'Farmgate', 'Rohingya', 'male', 'Bangladeshi', NULL, NULL, NULL),
 (13, 13, 'Aufi Islam', 'aufi9517', '01715633256', 'aufi@gmail.com', '', 'Businessman', 'Gulshan', 'Badda', 'male', 'Bangladeshi', NULL, NULL, NULL),
 (14, 11, 'Imran Sarker', 'imran1111', '01715633256', 'imran@gmail.com', '', 'E sports Gamer', 'Farmgate', 'Comilla', 'male', 'Bangladeshi', 'cottage Home', 'D4', 'Rent'),
-(15, 12, 'Afia Mohona', 'afia7839', '01714588523', 'aifa@gmail.com', '', 'Housewife', 'Farmgate', 'Mymensingh', 'female', 'Bangladeshi', 'JawwadHarem', 'D4', 'Buy');
+(15, 12, 'Afia Mohona', 'afia7839', '01714588523', 'aifa@gmail.com', '', 'Housewife', 'Farmgate', 'Mymensingh', 'female', 'Bangladeshi', 'JawwadHarem', 'D4', 'Buy'),
+(16, 21, 'shafi', 'shafi5081', '01311144444', 'shafi@yahoo.com', '', 'Businessman', 'Farmgate', 'BWDB, banani, Dhaka', 'male', 'Bangladeshi', 'Kabir Apartments', 'D1', 'Buy'),
+(17, 22, 'arpon', 'arpon4182', '01499966666', 'arpon@gmail.com', '', 'Businessman', 'Dhanmondi', 'BWDB, banani, dhaka', 'male', 'Bangladeshi', 'JawwadHarem', 'A3', 'Rent'),
+(18, 23, 'pritul', 'pritul0621', '01799966666', 'pritul@gmail.com', '', 'Businessman', 'Chittagong ', 'sector 11, Uttara', 'male', 'Bangladeshi', 'Tarin Dream Home', 'D3', 'Rent');
 
 -- --------------------------------------------------------
 
@@ -219,7 +222,10 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`customer_id`, `username`, `user_id`, `mobile_number`, `email`, `identity_num`, `occupation`, `present_address`, `permanent_address`, `gender`, `nationality`, `division`, `age`) VALUES
-(5, 'sumayta', 9, '01756322569', 'sumayta@gmail.com', '0stzr', 'Businesswoman', 'Gulshan', 'Badda', 'female', 'Bangladeshi', 'Dhaka', 42);
+(5, 'sumayta', 9, '01756322569', 'sumayta@gmail.com', '0stzr', 'Businesswoman', 'Gulshan', 'Badda', 'female', 'Bangladeshi', 'Dhaka', 42),
+(13, 'faiaz', 24, '01822288888', 'faiaz@gmail.com', 'cb(kl', 'Engineer', 'khilgao', 'khilgao', 'male', 'Bangladeshi', 'Dhaka', 30),
+(14, 'mugdho', 25, '01799977777', 'mugdho@gmail.com', 'f/b(i', 'Businessman', 'D block, Bashundhara', 'D block, Bashundhara', 'male', 'Bangladeshi', 'Dhaka', 22),
+(15, 'sakib', 26, '01788899999', 'sakib@yahoo.com', 'tlgk0', 'Engineer9', 'banani, dhaka', 'banani, dhaka', 'male', 'Bangladeshi', 'Dhaka', 23);
 
 -- --------------------------------------------------------
 
@@ -256,7 +262,13 @@ INSERT INTO `users` (`user_id`, `user_role`, `name`, `username`, `user_email`, `
 (13, 'client', 'Aufi Islam', 'aufi9517', 'aufi@gmail.com', '$2y$10$3D4C0S2RHS3LqvTo684zv.KQZepkKtikeaBkd.SK9XDUtv1.65UX6', '', '1968-01-01', '/85mf', ''),
 (14, 'admin', 'Aysha Siddika', 'aysha', 'aysha@gmail.com', '12345', '', '1998-05-22', '', ''),
 (17, 'admin', 'Nafisa Tarin', 'tarin', 'tarin@gmail.com', '$2y$10$UVIyy74cC0sEaB/FwPce5OVqsMWT.S45REncde28c5JJ0KkIjd3aW', 'images/admin_images/Tarin.jpg', '1998-05-22', '', ''),
-(18, 'admin', 'Fahad Al Rafi', 'rafi', 'rafi@gmail.com', '$2y$10$QIEDFK.YTQaW1eGDG76Eq./4TuiFE24D6zALN4v5Wi345VVz9Ffa2', 'images/admin_images/Rafi.jpg', '1998-05-22', '', '');
+(18, 'admin', 'Fahad Al Rafi', 'rafi', 'rafi@gmail.com', '$2y$10$QIEDFK.YTQaW1eGDG76Eq./4TuiFE24D6zALN4v5Wi345VVz9Ffa2', 'images/admin_images/Rafi.jpg', '1998-05-22', '', ''),
+(21, 'client', 'shafi', 'shafi5081', 'shafi@yahoo.com', '$2y$10$nx0cvvGm7174A/F/MAxLu.yN8/lOpdjFLwc7Ob57FWFpRxzzkW/n.', '', '1990-05-01', 'w2x95', ''),
+(22, 'client', 'arpon', 'arpon4182', 'arpon@gmail.com', '$2y$10$bbsHOJHujkPdVWeKKQme0ufDnC/T8BcCGrZCizNWX10o3DeDBP6.G', '', '1997-04-08', 's4glu', ''),
+(23, 'client', 'pritul', 'pritul0621', 'pritul@gmail.com', '$2y$10$uNEqpWr2OtkyfSN8L1ESSum41AjDadiQPfQx8vbAMZZoob/2dfK1i', '', '1998-05-07', 'h39(f', ''),
+(24, 'customer', 'faiaz', 'faiaz', 'faiaz@gmail.com', '$2y$10$oUF7vU7.fN8w32ohF/7QKuvXiaUaMWWz5kd8GQvjUXXRiWfIzgjaq', '', '1997-01-03', 'cb(kl', ''),
+(25, 'customer', 'mugdho', 'mugdho', 'mugdho@gmail.com', '$2y$10$08eZaSPyb1XSmr/zDkCNmucCiOKKO8k5taVb8f6wmPA.kuPHL3iq6', '', '1999-12-08', 'f/b(i', ''),
+(26, 'customer', 'sakib', 'sakib', 'sakib@yahoo.com', '$2y$10$rvcPP6cv.M1IjRNT66twj.BxJ9joGeOpE1IGeEdrtybLXtcktmgFG', '', '1998-02-08', 'tlgk0', '');
 
 -- --------------------------------------------------------
 
@@ -385,25 +397,25 @@ ALTER TABLE `building`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `utility_bill`
 --
 ALTER TABLE `utility_bill`
-  MODIFY `utility_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `utility_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
