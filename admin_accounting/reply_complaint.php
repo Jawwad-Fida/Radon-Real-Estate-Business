@@ -63,13 +63,15 @@ if (isset($_POST['add_submit'])) {
     //------------QUERY-------------
 
 
-    $stmt = prepare_query("UPDATE complaint SET admin_response=? WHERE complaint_id=?");
+    $stmt = prepare_query("UPDATE complaint SET admin_response=?,admin_reply=? WHERE complaint_id=?");
     $stmt->bindParam(1, $admin_response, PDO::PARAM_STR);
-    $stmt->bindParam(2, $complaint_id, PDO::PARAM_INT);
+    $stmt->bindParam(2, $message, PDO::PARAM_STR);
+    $stmt->bindParam(3, $complaint_id, PDO::PARAM_INT);
 
 
     $stmt->execute();
     unset($stmt);
+    
 
     //------------ MailTrap (Mail) -------------
 

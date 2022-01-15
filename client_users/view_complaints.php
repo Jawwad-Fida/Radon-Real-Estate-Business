@@ -94,6 +94,7 @@ if (isset($_GET['delete'])) {
                                                     <th>Complaint Date</th>
                                                     <th>Complaint Details</th>
                                                     <th>Admin Response</th>
+                                                    <th>Admin Reply</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -110,7 +111,7 @@ if (isset($_GET['delete'])) {
                                                     $complaint_date =  $row['complaint_date'];
                                                     $complaint_details =  $row['complaint_details'];
                                                     $admin_response = $row['admin_response'];
-                                                    
+                                                    $admin_reply = $row['admin_reply']
                                                     //close php tag so that we can include some html inside the php while loop
                                                 ?>
 
@@ -124,6 +125,7 @@ if (isset($_GET['delete'])) {
                                                         <td><?php echo $complaint_details; ?></td>
                          
                                                         <td><?php echo $admin_response; ?></td>
+                                                        <td><?php echo $admin_reply; ?> </td>
                                                                                                         
                                                     </tr>
 
