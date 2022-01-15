@@ -1,4 +1,4 @@
-<?php include 'marketing_admin_header.php'; ?>
+<?php include 'client_header.php'; ?>
 
 <!-- Right Side Content / End -->
 </div>
@@ -40,7 +40,7 @@
                     </div>
                     <ul class="author__contact">
                         <li><span class="la la-map-marker"><i class="fa fa-user"></i></span>Username: <?php echo $username; ?></li>
-                        <li><span class="la la-phone"><i class="fa fa-circle" aria-hidden="true"></i></span>Admin ID: <?php echo $client_id; ?></li>
+                        <li><span class="la la-phone"><i class="fa fa-circle" aria-hidden="true"></i></span>Client ID: <?php echo $client_id; ?></li>
                         <li><span class="la la-envelope-o"><i class="fa fa-envelope" aria-hidden="true"></i></span><a href="#"><?php echo $user_email; ?></a></li>
                     </ul>
 

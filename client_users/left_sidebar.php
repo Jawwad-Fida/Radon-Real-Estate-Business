@@ -36,12 +36,12 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="payment-method.html">
+                    <a href="#">
                         <i class="fas fa-credit-card"></i>Payment History
                     </a>
                 </li>
                 <li>
-                    <a href="payment-method.html">
+                    <a href="#">
                         <i class="fab fa-cc-mastercard"></i>Online Payment
                     </a>
                 </li>

@@ -25,7 +25,7 @@
                             </li>
                             <li><a href="#">Total Bill</a></li>
                             <li><a href="#">Due</a></li>
-                            <li><a href="#">Complaint Box</a></li>
+                            <li><a href="complaint_box.php">Complaint Box</a></li>
                         </ul>
                     </nav>
                     <div class="clearfix"></div>
