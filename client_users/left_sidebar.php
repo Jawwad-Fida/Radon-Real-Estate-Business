@@ -45,6 +45,11 @@
                         <i class="fab fa-cc-mastercard"></i>Online Payment
                     </a>
                 </li>
+                <li>
+                    <a href="view_complaints.php">
+                        <i class="fa fa-archive"></i>View Complaints
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

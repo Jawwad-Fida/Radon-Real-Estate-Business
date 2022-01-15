@@ -8,6 +8,14 @@ include "../includes/connect.php";
 include "../includes/functions.php";
 ?>
 
+<?php
+//delete building based on id 
+if (isset($_GET['delete'])) {
+    $apartment_id = $_GET['delete'];
+    $stmt = query("DELETE FROM apartment WHERE apartment_id={$apartment_id}");
+    redirect("view-Buy-apartment.php?success=item_delete");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -21,7 +29,7 @@ include "../includes/functions.php";
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="html 5 template">
     <meta name="author" content="">
-    <title>View Property</title>
+    <title>View Complaints</title>
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/jquery-ui.css">
@@ -73,57 +81,60 @@ include "../includes/functions.php";
                         <div class="dashborad-box stat bg-white">
 
                             <div class="dashborad-box">
-                                <h4 class="title">Owned Apartments - Rent</h4>
+                                <h4 class="title">View Complaints</h4>
                                 <div class="section-body listing-table">
                                     <div class="table-responsive">
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>Building Name</th>
+                                                    <th>Complaint ID</th>
                                                     <th>Building No.</th>
                                                     <th>Flat No.</th>
-                                                    <th>Image</th>
-                                                    <th>Rent Price</th>
-                                                    <th>Area</th>
-                                                    <th>Type</th>
-                                                    <th>Features</th>
+                                                    <th>Client ID</th>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Mobile Number</th>
+                                                    <th>Complaint Issue</th>
+                                                    <th>Complaint Date</th>
+                                                    <th>Complaint Details</th>
+                                                    <th>Respond</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
 
                                                 <?php
-                                                $client_username = $_SESSION['username'];
-                                                $stmt = query("SELECT * FROM apartment WHERE apartment_status='Rent' AND client_username='{$client_username}'");
+                                                $admin_response = "Not Responded Yet"; 
+                                                $stmt = query("SELECT * FROM complaint WHERE admin_response='{$admin_response}'");
 
                                                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                                    $apart_status = 'Rent';
-                                                    $apartment_id = $row['apartment_id'];
-                                                    $building_name = $row['building_name'];
+                                                    $complaint_id = $row['complaint_id'];
+                                                    $client_id = $row['client_id'];
+                                                    $name = $row['name'];
+                                                    $email = $row['email'];
+                                                    $mobile_number = $row['mobile_number'];
+                                                    $building_no = $row['build_num'];
                                                     $flat_no = $row['flat_no'];
-                                                    //$no_of_bedroom =  $row['no_of_bedroom'];
-                                                    //$no_of_bathroom =  $row['no_of_bathroom'];
-                                                    $image =  $row['image'];
-                                                    //$buy_price =  $row['buy_price'];
-                                                    $rent_price =  $row['rent_price'];
-                                                    $area =  $row['area'];
-                                                    $build_num = $row['build_num'];
-                                                    $type =  $row['type'];
-                                                    $features =  $row['features'];
-                                                    
+                                                    $complaint_issue =  $row['complaint_issue'];
+                                                    $complaint_date =  $row['complaint_date'];
+                                                    $complaint_details =  $row['complaint_details'];
 
                                                     //close php tag so that we can include some html inside the php while loop
                                                 ?>
 
 
                                                     <tr>
-                                                        <td><?php echo $building_name; ?></td>
-                                                        <td><?php echo $build_num; ?></td>
+                                                        <td><?php echo $complaint_id; ?></td>
+                                                        <td><?php echo $building_no; ?></td>
                                                         <td><?php echo $flat_no; ?></td>
-                                                        <td><img width="200px" src="<?php echo $image; ?>"></td>
-                                                        <td class="status"><span class=" active"><?php echo $rent_price; ?></span></td>
-                                                        <td><?php echo $area; ?></td>
-                                                        <td><?php echo $type; ?></td>
-                                                        <td><?php echo $features; ?></td>
+                                                        <td><?php echo $client_id; ?></td>
+                                                        <td><?php echo $name; ?></td>
+                                                        <td><?php echo $email; ?></td>
+                                                        <td><?php echo $mobile_number; ?></td>
+                                                        <td><?php echo $complaint_issue; ?></td>
+                                                        <td class="status"><span class=" active"><?php echo $complaint_date; ?></span></td>
+                                                        <td><?php echo $complaint_details; ?></td>
+                                                        <td class="edit"><a onClick="javascript: return confirm('Reply Complaint?');" href="reply_complaint.php?edit=<?php echo $complaint_id; ?>&client_id=<?php echo $client_id; ?>"><i class="fa fa-paper-plane"></i></a></td>
+                                                                                                        
                                                     </tr>
 
                                                 <?php } ?>

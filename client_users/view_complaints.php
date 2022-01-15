@@ -8,6 +8,14 @@ include "../includes/connect.php";
 include "../includes/functions.php";
 ?>
 
+<?php
+//delete building based on id 
+if (isset($_GET['delete'])) {
+    $apartment_id = $_GET['delete'];
+    $stmt = query("DELETE FROM apartment WHERE apartment_id={$apartment_id}");
+    redirect("view-Buy-apartment.php?success=item_delete");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -21,7 +29,7 @@ include "../includes/functions.php";
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="html 5 template">
     <meta name="author" content="">
-    <title>View Property</title>
+    <title>View Complaints</title>
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/jquery-ui.css">
@@ -73,57 +81,50 @@ include "../includes/functions.php";
                         <div class="dashborad-box stat bg-white">
 
                             <div class="dashborad-box">
-                                <h4 class="title">Owned Apartments - Rent</h4>
+                                <h4 class="title">View Complaints</h4>
                                 <div class="section-body listing-table">
                                     <div class="table-responsive">
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>Building Name</th>
+                                                    <th>Complaint ID</th>
                                                     <th>Building No.</th>
                                                     <th>Flat No.</th>
-                                                    <th>Image</th>
-                                                    <th>Rent Price</th>
-                                                    <th>Area</th>
-                                                    <th>Type</th>
-                                                    <th>Features</th>
+                                                    <th>Complaint Issue</th>
+                                                    <th>Complaint Date</th>
+                                                    <th>Complaint Details</th>
+                                                    <th>Admin Response</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
 
                                                 <?php
-                                                $client_username = $_SESSION['username'];
-                                                $stmt = query("SELECT * FROM apartment WHERE apartment_status='Rent' AND client_username='{$client_username}'");
+                                                $client_id = $_SESSION['client_id'];
+                                                $stmt = query("SELECT * FROM complaint WHERE client_id = {$client_id}");
 
                                                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                                    $apart_status = 'Rent';
-                                                    $apartment_id = $row['apartment_id'];
-                                                    $building_name = $row['building_name'];
+                                                    $complaint_id = $row['complaint_id'];
+                                                    $building_no = $row['build_num'];
                                                     $flat_no = $row['flat_no'];
-                                                    //$no_of_bedroom =  $row['no_of_bedroom'];
-                                                    //$no_of_bathroom =  $row['no_of_bathroom'];
-                                                    $image =  $row['image'];
-                                                    //$buy_price =  $row['buy_price'];
-                                                    $rent_price =  $row['rent_price'];
-                                                    $area =  $row['area'];
-                                                    $build_num = $row['build_num'];
-                                                    $type =  $row['type'];
-                                                    $features =  $row['features'];
+                                                    $complaint_issue =  $row['complaint_issue'];
+                                                    $complaint_date =  $row['complaint_date'];
+                                                    $complaint_details =  $row['complaint_details'];
+                                                    $admin_response = $row['admin_response'];
                                                     
-
                                                     //close php tag so that we can include some html inside the php while loop
                                                 ?>
 
 
                                                     <tr>
-                                                        <td><?php echo $building_name; ?></td>
-                                                        <td><?php echo $build_num; ?></td>
+                                                        <td><?php echo $complaint_id; ?></td>
+                                                        <td><?php echo $building_no; ?></td>
                                                         <td><?php echo $flat_no; ?></td>
-                                                        <td><img width="200px" src="<?php echo $image; ?>"></td>
-                                                        <td class="status"><span class=" active"><?php echo $rent_price; ?></span></td>
-                                                        <td><?php echo $area; ?></td>
-                                                        <td><?php echo $type; ?></td>
-                                                        <td><?php echo $features; ?></td>
+                                                        <td><?php echo $complaint_issue; ?></td>
+                                                        <td class="status"><span class=" active"><?php echo $complaint_date; ?></span></td>
+                                                        <td><?php echo $complaint_details; ?></td>
+                         
+                                                        <td><?php echo $admin_response; ?></td>
+                                                                                                        
                                                     </tr>
 
                                                 <?php } ?>

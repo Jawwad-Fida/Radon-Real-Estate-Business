@@ -127,6 +127,8 @@ function display_success_message()
             echo "<p style='color:red;font-size:25px;text-align:center'>Appointment Rejected!<p>";
         } elseif ($_GET['success'] == 'appointment_confirmed') {
             echo "<p style='color:green;font-size:25px;text-align:center'>Appointment Confirmed!<p>";
+        } elseif ($_GET['success'] == 'message_sent') {
+            echo "<p style='color:green;font-size:25px;text-align:center'>Message Sent!<p>";
         } 
     }
 }

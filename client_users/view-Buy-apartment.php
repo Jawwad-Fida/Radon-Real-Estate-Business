@@ -88,11 +88,11 @@ if (isset($_GET['delete'])) {
                                             <thead>
                                                 <tr>
                                                     <th>Building Name</th>
+                                                    <th>Building No.</th>
                                                     <th>Flat No.</th>
                                                     <th>Image</th>
                                                     <th>Buy Price</th>
                                                     <th>Area</th>
-                                             
                                                     <th>Type</th>
                                                     <th>Features</th>
                                                 </tr>
@@ -114,7 +114,7 @@ if (isset($_GET['delete'])) {
                                                     $buy_price =  $row['buy_price'];
                                                     //$rent_price =  $row['rent_price'];
                                                     $area =  $row['area'];
-                                               
+                                                    $build_num = $row['build_num'];
                                                     $type =  $row['type'];
                                                     $features =  $row['features'];
                                                     
@@ -125,6 +125,7 @@ if (isset($_GET['delete'])) {
 
                                                     <tr>
                                                         <td><?php echo $building_name; ?></td>
+                                                        <td><?php echo $build_num; ?></td>
                                                         <td><?php echo $flat_no; ?></td>
                                                         <td><img width="300px" src="<?php echo $image; ?>"></td>
                                                         <td class="status"><span class=" active"><?php echo $buy_price; ?></span></td>

@@ -24,7 +24,7 @@
                             <li><a href="accounting_admin_dashboard.php">Home</a>
                             </li>
                             <li><a href="#">Contact</a></li>
-                            <li><a href="#">Complaints</a></li>
+                            <li><a href="client_complaints.php">Complaints</a></li>
                         </ul>
                     </nav>
                     <div class="clearfix"></div>

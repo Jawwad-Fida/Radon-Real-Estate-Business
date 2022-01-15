@@ -1,61 +1,129 @@
 <?php
 
 declare(strict_types=1);
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 session_start();
 ob_start();
 
 include "../includes/connect.php";
 include "../includes/functions.php";
+include "../vendor/autoload.php";
+?>
+
+<?php
+
+if (isset($_GET['edit'])) {
+    $complaint_id = $_GET['edit'];
+    $current_complaint_id = $complaint_id;
+    $client_id = $_GET['client_id'];
+    $current_client_id = $client_id;
+
+    $stmt = query("SELECT * FROM complaint WHERE complaint_id ={$complaint_id} AND client_id = {$current_client_id}");
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $complaint_issue = $row['complaint_issue'];
+    $email = $row['email'];
+    $build_num = $row['build_num'];
+    $flat_no = $row['flat_no'];
+    $name = $row['name'];
+}
+
 ?>
 
 <?php
 
 if (isset($_POST['add_submit'])) {
 
-    $client_id = $_SESSION['client_id'];
 
-    $stmt2 = query("SELECT * FROM clients WHERE client_id = {$client_id}");
-    $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
-    $name =  $row2['name'];
-    $username =  $row2['username'];
-    $mobile_number =  $row2['mobile_number'];
-    $email =  $row2['email'];
-
-        
     $flat_no = validate($_POST['flat_num']);
     $build_num = validate($_POST['build_num']);
     $complaint_issue = validate($_POST['issue']);
-    $complaint_description = validate($_POST['description']);
+    $message = validate($_POST['description']);
     $complaint_date = date("Y/m/d");
-    $admin_response = "Not Responded Yet";
-    
+    $admin_response = "Responded";
+
+    $client_id = $_POST['client_id'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $complaint_id = $_POST['complaint_id'];
+
+
+
     //Check for errors
-    if (empty($complaint_issue) || empty($complaint_description) || empty($build_num) || empty($flat_no)) {
-        redirect("complaint_box.php?error=emptyFields");
+    if (empty($complaint_issue) || empty($message) || empty($build_num) || empty($flat_no)) {
+        redirect("reply_complaint.php?error=emptyFields");
         exit();
     }
 
+
     //------------QUERY-------------
 
-    $stmt = prepare_query("INSERT INTO complaint(client_id,name,mobile_number,email,build_num,flat_no,complaint_issue,complaint_date,complaint_details,username,admin_response) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
-    $stmt->bindParam(1, $client_id, PDO::PARAM_INT);
-    $stmt->bindParam(2, $name, PDO::PARAM_STR);
-    $stmt->bindParam(3, $mobile_number, PDO::PARAM_INT);
-    $stmt->bindParam(4, $email, PDO::PARAM_STR);
-    $stmt->bindParam(5, $build_num, PDO::PARAM_STR);
-    $stmt->bindParam(6, $flat_no, PDO::PARAM_STR);
-    $stmt->bindParam(7, $complaint_issue, PDO::PARAM_STR);
-    $stmt->bindParam(8, $complaint_date, PDO::PARAM_STR);
-    $stmt->bindParam(9, $complaint_description, PDO::PARAM_STR);
-    $stmt->bindParam(10, $username, PDO::PARAM_STR);
-    $stmt->bindParam(11, $admin_response, PDO::PARAM_STR);
-    
+
+    $stmt = prepare_query("UPDATE complaint SET admin_response=? WHERE complaint_id=?");
+    $stmt->bindParam(1, $admin_response, PDO::PARAM_STR);
+    $stmt->bindParam(2, $complaint_id, PDO::PARAM_INT);
+
 
     $stmt->execute();
-    //$last_id = last_inserted_id();
     unset($stmt);
 
-    redirect("complaint_box.php?success=message_sent");
+    //------------ MailTrap (Mail) -------------
+
+    $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
+    $dotenv->load(); //works here
+
+    //Mailtrap Credentials
+    $SMTP_HOST = getenv('SMTP_HOST');
+    $SMTP_PORT = getenv('SMTP_PORT');
+    $SMTP_USER = getenv('SMTP_USER');
+    $SMTP_PASSWORD = getenv('SMTP_PASSWORD');
+    $SMTP_ENCRYPTION = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail = new PHPMailer(true);
+
+    $current_email = "admin_finance@gmail.com";
+    $current_name = "Finance and Account Admin";
+
+    try {
+        //access class
+
+        //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                   
+        $mail->isSMTP();
+        $mail->Host = $SMTP_HOST;
+        $mail->Username = $SMTP_USER;
+        $mail->Password = $SMTP_PASSWORD;
+        $mail->Port = $SMTP_PORT;
+        $mail->SMTPSecure = $SMTP_ENCRYPTION;
+        $mail->SMTPAuth = true;
+
+        //Recipients
+        $mail->setFrom($current_email, $current_name);
+        $mail->addAddress($email);
+
+        // Content
+        $mail->isHTML(true);
+        $mail->Subject = "Replying Complaint to Client: {$name}";
+        $mail->Body = "<p>
+            Dear {$name},<br><br>
+            We have replied to your complaint regarding the following issue:<br><br>
+            <b>{$complaint_issue}</b><br><br>
+            The issue is as follows:<br><br>
+            <b>{$message}</b><br><br>
+            We hope you will be satisfied with our service.<br><br>
+            Thank you for choosing us.<br><br>
+            Regards,<br>
+            Finance and Account Admin
+            </p>";
+        $mail->send();
+
+        redirect("client_complaints.php?success=message_sent");
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+ 
 }
 
 ?>
@@ -74,7 +142,7 @@ if (isset($_POST['add_submit'])) {
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="html 5 template">
     <meta name="author" content="">
-    <title>Complaint Box</title>
+    <title>Reply Complaint</title>
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/jquery-ui.css">
@@ -127,7 +195,7 @@ if (isset($_POST['add_submit'])) {
                         <?php display_success_message(); ?>
 
                         <div class="single-add-property">
-                            <h3>Please Write Down your Complaint</h3>
+                            <h3>Reply Complaint to Client</h3>
                             <div class="property-form-group">
 
                                 <form action="" method="post">
@@ -136,7 +204,7 @@ if (isset($_POST['add_submit'])) {
                                         <div class="col-md-12">
                                             <p>
                                                 <label for="title">Complaint Issue</label>
-                                                <input type="text" name="issue" id="title" placeholder="Enter complaint subject">
+                                                <input type="text" name="issue" id="title" value="<?php echo $complaint_issue; ?>">
                                             </p>
                                         </div>
                                     </div>
@@ -144,7 +212,7 @@ if (isset($_POST['add_submit'])) {
                                         <div class="col-md-12">
                                             <p>
                                                 <label for="description">Complaint Description</label>
-                                                <textarea id="description" name="description" placeholder="Describe your complaint"></textarea>
+                                                <textarea id="description" name="description" placeholder="Enter message"></textarea>
                                             </p>
                                         </div>
                                     </div>
@@ -156,23 +224,28 @@ if (isset($_POST['add_submit'])) {
                                         <div class="col-md-6">
                                             <p>
                                                 <label for="title">Building Number</label>
-                                                <input type="text" name="build_num" id="title" placeholder="Enter Building Number">
+                                                <input type="text" name="build_num" id="title" value="<?php echo $build_num; ?>">
                                             </p>
                                         </div>
 
                                         <div class="col-md-6">
                                             <p>
                                                 <label for="title">Flat number</label>
-                                                <input type="text" name="flat_num" id="title" placeholder="Enter flat number">
+                                                <input type="text" name="flat_num" id="title" value="<?php echo $flat_no; ?>">
                                             </p>
                                         </div>
                                     </div>
+
+                                    <input type="hidden" id="custId" name="client_id" value="<?php echo $current_client_id; ?>">
+                                    <input type="hidden" id="custId" name="email" value="<?php echo $email; ?>">
+                                    <input type="hidden" id="custId" name="name" value="<?php echo $name; ?>">
+                                    <input type="hidden" id="custId" name="complaint_id" value="<?php echo $current_complaint_id; ?>">
 
                                     <div class="add-property-button pt-6">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="prperty-submit-button">
-                                                    <button type="submit" name="add_submit">Submit Complaint</button>
+                                                    <button type="submit" name="add_submit">Reply Complaint</button>
                                                 </div>
                                             </div>
                                         </div>
