@@ -178,7 +178,7 @@ include "includes/functions.php";
                     </div>
                 </form>
                 <!--/ End Search Form -->
-                <?php $stmt = query("SELECT * FROM apartment WHERE apartment_status='Buy'");
+                <?php $stmt = query("SELECT * FROM apartment WHERE (apartment_status='Buy' AND status='Not Booked')");
                 $row_count = count_records($stmt);
                 ?>
                 <section class="headings-2 pt-0">

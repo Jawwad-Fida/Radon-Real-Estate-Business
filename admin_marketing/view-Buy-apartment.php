@@ -104,7 +104,7 @@ if (isset($_GET['delete'])) {
 
                                                 <?php
                                                 //JOIN query
-                                                $stmt = query("SELECT * FROM apartment WHERE apartment_status='Buy'");
+                                                $stmt = query("SELECT * FROM apartment WHERE (apartment_status='Buy' AND status='Not Booked')");
 
                                                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                     $apart_status = 'Buy';

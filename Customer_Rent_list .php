@@ -178,7 +178,7 @@ include "includes/functions.php";
                     </div>
                 </form>
                 <!--/ End Search Form -->
-                <?php $stmt1 = query("SELECT * FROM apartment WHERE apartment_status='Rent'");
+                <?php $stmt1 = query("SELECT * FROM apartment WHERE (apartment_status='Rent' AND status='Not Booked')");
                 $row_count1 = count_records($stmt1);
                 ?>
                 <section class="headings-2 pt-0">
@@ -261,11 +261,11 @@ include "includes/functions.php";
                         <div class="col-lg-8 col-md-12 homes-content pb-0 mb-44" data-aos="fade-up">
                             <!-- homes address -->
                             <?php if (is_logged_in() == true) : ?>
-                            <h3><a href="single_property.php?edit=<?php echo $apartment_id; ?>&apart_status=<?php echo $apart_status; ?>"><?php echo $building_name ?></a></h3>
+                            <h3><a href="single_property.php?edit=<?php echo $apartment_id; ?>&apart_status=<?php echo $apart_status; ?>"><?php echo $building_name; ?></a></h3>
                             <?php endif; ?>
                             
                             <?php if (is_logged_in() == false) : ?>
-                            <h3><a href="#"><?php echo $building_name ?></a></h3>
+                            <h3><a href="#"><?php echo $building_name; ?></a></h3>
                             <?php endif; ?>
                             
                             

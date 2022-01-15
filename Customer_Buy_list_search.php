@@ -368,7 +368,7 @@ include "includes/functions.php";
                             <ul class="homes-list clearfix pb-3">
                                 <li class="the-icons">
                                     <i class="flaticon-bed mr-2" aria-hidden="true"></i>
-                                    <span><?php echo $no_of_bedroom ;?></span>
+                                    <span><?php echo $no_of_bedroom;?></span>
                                 </li>
                                 <li class="the-icons">
                                     <i class="flaticon-bathtub mr-2" aria-hidden="true"></i>
@@ -376,7 +376,7 @@ include "includes/functions.php";
                                 </li>
                                 <li class="the-icons">
                                     <i class="flaticon-square mr-2" aria-hidden="true"></i>
-                                    <span><?php echo $area ;?></span>
+                                    <span><?php echo $area;?></span>
                                 </li>
                             </ul>
                             <!-- Price -->

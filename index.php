@@ -85,7 +85,7 @@ include "includes/functions.php";
                                         <a class="nav-link" data-toggle="tab" href="#tabs_2">For Rent</a>
                                     </li>
                                 </ul>
-                                <form action="Customer_Buy_list_search.php" method="post" id="test">
+                                <form action="Customer_Buy_list_search.php" method="post" id="test10">
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="tabs_1">
                                             <div class="rld-main-search">
@@ -94,7 +94,7 @@ include "includes/functions.php";
                                                         <!-- Form Bathrooms -->
                                                         <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
                                                             <div class="rld-single-select">
-                                                                <select class="select single-select mr-0" name="bath" form="test">
+                                                                <select class="select single-select mr-0" name="bath" form="test10">
                                                                     <option value="null">Bathroom</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
@@ -111,7 +111,7 @@ include "includes/functions.php";
                                                         <!-- Form Bedrooms -->
                                                         <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
                                                             <div class="rld-single-select">
-                                                                <select class="select single-select mr-0" name="bed" form="test">
+                                                                <select class="select single-select mr-0" name="bed" form="test10">
                                                                     <option value="null">Bedroom</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
@@ -125,11 +125,10 @@ include "includes/functions.php";
                                                         <!--/ End Form Bedrooms -->
                                                     </div>
                                                     <div class="rld-single-select">
-                                                        <select class="select single-select mr-0" name="addr" id="test">
+                                                        <select class="select single-select mr-0" name="addr" id="test10">
                                                             <option value="null">Location</option>
                                                             <option value="Banani">Banani</option>
-                                                            <option value="Gulshan-2">Gulshan-2</option>
-                                                            <option value="Gulshan-1">Gulshan-1</option>
+                                                            <option value="Gulshan">Gulshan</option>
                                                             <option value="Dhanmondi">Dhanmondi</option>
                                                             <option value="Badda">Badda</option>
                                                             <option value="Baridhara">Baridhara</option>
@@ -143,7 +142,7 @@ include "includes/functions.php";
                                                     </div>
                                                     <div class="dropdown-filter"><span>Advanced Search</span></div>
                                                     <div class="col-xl-2 col-lg-2 col-md-4 pl-0">
-                                                        <button class="btn btn-yellow" form="test" name="search" type="submit" formmethod="post">Search Now</button>
+                                                        <button class="btn btn-yellow" form="test10" name="search" type="submit" formmethod="post">Search Now</button>
                                                     </div>
                                                     <div class="explore__form-checkbox-list full-filter">
                                                         <div class="row">
@@ -218,8 +217,7 @@ include "includes/functions.php";
                                                     <select class="select single-select mr-0" name="addr" form="test1">
                                                         <option value="null">Location</option>
                                                         <option value="Banani">Banani</option>
-                                                        <option value="Gulshan-2">Gulshan-2</option>
-                                                        <option value="Gulshan-1">Gulshan-1</option>
+                                                        <option value="Gulshan">Gulshan</option> 
                                                         <option value="Dhanmondi">Dhanmondi</option>
                                                         <option value="Badda">Badda</option>
                                                         <option value="6">Baridhara</option>
