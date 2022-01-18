@@ -109,6 +109,9 @@ if (isset($_GET['d_building']) && isset($_GET['d_flat']) && isset($_GET['d_usern
                                                 $stmt = query("SELECT * 
                                                               FROM utility_bill 
                                                               WHERE flat_no='$flat_no' and building_name='$building_name'");
+                                                
+                                                
+
 
                                                 #$stmt = query("SELECT * FROM building WHERE building_name != 'Test Case 1' AND building_name != 'Test Case 2'
                                                 #AND building_name != 'Test Case 3' AND building_name != 'Test Case 4' AND building_name != 'Test Case 5' 

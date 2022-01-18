@@ -21,27 +21,39 @@ if (isset($_POST['add_submit']) && isset($_GET['d_building']) && isset($_GET['d_
     $service_charge=$_POST['service_charge'];
 
 
-    //------------QUERY-------------             
+    //------------QUERY------------- 
+
+    $stmt = query("SELECT * 
+            FROM utility_bill 
+            WHERE building_name='$building_name'
+            AND flat_no='$flat_no'
+            AND month='$month'");
+
+    if($stmt->rowCount()==0){
+
+        $stmt = prepare_query("INSERT INTO utility_bill(building_name,flat_no,month,flat_status,water_bill,gas_bill,electricity_bill,additional_bill,service_charge) 
+                               VALUES(?,?,?,?,?,?,?,?,?)");
+        $stmt->bindParam(1, $building_name, PDO::PARAM_STR);
+        $stmt->bindParam(2, $flat_no, PDO::PARAM_INT);
+        $stmt->bindParam(3, $month, PDO::PARAM_STR);
+        $stmt->bindParam(4, $flat_status, PDO::PARAM_STR);
+        $stmt->bindParam(5, $water_bill, PDO::PARAM_INT);
+        $stmt->bindParam(6, $gas_bill, PDO::PARAM_INT);
+        $stmt->bindParam(7, $electricity_bill, PDO::PARAM_INT);
+        $stmt->bindParam(8, $additional_bill, PDO::PARAM_INT);
+        $stmt->bindParam(9, $service_charge, PDO::PARAM_INT);
 
 
-    $stmt = prepare_query("INSERT INTO utility_bill(building_name,flat_no,month,flat_status,water_bill,gas_bill,electricity_bill,additional_bill,service_charge) 
-VALUES(?,?,?,?,?,?,?,?,?)");
-    $stmt->bindParam(1, $building_name, PDO::PARAM_STR);
-    $stmt->bindParam(2, $flat_no, PDO::PARAM_INT);
-    $stmt->bindParam(3, $month, PDO::PARAM_STR);
-    $stmt->bindParam(4, $flat_status, PDO::PARAM_STR);
-    $stmt->bindParam(5, $water_bill, PDO::PARAM_INT);
-    $stmt->bindParam(6, $gas_bill, PDO::PARAM_INT);
-    $stmt->bindParam(7, $electricity_bill, PDO::PARAM_INT);
-    $stmt->bindParam(8, $additional_bill, PDO::PARAM_INT);
-    $stmt->bindParam(9, $service_charge, PDO::PARAM_INT);
+        $stmt->execute();
+    
+        unset($stmt);
 
-
-    $stmt->execute();
- 
-    unset($stmt);
-
-    redirect("apartment_list.php?success=item_add"."&b_name=". $building_name );
+        redirect("apartment_list.php?success=item_add"."&b_name=". $building_name );
+    }
+    else{
+        
+        redirect("apartment_list.php?error=already_exits"."&b_name=". $building_name );
+      }
 }
 
 
@@ -154,7 +166,7 @@ VALUES(?,?,?,?,?,?,?,?,?)");
                                         <div class="col-lg-4 col-md-12">
                                             <p class="no-mb last">
                                                 <label for="billig_month">Billing Month</label>
-                                                <input type="Date" name="month">
+                                                <input type="Month" name="month">
                                             </p>
                                         </div>
                                     </div>

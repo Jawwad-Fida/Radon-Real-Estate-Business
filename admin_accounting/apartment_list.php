@@ -76,6 +76,10 @@ if(isset($_GET['b_name']))
                         <!-- Display success messages -->
                         <?php display_success_message(); ?>
 
+                        <!-- Display error messages -->
+                        <?php display_error_message(); ?>
+
+
                         <div class="dashborad-box stat bg-white">
 
                             <div class="dashborad-box">

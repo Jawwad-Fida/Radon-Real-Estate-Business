@@ -95,7 +95,10 @@ function display_error_message()
             echo "<p style='color:red;font-size:25px;text-align:center'>Pin code does not match!<p>";
         } elseif ($_GET['error'] == 'invalid_phone_length') {
             echo "<p style='color:red;font-size:25px;text-align:center'>Phone number cannot be more than 11 characters!<p>";
-        } 
+        }
+          elseif ($_GET['error'] == 'already_exits') {
+            echo "<p style='color:red;font-size:25px;text-align:center'>This months utility has been added already!<p>";
+        }  
     }
 }
 
