@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2022 at 05:50 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Generation Time: Jan 18, 2022 at 02:10 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -301,7 +301,7 @@ CREATE TABLE `utility_bill` (
   `utility_id` int(11) NOT NULL,
   `building_name` varchar(50) NOT NULL,
   `flat_no` varchar(50) NOT NULL,
-  `month` date NOT NULL,
+  `month` text NOT NULL,
   `flat_status` varchar(50) NOT NULL,
   `rent` int(11) DEFAULT NULL,
   `water_bill` int(11) NOT NULL,
@@ -316,14 +316,14 @@ CREATE TABLE `utility_bill` (
 --
 
 INSERT INTO `utility_bill` (`utility_id`, `building_name`, `flat_no`, `month`, `flat_status`, `rent`, `water_bill`, `gas_bill`, `electricity_bill`, `additional_bill`, `service_charge`) VALUES
-(4, 'JawwadHarem', 'A3', '2022-01-08', 'Rent', 50000, 1, 1000, 100, 50, 500),
-(5, 'JawwadHarem', 'A3', '2022-02-08', 'Rent', 100, 1000, 100, 1000, 500, 1000),
 (6, 'Mill Home', 'A3', '2022-01-08', 'buy', 0, 1000, 1200, 10000, 5000, 5000),
 (7, 'Mill Home', 'C2', '2022-01-08', 'Rent', 80000, 800, 1200, 6000, 1000, 5000),
 (8, 'Mill Home', 'D4', '2022-01-08', 'Rent', 80000, 800, 1200, 6000, 1000, 5000),
 (9, 'cottage Home', 'D1', '2022-01-08', 'Buy', 0, 1000, 1500, 7000, 1000, 5000),
 (10, 'cottage Home', 'D6', '2022-01-08', 'Rent', 70000, 1000, 1500, 7000, 1000, 5000),
-(11, 'cottage Home', 'D8', '2022-01-08', 'Rent', 70000, 1200, 1000, 8000, 1000, 5000);
+(11, 'cottage Home', 'D8', '2022-01-08', 'Rent', 70000, 1200, 1000, 8000, 1000, 5000),
+(13, 'JawwadHarem', 'A3', '2022-01', 'Rent', NULL, 1000, 1000, 1000, 500, 5000),
+(14, 'JawwadHarem', 'A3', '2022-02', 'Rent', NULL, 1000, 1000, 1000, 500, 5000);
 
 --
 -- Indexes for dumped tables
@@ -448,7 +448,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `utility_bill`
 --
 ALTER TABLE `utility_bill`
-  MODIFY `utility_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `utility_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
