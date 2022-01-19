@@ -8,8 +8,16 @@ require_once(__DIR__ . "/lib/SslCommerzNotification.php");
 
 include("db_connection.php");
 include("OrderTransaction.php");
+include("vendor/autoload.php");
 
 use SslCommerz\SslCommerzNotification;
+
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
+$dotenv->load();
+
+$STORE_ID = getenv('Store_ID');
+$STORE_PASSWORD = getenv('Store_Password');
+$STORE_NAME = getenv('Store_Name');
 
 # Organize the submitted/inputted data
 $post_data = array();
@@ -21,7 +29,7 @@ $post_data['total_amount'] = $_POST['amount']; //this must have a value
 $post_data['currency'] = "BDT";
 $post_data['tran_id'] = "SSLCZ_TEST_" . uniqid();
 
-# CUSTOMER INFORMATION
+# CUSTOMER INFORMATION --- JUST ASSUME THE CUSTOMER IS CLIENT
 $post_data['cus_name'] = isset($_POST['customer_name']) ? $_POST['customer_name'] : "John Doe";
 $post_data['cus_email'] = isset($_POST['customer_email']) ? $_POST['customer_email'] : "john.doe@email.com";
 $post_data['cus_add1'] = "Dhaka";
