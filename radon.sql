@@ -482,3 +482,26 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
+CREATE TABLE invoice (
+  invoice_no int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  invoice_name varchar(50) NOT null,
+  building_name varchar(50) NOT NULL,
+  flat_no varchar(10) NOT NULL,
+  client_username varchar(50) NOT NULL,
+  billing_month varchar(50) NOT NULL,
+  issue_date date NOT NULL,
+  due_date date NOT NULL,
+  electricity_bill int(11) NOT NULL,
+  water_bill int(11) NOT NULL,
+  gas_bill int(11) NOT NULL,
+  additional_bill int(11) NOT NULL,
+  service_charge int(11) NOT NULL,
+  arrear int(11) NOT NULL,
+  due_charge double DEFAULT NULL,
+  status varchar(10) DEFAULT NULL,
+  total_bill float DEFAULT NULL
+) 

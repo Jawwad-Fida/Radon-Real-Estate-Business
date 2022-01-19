@@ -108,27 +108,17 @@ if(isset($_GET['b_name']))
                                                     $client_username = $row['client_username'];
                                                     $apartment_status= $row['apartment_status'];                                                  
 
-                                                    //close php tag so that we can include some html inside the php while loop
                                                 ?>
-
 
                                                     <tr>
                                                         <td><input type="button" class="btn btn-link" value="<?php echo $flat_no;?>" 
-                                                                   onclick="list_of_utility_bill('<?php echo $building_name; ?>' , '<?php echo $flat_no; ?>', '<?php echo $client_username; ?>');"></td>
-                                                        <td>
-                                                            <input type="button" class="btn btn-info btn-rounded" value=" Add Utility " onclick="add_utility_func('<?php echo $building_name; ?>' , '<?php echo $flat_no; ?>', '<?php echo $apartment_status; ?>');">                    
-                                                            <input type="button" class="btn btn-info btn-rounded" value=" Create Invoice " onclick="create_invoice_form('<?php echo $building_name; ?>' , '<?php echo $flat_no; ?>', '<?php echo $apartment_status; ?>');">                    
-                                                        </td>
-                                                       
+                                                                   onclick="list_of_invoice_bill('<?php echo $building_name; ?>' , '<?php echo $flat_no; ?>', '<?php echo $client_username; ?>');"></td>
+                                                                             
                                                     </tr>
 
                                                 <?php } ?>
-
-
                                             </tbody>
                                         </table>
-
-
                                     </div>
                                 </div>
                             </div>
@@ -203,28 +193,12 @@ if(isset($_GET['b_name']))
                 $(this).toggleClass("hu-menu-visdec");
             });
 
-            function list_of_utility_bill(info_b,info_f,info_username)
+            function list_of_invoice_bill(info_b,info_f,info_username)
             {
                 var del_b=info_b
                 var del_f=info_f;
                 var del_username=info_username;
-                location.assign("clients_utility_bill_list.php?d_building="+ del_b+ "&d_flat="+del_f+"&d_username="+del_username);
-            }
-
-            function add_utility_func(info_b,info_f,info_status)
-            {
-                var del_b=info_b
-                var del_f=info_f;
-                var del_status=info_status;
-                location.assign("add_utility_bill.php?d_building="+ del_b+ "&d_flat="+del_f+"&d_status="+del_status);
-            }
-
-            function create_invoice_form(info_b,info_f,info_status)
-            {
-                var del_b=info_b
-                var del_f=info_f;
-                var del_status=info_status;
-                location.assign("create_invoice_form.php?d_building="+ del_b+ "&d_flat="+del_f+"&d_status="+del_status);
+                location.assign("view_invoice_bill_list.php?d_building="+ del_b+ "&d_flat="+del_f+"&d_username="+del_username);
             }
         </script>
 
