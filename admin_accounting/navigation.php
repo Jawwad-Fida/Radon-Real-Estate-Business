@@ -1,3 +1,15 @@
+<?php
+
+if($_SESSION['admin_type'] != 'finance_and_account'){
+    session_unset();
+    session_destroy();
+    redirect("../login.php?error=not_login");
+}
+
+?>
+
+
+
 <div class="dash-content-wrap">
     <header id="header-container" class="db-top-header">
         <!-- Header -->
