@@ -19,11 +19,11 @@ include_once(__DIR__ . "/../OrderTransaction.php");
 include(__DIR__ . "/../vendor/autoload.php");
 
 use SslCommerz\SslCommerzNotification;
-//use PHPMailer\PHPMailer\PHPMailer;
-//use PHPMailer\PHPMailer\SMTP;
-//use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-/*
+
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
 $dotenv->load();
 
@@ -36,7 +36,7 @@ $SMTP_USER = getenv('SMTP_USER');
 $SMTP_PASSWORD = getenv('SMTP_PASSWORD');
 $SMTP_ENCRYPTION = PHPMailer::ENCRYPTION_STARTTLS;
 $mail = new PHPMailer(true);
-*/
+
 ?>
 
 
@@ -141,8 +141,88 @@ $mail = new PHPMailer(true);
                             </table>
 
                 <?php
-                        echo "<a href='../login.php' class='btn btn-success btn-lg btn-block'>Click here to return to Login Page</a>";
 
+                            //Enter the receipt details into database receipt table 
+                            //$sql = "INSERT INTO payment_details(order_id,cus_id,payment_type,receipt_number,receipt_date,transaction_id,transaction_date,bank_transaction_id,paid_amount) 
+        //VALUES ($order_id,$cus_id,'$card_type','$Receipt_number','$order_date','$tran_id','$trans_date','$bank_trans_id',$total_amount)";
+
+                            //$result = $conn_integration->query($sql);
+
+                            try {
+                                //access class
+                                
+                                $current_email = "admin@gmail.com";
+                                $current_name = "Marketing Admin";
+
+                                //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                   
+                                $mail->isSMTP();
+                                $mail->Host = $SMTP_HOST;
+                                $mail->Username = $SMTP_USER;
+                                $mail->Password = $SMTP_PASSWORD;
+                                $mail->Port = $SMTP_PORT;
+                                $mail->SMTPSecure = $SMTP_ENCRYPTION;
+                                $mail->SMTPAuth = true;
+
+                                //Recipients
+                                $mail->setFrom($current_email, $current_name);
+                                $mail->addAddress($client_email);
+
+                                // Content
+                                $mail->isHTML(true);
+                                $mail->Subject = "Invoice Payment Confirmation Email for {$client_name}";
+                                $mail->Body = "
+                                <h2>Invoice Payment Receipt</h2>
+
+                                <table border='1' class='table table-striped'>
+                                    <thead class='thead-dark'>
+                                        <tr class='text-center'>
+                                            <th colspan='2'>Order Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td class='text-right'>Invoice ID</td>
+                                        <td>{$invoice_id}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class='text-right'>Invoice Date</td>
+                                        <td>{$invoice_date}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class='text-right'>Client Name</td>
+                                        <td>{$client_name}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class='text-right'>Transaction ID</td>
+                                        <td>{$tran_id}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class='text-right'>Transaction Time</td>
+                                        <td>{$_POST['tran_date']}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class='text-right'>Payment Method</td>
+                                        <td>{$_POST['card_issuer']}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class='text-right'>Bank Transaction ID</td>
+                                        <td>{$_POST['bank_tran_id']}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class='text-right'>Amount</td>
+                                        <td>{$_POST['amount']} {$_POST['currency']}</td>
+                                    </tr>
+
+                                </table>
+        ";
+
+                                $mail->send();
+
+                                //redirect("index.php?success=customer_reserve");
+                            } catch (Exception $e) {
+                                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                            }
+
+                            echo "<a href='../login.php' class='btn btn-success btn-lg btn-block'>Click here to return to Login Page</a>";
                         } else { // update query returned error
 
                             echo '<h2 class="text-center text-danger">Error updating record: </h2>' . $conn_integration->error;
