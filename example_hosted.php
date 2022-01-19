@@ -22,7 +22,7 @@ $invoice_date = date("Y-m-d");
 
 if (is_client() == true) {
 
-	$client_id = $_SESSION['client_id'];
+    $client_id = $_SESSION['client_id'];
     $stmt = query("SELECT * FROM clients WHERE client_id = {$client_id}");
     /*
 	$stmt = query("SELECT u1.name,c1.mobile_number,c1.email,c1.address,c1.city,c1.zipcode
@@ -33,10 +33,10 @@ if (is_client() == true) {
     WHERE c1.customer_id = {$cus_id}");
     */
 
-	$row = $stmt->fetch(PDO::FETCH_ASSOC);
-	$client_name = $row['name'];
-	$client_mobile_number = $row['mobile_number'];
-	$client_email = $row['email'];
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $client_name = $row['name'];
+    $client_mobile_number = $row['mobile_number'];
+    $client_email = $row['email'];
     $client_present_address = $row['present_address'];
     $building_name = $row['building_name'];
     $flat_number = $row['flat_number'];
@@ -121,7 +121,7 @@ if (is_client() == true) {
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3">Billing address</h4>
 
-                
+
                 <form action="checkout_hosted.php" method="POST" class="needs-validation">
                     <div class="row">
                         <div class="col-md-12 mb-3">
@@ -156,7 +156,7 @@ if (is_client() == true) {
 
                     <div class="mb-3">
                         <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" value="<?php echo $client_present_address; ?>" required>
+                        <input type="text" class="form-control" id="address" name="customer_address" value="<?php echo $client_present_address; ?>" required>
                         <div class="invalid-feedback">
                             Please enter your shipping address.
                         </div>
@@ -194,6 +194,8 @@ if (is_client() == true) {
                         <input type="hidden" value="<?php echo $amount; ?>" name="amount" id="total_amount" required />
                         <input type="hidden" value="<?php echo $invoice_id; ?>" name="invoice_id" required />
                         <input type="hidden" value="<?php echo $invoice_date; ?>" name="invoice_date" required />
+                        <input type="hidden" value="<?php echo $building_name; ?>" name="building_name" required />
+                        <input type="hidden" value="<?php echo $flat_number; ?>" name="flat_number" required />
                         <!-- sent client id session and others as hidden values   -->
                     </div>
 

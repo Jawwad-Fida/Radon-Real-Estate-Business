@@ -19,8 +19,16 @@ class OrderTransaction {
         $transaction_id = $post_data['tran_id'];
         $currency = $post_data['currency'];
 
-        $sql = "INSERT INTO orders (name, email, phone, amount, address, status, transaction_id,currency)
-                                    VALUES ('$name', '$email', '$phone','$transaction_amount','$address','Pending', '$transaction_id','$currency')";
+        $invoice_id = $post_data['invoice_id'];
+        $invoice_date = $post_data['invoice_date'];
+        $building_name = $post_data['building_name'];
+        $flat_number = $post_data['flat_number'];
+
+        //$sql = "INSERT INTO orders (name, email, phone, amount, address, status, transaction_id,currency)
+                                    //VALUES ('$name', '$email', '$phone','$transaction_amount','$address','Pending', '$transaction_id','$currency')";
+
+        $sql = "INSERT INTO orders (invoice_id, invoice_date, name, email, phone, amount, address, status, transaction_id, building_name, flat_no,currency) 
+        VALUES ('$invoice_id', '$invoice_date','$name', '$email', '$phone','$transaction_amount','$address','Pending', '$transaction_id', '$building_name', '$flat_number','$currency')";
 
         return $sql;
     }

@@ -11,13 +11,12 @@ ini_set('display_errors', 0);
 ?>
 
 <?php
-
 session_start();
 
 require_once(__DIR__ . "/../lib/SslCommerzNotification.php");
 include_once(__DIR__ . "/../db_connection.php");
 include_once(__DIR__ . "/../OrderTransaction.php");
-//include(__DIR__ . "/../vendor/autoload.php");
+include(__DIR__ . "/../vendor/autoload.php");
 
 use SslCommerz\SslCommerzNotification;
 //use PHPMailer\PHPMailer\PHPMailer;
@@ -80,14 +79,15 @@ $mail = new PHPMailer(true);
                 $row = $result->fetch_array(MYSQLI_ASSOC); //fetch as associative array
 
                 //get some info from database table
-                //$order_id = $row['order_id'];
-                //$cus_id = $row['cus_id'];
-                //$cus_name = $row['cus_name'];
-                //$cus_email = $row['cus_email'];
-                //$Receipt_number = $row['identify_num'];
-                //$total_quantity = $row['total_quantity'];
-                //$order_date = $row['order_date'];
+                $invoice_id = $row['invoice_id'];
+                $invoice_date = $row['invoice_date'];
+                $client_name = $row['name'];
+                $client_email = $row['email'];
 
+
+                //$Receipt_number = $row['identify_num'];
+
+                //$order_date = $row['order_date'];
                 //$order_pin_code = $row['order_pin_code'];
 
 
@@ -106,6 +106,18 @@ $mail = new PHPMailer(true);
                                         <th colspan="2">Payment Details</th>
                                     </tr>
                                 </thead>
+                                <tr>
+                                    <td class="text-right">Invoice ID</td>
+                                    <td><?= $row['invoice_id'] ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Invoice Date</td>
+                                    <td><?= $row['invoice_date'] ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Client Name</td>
+                                    <td><?= $row['name'] ?></td>
+                                </tr>
                                 <tr>
                                     <td class="text-right">Transaction ID</td>
                                     <td><?= $_POST['tran_id'] ?></td>
@@ -129,6 +141,7 @@ $mail = new PHPMailer(true);
                             </table>
 
                 <?php
+                        echo "<a href='../login.php' class='btn btn-success btn-lg btn-block'>Click here to return to Login Page</a>";
 
                         } else { // update query returned error
 

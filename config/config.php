@@ -38,8 +38,8 @@ return [
         'store_id' => constant("STORE_ID"),
         'store_password' => constant("STORE_PASSWORD"),
     ],
-    'apiUrl' => [ //Use v3 instead v4 shows problems
-        'make_payment' => "/gwprocess/v4/api.php",
+    'apiUrl' => [ //Use v3 instead, v4 shows problems
+        'make_payment' => "/gwprocess/v3/api.php",
         'transaction_status' => "/validator/api/merchantTransIDvalidationAPI.php",
         'order_validate' => "/validator/api/validationserverAPI.php",
         'refund_payment' => "/validator/api/merchantTransIDvalidationAPI.php",

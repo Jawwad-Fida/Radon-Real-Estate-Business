@@ -2,6 +2,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+session_start();
+
 # This is a sample page to understand how to connect payment gateway
 
 require_once(__DIR__ . "/lib/SslCommerzNotification.php");
@@ -30,29 +32,39 @@ $post_data['currency'] = "BDT";
 $post_data['tran_id'] = "SSLCZ_TEST_" . uniqid();
 
 # CUSTOMER INFORMATION --- JUST ASSUME THE CUSTOMER IS CLIENT
-$post_data['cus_name'] = isset($_POST['customer_name']) ? $_POST['customer_name'] : "John Doe";
-$post_data['cus_email'] = isset($_POST['customer_email']) ? $_POST['customer_email'] : "john.doe@email.com";
-$post_data['cus_add1'] = "Dhaka";
-//$post_data['cus_add1'] = isset($_POST['customer_address']) ? $_POST['customer_address'] : "Dhanmondi";
+
+$post_data['cus_name'] = isset($_POST['customer_name']) ? $_POST['customer_name'] : "John Doe"; //Client name
+$post_data['cus_email'] = isset($_POST['customer_email']) ? $_POST['customer_email'] : "john.doe@email.com"; //Client email
+$post_data['cus_add1'] = isset($_POST['customer_address']) ? $_POST['customer_address'] : "Dhanmondi"; //Client address
+$post_data['cus_phone'] = isset($_POST['customer_mobile']) ? $_POST['customer_mobile'] : "01711111111"; //Client phone
+
+
+
+$post_data['cus_country'] = "Bangladesh";
 $post_data['cus_add2'] = "Dhaka";
 $post_data['cus_city'] = "Dhaka";
 $post_data['cus_state'] = "Dhaka";
 //$post_data['cus_state'] = isset($_POST['customer_state']) ? $_POST['customer_state'] : "Dhaka";
 $post_data['cus_postcode'] = "1000";
-$post_data['cus_country'] = "Bangladesh";
-$post_data['cus_phone'] = isset($_POST['customer_mobile']) ? $_POST['customer_mobile'] : "01711111111";
 $post_data['cus_fax'] = "01711111111";
 
 //$post_data['cus_zip'] = isset($_POST['zip_code']) ? $_POST['zip_code'] : "0000";
 //$post_data['cus_items'] = isset($_POST['items']) ? $_POST['items'] : "0";
 //$post_data['cus_order_pin'] = isset($_POST['customer_pin_code']) ? $_POST['customer_pin_code'] : "XXX";
 
+# EXTRA --> invoice related stuff (came from hidden values)
+$post_data['invoice_id'] = $_POST['invoice_id']; 
+$post_data['invoice_date'] = $_POST['invoice_date']; 
+$post_data['building_name'] = $_POST['building_name']; 
+$post_data['flat_number'] = $_POST['flat_number']; 
+
+
 
 # SHIPMENT INFORMATION
-$post_data['ship_name'] = "Store Test";
-//$post_data['ship_name'] = "{$STORE_NAME}"; //store name
-$post_data['ship_add1'] = "Dhaka";
-//$post_data['ship_add1'] = "Dhanmondi, Road no. 7A, Jawwad City Center, 3rd Floor, Dhaka";
+$post_data['ship_name'] = "{$STORE_NAME}"; //store name
+$post_data['ship_add1'] = "Dhanmondi, Road no. 7A, Jawwad City Center, 3rd Floor, Dhaka";
+
+
 $post_data['ship_add2'] = "Dhaka";
 $post_data['ship_city'] = "Dhaka";
 $post_data['ship_state'] = "Dhaka";

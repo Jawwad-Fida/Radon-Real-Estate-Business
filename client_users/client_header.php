@@ -8,21 +8,6 @@ include "../includes/connect.php";
 include "../includes/functions.php";
 ?>
 
-<?php
-
-// if no is logged in, no one cannot access admin panel
-if(!isset($_SESSION['user_role'])){
-    redirect("../login.php?error=not_login");
-}
-
-//prevent other users from coming to admin page 
-
-if(isset($_SESSION['user_role']) != 'admin'){
-    redirect("../login.php?error=not_admin");
-}
-
-?>
-
 
 <!DOCTYPE html>
 <html lang="zxx">
