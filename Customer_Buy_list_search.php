@@ -39,6 +39,8 @@ include "includes/functions.php";
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" id="color" href="css/default.css">
+    <link rel="stylesheet" href="css/advance_search.css">
+    <link rel="stylesheet" href="css/advance_search1.css">
 </head>
 
 <body class="inner-pages agents hp-6 full hd-white">
@@ -80,7 +82,7 @@ include "includes/functions.php";
                     </div>
                 </section>
                 <!-- Search Form -->
-                <form action="Customer_Buy_list_search.php" method="post" class="search" id="test4">
+                <form action="" method="post" class="search" id="test4">
                     <div class="col-12 px-0 parallax-searchs">
                         <div class="banner-search-wrap">
                             <div class="tab-content">
@@ -153,16 +155,18 @@ include "includes/functions.php";
                                                         <!-- Price Fields -->
                                                         <div class="main-search-field-2">
                                                             <!-- Area Range -->
-                                                            <div class="range-slider">
+                                                            <div class="slidecontainer">
                                                                 <label>Area Size</label>
-                                                                <div id="area-range" data-min="0" data-max="2500" data-unit="sq ft"></div>
+                                                                <input type="range" name="area" form="test4" min="0" max="2500" value="0" class="slider" id="myRange" method="post">
+                                                                <p><span id="demo" ></span> Sqft</p>
                                                                 <div class="clearfix"></div>
                                                             </div>
                                                             <br>
                                                             <!-- Price Range -->
-                                                            <div class="range-slider">
+                                                            <div class="slidecontainer1">
                                                                 <label>Price Range</label>
-                                                                <div id="price-range" data-min="0" data-max="90000000" data-unit="BDT "></div>
+                                                                <input type="range" name="price" form="test4" min="0" max="10000000" value="0" class="slider" id="myRange1" method="post">
+                                                                <p><span id="demo1" ></span> BDT</p>
                                                                 <div class="clearfix"></div>
                                                             </div>
                                                         </div>
@@ -177,33 +181,9 @@ include "includes/functions.php";
                     </div>
                 </form>
                 <!--/ End Search Form -->
-                <?php /*if ((isset($_POST['bath'])) && (isset($_POST['bed'])) && (isset($_POST['addr']))){
-
-                    $search = $_POST['bath'];
-                    //echo $search;
-
-                    $search1 = $_POST['bed'];
-                    //echo $search1;
-
-                    $search2 = $_POST['addr'];
-                    //echo $search2;
-
-                    //$search3 = $_POST['price'];
-                    //$search4 = $_POST['size'];
-                
-
-                    //Query for search
-                    $stmt = query("SELECT * 
-                                   FROM apartment 
-                                   WHERE (apartment_status='Buy' 
-                                   AND no_of_bathroom LIKE '%$search%' 
-                                   AND no_of_bedroom LIKE '%$search1%' 
-                                   AND address LIKE '%$search2%')"
-                                   );
-                    $row_count = count_records($stmt);
-
-                } */
-                if ((isset($_POST['bath']))&& $_POST['bed']=='null' && $_POST['addr']=='null') {
+                <?php 
+                // Single search //
+                if ((isset($_POST['bath'])) && $_POST['bed']=='null' && $_POST['addr']=='null' && $_POST['area']==0 && $_POST['price']==0) {
                     $search3= $_POST['bath'];
                     $stmt= query("SELECT * 
                         FROM apartment 
@@ -212,14 +192,14 @@ include "includes/functions.php";
 
 
                 }
-                elseif((isset($_POST['bed']))&& $_POST['bath']=='null' && $_POST['addr']=='null'){
+                elseif((isset($_POST['bed']))&& $_POST['bath']=='null' && $_POST['addr']=='null' && $_POST['area']==0 && $_POST['price']==0){
                     $search4= $_POST['bed'];
                     $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Buy'AND no_of_bedroom LIKE '%$search4%')");
                     $row_count = count_records($stmt);
 
 
                 }
-                elseif((isset($_POST['addr'])) && $_POST['bath']=='null' && $_POST['bed']=='null'){
+                elseif((isset($_POST['addr'])) && $_POST['bath']=='null' && $_POST['bed']=='null' && $_POST['area']==0 && $_POST['price']==0){
                    $search5= $_POST['addr'];
                    $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Buy' AND address LIKE '%$search5%')");
                    $row_count = count_records($stmt);
@@ -228,46 +208,40 @@ include "includes/functions.php";
                }
 
 
+               //Double Search//
 
-
-               elseif((isset($_POST['bath'])) && (isset($_POST['bed'])) && $_POST['addr']=='null'){
-                   $search5= $_POST['bath'];
-                   $search6= $_POST['bed'];
-                   $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Buy' AND no_of_bathroom LIKE '%$search5%' AND no_of_bedroom LIKE '%$search6%')");
-                   $row_count = count_records($stmt);
-
-
-               }
-               elseif((isset($_POST['bed'])) && (isset($_POST['addr'])) && $_POST['bath']=='null'){
-                   $search5= $_POST['bed'];
-                   $search6= $_POST['addr'];
-                   $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Buy' AND no_of_bedroom LIKE '%$search5%' AND address LIKE '%$search6%')");
-                   $row_count = count_records($stmt);
-
-
-               }elseif((isset($_POST['addr'])) && (isset($_POST['bath'])) && $_POST['bed']=='null'){
-                   $search5= $_POST['addr'];
+               elseif((isset($_POST['bath'])) && (isset($_POST['bed'])) && $_POST['addr']=='null' && $_POST['area']==0 && $_POST['price']==0){
                    $search6= $_POST['bath'];
-                   $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Buy' AND address LIKE '%$search5%' AND no_of_bathroom LIKE '%$search6%')");
+                   $search7= $_POST['bed'];
+                   $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Buy' AND no_of_bathroom LIKE '%$search6%' AND no_of_bedroom LIKE '%$search7%')");
                    $row_count = count_records($stmt);
 
 
                }
-               elseif ((isset($_POST['bath'])) && (isset($_POST['bed'])) && (isset($_POST['addr']))){
+               elseif((isset($_POST['bed'])) && (isset($_POST['addr'])) && $_POST['bath']=='null' && $_POST['area']==0 && $_POST['price']==0){
+                   $search8= $_POST['bed'];
+                   $search9= $_POST['addr'];
+                   $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Buy' AND no_of_bedroom LIKE '%$search8%' AND address LIKE '%$search9%')");
+                   $row_count = count_records($stmt);
+
+
+               }elseif((isset($_POST['addr'])) && (isset($_POST['bath'])) && $_POST['bed']=='null' && $_POST['area']==0 && $_POST['price']==0){
+                   $search10= $_POST['addr'];
+                   $search11= $_POST['bath'];
+                   $stmt= query("SELECT * FROM apartment WHERE (apartment_status='Buy' AND address LIKE '%$search10%' AND no_of_bathroom LIKE '%$search11%')");
+                   $row_count = count_records($stmt);
+
+
+               }
+            
+               // triple search //
+               elseif ((isset($_POST['bath'])) && (isset($_POST['bed'])) && (isset($_POST['addr'])) && $_POST['area']==0 && $_POST['price']==0){
 
                     $search = $_POST['bath'];
-                    //echo $search;
 
                     $search1 = $_POST['bed'];
-                    //echo $search1;
-
+                    
                     $search2 = $_POST['addr'];
-                    //echo $search2;
-
-                    //$search3 = $_POST['price'];
-                    //$search4 = $_POST['size'];
-                
-
                     //Query for search
                     $stmt = query("SELECT * 
                                    FROM apartment 
@@ -279,8 +253,30 @@ include "includes/functions.php";
                     $row_count = count_records($stmt);
 
                 } 
+                
+            elseif((isset($_POST['area'])) && $_POST['bath']=='null' && $_POST['bed']=='null' && $_POST['addr']=='null' && $_POST['price']==0){
+                $search12= $_POST['area'];
+                $stmt= query("SELECT * FROM apartment WHERE apartment_status='Buy' AND area BETWEEN 0 AND '$search12' ORDER BY area ASC");
+                $row_count = count_records($stmt);
+            }
+            elseif((isset($_POST['price']))&& $_POST['bath']=='null' && $_POST['bed']=='null' && $_POST['addr']=='null' && $_POST['area']==0){
+                $search13= $_POST['price'];
+                $stmt= query("SELECT * FROM apartment WHERE apartment_status='Buy' AND buy_price BETWEEN 0 AND '$search13' ORDER BY buy_price ASC");
+                $row_count = count_records($stmt);
+
+
+            }elseif((isset($_POST['area'])) && (isset($_POST['price'])) && $_POST['bath']=='null' && $_POST['bed']=='null' && $_POST['addr']=='null' ){
+                $search7= $_POST['area'];
+                $search8= $_POST['price'];
+                $stmt= query("SELECT * FROM apartment WHERE apartment_status='Buy' AND buy_price BETWEEN 0 AND '$search8' AND area BETWEEN 0 AND '$search7'");
+                $row_count = count_records($stmt);
+
+
+            }
 
                 ?>
+
+                
 
                 
 
@@ -432,6 +428,8 @@ include "includes/functions.php";
         <script src="js/newsletter.js"></script>
         <script src="js/inner.js"></script>
         <script src="js/color-switcher.js"></script>
+        <script src="js/advance_search.js"></script>
+        <script src="js/advance_search1.js"></script>
 
         <script>
             $(".dropdown-filter").on('click', function() {
