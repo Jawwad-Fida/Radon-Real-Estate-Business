@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2022 at 11:04 AM
+-- Generation Time: Jan 20, 2022 at 02:10 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -187,7 +187,7 @@ CREATE TABLE `clients` (
 
 INSERT INTO `clients` (`client_id`, `user_id`, `name`, `username`, `mobile_number`, `email`, `identity_num`, `occupation`, `present_address`, `permanent_address`, `gender`, `nationality`, `building_name`, `flat_number`, `client_type`) VALUES
 (10, 7, 'Shafiqul Islam', 'shafique1273', '01775423659', 'shafiqul@yahoo.com', '', 'Banker', 'Shankor, West Dhanmondi', 'Titas, Comilla', 'male', 'Bangladeshi', NULL, NULL, NULL),
-(12, 8, 'Pranto Podder', 'pranto3719', '01753699568', 'ppodder@gmail.com', '', 'House Husband', 'Farmgate', 'Rohingya', 'male', 'Bangladeshi', 'JawwadHarem', 'A3', NULL),
+(12, 8, 'Pranto Podder', 'pranto3719', '01753699568', 'ppodder@gmail.com', '', 'House Husband', 'Farmgate', 'Rohingya', 'male', 'Bangladeshi', 'JawwadHarem', 'A3', 'Rent'),
 (13, 13, 'Aufi Islam', 'aufi9517', '01715633256', 'aufi@gmail.com', '', 'Businessman', 'Gulshan', 'Badda', 'male', 'Bangladeshi', NULL, NULL, NULL),
 (14, 11, 'Imran Sarker', 'imran1111', '01715633256', 'imran@gmail.com', '', 'E sports Gamer', 'Farmgate', 'Comilla', 'male', 'Bangladeshi', 'cottage Home', 'D4', 'Rent'),
 (15, 12, 'Afia Mohona', 'afia7839', '01714588523', 'aifa@gmail.com', '', 'Housewife', 'Farmgate', 'Mymensingh', 'female', 'Bangladeshi', 'JawwadHarem', 'D4', 'Buy');
@@ -262,7 +262,6 @@ INSERT INTO `customers` (`customer_id`, `username`, `user_id`, `mobile_number`, 
 
 CREATE TABLE `invoice` (
   `invoice_no` int(11) NOT NULL,
-  `invoice_name` varchar(50) NOT NULL,
   `building_name` varchar(50) NOT NULL,
   `flat_no` varchar(10) NOT NULL,
   `client_username` varchar(50) NOT NULL,
@@ -280,10 +279,9 @@ CREATE TABLE `invoice` (
 -- Dumping data for table `invoice`
 --
 
-INSERT INTO `invoice` (`invoice_no`, `invoice_name`, `building_name`, `flat_no`, `client_username`, `billing_month`, `issue_date`, `due_date`, `current_bill`, `arrear`, `due_charge`, `status`, `total_bill`) VALUES
-(2, 'tarin', 'JawwadHarem', 'A3', 'Pranto Podder', '2022-03', '2022-01-01', '2022-01-19', 8500, NULL, 0, 'unpaid', 8700),
-(4, 'tarin1', 'JawwadHarem', 'A3', 'Pranto Podder', '2022-04', '2022-04-13', '2022-04-19', 8500, 8700, 500, NULL, 17700),
-(5, 'tarin2', 'JawwadHarem', 'A3', 'Pranto Podder', '2022-05', '2022-05-13', '2022-04-19', 0, 8700, 500, NULL, 9200);
+INSERT INTO `invoice` (`invoice_no`, `building_name`, `flat_no`, `client_username`, `billing_month`, `issue_date`, `due_date`, `current_bill`, `arrear`, `due_charge`, `status`, `total_bill`) VALUES
+(9, 'JawwadHarem', 'D4', 'Afia Mohona', '2022-01', '2022-01-13', '2022-01-20', 8500, 0, 0, 'unpaid', 8500),
+(11, 'JawwadHarem', 'D4', 'Afia Mohona', '2022-02', '2022-02-17', '2022-02-20', 8500, 8500, 500, 'unpaid', 17500);
 
 -- --------------------------------------------------------
 
@@ -353,10 +351,10 @@ INSERT INTO `utility_bill` (`utility_id`, `building_name`, `flat_no`, `month`, `
 (9, 'cottage Home', 'D1', '2022-01-08', 'Buy', 0, 1000, 1500, 7000, 1000, 5000),
 (10, 'cottage Home', 'D6', '2022-01-08', 'Rent', 70000, 1000, 1500, 7000, 1000, 5000),
 (11, 'cottage Home', 'D8', '2022-01-08', 'Rent', 70000, 1200, 1000, 8000, 1000, 5000),
-(13, 'JawwadHarem', 'A3', '2022-01', 'Rent', NULL, 1000, 1000, 1000, 500, 5000),
-(14, 'JawwadHarem', 'A3', '2022-02', 'Rent', NULL, 1000, 1000, 1000, 500, 5000),
-(15, 'JawwadHarem', 'A3', '2022-03', 'Rent', NULL, 1000, 1000, 1000, 500, 5000),
-(16, 'JawwadHarem', 'A3', '2022-04', 'Rent', NULL, 1000, 1000, 1000, 500, 5000);
+(18, 'JawwadHarem', 'A3', '2022-01', 'Rent', NULL, 1000, 1000, 1000, 500, 5000),
+(19, 'JawwadHarem', 'A3', '2022-02', 'Rent', NULL, 1000, 1000, 1000, 500, 5000),
+(22, 'JawwadHarem', 'D4', '2022-01', 'Buy', NULL, 1000, 1000, 1000, 500, 5000),
+(23, 'JawwadHarem', 'D4', '2022-02', 'Buy', NULL, 1000, 1000, 1000, 500, 5000);
 
 --
 -- Indexes for dumped tables
@@ -481,7 +479,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -493,7 +491,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `utility_bill`
 --
 ALTER TABLE `utility_bill`
-  MODIFY `utility_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `utility_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables
