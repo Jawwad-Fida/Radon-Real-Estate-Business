@@ -23,33 +23,11 @@ if (isset($_POST['add_submit'])) {
     $no_of_bedroom = $_POST['no_of_bedroom'];
     $no_of_bathroom = $_POST['no_of_bathroom'];
     $Division = $_POST['Division'];
+    $building_name = $_POST['building_name'];
+    $building_id = $_POST['building_id'];
 
     //Test Case buildings
-    if($Division == 'Dhaka'){
-        $building_id = 4;
-        $building_name = 'Test Case 1';
-    } elseif ($Division == 'Chittagong'){
-        $building_id = 5;
-        $building_name = 'Test Case 2';
-    } elseif ($Division == 'Barisal'){
-        $building_id = 6;
-        $building_name = 'Test Case 3';
-    } elseif ($Division == 'Khulna'){
-        $building_id = 7;
-        $building_name = 'Test Case 4';
-    } elseif ($Division == 'Sylhet'){
-        $building_id = 8;
-        $building_name = 'Test Case 5';
-    } elseif ($Division == 'Rajshahi'){
-        $building_id = 9;
-        $building_name = 'Test Case 6';
-    } elseif ($Division == 'Rangpur'){
-        $building_id = 10;
-        $building_name = 'Test Case 7';
-    } elseif ($Division == 'Mymensingh'){
-        $building_id = 11;
-        $building_name = 'Test Case 8';
-    } 
+   
 
 
     //Checkbox values - Apartment Features
@@ -86,7 +64,7 @@ if (isset($_POST['add_submit'])) {
 
     //------------QUERY-------------
 
-    $stmt = prepare_query("INSERT INTO apartment(building_id,building_name,flat_no,no_of_bedroom, no_of_bathroom,image,buy_price,rent_price,area,status,type,apartment_status,features,division) 
+    $stmt = prepare_query("INSERT INTO apartment(building_id,building_name,flat_no,no_of_bedroom,no_of_bathroom,image,buy_price,rent_price,area,status,type,apartment_status,features,division) 
     VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
     $stmt->bindParam(1, $building_id, PDO::PARAM_INT);
     $stmt->bindParam(2, $building_name, PDO::PARAM_STR);
@@ -185,13 +163,25 @@ if (isset($_POST['add_submit'])) {
 
                                     <div class="row">
 
-                                        <div class="col-lg-6 col-md-12">
+                                        <div class="col-lg-4 col-md-12">
                                             <p class="no-mb">
                                                 <label for="price">Flat No.</label>
                                                 <input type="text" name="flat_num" placeholder="Enter Flat Number" id="price">
                                             </p>
                                         </div>
-                                        <div class="col-lg-6 col-md-12">
+                                        <div class="col-lg-4 col-md-12">
+                                            <p class="no-mb last">
+                                                <label for="building_id">Building ID</label>
+                                                <input type="text" name="building_id" placeholder="Enter Building ID" id="">
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 col-md-12">
+                                            <p class="no-mb last">
+                                                <label for="building_name">Building Name</label>
+                                                <input type="text" name="building_name" placeholder="Enter Building Name" id="">
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 col-md-12">
                                             <p class="no-mb last">
                                                 <label for="area">Area/Size</label>
                                                 <input type="text" name="area" placeholder="Sqft" id="area">
@@ -286,12 +276,7 @@ if (isset($_POST['add_submit'])) {
                                                 <select class="form-control" name="Division">
                                                     <option value="Dhaka">Dhaka</option>
                                                     <option value="Chittagong">Chittagong</option>
-                                                    <option value="Barisal">Barishal</option>
-                                                    <option value="Khulna">Khulna</option>
-                                                    <option value="Sylhet">Sylhet</option>
-                                                    <option value="Rajshahi">Rajshahi</option>
-                                                    <option value="Rangpur">Rangpur</option>
-                                                    <option value="Mymensingh">Mymensingh</option>
+                                                    
                                                 </select>
                                             </div>
                                         </div>
