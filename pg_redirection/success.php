@@ -146,7 +146,7 @@ $mail = new PHPMailer(true);
                             //$sql = "INSERT INTO payment_details(order_id,cus_id,payment_type,receipt_number,receipt_date,transaction_id,transaction_date,bank_transaction_id,paid_amount) 
         //VALUES ($order_id,$cus_id,'$card_type','$Receipt_number','$order_date','$tran_id','$trans_date','$bank_trans_id',$total_amount)";
                             $sql = "UPDATE ORDERS 
-                            SET payment_type='{$_POST['card_issuer']}', bank_trans_id = '{$_POST['bank_tran_id']}' 
+                            SET payment_type='{$_POST['card_issuer']}', bank_transaction_id = '{$_POST['bank_tran_id']}' 
                             WHERE transaction_id='$tran_id'";
 
                             $result = $conn_integration->query($sql);
@@ -226,6 +226,7 @@ $mail = new PHPMailer(true);
                             }
 
                             echo "<a href='../login.php' class='btn btn-success btn-lg btn-block'>Click here to return to Login Page</a>";
+                            session_destroy();
                         } else { // update query returned error
 
                             echo '<h2 class="text-center text-danger">Error updating record: </h2>' . $conn_integration->error;
@@ -240,6 +241,7 @@ $mail = new PHPMailer(true);
                 } else { // status is something else
 
                     echo '<h2 class="text-center text-danger">Invalid Information.</h2>';
+                    session_destroy();
                 } // status is 'Pending' or already 'Processing'
                 ?>
 

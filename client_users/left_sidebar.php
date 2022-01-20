@@ -36,7 +36,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="payment_history.php">
                         <i class="fas fa-credit-card"></i>Payment History
                     </a>
                 </li>
