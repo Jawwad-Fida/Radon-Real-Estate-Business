@@ -56,7 +56,7 @@
 
 
                 <li>
-                    <a href="#">
+                    <a href="payment_history.php">
             
                         <i class="far fa-credit-card"></i>Payments
                     </a>
