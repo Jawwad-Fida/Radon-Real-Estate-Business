@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2022 at 02:10 PM
+-- Generation Time: Jan 20, 2022 at 11:04 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -187,7 +187,7 @@ CREATE TABLE `clients` (
 
 INSERT INTO `clients` (`client_id`, `user_id`, `name`, `username`, `mobile_number`, `email`, `identity_num`, `occupation`, `present_address`, `permanent_address`, `gender`, `nationality`, `building_name`, `flat_number`, `client_type`) VALUES
 (10, 7, 'Shafiqul Islam', 'shafique1273', '01775423659', 'shafiqul@yahoo.com', '', 'Banker', 'Shankor, West Dhanmondi', 'Titas, Comilla', 'male', 'Bangladeshi', NULL, NULL, NULL),
-(12, 8, 'Pranto Podder', 'pranto3719', '01753699568', 'ppodder@gmail.com', '', 'House Husband', 'Farmgate', 'Rohingya', 'male', 'Bangladeshi', NULL, NULL, NULL),
+(12, 8, 'Pranto Podder', 'pranto3719', '01753699568', 'ppodder@gmail.com', '', 'House Husband', 'Farmgate', 'Rohingya', 'male', 'Bangladeshi', 'JawwadHarem', 'A3', NULL),
 (13, 13, 'Aufi Islam', 'aufi9517', '01715633256', 'aufi@gmail.com', '', 'Businessman', 'Gulshan', 'Badda', 'male', 'Bangladeshi', NULL, NULL, NULL),
 (14, 11, 'Imran Sarker', 'imran1111', '01715633256', 'imran@gmail.com', '', 'E sports Gamer', 'Farmgate', 'Comilla', 'male', 'Bangladeshi', 'cottage Home', 'D4', 'Rent'),
 (15, 12, 'Afia Mohona', 'afia7839', '01714588523', 'aifa@gmail.com', '', 'Housewife', 'Farmgate', 'Mymensingh', 'female', 'Bangladeshi', 'JawwadHarem', 'D4', 'Buy');
@@ -253,6 +253,37 @@ CREATE TABLE `customers` (
 
 INSERT INTO `customers` (`customer_id`, `username`, `user_id`, `mobile_number`, `email`, `identity_num`, `occupation`, `present_address`, `permanent_address`, `gender`, `nationality`, `division`, `age`) VALUES
 (5, 'sumayta', 9, '01756322569', 'sumayta@gmail.com', '0stzr', 'Businesswoman', 'Gulshan', 'Badda', 'female', 'Bangladeshi', 'Dhaka', 42);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `invoice`
+--
+
+CREATE TABLE `invoice` (
+  `invoice_no` int(11) NOT NULL,
+  `invoice_name` varchar(50) NOT NULL,
+  `building_name` varchar(50) NOT NULL,
+  `flat_no` varchar(10) NOT NULL,
+  `client_username` varchar(50) NOT NULL,
+  `billing_month` varchar(50) NOT NULL,
+  `issue_date` date NOT NULL,
+  `due_date` date NOT NULL,
+  `current_bill` int(11) NOT NULL,
+  `arrear` int(11) DEFAULT NULL,
+  `due_charge` double DEFAULT NULL,
+  `status` varchar(10) DEFAULT NULL,
+  `total_bill` float DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `invoice`
+--
+
+INSERT INTO `invoice` (`invoice_no`, `invoice_name`, `building_name`, `flat_no`, `client_username`, `billing_month`, `issue_date`, `due_date`, `current_bill`, `arrear`, `due_charge`, `status`, `total_bill`) VALUES
+(2, 'tarin', 'JawwadHarem', 'A3', 'Pranto Podder', '2022-03', '2022-01-01', '2022-01-19', 8500, NULL, 0, 'unpaid', 8700),
+(4, 'tarin1', 'JawwadHarem', 'A3', 'Pranto Podder', '2022-04', '2022-04-13', '2022-04-19', 8500, 8700, 500, NULL, 17700),
+(5, 'tarin2', 'JawwadHarem', 'A3', 'Pranto Podder', '2022-05', '2022-05-13', '2022-04-19', 0, 8700, 500, NULL, 9200);
 
 -- --------------------------------------------------------
 
@@ -323,7 +354,9 @@ INSERT INTO `utility_bill` (`utility_id`, `building_name`, `flat_no`, `month`, `
 (10, 'cottage Home', 'D6', '2022-01-08', 'Rent', 70000, 1000, 1500, 7000, 1000, 5000),
 (11, 'cottage Home', 'D8', '2022-01-08', 'Rent', 70000, 1200, 1000, 8000, 1000, 5000),
 (13, 'JawwadHarem', 'A3', '2022-01', 'Rent', NULL, 1000, 1000, 1000, 500, 5000),
-(14, 'JawwadHarem', 'A3', '2022-02', 'Rent', NULL, 1000, 1000, 1000, 500, 5000);
+(14, 'JawwadHarem', 'A3', '2022-02', 'Rent', NULL, 1000, 1000, 1000, 500, 5000),
+(15, 'JawwadHarem', 'A3', '2022-03', 'Rent', NULL, 1000, 1000, 1000, 500, 5000),
+(16, 'JawwadHarem', 'A3', '2022-04', 'Rent', NULL, 1000, 1000, 1000, 500, 5000);
 
 --
 -- Indexes for dumped tables
@@ -378,6 +411,12 @@ ALTER TABLE `customers`
   ADD PRIMARY KEY (`customer_id`),
   ADD UNIQUE KEY `uk3` (`username`,`email`,`identity_num`),
   ADD KEY `fk2` (`user_id`);
+
+--
+-- Indexes for table `invoice`
+--
+ALTER TABLE `invoice`
+  ADD PRIMARY KEY (`invoice_no`);
 
 --
 -- Indexes for table `users`
@@ -439,6 +478,12 @@ ALTER TABLE `customers`
   MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `invoice`
+--
+ALTER TABLE `invoice`
+  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
@@ -448,7 +493,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `utility_bill`
 --
 ALTER TABLE `utility_bill`
-  MODIFY `utility_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `utility_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
@@ -482,26 +527,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-
-
-CREATE TABLE invoice (
-  invoice_no int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  invoice_name varchar(50) NOT null,
-  building_name varchar(50) NOT NULL,
-  flat_no varchar(10) NOT NULL,
-  client_username varchar(50) NOT NULL,
-  billing_month varchar(50) NOT NULL,
-  issue_date date NOT NULL,
-  due_date date NOT NULL,
-  electricity_bill int(11) NOT NULL,
-  water_bill int(11) NOT NULL,
-  gas_bill int(11) NOT NULL,
-  additional_bill int(11) NOT NULL,
-  service_charge int(11) NOT NULL,
-  arrear int(11) NOT NULL,
-  due_charge double DEFAULT NULL,
-  status varchar(10) DEFAULT NULL,
-  total_bill float DEFAULT NULL
-) 
