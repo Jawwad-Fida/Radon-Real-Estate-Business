@@ -45,12 +45,7 @@
                 </li>
                 <li>
                     <a href="payment_history.php">
-                        <i class="fas fa-credit-card"></i>Payment History
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fab fa-cc-mastercard"></i>Online Payment
+                        <i class="fab fa-cc-mastercard"></i>Payment History
                     </a>
                 </li>
                 <li>

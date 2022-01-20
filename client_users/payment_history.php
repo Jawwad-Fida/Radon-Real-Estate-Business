@@ -94,38 +94,38 @@ include "../includes/functions.php";
 
                                                 <?php
                                                 $client_username = $_SESSION['username'];
-                                                $stmt = query("SELECT * FROM apartment WHERE apartment_status='Rent' AND client_username='{$client_username}' ORDER BY apartment_id DESC");
+                                                $stmt = query("SELECT name FROM clients WHERE username = '$client_username'");
+                                                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                                                $client_name = $row['name'];
+
+                                                $stmt = query("SELECT * FROM orders WHERE name = '{$client_name}'");
 
                                                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                                    $apart_status = 'Rent';
-                                                    $apartment_id = $row['apartment_id'];
+                                                    $invoice_id = $row['invoice_id'];
+                                                    $invoice_date = $row['invoice_date'];
+                                                    $amount = $row['amount'];
+                                                    $transaction_id = $row['transaction_id'];
+                                                    $bank_transaction_id = $row['bank_transaction_id'];
+                                                    $payment_type = $row['payment_type'];
                                                     $building_name = $row['building_name'];
                                                     $flat_no = $row['flat_no'];
-                                                    //$no_of_bedroom =  $row['no_of_bedroom'];
-                                                    //$no_of_bathroom =  $row['no_of_bathroom'];
-                                                    $image =  $row['image'];
-                                                    //$buy_price =  $row['buy_price'];
-                                                    $rent_price =  $row['rent_price'];
-                                                    $area =  $row['area'];
-                                                    $build_num = $row['build_num'];
-                                                    $type =  $row['type'];
-                                                    $features =  $row['features'];
+                                                    $status = $row['status'];
+                                                  
                                                     
-
                                                     //close php tag so that we can include some html inside the php while loop
                                                 ?>
 
 
                                                     <tr>
+                                                        <td><?php echo $invoice_id; ?></td>
+                                                        <td><?php echo $invoice_date; ?></td>
+                                                        <td><?php echo $amount; ?></td>
+                                                        <td class="status"><span class=" active"><?php echo $transaction_id; ?></span></td>
+                                                        <td><?php echo $bank_transaction_id; ?></td>
+                                                        <td><?php echo $payment_type; ?></td>
                                                         <td><?php echo $building_name; ?></td>
-                                                        <td><?php echo $build_num; ?></td>
                                                         <td><?php echo $flat_no; ?></td>
-                                                        <td class="status"><span class=" active"><?php echo $rent_price; ?></span></td>
-                                                        <td><?php echo $area; ?></td>
-                                                        <td><?php echo $type; ?></td>
-                                                        <td><?php echo $features; ?></td>
-                                                        <td><?php echo $type; ?></td>
-                                                        <td><?php echo $type; ?></td>
+                                                        <td><?php echo $status; ?></td>
                                                     </tr>
 
                                                 <?php } ?>

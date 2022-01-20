@@ -21,11 +21,7 @@
                     <!-- Main Navigation -->
                     <nav id="navigation" class="style-1">
                         <ul id="responsive">
-                            <li><a href="../index.php">Home</a>
-                            </li>
-                            <li><a href="#">Total Bill</a></li>
-                            <li><a href="#">Due</a></li>
-                            <li><a href="../example_hosted.php">Checkout Test</a></li>
+                            <li><a href="../index.php">Home</a></li>
                             <li><a href="complaint_box.php">Complaint Box</a></li>
                         </ul>
                     </nav>
