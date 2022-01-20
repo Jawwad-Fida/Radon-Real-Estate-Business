@@ -4,21 +4,15 @@ session_start();
 include "includes/connect.php";
 include "includes/functions.php";
 
+//delete building based on id 
+if (isset($_GET['amount'])) {
 
-//$amount = $_POST['amount'];
-$amount = 2000;
-$_SESSION['amount'] = $amount;
+    $amount = $_GET['amount'];
+    $_SESSION['amount'] = $amount; 
 
-/*
-if (isset($_SESSION['client_id'])) {
-	$client_id = $_SESSION['client_id'];
-} else{
-    $client_id = 1;
+    $invoice_id = $_GET['invoice_id'];
+    $invoice_date = $_GET['invoice_date'];
 }
-*/
-
-$invoice_id = 1;
-$invoice_date = date("Y-m-d");
 
 if (is_client() == true) {
 
@@ -87,30 +81,23 @@ if (is_client() == true) {
         <div class="row">
             <div class="col-md-4 order-md-2 mb-4">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-muted">Your cart</span>
-                    <span class="badge badge-secondary badge-pill">Numbers Below</span>
+                    <span class="text-muted">Your Invoice Details</span>
+                    <span class="badge badge-secondary badge-pill">Dhur ho</span>
                 </h4>
                 <ul class="list-group mb-3">
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                            <h6 class="my-0">Product name</h6>
+                            <h6 class="my-0">Invoice ID</h6>
                             <small class="text-muted">Brief description</small>
                         </div>
-                        <span class="text-muted">1000</span>
+                        <span class="text-muted"><?php echo $invoice_id; ?></span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                            <h6 class="my-0">Second product</h6>
+                            <h6 class="my-0">Invoice Date</h6>
                             <small class="text-muted">Brief description</small>
                         </div>
-                        <span class="text-muted">50</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                            <h6 class="my-0">Third item</h6>
-                            <small class="text-muted">Brief description</small>
-                        </div>
-                        <span class="text-muted">150</span>
+                        <span class="text-muted"><?php echo $invoice_date; ?></span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Total (BDT)</span>
@@ -160,32 +147,6 @@ if (is_client() == true) {
                         <div class="invalid-feedback">
                             Please enter your shipping address.
                         </div>
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-md-5 mb-3">
-                            <label for="country">Country</label>
-                            <select class="custom-select d-block w-100" id="country" required>
-                                <option value="Bangladesh">Bangladesh</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Please select a valid country.
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 mb-3">
-                            <label for="state">State</label>
-                            <select class="custom-select d-block w-100" id="state" required>
-                                <option value="">Choose...</option>
-                                <option value="Dhaka">Dhaka</option>
-                                <option value="Chittagong">Chittagong</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Please provide a valid state.
-                            </div>
-                        </div>
-
                     </div>
 
                     <hr class="mb-4">

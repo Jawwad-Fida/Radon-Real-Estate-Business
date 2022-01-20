@@ -5,7 +5,7 @@
 $servername = "localhost";
 $username = "root"; // Put the MySQL Username
 $password = ""; // Put the MySQL Password
-$database = "order_db"; // Put the Database Name - change it to radon later
+$database = "radon"; // Put the Database Name - change it to radon later (order_db)
 
 
 // Create connection for integration

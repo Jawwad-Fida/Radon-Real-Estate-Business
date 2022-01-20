@@ -160,9 +160,10 @@ $name = $_SESSION['name'];
                                                         <td><?php echo $row['arrear']?></td>
                                                         <td><?php echo $row['due_charge']?></td>
                                                         <td><?php echo $row['total_bill']?></td>
-                                                        <td><?php echo $row['status']?></td> 
+                                                        <td><?php echo $row['status']?></td>
                                                         <td>
-                                                            <input type="button" class="btn btn-info btn-rounded" value=" Pay " onclick="">                    
+                                                    
+                                                            <a href="../example_hosted.php?amount=<?php echo $row['total_bill']; ?>&invoice_id=<?php echo $row['invoice_no']; ?>&invoice_date=<?php echo $row['issue_date']; ?>" onclick="javascript: return confirm('Do want to proceed to payment?');"><i class="fas fa-credit-card"></i></a>                    
                                                         </td>
                                                 </tr>
 

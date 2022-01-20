@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2022 at 02:10 PM
+-- Generation Time: Jan 20, 2022 at 02:45 PM
 -- Server version: 10.4.17-MariaDB
--- PHP Version: 7.3.27
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -280,8 +280,40 @@ CREATE TABLE `invoice` (
 --
 
 INSERT INTO `invoice` (`invoice_no`, `building_name`, `flat_no`, `client_username`, `billing_month`, `issue_date`, `due_date`, `current_bill`, `arrear`, `due_charge`, `status`, `total_bill`) VALUES
-(9, 'JawwadHarem', 'D4', 'Afia Mohona', '2022-01', '2022-01-13', '2022-01-20', 8500, 0, 0, 'unpaid', 8500),
+(9, 'JawwadHarem', 'D4', 'Afia Mohona', '2022-01', '2022-01-13', '2022-01-20', 8500, 0, 0, 'Paid', 8500),
 (11, 'JawwadHarem', 'D4', 'Afia Mohona', '2022-02', '2022-02-17', '2022-02-20', 8500, 8500, 500, 'unpaid', 17500);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `invoice_id` int(11) DEFAULT NULL,
+  `invoice_date` date NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `phone` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `amount` double DEFAULT NULL,
+  `address` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `transaction_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `bank_transaction_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `payment_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `building_name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `flat_no` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `currency` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `invoice_id`, `invoice_date`, `name`, `email`, `phone`, `amount`, `address`, `status`, `transaction_id`, `bank_transaction_id`, `payment_type`, `building_name`, `flat_no`, `currency`) VALUES
+(1, 9, '2022-01-13', 'Afia Mohona', 'aifa@gmail.com', '01714588523', 8500, 'Farmgate', 'Success', 'SSLCZ_TEST_61e965b96a717', '220120193909EAetMKOLG8O8UGc', 'BKash Mobile Banking', 'JawwadHarem', 'D4', 'BDT'),
+(2, 9, '2022-01-13', 'Afia Mohona', 'aifa@gmail.com', '01714588523', 8500, 'Farmgate', 'Success', 'SSLCZ_TEST_61e9669227993', '2201201942350S2RbFw6SrPoW6Y', 'STANDARD CHARTERED BANK', 'JawwadHarem', 'D4', 'BDT');
 
 -- --------------------------------------------------------
 
@@ -417,6 +449,12 @@ ALTER TABLE `invoice`
   ADD PRIMARY KEY (`invoice_no`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -480,6 +518,12 @@ ALTER TABLE `customers`
 --
 ALTER TABLE `invoice`
   MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`

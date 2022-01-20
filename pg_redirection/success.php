@@ -151,6 +151,10 @@ $mail = new PHPMailer(true);
 
                             $result = $conn_integration->query($sql);
 
+                            $sql2 = "UPDATE INVOICE SET status='Paid' WHERE invoice_no='$invoice_id'";
+                            $result2 = $conn_integration->query($sql2);
+    
+
                             try {
                                 //access class
                                 
@@ -225,8 +229,8 @@ $mail = new PHPMailer(true);
                                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                             }
 
-                            echo "<a href='../login.php' class='btn btn-success btn-lg btn-block'>Click here to return to Login Page</a>";
-                            session_destroy();
+                            echo "<a href='../index.php' class='btn btn-success btn-lg btn-block'>Click here to return to Home Page</a>";
+                            //session_destroy();
                         } else { // update query returned error
 
                             echo '<h2 class="text-center text-danger">Error updating record: </h2>' . $conn_integration->error;
@@ -241,7 +245,7 @@ $mail = new PHPMailer(true);
                 } else { // status is something else
 
                     echo '<h2 class="text-center text-danger">Invalid Information.</h2>';
-                    session_destroy();
+                    //session_destroy();
                 } // status is 'Pending' or already 'Processing'
                 ?>
 
