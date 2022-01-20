@@ -164,6 +164,7 @@ include "includes/functions.php";
                                                             <div class="range-slider">
                                                                 <label>Price Range</label>
                                                                 <div id="price-range" data-min="0" data-max="90000000" data-unit="BDT "></div>
+                                                                <input type= "range" value="50" min="0" max="1000000">
                                                                 <div class="clearfix"></div>
                                                             </div>
                                                         </div>

@@ -108,7 +108,7 @@ if (isset($_POST['login_submit'])) {
 
                 <button type="submit" name="login_submit" class="btn btn-primary">Login</button>
                 <br>
-                <span class="psw">Forgot <a href="#">password?</a></span><br>
+                <span class="psw">Forgot <a name="forgot_submit" href="forgot.php">password?</a></span><br>
                 <br>
                 <span>Don't have an account? <a href="signup.php">Sign Up</a></span><br>
                 <br>
