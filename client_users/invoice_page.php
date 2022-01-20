@@ -10,6 +10,14 @@ include "../includes/functions.php";
 
 $username = $_SESSION['username'];
 $name = $_SESSION['name'];
+if(isset($_GET['i_no'])) 
+$i_no=$_GET['i_no'];
+
+
+
+
+
+
 
 ?>
 
@@ -79,31 +87,54 @@ $name = $_SESSION['name'];
                                         <div class="col-md-6">
                                             <img src="images/logo.svg" width="80" alt="Logo">
                                         </div>
-
                                         <div class="col-md-6 text-right">
-                                            <p class="font-weight-bold mb-1">Invoice #550</p>
-                                            <p class="text-muted">Due to: 4 Jan, 2020</p>
+                                            <p class="font-weight-bold mb-1">Invoice No:  <?php echo $i_no ?></p>
+                                            <?php  $stmt = query("SELECT * 
+                                                    FROM invoice
+                                                    WHERE invoice_no='$i_no'");
+                                                    $table= $stmt->fetchall();
+                                                    $row=$table[0];
+
+                                                    $b_month=$row['billing_month'];
+                                                    $flat_no= $row['flat_no'];
+                                                    $building_name= $row['building_name'];
+
+                                                    $stmt1 = query("SELECT * 
+                                                    FROM utility_bill
+                                                    WHERE building_name='$building_name' 
+                                                    AND flat_no='$flat_no' 
+                                                    AND month='$b_month'  ");
+
+                                                    $table1=$stmt1->fetchAll(); 
+                                                    $row1=$table1[0];?>
+
+                                            <p class="text-muted">Due to: <?php echo $row['due_date'] ?> </p>
                                         </div>
                                     </div>
-
                                     <hr class="my-5">
-
                                     <div class="row pb-5 p-5 the-five">
                                         <div class="col-md-6">
                                             <h3 class="font-weight-bold mb-4">Invoice To</h3>
-                                            <p class="mb-0 font-weight-bold">Carls Jhons</p>
-                                            <p class="mb-0">Acme Inc</p>
-                                            <p class="mb-0">Est St, 77 - Central Park, NYC</p>
-                                            <p class="mb-0">6781 45P</p>
+                                                <p class="mb-0 font-weight-bold"><?php echo $name ?></p>
+                                                <?php  $stmt2 = query("SELECT * 
+                                                                       FROM clients
+                                                                       WHERE name='$name'");
+                                                                       $table2= $stmt2->fetchall();
+                                                                       $row2=$table2[0];
+                                                ?>
+
+                                                <p class="mb-0"> <?php echo $row2['occupation']?></p>
+                                                <p class="mb-0"><?php echo $row2['present_address']?></p>
+                                                <p class="mb-0"><?php echo $row2['mobile_number']?></p>
                                         </div>
 
-                                        <div class="col-md-6 text-right">
+ <!--                                        <div class="col-md-6 text-right">
                                             <h3 class="font-weight-bold mb-4">Payment Details</h3>
                                             <p class="mb-1"><span class="text-muted">VAT: </span> 1425782</p>
                                             <p class="mb-1"><span class="text-muted">VAT ID: </span> 10253642</p>
                                             <p class="mb-1"><span class="text-muted">Payment Type: </span> Root</p>
                                             <p class="mb-1"><span class="text-muted">Name: </span> John Doe</p>
-                                        </div>
+                                        </div> -->
                                     </div>
 
                                     <div class="row p-5 the-five">
@@ -112,17 +143,27 @@ $name = $_SESSION['name'];
                                                 <thead>
                                                     <tr>
                                                         <th class="border-0 text-uppercase small font-weight-bold">Description</th>
-                                                        <th class="border-0 text-uppercase small font-weight-bold">Price</th>
-                                                        <th class="border-0 text-uppercase small font-weight-bold">VAT (10%)</th>
+                                                        <th class="border-0 text-uppercase small font-weight-bold">Gas Bill</th>
+                                                        <th class="border-0 text-uppercase small font-weight-bold">Electricity Bill</th>
+                                                        <th class="border-0 text-uppercase small font-weight-bold">Water Bill</th>
+                                                        <th class="border-0 text-uppercase small font-weight-bold">Additional Bill</th>
+                                                        <th class="border-0 text-uppercase small font-weight-bold">Service Charge</th>
+                                                        <th class="border-0 text-uppercase small font-weight-bold">Arrear</th>
+                                                        <th class="border-0 text-uppercase small font-weight-bold">Due Charge</th>
                                                         <th class="border-0 text-uppercase small font-weight-bold">Total</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>Standard Plan</td>
-                                                        <td>$40</td>
-                                                        <td>$7.55</td>
-                                                        <td>$47.55</td>
+                                                        <td>Amount</td>
+                                                        <td><?php echo $row1['gas_bill']?></td>
+                                                        <td><?php echo $row1['electricity_bill']?></td>
+                                                        <td><?php echo $row1['water_bill']?></td>
+                                                        <td><?php echo $row1['additional_bill']?></td>
+                                                        <td><?php echo $row1['service_charge']?></td>
+                                                        <td><?php echo $row['arrear']?></td>
+                                                        <td><?php echo $row['due_charge']?></td>
+                                                        <td><?php echo $row['total_bill']?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -131,18 +172,8 @@ $name = $_SESSION['name'];
 
                                     <div class="d-flex flex-row-reverse bg-dark text-white p-4">
                                         <div class="py-3 px-5 text-left">
-                                            <div class="mb-2">Grand Total</div>
-                                            <div class="h2 font-weight-light">$42.79</div>
-                                        </div>
-
-                                        <div class="py-3 px-5 text-right">
-                                            <div class="mb-2">Discount</div>
-                                            <div class="h2 font-weight-light">10%</div>
-                                        </div>
-
-                                        <div class="py-3 px-5 text-left">
-                                            <div class="mb-2">Sub - Total</div>
-                                            <div class="h2 font-weight-light">$47.55</div>
+                                            <div class="mb-2"><a href="../example_hosted.php?amount=<?php echo $row['total_bill']; ?>&invoice_id=<?php echo $row['invoice_no']; ?>&invoice_date=<?php echo $row['issue_date']; ?>" onclick="javascript: return confirm('Do want to proceed to payment?');"><i class="fas fa-credit-card"></i></a> </div>
+                                            <div class="h2 font-weight-light">Pay Now</div>
                                         </div>
                                     </div>
                                 </div>
@@ -181,6 +212,37 @@ $name = $_SESSION['name'];
         <script src="js/isotope.pkgd.min.js"></script>
         <script src="js/smooth-scroll.min.js"></script>
         <script src="js/lightcase.js"></script>
+        <script src="js/search.js"></script>
+        <script src="js/owl.carousel.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/ajaxchimp.min.js"></script>
+        <script src="js/newsletter.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/searched.js"></script>
+        <script src="js/dashbord-mobile-menu.js"></script>
+        <script src="js/forms-2.js"></script>
+        <script src="js/color-switcher.js"></script>
+        <script src="js/dropzone.js"></script>
+
+        <!-- MAIN JS -->
+        <script src="js/script.js"></script>
+        
+        <script>
+            $(".header-user-name").on("click", function() {
+                $(".header-user-menu ul").toggleClass("hu-menu-vis");
+                $(this).toggleClass("hu-menu-visdec");
+            });
+
+        </script>
+
+    </div>
+    <!-- Wrapper / End -->
+</body>
+
+
+<!-- Mirrored from code-theme.com/html/findhouses/invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Dec 2021 10:32:33 GMT -->
+</html>
         <script src="js/search.js"></script>
         <script src="js/owl.carousel.js"></script>
         <script src="js/jquery.magnific-popup.min.js"></script>

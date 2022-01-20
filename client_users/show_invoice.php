@@ -246,7 +246,7 @@ $name = $_SESSION['name'];
             function show_invoice(invoice_no)
                 {
                      
-                    location.assign("invoice_page.php?d_b="+invoice_no);
+                    location.assign("invoice_page.php?i_no="+invoice_no);
                     
                 }
                
