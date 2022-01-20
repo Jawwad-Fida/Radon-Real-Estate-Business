@@ -5,7 +5,10 @@
         <?php
         $user_id = $_SESSION['user_id'];
 
-        $stmt = query("SELECT user_image FROM users WHERE user_id={$user_id}");
+        $stmt = query("SELECT user_image 
+                       FROM users 
+                       WHERE user_id={$user_id}");
+
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         $user_image = $row['user_image'];
 
@@ -34,6 +37,11 @@
                             <a href="view-Buy-apartment.php"> Owned Buy Apartments </a>
                         </li>
                     </ul>
+                </li>
+                <li>
+                    <a href="show_invoice.php">
+                        <i class="fas fa-credit-card"></i>Invoice History
+                    </a>
                 </li>
                 <li>
                     <a href="payment_history.php">

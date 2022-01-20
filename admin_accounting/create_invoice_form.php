@@ -9,18 +9,16 @@ include "../includes/functions.php";
 
 
 
-    if (isset($_POST['due_charge']) && isset($_POST['add_submit']) && isset($_POST['invoice_name']) 
-        && isset($_POST['issue_date']) && isset($_POST['due_date']) && isset($_GET['d_building']) 
-        && isset($_GET['d_flat']) && isset($_GET['d_status'])) {
+    if (isset($_POST['add_submit'])&& isset($_POST['issue_date']) && isset($_POST['due_date']) && isset($_GET['d_building']) 
+        && isset($_GET['d_flat']) && isset($_GET['d_status'])) 
+    {
 
         $billing_month=$_POST['billing_month'];
         $issue_date=$_POST['issue_date'];
-        $due_date=$_POST['due_date'];
-        $invoice_name=$_POST['invoice_name'];
         $building_name=$_GET['d_building'];
         $flat_no= $_GET['d_flat'];
         $flat_status= $_GET['d_status'];
-        $due_charge=validate($_POST['due_charge']);
+        $due_date=$_POST['due_date'];
         
         
         $stmt = query("SELECT total_bill 
@@ -32,10 +30,12 @@ include "../includes/functions.php";
         $table=$stmt->fetchAll();
 
         $previous_bill=0;
+        $due_charge=0;
         
         if (count($table)>0) {
             $table_length=count($table);
             $i=$table_length-1;
+            $due_charge=500;
             $previous_bill=$table[$i]['total_bill'];
         }
        
@@ -81,26 +81,25 @@ include "../includes/functions.php";
                        AND flat_no='$flat_no' 
                        AND billing_month='$billing_month'");
    
-        
+        $status="unpaid";
 
         if ($stmt->rowCount()==0) 
         {
-            $stmt = prepare_query("INSERT INTO invoice (invoice_name,building_name,flat_no,client_username,      billing_month,  issue_date,due_date,current_bill,arrear,due_charge,status,total_bill)
-                               VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
+            $stmt = prepare_query("INSERT INTO invoice (building_name,flat_no,client_username,billing_month,issue_date,due_date,current_bill,arrear,due_charge,status,total_bill)
+                               VALUES(?,?,?,?,?,?,?,?,?,?,?)");
 
         
-                                $stmt->bindParam(1,$invoice_name, PDO::PARAM_STR);
-                                $stmt->bindParam(2,$building_name, PDO::PARAM_STR);
-                                $stmt->bindParam(3,$flat_no, PDO::PARAM_INT);
-                                $stmt->bindParam(4,$username, PDO::PARAM_STR);
-                                $stmt->bindParam(5,$billing_month, PDO::PARAM_STR);
-                                $stmt->bindParam(6,$issue_date, PDO::PARAM_STR);
-                                $stmt->bindParam(7,$due_date, PDO::PARAM_INT);
-                                $stmt->bindParam(8,$current_bill, PDO::PARAM_INT);
-                                $stmt->bindParam(9,$previous_bill, PDO::PARAM_INT);
-                                $stmt->bindParam(10,$due_charge, PDO::PARAM_INT);
-                                $stmt->bindParam(11,$status, PDO::PARAM_INT);
-                                $stmt->bindParam(12,$total_bill, PDO::PARAM_STR);
+                                $stmt->bindParam(1,$building_name, PDO::PARAM_STR);
+                                $stmt->bindParam(2,$flat_no, PDO::PARAM_INT);
+                                $stmt->bindParam(3,$username, PDO::PARAM_STR);
+                                $stmt->bindParam(4,$billing_month, PDO::PARAM_STR);
+                                $stmt->bindParam(5,$issue_date, PDO::PARAM_STR);
+                                $stmt->bindParam(6,$due_date, PDO::PARAM_INT);
+                                $stmt->bindParam(7,$current_bill, PDO::PARAM_INT);
+                                $stmt->bindParam(8,$previous_bill, PDO::PARAM_INT);
+                                $stmt->bindParam(9,$due_charge, PDO::PARAM_INT);
+                                $stmt->bindParam(10,$status, PDO::PARAM_INT);
+                                $stmt->bindParam(11,$total_bill, PDO::PARAM_STR);
 
                               
      
@@ -196,8 +195,6 @@ include "../includes/functions.php";
                                         <form method="post" action="" enctype="multipart/form-data">
                                             <div class="agent-contact-form-sidebar">
                                                 <div class="row">
-                                                    <label>Invoice Name</label>
-                                                        <input placeholder="Invoice_name" name="invoice_name" required>
                                                     <div class="col-lg-6 col-md-12 book">
                                                     <label for="issue_date">Issue Date</label>
                                                         <input type="date" name="issue_date" id="issue_date"  data-lang="en" data-large-mode="true" data-min-year="2021" data-max-year="2025" data-id="datedropper-0" data-theme="my-style" class="form-control"> 
@@ -209,13 +206,10 @@ include "../includes/functions.php";
                                                     <div class="col-lg-6 col-md-12">
                                                     <label for="issue_date">Billing Month</label>
                                                         <input type="month" name="billing_month" id="billing_month"  data-lang="en" data-large-mode="true" data-min-year="2021" data-max-year="2025" data-id="datedropper-0" data-theme="my-style" class="form-control"> 
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-12">
-                                                    <label for="due_charge">Due Charge</label>
-                                                        <input placeholder="Due" name="due_charge" id="due_charge">
-                                                    </div>
+                                                    </div>                          
                                                 </div>
-                                                <button type="submit" name="add_submit">Submit</button>                                            </div>
+                                                <button type="submit" name="add_submit">Submit</button>                                            
+                                            </div>
                                         </form>
                                     </div>
                                 </aside>

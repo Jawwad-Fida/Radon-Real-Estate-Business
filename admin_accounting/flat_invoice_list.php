@@ -89,7 +89,8 @@ if(isset($_GET['b_name']))
                                             <thead>
                                                 <tr>
                                                     <th>Flat No</th>
-                                                    <th>Action</th>
+                                                    <th>Client Username</th>
+                                                    <th>Apartment Status</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -109,13 +110,13 @@ if(isset($_GET['b_name']))
                                                     $apartment_status= $row['apartment_status'];                                                  
 
                                                 ?>
-
                                                     <tr>
-                                                        <td><input type="button" class="btn btn-link" value="<?php echo $flat_no;?>" 
+                                                      <td><input type="button" class="btn btn-link" value="<?php echo $flat_no;?>" 
                                                                    onclick="list_of_invoice_bill('<?php echo $building_name; ?>' , '<?php echo $flat_no; ?>', '<?php echo $client_username; ?>');"></td>
-                                                                             
-                                                    </tr>
 
+                                                      <td><?php echo $client_username; ?></td>                                                   
+                                                      <td><?php echo $apartment_status; ?></td> 
+                                                    </tr>
                                                 <?php } ?>
                                             </tbody>
                                         </table>

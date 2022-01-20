@@ -7,14 +7,9 @@ ob_start();
 include "../includes/connect.php";
 include "../includes/functions.php";
 
-$building_name="";
-$flat_no="";
-$client_username="";
 
-if (isset($_GET['d_building']) && isset($_GET['d_flat']) && isset($_GET['d_username'])) 
-    $building_name=$_GET['d_building'];
-    $flat_no=$_GET['d_flat'];
-    $client_username=$_GET['d_username'];
+$username = $_SESSION['username'];
+$name = $_SESSION['name'];
 
 ?>
 
@@ -83,25 +78,28 @@ if (isset($_GET['d_building']) && isset($_GET['d_flat']) && isset($_GET['d_usern
                         <div class="dashborad-box stat bg-white">
 
                             <div class="dashborad-box">
-                                <h4 class="title">Invoice Bill List</h4>
+                                <h4 class="title">Invoice List</h4>
                                 <div class="section-body listing-table">
                                     <div class="table-responsive">
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>Invoice No</th>
-                                                    <th>Building Name</th> 
-                                                    <th>Flat No</th>
-                                                    <th>Client Username</th>  
-                                                    <th>Billing Month</th>  
-                                                    <th>Issue Date</th>  
-                                                    <th>Due Date</th>  
-                                                    <th>Current Bill</th>  
-                                                    <th>Arrear</th>                                                 
-                                                    <th>Due Charge</th>
-                                                    <th>Status</th>
+                                                    <th>Invoice ID</th>
+                                                    <th>Building Name</th>
+                                                    <th>Flat_no</th>
+                                                    <th>Billing Month</th>
+                                                    <th>Issue Date</th>
+                                                    <th>Due Date</th>
+                                                    <th>Water Bill</th>
+                                                    <th>Electricity Bill</th>
+                                                    <th>Gas Bill</th>
+                                                    <th>Additional Bill</th>
+                                                    <th>Service charge </th>
+                                                    <th>Arrearl</th>
+                                                    <th>Due Charge </th>
                                                     <th>Total Bill</th>
-                                                    <th>Action</th>
+                                                    <th>Status</th> 
+                                                    <th>Action</th>     
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -109,68 +107,77 @@ if (isset($_GET['d_building']) && isset($_GET['d_flat']) && isset($_GET['d_usern
                                                 <?php
                                                 //JOIN query
                                                 $stmt = query("SELECT * 
-                                                              FROM invoice 
-                                                              WHERE flat_no='$flat_no' and building_name='$building_name'");
+                                                               FROM invoice
+                                                               WHERE  client_username ='$name' ");
                                                 
-                                                
+                                                $table= $stmt->fetchall();
 
-
-                                                #$stmt = query("SELECT * FROM building WHERE building_name != 'Test Case 1' AND building_name != 'Test Case 2'
-                                                #AND building_name != 'Test Case 3' AND building_name != 'Test Case 4' AND building_name != 'Test Case 5' 
-                                                #AND building_name != 'Test Case 6' AND building_name != 'Test Case 7' AND building_name != 'Test Case 8'");       
-
-                                                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
-                                                    $invoice_no= $row['invoice_no'];
-                                                    $building_name=$row['building_name'];                                          
-                                                    $flat_no = $row['flat_no'];
-                                                    $client_username= $row['client_username'];
-                                                    $billing_month=$row['billing_month'];
-                                                    $issue_date=$row['issue_date'];
-                                                    $due_date=$row['due_date'];
-                                                    $current_bill=$row['current_bill'];
-                                                    $arrear=$row['arrear'];                                      
-                                                    $due_charge = $row['due_charge'];
-                                                    $status= $row['status'];
-                                                    $total_bill= $row['total_bill'];                                                 
-
-                                                    //close php tag so that we can include some html inside the php while loop
+                                                for($i=0 ; $i<count($table) ; $i++)
+                                                {
+                                                    $row = $table[$i];                                       
                                                 ?>
 
 
                                                     <tr>
-                                                        <td><?php echo $invoice_no; ?></td>
-                                                        <td><?php echo $building_name; ?></td> 
-                                                        <td><?php echo $flat_no; ?></td> 
-                                                        <td><?php echo $client_username; ?></td> 
-                                                        <td><?php echo $billing_month; ?></td> 
-                                                        <td><?php echo $issue_date; ?></td> 
-                                                        <td><?php echo $due_date; ?></td> 
-                                                        <td><?php echo $current_bill; ?></td> 
-                                                        <td><?php echo $arrear; ?></td> 
-                                                        <td><?php echo $due_charge; ?></td>
-                                                        <td><?php echo $status; ?></td>
-                                                        <td><?php echo $total_bill; ?></td>
+                                                        <td>
+                                                            <input type="button" class="btn btn-link" value="<?php echo $row['invoice_no']?>" 
+                                                                    onclick="show_listfn('<?php echo $row['invoice_no']?>');"></td>
+                                                        <td><?php echo $row['building_name']?></td>
+                                                        <td><?php echo $row['flat_no']?></td>
+                                                        <td><?php echo $row['billing_month']?></td>
+                                                        <td><?php echo $row['issue_date']?></td>
+                                                        <td><?php echo $row['due_date']?></td>
+                                            
+                                                    <?php 
+                                                        $b_month=$row['billing_month'];
+                                                        $flat_no= $row['flat_no'];
+                                                        $building_name= $row['building_name'];
 
-                                                        <td class="edit"><a  onclick="deletefn('<?php echo $row['building_name'] ?>','<?php echo $row['flat_no'] ?>','<?php echo $row['invoice_no'] ?>');" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash font-14"></i></a></td>     
-                                                    </tr>
+                                                        $stmt1 = query("SELECT * 
+                                                                        FROM utility_bill
+                                                                        WHERE building_name='$building_name' 
+                                                                        AND flat_no='$flat_no' 
+                                                                        AND month='$b_month' 
 
-                                                <?php } ?>
+                                                                      ");
 
+                                                        $table1=$stmt1->fetchAll();
+
+                                                        for($j=0;$j<count($table1);$j++)
+                                                        {
+                                                            $row1=$table1[$j];
+                                                            
+                                                    ?>
+                                                            <td><?php echo $row1['water_bill']?></td>
+                                                            <td><?php echo $row1['electricity_bill']?></td>
+                                                            <td><?php echo $row1['gas_bill']?></td>
+                                                            <td><?php echo $row1['additional_bill']?></td>
+                                                            <td><?php echo $row1['service_charge']?></td>
+                                                    <?php
+
+                                                        }                     
+                                                    ?>
+                                                        <td><?php echo $row['arrear']?></td>
+                                                        <td><?php echo $row['due_charge']?></td>
+                                                        <td><?php echo $row['total_bill']?></td>
+                                                        <td><?php echo $row['status']?></td> 
+                                                        <td>
+                                                            <input type="button" class="btn btn-info btn-rounded" value=" Pay " onclick="">                    
+                                                        </td>
+                                                </tr>
+
+                                                <?php
+
+                                                } 
+                                                                    
+                                                ?>
                                             </tbody>
                                         </table>
-
-
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
-
                     </div>
-
-
                 </div>
             </div>
         </section>
@@ -240,7 +247,7 @@ if (isset($_GET['d_building']) && isset($_GET['d_flat']) && isset($_GET['d_usern
                      var choice=confirm("Do you want to delete this?");
                      if(choice)
                      {
-                          location.assign("delete_invoice_bill.php?d_b="+del_b+ "&d_f="+del_f+ "&d_id="+del_id);
+                          location.assign("delete_utility_bill.php?d_b="+del_b+ "&d_f="+del_f+ "&d_id="+del_id);
                      }
                 }
                
@@ -252,16 +259,6 @@ if (isset($_GET['d_building']) && isset($_GET['d_flat']) && isset($_GET['d_usern
     <!-- Wrapper / End -->
 </body>
 
-
-<!-- Mirrored from code-theme.com/html/findhouses/add-property.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Dec 2021 10:32:33 GMT -->
-
-</html>
-
-<?php
-//close database connection - initialize object to null
-$pdo = null;
-ob_end_flush();
-?>
 
 <!-- Mirrored from code-theme.com/html/findhouses/add-property.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Dec 2021 10:32:33 GMT -->
 

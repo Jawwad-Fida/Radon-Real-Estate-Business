@@ -186,7 +186,7 @@ include "../includes/functions.php";
 
             function show_listfn(info_b)
                 {
-                   location.assign("client_invoice_list.php?b_name="+info_b);
+                   location.assign("flat_invoice_list.php?b_name="+info_b);
                 }
         </script>
 
