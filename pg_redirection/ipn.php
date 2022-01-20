@@ -3,7 +3,7 @@
 # THIS FILE IS ONLY AN EXAMPLE. PLEASE MODIFY AS REQUIRED.
 # Contributor: Md. Rakibul Islam <rakibul.islam@sslwireless.com>
 ######
-
+session_start();
 error_reporting(0);
 
 require_once __DIR__ . "/../lib/SslCommerzNotification.php";

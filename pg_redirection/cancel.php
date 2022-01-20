@@ -4,6 +4,9 @@
     # Contributor: Md. Rakibul Islam <rakibul.islam@sslwireless.com>
     ######
  -->
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 
