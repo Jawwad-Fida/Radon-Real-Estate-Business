@@ -98,6 +98,9 @@ function display_error_message()
         }
           elseif ($_GET['error'] == 'already_exits') {
             echo "<p style='color:red;font-size:25px;text-align:center'>This months utility has been added already!<p>";
+        } 
+          elseif ($_GET['error'] == 'invoice_exits') {
+            echo "<p style='color:red;font-size:25px;text-align:center'>This months invoice has been created already!<p>";
         }  
     }
 }
@@ -132,6 +135,9 @@ function display_success_message()
             echo "<p style='color:green;font-size:25px;text-align:center'>Appointment Confirmed!<p>";
         } elseif ($_GET['success'] == 'message_sent') {
             echo "<p style='color:green;font-size:25px;text-align:center'>Message Sent!<p>";
+        } 
+          elseif ($_GET['success'] == 'invoice_created') {
+            echo "<p style='color:green;font-size:25px;text-align:center'>Invoice Created!<p>";
         } 
     }
 }

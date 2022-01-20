@@ -1,0 +1,36 @@
+<aside class="col-lg-4 col-md-12 car">
+    <div class="single widget">
+        <div class="schedule widget-boxed mt-33 mt-0">
+            <div class="widget-boxed-header">
+                <h4><i class="fa fa-money"></i>Create Invoice</h4>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<form method="post" action="create_invoice.php">
+    <div class="agent-contact-form-sidebar">
+        <div class="row">
+        <label for="due_charge">Invoice Name</label>
+            <input placeholder="invoice_name" name="invoice_name" required>
+            <div class="col-lg-6 col-md-12 book">
+            <label for="issue_date">Issue Date</label>
+                <input type="date" name="issue_date" id="issue_date"  data-lang="en" data-large-mode="true" data-min-year="2021" data-max-year="2025" data-id="datedropper-0" data-theme="my-style" class="form-control"> 
+            </div>
+            <div class="col-lg-6 col-md-12 book2">
+            <label for="Due_date">Due Date</label>
+            <input type="date" name="due_date" id="due_date" data-lang="en" data-large-mode="true" data-min-year="2021" data-max-year="2025" data-id="datedropper-0" data-theme="my-style" class="form-control">
+            </div>
+            <div class="col-lg-6 col-md-12 book">
+            <label for="issue_date">Billing Month</label>
+                <input type="month" name="billing_month" id="billing_month"  data-lang="en" data-large-mode="true" data-min-year="2021" data-max-year="2025" data-id="datedropper-0" data-theme="my-style" class="form-control"> 
+            </div>
+            <div class="col-lg-6 col-md-12 book2">
+            <label for="due_charge">Due Charge</label>
+            <input placeholder="due" name="due_charge">
+            </div>
+        </div>
+        <input type="hidden" name="building_name" value="<?php echo $building_name?>">   
+        <button type="submit" name="invoice_create" class="btn reservation btn-radius theme-btn full-width mrg-top-10">Create invoice</button>
+    </div>
+</form>

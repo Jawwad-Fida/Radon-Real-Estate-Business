@@ -32,6 +32,12 @@
                         </li>                      
                     </ul>
                 </li>
+
+                <li>
+                    <a href="building_invoice_list.php">
+                        <i class="fa fa-list"></i> Invoice Bill List <i class="fa fa-fw "></i>
+                    </a>
+                </li>
                 
                 <li>
                     <a href="javascript:;" data-toggle="collapse" data-target="#demo4"><i class="fa fa-user-circle" aria-hidden="true"></i> Owner-Client<i class="fa fa-fw fa-caret-down"></i></a>
