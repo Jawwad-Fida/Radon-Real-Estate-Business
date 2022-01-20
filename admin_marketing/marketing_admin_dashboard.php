@@ -23,44 +23,69 @@
                             <div class="col-lg-3 col-md-6 col-xs-12 dar pro mr-3">
                                 <div class="item">
                                     <div class="icon">
-                                        <i class="fa fa-list" aria-hidden="true"></i>
+                                        <i class="fas fa-home"></i>
                                     </div>
                                     <div class="info">
-                                        <h6 class="number">345</h6>
-                                        <p class="type ml-1">Published Property</p>
+                                        <h6 class="number">
+                                        <?php
+                                        $sql = query("SELECT * FROM apartment");
+                                        $count1 = count_records($sql);
+                                        echo $count1;
+                                      ?>
+                                        
+                                    </h6>
+                                        <p class="type ml-1">Total number of apartments</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 col-xs-12 dar rev mr-3">
                                 <div class="item">
                                     <div class="icon">
-                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-building"></i>
                                     </div>
                                     <div class="info">
-                                        <h6 class="number">116</h6>
-                                        <p class="type ml-1">Total Reviews</p>
+                                        <h6 class="number">
+                                        <?php
+                                        $sql = query("SELECT * FROM building");
+                                        $count1 = count_records($sql);
+                                        echo $count1;
+                                      ?>
+                                        </h6>
+                                        <p class="type ml-1">Total number of buildings</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 dar com mr-3">
                                 <div class="item mb-0">
                                     <div class="icon">
-                                        <i class="fas fa-comments"></i>
+                                        <i class="fas fa-calendar-check"></i>
                                     </div>
                                     <div class="info">
-                                        <h6 class="number">223</h6>
-                                        <p class="type ml-1">Messages</p>
+                                        <h6 class="number"> 
+                                            <?php
+                                        $sql = query("SELECT * FROM appointment ");
+                                        $count1 = count_records($sql);
+                                        echo $count1;
+                                      ?>
+                                      </h6>
+                                        <p class="type ml-1">Pending appointments  </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 dar booked">
                                 <div class="item mb-0">
                                     <div class="icon">
-                                        <i class="fas fa-heart"></i>
+                                        <i class="fas fa-users"></i>
                                     </div>
                                     <div class="info">
-                                        <h6 class="number">432</h6>
-                                        <p class="type ml-1">Times Bookmarked</p>
+                                        <h6 class="number">
+                                        <?php
+                                        $sql = query("SELECT * FROM customers ");
+                                        $count1 = count_records($sql);
+                                        echo $count1;
+                                      ?>
+                                        </h6>
+                                        <p class="type ml-1">Total number of customer </p>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +94,7 @@
                 </div>
 
 
-                <div class="dashborad-box">
+               <!-- <div class="dashborad-box">
                     <h4 class="title">Listing</h4>
                     <div class="section-body listing-table">
                         <div class="table-responsive">
@@ -116,10 +141,9 @@
                             </table>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-
-                <div class="dashborad-box">
+               <!-- <div class="dashborad-box">
                     <h4 class="title">Message</h4>
                     <div class="section-body">
                         <div class="messages">
@@ -269,7 +293,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --> 
 
                 <!-- START FOOTER -->
                 <div class="second-footer">
