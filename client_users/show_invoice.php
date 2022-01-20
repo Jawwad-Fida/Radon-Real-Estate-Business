@@ -121,7 +121,7 @@ $name = $_SESSION['name'];
                                                     <tr>
                                                         <td>
                                                             <input type="button" class="btn btn-link" value="<?php echo $row['invoice_no']?>" 
-                                                                    onclick="show_listfn('<?php echo $row['invoice_no']?>');"></td>
+                                                                    onclick="show_invoice('<?php echo $row['invoice_no']?>');"></td>
                                                         <td><?php echo $row['building_name']?></td>
                                                         <td><?php echo $row['flat_no']?></td>
                                                         <td><?php echo $row['billing_month']?></td>
@@ -243,13 +243,11 @@ $name = $_SESSION['name'];
             });
 
           
-            function deletefn(del_b,del_f,del_id)
+            function show_invoice(invoice_no)
                 {
-                     var choice=confirm("Do you want to delete this?");
-                     if(choice)
-                     {
-                          location.assign("delete_utility_bill.php?d_b="+del_b+ "&d_f="+del_f+ "&d_id="+del_id);
-                     }
+                     
+                    location.assign("invoice_page.php?d_b="+invoice_no);
+                    
                 }
                
         </script>
