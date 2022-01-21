@@ -17,11 +17,11 @@ if (isset($_POST['add_submit'])) {
     $address = validate($_POST['address']);
     $build_num = validate($_POST['build_num']);
     $Division = $_POST['Division'];
-    $num_floors = $_POST['num_floors'];
-    $num_flats = $_POST['num_flats'];
+    $no_of_floors = $_POST['no_of_floors'];
+    $no_of_flats = $_POST['no_of_flats'];
 
     //Check for errors
-    if (empty($property_name) || empty($property_info) || empty($address) || empty($build_num)) {
+    if (empty($property_name) || empty($property_info) || empty($address) || empty($build_num)|| empty($Division)|| empty($no_of_flats)|| empty($no_of_floors)) {
         redirect("add-property.php?error=emptyFields");
         exit();
     }
@@ -30,11 +30,11 @@ if (isset($_POST['add_submit'])) {
 
     $stmt = prepare_query("INSERT INTO building(building_name,no_of_flats,address,build_info,division,no_of_floors,build_num) VALUES(?,?,?,?,?,?,?)");
     $stmt->bindParam(1, $property_name, PDO::PARAM_STR);
-    $stmt->bindParam(2, $num_flats, PDO::PARAM_INT);
+    $stmt->bindParam(2, $no_of_flats, PDO::PARAM_INT);
     $stmt->bindParam(3, $address, PDO::PARAM_STR);
     $stmt->bindParam(4, $property_info, PDO::PARAM_STR);
     $stmt->bindParam(5, $Division, PDO::PARAM_STR);
-    $stmt->bindParam(6, $num_floors, PDO::PARAM_INT);
+    $stmt->bindParam(6, $no_of_floors, PDO::PARAM_INT);
     $stmt->bindParam(7, $build_num, PDO::PARAM_INT);
 
     $stmt->execute();
@@ -147,11 +147,23 @@ if (isset($_POST['add_submit'])) {
                                             </p>
                                         </div>
 
-                                        <div class="col-lg-4 col-md-12">
-                                            <p class="no-mb">
-                                                <label for="price">Address</label>
-                                                <input type="text" name="address" placeholder="enter address of building" id="address">
-                                            </p>
+                                        <div class="col-lg-4 col-md-12 dropdown faq-drop">
+                                            <div class="form-group categories">
+                                                <label for="address">Address</label>
+                                                <select class="form-control" name="address">
+                                                <option value="null">Location</option>
+                                                <option value="Banani">Banani</option>
+                                                <option value="Gulshan">Gulshan</option>
+                                                <option value="Dhanmondi">Dhanmondi</option>
+                                                <option value="Badda">Badda</option>
+                                                <option value="Baridhara">Baridhara</option>
+                                                <option value="Motijheel">Motijheel</option>
+                                                <option value="Wari">Wari</option>
+                                                <option value="Uttara">Uttara</option>
+                                                <option value="Farmgate">Farmgate</option>
+                                                <option value="Mirpur">Mirpur</option>
+                                                </select>
+                                            </div>
                                         </div>
 
                                         <div class="col-lg-4 col-md-12 dropdown faq-drop">
@@ -164,28 +176,21 @@ if (isset($_POST['add_submit'])) {
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-4 col-md-12 dropdown faq-drop">
-                                            <div class="form-group categories">
-                                                <label for="city">No. of Floors</label>
-                                                <select class="form-control" name="num_floors">
-                                                    <option value="5">5</option>
-                                                    <option value="10">10</option>
-                                                    <option value="15">15</option>
-                                                </select>
-                                            </div>
+                                        <div class="col-lg-4 col-md-12">
+                                            <p class="no-mb">
+                                                <label for="no_of_floors">Number Of Floors</label>
+                                                <input type="int" name="no_of_floors" placeholder="Enter number of floors" id="no_of_floors">
+                                            </p>
                                         </div>
 
-                                        <div class="col-lg-4 col-md-12 dropdown faq-drop">
-                                            <div class="form-group categories">
-                                                <label for="city">No. of Flats(Per Floor)</label>
-                                                <select class="form-control" name="num_flats">
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select>
-                                            </div>
+                                        <div class="col-lg-4 col-md-12">
+                                            <p class="no-mb">
+                                                <label for="no_of_flats">No. of Flats(Per Floor)</label>
+                                                <input type="int" name="no_of_flats" placeholder="Enter number of flats(Per floor)" id="no_of_flats">
+                                            </p>
                                         </div>
+
+                                        
 
                                     </div>
 
