@@ -89,6 +89,7 @@ if (isset($_GET['delete'])) {
                                                 <tr>
                                                     <th>Building ID</th>
                                                     <th>Building Name</th>
+                                                    <th>Building No</th>
                                                     <th>No.of Floors</th>
                                                     <th>No.of Flats(Per Floor)</th>
                                                     <th>Division</th>
@@ -109,6 +110,7 @@ if (isset($_GET['delete'])) {
                                                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                     $building_id = $row['building_id'];
                                                     $building_name = $row['building_name'];
+                                                    $build_num = $row['build_num'];
                                                     $no_of_flats = $row['no_of_flats'];
                                                     $no_of_floors =  $row['no_of_floors'];
                                                     $division =  $row['division'];
@@ -121,6 +123,7 @@ if (isset($_GET['delete'])) {
                                                     <tr>
                                                         <td><?php echo $building_id; ?></td>
                                                         <td><?php echo $building_name; ?></td>
+                                                        <td><?php echo $build_num; ?></td>
                                                         <td><?php echo $no_of_floors; ?></td>
                                                         <td class="rating"><span><?php echo $no_of_flats; ?></span></td>
                                                         <td class="status"><span class=" active"><?php echo $division; ?></span></td>

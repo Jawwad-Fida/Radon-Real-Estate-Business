@@ -174,21 +174,6 @@ if (isset($_POST['add_submit'])) {
                                             </p>
                                         </div>
                                         <div class="col-lg-4 col-md-12">
-<<<<<<< HEAD
-=======
-                                            <p class="no-mb last">
-                                                <label for="building_id">Building ID</label>
-                                                <input type="text" name="building_id" placeholder="Enter Building ID" id="">
-                                            </p>
-                                        </div>
-                                        <div class="col-lg-4 col-md-12">
-                                            <p class="no-mb last">
-                                                <label for="building_name">Building Name</label>
-                                                <input type="text" name="building_name" placeholder="Enter Building Name" id="">
-                                            </p>
-                                        </div>
-                                        <div class="col-lg-4 col-md-12">
->>>>>>> 9d63e559e748bba444a7c9fef75d9fdf35672aa9
                                             <p class="no-mb last">
                                                 <label for="build_num">Building No.</label>
                                                 <input type="text" name="build_num" placeholder="Enter Building Number" id="">
