@@ -56,7 +56,7 @@
                         <div class="pftext">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum odio id voluptatibus incidunt cum?
                                 Atque quasi eum debitis optio ab. Esse itaque officiis tempora possimus odio rerum aperiam ratione, sunt.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit sunt.</p>
+                                Atque.</p>
 
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum odio id voluptatibus incidunt cum? Atque
                                 quasi eum debitis optio ab. Esse itaque officiis tempora possimus odio rerum aperiam ratione, sunt. Lorem ipsum
