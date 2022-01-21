@@ -26,8 +26,15 @@
                                         <i class="fa fa-list" aria-hidden="true"></i>
                                     </div>
                                     <div class="info">
-                                        <h6 class="number">345</h6>
-                                        <p class="type ml-1">Published Property</p>
+                                        <h6 class="number">
+                                        <?php
+                                        $sql = query("SELECT * FROM invoice WHERE (status='unpaid') ");
+                                        $count1 = count_records($sql);
+                                        echo $count1;
+                                       
+                                        ?>
+                                        </h6>
+                                        <p class="type ml-1">Unpaid invoice </p>
                                     </div>
                                 </div>
                             </div>
@@ -37,8 +44,14 @@
                                         <i class="fas fa-building"></i>
                                     </div>
                                     <div class="info">
-                                        <h6 class="number">116</h6>
-                                        <p class="type ml-1">Total Reviews</p>
+                                        <h6 class="number">
+                                        <?php
+                                        $sql = query("SELECT * FROM clients");
+                                        $count1 = count_records($sql);
+                                        echo $count1;
+                                      ?>
+                                        </h6>
+                                        <p class="type ml-1">client list</p>
                                     </div>
                                 </div>
                             </div>
@@ -48,8 +61,14 @@
                                         <i class="fas fa-comments"></i>
                                     </div>
                                     <div class="info">
-                                        <h6 class="number">223</h6>
-                                        <p class="type ml-1">Messages</p>
+                                        <h6 class="number">
+                                        <?php
+                                        $sql = query("SELECT * FROM complaint");
+                                        $count1 = count_records($sql);
+                                        echo $count1;
+                                      ?>
+                                        </h6>
+                                        <p class="type ml-1">List of complaint </p>
                                     </div>
                                 </div>
                             </div>
@@ -59,8 +78,14 @@
                                         <i class="fas fa-heart"></i>
                                     </div>
                                     <div class="info">
-                                        <h6 class="number">432</h6>
-                                        <p class="type ml-1">Times Bookmarked</p>
+                                        <h6 class="number">
+                                        <?php
+                                        $sql = query("SELECT * FROM orders");
+                                        $count1 = count_records($sql);
+                                        echo $count1;
+                                      ?>
+                                        </h6>
+                                        <p class="type ml-1">Payment History</p>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +94,7 @@
                 </div>
 
 
-                <div class="dashborad-box">
+               <!-- <div class="dashborad-box">
                     <h4 class="title">Listing</h4>
                     <div class="section-body listing-table">
                         <div class="table-responsive">
@@ -275,7 +300,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- END SECTION DASHBOARD -->
 
 
@@ -340,4 +365,4 @@
 //close database connection - initialize object to null
 $pdo = null;
 ob_end_flush();
-?>
+ ?>

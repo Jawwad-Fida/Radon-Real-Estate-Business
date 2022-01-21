@@ -15,6 +15,7 @@ if (isset($_GET['edit'])) {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
     $building_name = $row['building_name'];
+    $build_num = $row['build_num'];
     $build_info = $row['build_info'];
     $no_of_flats = $row['no_of_flats'];
     $no_of_floors =  $row['no_of_floors'];
@@ -30,27 +31,31 @@ if (isset($_POST['update_submit'])) {
 
     $property_name = validate($_POST['name']);
     $property_info = validate($_POST['description']);
-    $address = validate($_POST['address']);
+    $build_num = validate($_POST['build_num']);
+    $no_of_floors = validate($_POST['no_of_floors']);
+    $no_of_flats = validate($_POST['no_of_flats']);
+    $address = $_POST['address'];
     $Division = $_POST['Division'];
-    $num_floors = $_POST['num_floors'];
-    $num_flats = $_POST['num_flats'];
+   
 
     //Check for errors
-    if (empty($property_name) || empty($property_info) || empty($address)) {
+    if (empty($property_name) || empty($property_info) || empty($address) || empty($no_of_flats) || empty($no_of_floors) || empty($address) || empty($build_num)) {
         redirect("add-property.php?error=emptyFields");
         exit();
     }
 
     //------------QUERY-------------
 
-    $stmt = prepare_query("UPDATE building SET building_name = ?, no_of_flats = ?, address = ?, build_info = ?, division = ?, no_of_floors = ? WHERE building_id = ?");
+    $stmt = prepare_query("UPDATE building SET building_name = ?, no_of_flats = ?, address = ?, build_info = ?, division = ?, no_of_floors = ?, build_num = ? WHERE building_id = ?");
     $stmt->bindParam(1, $property_name, PDO::PARAM_STR);
-    $stmt->bindParam(2, $num_flats, PDO::PARAM_INT);
+    $stmt->bindParam(2, $no_of_flats, PDO::PARAM_INT);
     $stmt->bindParam(3, $address, PDO::PARAM_STR);
     $stmt->bindParam(4, $property_info, PDO::PARAM_STR);
     $stmt->bindParam(5, $Division, PDO::PARAM_STR);
-    $stmt->bindParam(6, $num_floors, PDO::PARAM_INT);
-    $stmt->bindParam(7, $building_id, PDO::PARAM_INT);
+    $stmt->bindParam(6, $no_of_floors, PDO::PARAM_INT);
+    $stmt->bindParam(7, $build_num, PDO::PARAM_STR);
+    $stmt->bindParam(8, $building_id, PDO::PARAM_INT);
+    
 
     $stmt->execute();
     //$last_id = last_inserted_id();
@@ -151,6 +156,7 @@ if (isset($_POST['update_submit'])) {
                                                 </textarea>
                                             </p>
                                         </div>
+                                        
                                     </div>
                                     <div class="row">
 
@@ -158,12 +164,7 @@ if (isset($_POST['update_submit'])) {
 
                                     <div class="row">
 
-                                        <div class="col-lg-6 col-md-12">
-                                            <p class="no-mb">
-                                                <label for="price">Address</label>
-                                                <input type="text" name="address" value="<?php echo $address; ?>" id="address">
-                                            </p>
-                                        </div>
+                                        
 
                                         <div class="col-lg-4 col-md-12 dropdown faq-drop">
                                             <div class="form-group categories">
@@ -172,40 +173,50 @@ if (isset($_POST['update_submit'])) {
                                                     <option value="<?php echo $division; ?>"><?php echo $division; ?></option>
                                                     <option value="Dhaka">Dhaka</option>
                                                     <option value="Chittagong">Chittagong</option>
-                                                    <option value="Barisal">Barishal</option>
-                                                    <option value="Khulna">Khulna</option>
-                                                    <option value="Sylhet">Sylhet</option>
-                                                    <option value="Rajshahi">Rajshahi</option>
-                                                    <option value="Rangpur">Rangpur</option>
-                                                    <option value="Mymensingh">Mymensingh</option>
+                                                    
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-12 dropdown faq-drop">
+                                            <div class="form-group categories">
+                                                <label for="address">Address</label>
+                                                <select class="form-control" name="address">
+                                                <option value="<?php echo $address; ?>"><?php echo $address; ?></option>
+                                                <option value="Banani">Banani</option>
+                                                <option value="Gulshan">Gulshan</option>
+                                                <option value="Dhanmondi">Dhanmondi</option>
+                                                <option value="Badda">Badda</option>
+                                                <option value="Baridhara">Baridhara</option>
+                                                <option value="Motijheel">Motijheel</option>
+                                                <option value="Wari">Wari</option>
+                                                <option value="Uttara">Uttara</option>
+                                                <option value="Farmgate">Farmgate</option>
+                                                <option value="Mirpur">Mirpur</option>
                                                 </select>
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-4 col-md-12 dropdown faq-drop">
-                                            <div class="form-group categories">
-                                                <label for="city">No. of Floors</label>
-                                                <select class="form-control" name="num_floors">
-                                                    <option value="<?php echo $no_of_floors; ?>"><?php echo $no_of_floors; ?></option>
-                                                    <option value="5">5</option>
-                                                    <option value="10">10</option>
-                                                    <option value="15">15</option>
-                                                </select>
-                                            </div>
+                                        <div class="col-lg-4 col-md-12">
+                                            <p class="no-mb">
+                                                <label for="no_of_floors">Number Of Floors</label>
+                                                
+                                                <input type="int" name="no_of_floors"placeholder="Enter number of Floors" id="no_of_floors" value="<?php echo $no_of_floors; ?>">
+                                            </p>
                                         </div>
 
-                                        <div class="col-lg-4 col-md-12 dropdown faq-drop">
-                                            <div class="form-group categories">
-                                                <label for="city">No. of Flats in each Floor</label>
-                                                <select class="form-control" name="num_flats">
-                                                    <option value="<?php echo $no_of_flats; ?>"><?php echo $no_of_flats; ?></option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select>
-                                            </div>
+                                        <div class="col-lg-4 col-md-12">
+                                            <p class="no-mb">
+                                                <label for="no_of_flats">No. of Flats(Per Floor)</label>
+                                                <input type="int" name="no_of_flats" placeholder="Enter number of Flats(Per floor)" id="no_of_flats"value="<?php echo $no_of_flats; ?>">
+                                            </p>
                                         </div>
+                                        <div class="col-lg-4 col-md-12">
+                                            <p class="no-mb">
+                                                <label for="price">Building No.</label>
+                                                <input type="text" name="build_num" placeholder="enter building num" id="build_num"value="<?php echo $build_num; ?>">
+                                            </p>
+                                        </div>
+                                        
 
                                     </div>
 

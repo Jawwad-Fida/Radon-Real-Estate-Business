@@ -26,12 +26,20 @@
                                         <i class="fa fa-list" aria-hidden="true"></i>
                                     </div>
                                     <div class="info">
-                                        <h6 class="number">345</h6>
-                                        <p class="type ml-1">Published Property</p>
+                                        <h6 class="number">
+                                        <?php                                
+                                        $client_username = $_SESSION['username'];
+                                        $stmt = query("SELECT name FROM clients WHERE username = '$client_username'");
+                                        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                                        $client_name = $row['name'];
+                                        $stmt = query("SELECT * FROM orders WHERE name = '{$client_name}'");
+                                        ?>
+                                        </h6>
+                                        <p class="type ml-1">invoice</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-6 col-xs-12 dar rev mr-3">
+                            <!-- <div class="col-lg-3 col-md-6 col-xs-12 dar rev mr-3">
                                 <div class="item">
                                     <div class="icon">
                                         <i class="fas fa-star"></i>
@@ -41,8 +49,8 @@
                                         <p class="type ml-1">Total Reviews</p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 dar com mr-3">
+                            </div> -->
+                            <!-- <div class="col-lg-3 col-md-6 dar com mr-3">
                                 <div class="item mb-0">
                                     <div class="icon">
                                         <i class="fas fa-comments"></i>
@@ -52,8 +60,8 @@
                                         <p class="type ml-1">Messages</p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 dar booked">
+                            </div> -->
+                            <!-- <div class="col-lg-3 col-md-6 dar booked">
                                 <div class="item mb-0">
                                     <div class="icon">
                                         <i class="fas fa-heart"></i>
@@ -63,13 +71,13 @@
                                         <p class="type ml-1">Times Bookmarked</p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
 
 
-                <div class="dashborad-box">
+                <!-- <div class="dashborad-box">
                     <h4 class="title">Listing</h4>
                     <div class="section-body listing-table">
                         <div class="table-responsive">
@@ -269,7 +277,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- START FOOTER -->
                 <div class="second-footer">

@@ -23,8 +23,15 @@ if (isset($_POST['add_submit'])) {
     $no_of_bedroom = $_POST['no_of_bedroom'];
     $no_of_bathroom = $_POST['no_of_bathroom'];
     $Division = $_POST['Division'];
+    $building_name = $_POST['building_name'];
+    $building_id = $_POST['building_id'];
+    $build_num = $_POST['build_num'];
+    $address = $_POST['address'];
 
-    
+    //Test Case buildings
+   
+
+
     //Checkbox values - Apartment Features
     $aDoor = $_POST['formDoor']; //array
     $chk = "";
@@ -38,7 +45,7 @@ if (isset($_POST['add_submit'])) {
     }
 
     //Check for errors
-    if (empty($flat_num) || empty($area) || empty($buy_price) || empty($rent_price)) {
+    if (empty($building_id) ||empty($building_name) || empty($flat_num) || empty($no_of_bedroom) || empty($no_of_bathroom) || empty($buy_price) || empty($rent_price) || empty($area) || empty($Division) || empty($build_num) || empty($address)) {
         redirect("add-apartment.php?error=emptyFields");
         exit();
     }
@@ -59,8 +66,8 @@ if (isset($_POST['add_submit'])) {
 
     //------------QUERY-------------
 
-    $stmt = prepare_query("INSERT INTO apartment(building_id,building_name,flat_no,no_of_bedroom, no_of_bathroom,image,buy_price,rent_price,area,status,type,apartment_status,features,division) 
-    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+    $stmt = prepare_query("INSERT INTO apartment(building_id,building_name,flat_no,no_of_bedroom,no_of_bathroom,image,buy_price,rent_price,area,status,type,apartment_status,features,division,build_num,address) 
+    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
     $stmt->bindParam(1, $building_id, PDO::PARAM_INT);
     $stmt->bindParam(2, $building_name, PDO::PARAM_STR);
     $stmt->bindParam(3, $flat_num, PDO::PARAM_INT);
@@ -75,6 +82,8 @@ if (isset($_POST['add_submit'])) {
     $stmt->bindParam(12, $apart_status, PDO::PARAM_STR);
     $stmt->bindParam(13, $chk, PDO::PARAM_STR);
     $stmt->bindParam(14, $Division, PDO::PARAM_STR);
+    $stmt->bindParam(15, $build_num, PDO::PARAM_STR);
+    $stmt->bindParam(16, $address, PDO::PARAM_STR);
 
     $stmt->execute();
     //$last_id = last_inserted_id();
@@ -158,18 +167,61 @@ if (isset($_POST['add_submit'])) {
 
                                     <div class="row">
 
-                                        <div class="col-lg-6 col-md-12">
+                                        <div class="col-lg-4 col-md-12">
                                             <p class="no-mb">
                                                 <label for="price">Flat No.</label>
                                                 <input type="text" name="flat_num" placeholder="Enter Flat Number" id="price">
                                             </p>
                                         </div>
-                                        <div class="col-lg-6 col-md-12">
+                                        <div class="col-lg-4 col-md-12">
                                             <p class="no-mb last">
-                                                <label for="area">Area/Size</label>
+                                                <label for="build_num">Building No.</label>
+                                                <input type="text" name="build_num" placeholder="Enter Building Number" id="">
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 col-md-12">
+                                            <p class="no-mb last">
+                                                <label for="building_name">Building Name</label>
+                                                <input type="text" name="building_name" placeholder="Enter Building Name" id="">
+                                            </p>
+                                        </div>
+                                        <br>
+                                        
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-12">
+                                            <p class="no-mb last">
+                                                <label for="building_id">Building ID</label>
+                                                <input type="text" name="building_id" placeholder="Enter Building ID" id="">
+                                            </p>
+                                        </div>
+                                
+                                        <div class="col-lg-4 col-md-12">
+                                            <p class="no-mb last">
+                                                <label for="area">Size</label>
                                                 <input type="text" name="area" placeholder="Sqft" id="area">
                                             </p>
                                         </div>
+                                        <div class="col-lg-4 col-md-12 dropdown faq-drop">
+                                            <div class="form-group categories">
+                                                <label for="address">Address</label>
+                                                <select class="form-control" name="address">
+                                                <option value="null">Location</option>
+                                                <option value="Banani">Banani</option>
+                                                <option value="Gulshan">Gulshan</option>
+                                                <option value="Dhanmondi">Dhanmondi</option>
+                                                <option value="Badda">Badda</option>
+                                                <option value="Baridhara">Baridhara</option>
+                                                <option value="Motijheel">Motijheel</option>
+                                                <option value="Wari">Wari</option>
+                                                <option value="Uttara">Uttara</option>
+                                                <option value="Farmgate">Farmgate</option>
+                                                <option value="Mirpur">Mirpur</option>                                                            <option value="Chittagong">Chittagong</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                    
                                     </div>
                                     <br>
 
@@ -191,7 +243,7 @@ if (isset($_POST['add_submit'])) {
                                                 <select class="form-control" name="type">
                                                     <option value="House">House</option>
                                                     <option value="Commercial">Commercial</option>
-                                                    <option value="Lot">Lot</option>
+                                                    
                                                 </select>
                                             </div>
                                         </div>
@@ -259,12 +311,7 @@ if (isset($_POST['add_submit'])) {
                                                 <select class="form-control" name="Division">
                                                     <option value="Dhaka">Dhaka</option>
                                                     <option value="Chittagong">Chittagong</option>
-                                                    <option value="Barisal">Barishal</option>
-                                                    <option value="Khulna">Khulna</option>
-                                                    <option value="Sylhet">Sylhet</option>
-                                                    <option value="Rajshahi">Rajshahi</option>
-                                                    <option value="Rangpur">Rangpur</option>
-                                                    <option value="Mymensingh">Mymensingh</option>
+                                                    
                                                 </select>
                                             </div>
                                         </div>
@@ -272,7 +319,7 @@ if (isset($_POST['add_submit'])) {
 
                                     <div class="row">
                                         <div class="col-lg-6 col-md-12">
-                                            <label for="product-title"> Upload Image</label>
+                                            <label for="product-title"> Upload Appartment Image</label>
                                             <input type="file" name="apartment_image">
                                         </div>
                                     </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2022 at 02:45 PM
+-- Generation Time: Jan 20, 2022 at 07:24 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -62,7 +62,7 @@ CREATE TABLE `apartment` (
   `image` text NOT NULL,
   `buy_price` double NOT NULL,
   `rent_price` double NOT NULL,
-  `area` varchar(50) DEFAULT NULL,
+  `area` int(50) DEFAULT NULL,
   `status` varchar(25) NOT NULL,
   `type` varchar(50) NOT NULL,
   `apartment_status` varchar(50) NOT NULL,
@@ -78,20 +78,20 @@ CREATE TABLE `apartment` (
 --
 
 INSERT INTO `apartment` (`apartment_id`, `building_id`, `building_name`, `flat_no`, `no_of_bedroom`, `no_of_bathroom`, `image`, `buy_price`, `rent_price`, `area`, `status`, `type`, `apartment_status`, `features`, `division`, `address`, `client_username`, `build_num`) VALUES
-(3, 6, 'Rafi Kingdom', 'B2', 4, 5, 'images/apartment_images/fp-11.jpg', 6750000, 50000, '3600 sq ft', 'Booked', 'Commercial', 'Buy', 'Air Conditioning, Central Heating, Alarm', 'Dhaka', 'Badda', 'pranto0432', 'RAF5'),
-(6, 3, 'JawwadHarem', 'A3', 3, 3, 'images/apartment_images/p-3.jpg', 560000, 20000, '1300 sq ft', 'Booked', 'House', 'Rent', 'Air Conditioning,Window Covering,', 'Dhaka', 'Dhanmondi', 'pranto3719', 'JH1'),
-(8, 12, 'Kabir Apartments', 'A2', 3, 3, 'images/apartment_images/p-3.jpg', 250000, 50000, '1300 sq ft', 'Booked', 'House', 'Rent', 'Air Conditioning,Central Heating,Window Covering,TV Cable & WIFI,', 'Barisal', 'Farmgate', 'imran1111', 'KA64'),
-(9, 12, 'Kabir Apartments', 'D1', 4, 4, 'images/apartment_images/p-3.jpg', 3956000, 42000, '2200 sq ft', 'Not Booked', 'Commercial', 'Buy', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Chittagong', 'Farmgate', '', 'KA64'),
-(10, 3, 'JawwadHarem', 'D4', 4, 4, 'images/apartment_images/p-3.jpg', 3956000, 42000, '2500 sq ft', 'Booked', 'Commercial', 'Buy', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Farmgate', 'afia7839', 'JH1'),
-(13, 8, 'Tarin Dream Home', 'D3', 2, 2, 'images/apartment_images/p-3.jpg', 1956000, 42000, '1500 sq ft', 'Not Booked', 'Commercial', 'Rent', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Chittagong', 'Chittagong ', '', 'TAR62'),
-(15, 7, 'Pranto Fanta sea', 'C1', 5, 4, 'images/apartment_images/fp-12.jpg', 9800000, 56000, '2400 sq ft', 'Not Booked', 'House', 'Buy', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Gulshan', '', 'POT65'),
-(17, 6, 'Rafi Kingdom', 'C5', 4, 4, 'images/apartment_images/fp-12.jpg', 8800000, 46000, '2200 sq ft', 'Not Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'dhanmondi', '', 'RAF5'),
-(19, 17, 'Mill Home', 'A2', 4, 4, 'images/apartment_images/fp-12.jpg', 8800000, 46000, '2200 sq ft', 'Not Booked', 'House', 'Buy', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'dhanmondi', '', ''),
-(20, 17, 'Mill Home', 'C2', 5, 4, 'images/apartment_images/fp-12.jpg', 7800000, 56000, '2400 sq ft', 'Not Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Dhanmondi ', '', ''),
-(21, 18, 'cottage Home', 'D1', 5, 4, 'images/apartment_images/p-3.jpg', 956000, 42000, '2200 sq ft', 'Not Booked', 'Commercial', 'Buy', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Badda', '', ''),
-(22, 18, 'cottage Home', 'D6', 5, 4, 'images/apartment_images/p-3.jpg', 856000, 42000, '2200 sq ft', 'Not Booked', 'Commercial', 'Rent', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Badda', '', ''),
-(23, 17, 'Mill Home', 'D4', 5, 4, 'images/apartment_images/fp-12.jpg', 7800000, 56000, '2400 sq ft', 'Not Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Dhanmondi ', '', ''),
-(24, 18, 'cottage Home', 'D8', 5, 4, 'images/apartment_images/p-3.jpg', 856000, 42000, '2200 sq ft', 'Not Booked', 'Commercial', 'Rent', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Badda', '', '');
+(3, 6, 'Rafi Kingdom', 'B2', 4, 5, 'images/apartment_images/fp-11.jpg', 6750000, 50000, 3600, 'Booked', 'Commercial', 'Buy', 'Air Conditioning, Central Heating, Alarm', 'Dhaka', 'Badda', 'pranto0432', 'RAF5'),
+(6, 3, 'JawwadHarem', 'A3', 3, 3, 'images/apartment_images/p-3.jpg', 560000, 20000, 1300, 'Booked', 'House', 'Rent', 'Air Conditioning,Window Covering,', 'Dhaka', 'Dhanmondi', 'pranto3719', 'JH1'),
+(8, 12, 'Kabir Apartments', 'A2', 3, 3, 'images/apartment_images/p-3.jpg', 250000, 50000, 1300, 'Booked', 'House', 'Rent', 'Air Conditioning,Central Heating,Window Covering,TV Cable & WIFI,', 'Barisal', 'Farmgate', 'imran1111', 'KA64'),
+(9, 12, 'Kabir Apartments', 'D1', 4, 4, 'images/apartment_images/p-3.jpg', 3956000, 42000, 2200, 'Not Booked', 'Commercial', 'Buy', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Chittagong', 'Farmgate', '', 'KA64'),
+(10, 3, 'JawwadHarem', 'D4', 4, 4, 'images/apartment_images/p-3.jpg', 3956000, 42000, 2500, 'Booked', 'Commercial', 'Buy', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Farmgate', 'afia7839', 'JH1'),
+(13, 8, 'Tarin Dream Home', 'D3', 2, 2, 'images/apartment_images/p-3.jpg', 1956000, 42000, 1500, 'Not Booked', 'Commercial', 'Rent', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Chittagong', 'Chittagong ', '', 'TAR62'),
+(15, 7, 'Pranto Fanta sea', 'C1', 5, 4, 'images/apartment_images/fp-12.jpg', 9800000, 56000, 2400, 'Not Booked', 'House', 'Buy', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Gulshan', '', 'POT65'),
+(17, 6, 'Rafi Kingdom', 'C5', 4, 4, 'images/apartment_images/fp-12.jpg', 8800000, 46000, 2200, 'Not Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'dhanmondi', '', 'RAF5'),
+(19, 17, 'Mill Home', 'A2', 4, 4, 'images/apartment_images/fp-12.jpg', 8800000, 46000, 2200, 'Not Booked', 'House', 'Buy', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'dhanmondi', '', ''),
+(20, 17, 'Mill Home', 'C2', 5, 4, 'images/apartment_images/fp-12.jpg', 7800000, 56000, 2400, 'Not Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Dhanmondi ', '', ''),
+(21, 18, 'cottage Home', 'D1', 5, 4, 'images/apartment_images/p-3.jpg', 956000, 42000, 2200, 'Not Booked', 'Commercial', 'Buy', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Badda', '', ''),
+(22, 18, 'cottage Home', 'D6', 5, 4, 'images/apartment_images/p-3.jpg', 856000, 42000, 2200, 'Not Booked', 'Commercial', 'Rent', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Badda', '', ''),
+(23, 17, 'Mill Home', 'D4', 5, 4, 'images/apartment_images/fp-12.jpg', 7800000, 56000, 2400, 'Not Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Dhanmondi ', '', ''),
+(24, 18, 'cottage Home', 'D8', 5, 4, 'images/apartment_images/p-3.jpg', 856000, 42000, 2200, 'Not Booked', 'Commercial', 'Rent', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Badda', '', '');
 
 -- --------------------------------------------------------
 
@@ -312,7 +312,6 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `invoice_id`, `invoice_date`, `name`, `email`, `phone`, `amount`, `address`, `status`, `transaction_id`, `bank_transaction_id`, `payment_type`, `building_name`, `flat_no`, `currency`) VALUES
-(1, 9, '2022-01-13', 'Afia Mohona', 'aifa@gmail.com', '01714588523', 8500, 'Farmgate', 'Success', 'SSLCZ_TEST_61e965b96a717', '220120193909EAetMKOLG8O8UGc', 'BKash Mobile Banking', 'JawwadHarem', 'D4', 'BDT'),
 (2, 9, '2022-01-13', 'Afia Mohona', 'aifa@gmail.com', '01714588523', 8500, 'Farmgate', 'Success', 'SSLCZ_TEST_61e9669227993', '2201201942350S2RbFw6SrPoW6Y', 'STANDARD CHARTERED BANK', 'JawwadHarem', 'D4', 'BDT');
 
 -- --------------------------------------------------------

@@ -243,3 +243,34 @@ $i_no=$_GET['i_no'];
 
 <!-- Mirrored from code-theme.com/html/findhouses/invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Dec 2021 10:32:33 GMT -->
 </html>
+        <script src="js/search.js"></script>
+        <script src="js/owl.carousel.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/ajaxchimp.min.js"></script>
+        <script src="js/newsletter.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/searched.js"></script>
+        <script src="js/dashbord-mobile-menu.js"></script>
+        <script src="js/forms-2.js"></script>
+        <script src="js/color-switcher.js"></script>
+        <script src="js/dropzone.js"></script>
+
+        <!-- MAIN JS -->
+        <script src="js/script.js"></script>
+        
+        <script>
+            $(".header-user-name").on("click", function() {
+                $(".header-user-menu ul").toggleClass("hu-menu-vis");
+                $(this).toggleClass("hu-menu-visdec");
+            });
+
+        </script>
+
+    </div>
+    <!-- Wrapper / End -->
+</body>
+
+
+<!-- Mirrored from code-theme.com/html/findhouses/invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Dec 2021 10:32:33 GMT -->
+</html>

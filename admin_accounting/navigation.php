@@ -35,7 +35,6 @@ if($_SESSION['admin_type'] != 'finance_and_account'){
                         <ul id="responsive">
                             <li><a href="accounting_admin_dashboard.php">Home</a>
                             </li>
-                            <li><a href="#">Contact</a></li>
                             <li><a href="client_complaints.php">Complaints</a></li>
                         </ul>
                     </nav>

@@ -39,6 +39,8 @@ include "includes/functions.php";
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" id="color" href="css/default.css">
+    <link rel="stylesheet" href="css/advance_search.css">
+    <link rel="stylesheet" href="css/advance_search1.css">
 </head>
 
 <body class="inner-pages agents hp-6 full hd-white">
@@ -154,17 +156,19 @@ include "includes/functions.php";
                                                         <!-- Price Fields -->
                                                         <div class="main-search-field-2">
                                                             <!-- Area Range -->
-                                                            <div class="range-slider">
+                                                            <div class="slidecontainer">
                                                                 <label>Area Size</label>
-                                                                <div id="area-range" data-min="0" data-max="2500" data-unit="sq ft"></div>
+                                                                <input type="range" name="area" form="test" min="0" max="2500" value="0" class="slider" id="myRange" method="post">
+                                                                <p><span id="demo" ></span> Sqft</p>
                                                                 <div class="clearfix"></div>
                                                             </div>
                                                             <br>
                                                             <!-- Price Range -->
-                                                            <div class="range-slider">
+                                                            <div class="slidecontainer1">
                                                                 <label>Price Range</label>
-                                                                <div id="price-range" data-min="0" data-max="90000000" data-unit="BDT "></div>
-                                                                <input type= "range" value="50" min="0" max="1000000">
+                                                                <input type="range" name="price" form="test" min="0" max="10000000" value="0" class="slider" id="myRange1" method="post">
+                                                                <p><span id="demo1" ></span> BDT</p> 
+                                                                
                                                                 <div class="clearfix"></div>
                                                             </div>
                                                         </div>
@@ -330,6 +334,8 @@ include "includes/functions.php";
         <script src="js/newsletter.js"></script>
         <script src="js/inner.js"></script>
         <script src="js/color-switcher.js"></script>
+        <script src="js/advance_search.js"></script>
+        <script src="js/advance_search1.js"></script>
 
         <script>
             $(".dropdown-filter").on('click', function() {

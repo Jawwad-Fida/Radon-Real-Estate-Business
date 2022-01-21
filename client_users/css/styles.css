@@ -93,7 +93,7 @@ body {
   font-family: 'Lato', sans-serif;
   font-size: 15px;
   font-weight: 400;
-  color: #666;
+  color: rgb(14, 6, 61);
   overflow-x: hidden !important;
 }
 
@@ -211,6 +211,7 @@ img {
 
 .bg-white {
   background: #fff !important;
+  padding: 15px 20px 20px 20px;
 }
 
 .bg-gray {
@@ -18543,6 +18544,7 @@ a.button {
   background: #f7f7f7;
   -webkit-box-shadow: none;
           box-shadow: none;
+          padding-top: 0;
 }
 
 .db-top-header {
