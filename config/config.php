@@ -12,7 +12,7 @@ $STORE_PASSWORD = getenv('Store_Password');
 $STORE_NAME = getenv('Store_Name');
 
 if (!defined('PROJECT_PATH')) {
-    define('PROJECT_PATH', 'http://www.jawwadfida.com/phpDemo/Radon/'); // Replace this value with your project path
+    define('PROJECT_PATH', 'http://localhost/phpDemo/Radon/'); // Replace this value with your project path
 }
 
 if (!defined('API_DOMAIN_URL')) {
