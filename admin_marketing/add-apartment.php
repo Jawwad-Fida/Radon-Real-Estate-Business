@@ -24,34 +24,7 @@ if (isset($_POST['add_submit'])) {
     $no_of_bathroom = $_POST['no_of_bathroom'];
     $Division = $_POST['Division'];
 
-    //Test Case buildings
-    if($Division == 'Dhaka'){
-        $building_id = 4;
-        $building_name = 'Test Case 1';
-    } elseif ($Division == 'Chittagong'){
-        $building_id = 5;
-        $building_name = 'Test Case 2';
-    } elseif ($Division == 'Barisal'){
-        $building_id = 6;
-        $building_name = 'Test Case 3';
-    } elseif ($Division == 'Khulna'){
-        $building_id = 7;
-        $building_name = 'Test Case 4';
-    } elseif ($Division == 'Sylhet'){
-        $building_id = 8;
-        $building_name = 'Test Case 5';
-    } elseif ($Division == 'Rajshahi'){
-        $building_id = 9;
-        $building_name = 'Test Case 6';
-    } elseif ($Division == 'Rangpur'){
-        $building_id = 10;
-        $building_name = 'Test Case 7';
-    } elseif ($Division == 'Mymensingh'){
-        $building_id = 11;
-        $building_name = 'Test Case 8';
-    } 
-
-
+    
     //Checkbox values - Apartment Features
     $aDoor = $_POST['formDoor']; //array
     $chk = "";

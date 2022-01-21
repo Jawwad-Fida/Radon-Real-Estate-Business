@@ -34,7 +34,7 @@
                             <div class="col-lg-3 col-md-6 col-xs-12 dar rev mr-3">
                                 <div class="item">
                                     <div class="icon">
-                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-building"></i>
                                     </div>
                                     <div class="info">
                                         <h6 class="number">116</h6>
