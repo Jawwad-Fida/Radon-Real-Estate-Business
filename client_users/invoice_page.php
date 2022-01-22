@@ -14,11 +14,6 @@ if(isset($_GET['i_no']))
 $i_no=$_GET['i_no'];
 
 
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>

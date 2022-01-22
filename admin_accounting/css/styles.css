@@ -18429,7 +18429,7 @@ a.button {
 }
 
 .user-profile-box {
-  background: #af7f5c;
+  background: #c18847;
   -webkit-box-shadow: 0 0 20px rgba(38, 38, 38, 0.2);
           box-shadow: 0 0 20px rgba(38, 38, 38, 0.2);
   margin: 0 auto 50px;
@@ -18448,7 +18448,7 @@ a.button {
   background-repeat: no-repeat;
   border: none;
   margin: 0;
-  background: #af7f5c;
+  background: #c18747;
   background-size: cover;
   color: #ffffff;
   z-index: 1;
@@ -18579,7 +18579,7 @@ a.button {
 }
 
 .dashboard-bd .sidebar-header {
-  background-color: #805a3f;
+  background-color: #020202;
   padding: 28px 0 28px 0;
 }
 

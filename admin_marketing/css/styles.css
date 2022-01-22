@@ -18429,7 +18429,7 @@ a.button {
 }
 
 .user-profile-box {
-  background: #BB6238;
+  background: #c18847;
   -webkit-box-shadow: 0 0 20px rgba(38, 38, 38, 0.2);
           box-shadow: 0 0 20px rgba(38, 38, 38, 0.2);
   margin: 0 auto 50px;
@@ -18448,7 +18448,7 @@ a.button {
   background-repeat: no-repeat;
   border: none;
   margin: 0;
-  background: #BB6238;
+  background: #c18747;
   background-size: cover;
   color: #ffffff;
   z-index: 1;
@@ -18472,7 +18472,7 @@ a.button {
 .user-profile-box .profile-img {
   border-radius: 50%;
   background-clip: padding-box;
-  border: 5px solid #18ba60;
+  border: 5px solid rgb(0 0 0 / 50%);;
   bottom: 5px;
   float: left;
   height: 100px;
@@ -18489,7 +18489,7 @@ a.button {
 }
 
 .user-profile-box .detail ul li a {
-  color: #aeb7c2;
+  color: #121b22;
   padding: 12px 50px;
   display: block;
   text-decoration: none;
@@ -18579,7 +18579,7 @@ a.button {
 }
 
 .dashboard-bd .sidebar-header {
-  background-color: #c18847;
+  background-color: #020202;
   padding: 28px 0 28px 0;
 }
 
@@ -18648,7 +18648,7 @@ a.button {
   padding-top: 15px;
   font-size: 16px;
   margin-bottom: 30px;
-  color: #aeb7c2;
+  color: #121b22;
   text-align: center;
 }
 
@@ -18796,7 +18796,7 @@ body.dashboard-bd {
   position: relative;
   float: left;
   cursor: pointer;
-  color: #666;
+  color: #121b22;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   white-space: nowrap;
@@ -19039,7 +19039,7 @@ body.dashboard-bd {
   margin-bottom: 0;
   border: none;
   color: #c18847;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .messages .message {
