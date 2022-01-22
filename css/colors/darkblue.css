@@ -1,14 +1,14 @@
 .header-top {
-	background: #274abb;
+	background: #c18847;
 }
 a.button.border, a.button {
     background: #274abb;
 }
 #main-menu ul li a:hover {
-	background: #274abb;
+	background: #c18847;
 }
 #main-menu .dropdown-menu a:hover {
-	background: #274abb;
+	background: #c18847;
 }
 .bloq-search input[type="text"] {
 	border: 1px solid #274abb;
@@ -20,7 +20,7 @@ a.button.border, a.button {
 	background: #274abb;
 }
 .section-title:before {
-	background-color: #274abb;
+	background-color: #c18847;
 }
 .parallax-searchs .form-group .nice-select i,
 .parallax-searchs .form-group .nice-select:hover {
@@ -34,7 +34,7 @@ a.button.border, a.button {
     background: #274abb;
 }
 .section-title h2 {
-	color: #274abb;
+	color: #c18847;
 }
 .recently .homes-content .homes-list li {
 	color: #274abb;
@@ -62,29 +62,29 @@ a.button.border, a.button {
 	background: #274abb;
 }
 #navigation.style-1 .current {
-    color: #274abb;
+    color: #c18847;
 }
 .slick-prev.slick-disabled:hover, 
 .slick-next.slick-disabled:hover,
 .slick-prev:hover, 
 .slick-next:hover {
-    background: #274abb !important;
+    background: #c18847!important;
 }
 .slick-dots li.slick-active {
-    box-shadow: inset 0 0 0 6px #274abb;
+    box-shadow: inset 0 0 0 6px #c18847;
 }
 .slick-dots li {
-    box-shadow: inset 0 0 0 2px #274abb;
-    color: #274abb;
+    box-shadow: inset 0 0 0 2px #c18847;
+    color: #c18847;
 }
 .slick-dots li:after {
-    background: #274abb;
+    background: #c18847;
 }
 .portfolio .homes-content h3 a:hover {
     color: #274abb;
 }
 #navigation.style-1 ul li:hover {
-    background: #274abb;
+    background: #c18847;
 }
 .feature-cities-1 .listing-badges .featured {
     background: #274abb;
@@ -140,7 +140,7 @@ a.button.border, a.button {
 .first-footer .navigation h3::after,
 .first-footer .widget h3::after,
 .first-footer .contactus h3::after {
-	background-color: #274abb;
+	background-color: #c18847;
 }
 .first-footer .btn {
 	background: #274abb;
@@ -163,7 +163,7 @@ a.button.border, a.button {
 	background: #303441;
 }
 .go-up {
-	background: #274abb;
+	background: #c18847
 }
 .main-search-field {
 	background: #274abb;
@@ -330,41 +330,41 @@ a.button.border, a.button {
 	border: 1px solid #274abb;
 }
 .inner-pages .contact-us .btn:hover {
-	border: 1px solid #274abb;
+	border: 1px solid #c18847;
 }
 .inner-pages .call-info h3::after {
-	background-color: #274abb;
+	background-color: #c18847;
 }
 .inner-pages .call-info ul li .fa {
-	color: #274abb;
+	color: #c18847;
 }
 .inner-pages .single-add-property > h3 {
-	color: #274abb;
+	color: #c18847;
 }
 .inner-pages .prperty-submit-button > button {
-	background: #274abb none repeat scroll 0 0;
+	background: #c18847 none repeat scroll 0 0;
 }
 .leaflet-div-icon, .map-marker {
-	background-color: #274abb;
-	border: 5px solid #274abb;
+	background-color: #c18847;
+	border: 5px solid #c18847;
 }
 .leaflet-div-icon:before, .map-marker:before {
-	border-top-color: #274abb;
+	border-top-color: #c18847;
 }
 .listing-window-image:before {
-	background-color: #274abb;
+	background-color: #c18847;
 }
 .listing-window-content h3 {
-	background-color: #274abb;
+	background-color: #c18847;
 }
 .blog-section .action-list .fa-comment {
-    color: #274abb;
+    color: #c18847;
 }
 .blog-section .action-list .fa-share-alt {
-    color: #274abb;
+    color: #c18847;
 }
 .blog-section .action-list .fa-heart {
-    color: #274abb;
+    color: #c18847;
 }
 section.pricing-table {
     padding: 6rem 0;
@@ -375,8 +375,8 @@ section.pricing-table {
 .rld-banner-tab .nav-item a.active:before,
 .btn.btn-yellow,
 .homes-tag.featured {
-    background: #274abb !important;
+    background: #c18847 !important;
 }
 .dropdown-filter span::after {
-    color: #274abb;
+    color: #c18847;
 }

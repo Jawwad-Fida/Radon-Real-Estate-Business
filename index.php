@@ -89,41 +89,33 @@ include "includes/functions.php";
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="tabs_1">
                                             <div class="rld-main-search">
-                                                <div class="row">
-                                                    <div class="col-lg-2 col-md-3 py-1 pl-0 pr-0">
-                                                        <!-- Form Bathrooms -->
-                                                        <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
-                                                            <div class="rld-single-select">
-                                                                <select class="select single-select mr-0" name="bath" form="test10">
-                                                                    <option value="null">Bathroom</option>
-                                                                    <option value="1">1</option>
-                                                                    <option value="2">2</option>
-                                                                    <option value="3">3</option>
-                                                                    <option value="4">4</option>
-                                                                    <option value="5">5</option>
-
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <!--/ End Form Bathrooms -->
-                                                    </div>
-                                                    <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
-                                                        <!-- Form Bedrooms -->
-                                                        <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
-                                                            <div class="rld-single-select">
-                                                                <select class="select single-select mr-0" name="bed" form="test10">
-                                                                    <option value="null">Bedroom</option>
-                                                                    <option value="1">1</option>
-                                                                    <option value="2">2</option>
-                                                                    <option value="3">3</option>
-                                                                    <option value="4">4</option>
-                                                                    <option value="5">5</option>
-
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <!--/ End Form Bedrooms -->
-                                                    </div>
+                                                <div class="row">                   
+                                                <!-- Form Bathrooms -->                                                       
+                                                    <div class="rld-single-select">
+                                                        <select class="select single-select mr-0" name="bath" form="test10">
+                                                            <option value="null">Bathroom</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                        </select>
+                                                    </div>                                                     
+                                                <!--/ End Form Bathrooms -->                                                 
+                                            
+                                                <!-- Form Bedrooms -->                                                       
+                                                    <div class="rld-single-select">
+                                                        <select class="select single-select mr-0" name="bed" form="test10">
+                                                            <option value="null">Bedroom</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                        </select>
+                                                    </div>                                                       
+                                                <!--/ End Form Bedrooms -->
+                                                    
                                                     <div class="rld-single-select">
                                                         <select class="select single-select mr-0" name="addr" id="test10">
                                                             <option value="null">Location</option>
@@ -178,10 +170,9 @@ include "includes/functions.php";
                                     <form action="Customer_Rent_list_search.php" method="post" id="test1">
                                         <div class="rld-main-search">
                                             <div class="row">
-
-                                                <div class="col-lg-2 col-md-3 py-1 pl-0 pr-0">
+                                                
                                                     <!-- Form Bathrooms -->
-                                                    <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
+                                                    
                                                         <div class="rld-single-select">
                                                             <select class="select single-select mr-0" name="bath" form="test1">
                                                                 <option value="null">Bathroom</option>
@@ -193,12 +184,12 @@ include "includes/functions.php";
 
                                                             </select>
                                                         </div>
-                                                    </div>
+                                                   
                                                     <!--/ End Form Bathrooms -->
-                                                </div>
-                                                <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
+                                                
+                                                
                                                     <!-- Form Bedrooms -->
-                                                    <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
+                                                    
                                                         <div class="rld-single-select">
                                                             <select class="select single-select mr-0" name="bed" form="test1">
                                                                 <option value="null">Bedroom</option>
@@ -210,9 +201,9 @@ include "includes/functions.php";
 
                                                             </select>
                                                         </div>
-                                                    </div>
+                                                    
                                                     <!--/ End Form Bedrooms -->
-                                                </div>
+                                                
                                                 <div class="rld-single-select">
                                                     <select class="select single-select mr-0" name="addr" form="test1">
                                                         <option value="null">Location</option>
@@ -545,7 +536,7 @@ include "includes/functions.php";
             </div>
         </div>
     </section>
-    ?>
+    
     <!-- END SECTION SERVICES -->
 
     
@@ -603,58 +594,6 @@ include "includes/functions.php";
         </div>
     </section>
     <!-- END SECTION AGENTS -->
-
-    <!-- START SECTION TESTIMONIALS -->
-    <section class="testimonials bg-gray">
-        <div class="container">
-            <div class="section-title">
-                <h3>Happy</h3>
-                <h2>Customers</h2>
-            </div>
-            <div class="owl-carousel style1">
-                <div class="test-1" data-aos="zoom-in">
-                    <h3>Lisa Smith</h3>
-                    <img src="images/testimonials/ts-1.jpg" alt="">
-                    <h6 class="mt-2">New York</h6>
-                    <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                </div>
-                <div class="test-1" data-aos="zoom-in">
-                    <h3>Jhon Morris</h3>
-                    <img src="images/testimonials/ts-2.jpg" alt="">
-                    <h6 class="mt-2">Los Angeles</h6>
-
-                    <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                </div>
-                <div class="test-1" data-aos="zoom-in">
-                    <h3>Mary Deshaw</h3>
-                    <img src="images/testimonials/ts-3.jpg" alt="">
-                    <h6 class="mt-2">Chicago</h6>
-
-                    <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                </div>
-                <div class="test-1" data-aos="zoom-in">
-                    <h3>Gary Steven</h3>
-                    <img src="images/testimonials/ts-4.jpg" alt="">
-                    <h6 class="mt-2">Philadelphia</h6>
-
-                    <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                </div>
-                <div class="test-1" data-aos="zoom-in">
-                    <h3>Cristy Mayer</h3>
-                    <img src="images/testimonials/ts-5.jpg" alt="">
-                    <h6 class="mt-2">San Francisco</h6>
-                    <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                </div>
-                <div class="test-1" data-aos="zoom-in">
-                    <h3>Ichiro Tasaka</h3>
-                    <img src="images/testimonials/ts-6.jpg" alt="">
-                    <h6 class="mt-2">Houston</h6>
-                    <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END SECTION TESTIMONIALS -->
 
 
     <!-- START FOOTER -->

@@ -2796,14 +2796,14 @@ section.portfolio {
 }
 
 .portfolio .homes-content {
-  background: #fff !important;
+  background: #212122 !important;
   padding: 20px 20px !important;
 }
 
 .portfolio .homes-content h3.title a {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #666;
+  color: #fbfffe
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -3148,7 +3148,7 @@ section.portfolio {
 /*------------------------------------*/
 section.popular-places {
   padding: 4.6rem 0;
-  background: #fff;
+  background: #212122;
 }
 
 .popular-places .img-box {
@@ -4516,10 +4516,10 @@ section.counterup {
 /*------ 15. SECTION FOOTER ------*/
 /*-----------------------------------*/
 .first-footer .top-footer {
-  background: #303441;
+  background: #212122;
   color: #333;
   padding: 6rem 0;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #212122;
 }
 
 .first-footer .logo img {
@@ -10045,7 +10045,7 @@ body.int_white_bg {
 }
 
 .bg-white-2 {
-  background: #212122 !important;
+  background: #282d32 !important;
 }
 
 .int_white_bg .section-title h3 {
@@ -14471,7 +14471,7 @@ a.button {
 
 .homepage-23 .parallax-searchs .form-group .nice-select i,
 .homepage-23 .dropdown-filter span::after {
-  color: #274abb;
+  color: #c18847;
 }
 
 .homepage-23 .parallax-searchs .form-group .nice-select:hover {
