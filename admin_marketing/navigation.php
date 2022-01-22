@@ -33,16 +33,8 @@ if($_SESSION['admin_type'] != 'marketing'){
                     <nav id="navigation" class="style-1">
                         <ul id="responsive">
                             <li><a href="../index.php">Home</a>
-                            </li>
-                            <li><a href="#">Property List</a>
-                                <ul>
-                                    <li><a href="#">For Rent</a></li>
-                                    <li><a href="#">For Buy</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Review List</a></li>
-                            <li><a href="view_appointment.php">Appointment</a></li>
-                            <li><a href="#">Contact</a></li>
+                            </li>                                                
+                            <li><a href="view_appointment.php">Appointment</a></li>                         
                         </ul>
                     </nav>
                     <div class="clearfix"></div>

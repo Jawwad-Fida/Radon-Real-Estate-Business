@@ -22128,6 +22128,7 @@ form label.error {
   padding: 10px;
   width: 100%;
   background-color: #282d32;
+  color:white;
 }
 
 .inner-pages .property-form-group p.no-mb,

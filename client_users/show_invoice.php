@@ -85,6 +85,7 @@ $name = $_SESSION['name'];
                                             <thead>
                                                 <tr>
                                                     <th>Invoice ID</th>
+                                                    <th>Action</th>  
                                                     <th>Building Name</th>
                                                     <th>Flat_no</th>
                                                     <th>Billing Month</th>
@@ -99,7 +100,7 @@ $name = $_SESSION['name'];
                                                     <th>Due Charge </th>
                                                     <th>Total Bill</th>
                                                     <th>Status</th> 
-                                                    <th>Action</th>     
+                                                        
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -121,7 +122,13 @@ $name = $_SESSION['name'];
                                                     <tr>
                                                         <td>
                                                             <input type="button" class="btn btn-link" value="<?php echo $row['invoice_no']?>" 
-                                                                    onclick="show_invoice('<?php echo $row['invoice_no']?>');"></td>
+                                                                    onclick="show_invoice('<?php echo $row['invoice_no']?>');">
+                                                        </td>
+                                                        <td>
+                                                    
+                                                            <a href="../example_hosted.php?amount=<?php echo $row['total_bill']; ?>&invoice_id=<?php echo $row['invoice_no']; ?>&invoice_date=<?php echo $row['issue_date']; ?>" onclick="javascript: return confirm('Do want to proceed to payment?');"><i class="fas fa-credit-card"></i></a>                    
+                                                        </td>
+
                                                         <td><?php echo $row['building_name']?></td>
                                                         <td><?php echo $row['flat_no']?></td>
                                                         <td><?php echo $row['billing_month']?></td>
@@ -161,10 +168,7 @@ $name = $_SESSION['name'];
                                                         <td><?php echo $row['due_charge']?></td>
                                                         <td><?php echo $row['total_bill']?></td>
                                                         <td><?php echo $row['status']?></td>
-                                                        <td>
-                                                    
-                                                            <a href="../example_hosted.php?amount=<?php echo $row['total_bill']; ?>&invoice_id=<?php echo $row['invoice_no']; ?>&invoice_date=<?php echo $row['issue_date']; ?>" onclick="javascript: return confirm('Do want to proceed to payment?');"><i class="fas fa-credit-card"></i></a>                    
-                                                        </td>
+                                                        
                                                 </tr>
 
                                                 <?php

@@ -9486,6 +9486,7 @@ a.int_btn,
 .int_main_wraapper {
   overflow: hidden;
   position: relative;
+  background-color: #282d32;
 }
 
 .banner_box_wrapper .swiper-slide.swiper-slide-active .imgbox1 .swipper_img h4 {
@@ -18653,7 +18654,7 @@ a.button {
 }
 
 body.dashboard-bd {
-  background: #f5f7fb;
+  background: #282d32;
 }
 
 .dashboard-bd .sidebar-header img {
@@ -22128,6 +22129,7 @@ form label.error {
   padding: 10px;
   width: 100%;
   background-color: #282d32;
+  color: white;
 }
 
 .inner-pages .property-form-group p.no-mb,
@@ -22155,6 +22157,7 @@ form label.error {
   height: 180px;
   padding: 10px;
   width: 100%;
+  color: white;
 }
 
 .inner-pages .single-add-property {

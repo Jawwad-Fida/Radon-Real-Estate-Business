@@ -51,26 +51,25 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-12 who-1">
                         <div>
-                            <h2 class="text-left mb-4">About <span>Find Houses</span></h2>
+                            <h2 class="text-left mb-8">About <span>Our Company</span></h2>
                         </div>
                         <div class="pftext">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum odio id voluptatibus incidunt cum?
-                                Atque quasi eum debitis optio ab. Esse itaque officiis tempora possimus odio rerum aperiam ratione, sunt.
-                                Atque.</p>
+                            <p>Our Company is online based Real estate business where users can buy, and rent luxurious properties from online.
+                                A real estate business consists of land and improvement which includes building fixtures, roads, structures and utility system. Our project have two field to explore.
+                                 </p>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum odio id voluptatibus incidunt cum? Atque
-                                quasi eum debitis optio ab. Esse itaque officiis tempora possimus odio rerum aperiam ratione, sunt. Lorem ipsum
-                                dolor sit amet, consectetur adipisicing elit sunt.</p>
+                            <p>Firstly we have a pure real estate platform where client can buy and rent apartments or properties from anywhere through online.Our real estate service allows users search for a new home through filtering searches by property types and many other categories.
+                                 They can easily interact with their favourite properties by scheduling a tour with an agent. Secondly our project will mainly focused on the post-handover service which means our company will still take care of the properties management and accounting (utility bill, invoice…etc) even after handing over the property to its clients
+                                  And client have their personal account on the website where the can view every details of that property and property invoices. They can also pay their bills and invoice through online.
+                                 Along with many other new ideas of real estate business our project motivation is not only avoid embezzlement through online payment but also making real estate business time efficient and flawless in accounting.
                         </div>
-                        <div class="box bg-2">
-                            <img src="images/signature.png" class="ml-5" alt="">
-                        </div>
+                        
                     </div>
                     <div class="col-lg-6 col-md-12 col-xs-12">
                         <div class="wprt-image-video w50">
                             <img alt="image" src="images/bg/bg-video.jpg">
-                            <a class="icon-wrap popup-video popup-youtube" href="https://www.youtube.com/watch?v=2xHQqYRcrx4">
-                                <i class="fa fa-play"></i>
+                            <!--<a class="icon-wrap popup-video popup-youtube" href="https://www.youtube.com/watch?v=2xHQqYRcrx4">
+                                <i class="fa fa-play"></i>-->
                             </a>
                             <div class="iq-waves">
                                 <div class="waves wave-1"></div>
@@ -96,11 +95,10 @@
                         <div class="serv-flex">
                             <div class="art-1 img-13">
                                 <img src="images/icons/icon-4.svg" alt="">
-                                <h3>Wide Renge Of Properties</h3>
+                                <h3>Categorical Search Home</h3>
                             </div>
                             <div class="service-text-p">
-                                <p class="text-center">lorem ipsum dolor sit amet, consectetur pro adipisici consectetur debits adipisicing
-                                    lacus consectetur Business Directory.</p>
+                                
                             </div>
                         </div>
                     </article>
@@ -108,11 +106,10 @@
                         <div class="serv-flex">
                             <div class="art-1 img-14">
                                 <img src="images/icons/icon-5.svg" alt="">
-                                <h3>Trusted by thousands</h3>
+                                <h3>Trusted By Thousands</h3>
                             </div>
                             <div class="service-text-p">
-                                <p class="text-center">lorem ipsum dolor sit amet, consectetur pro adipisici consectetur debits adipisicing
-                                    lacus consectetur Business Directory.</p>
+                                
                             </div>
                         </div>
                     </article>
@@ -120,11 +117,10 @@
                         <div class="serv-flex arrow">
                             <div class="art-1 img-15">
                                 <img src="images/icons/icon-6.svg" alt="">
-                                <h3>Financing made easy</h3>
+                                <h3>Invoice Payment System</h3>
                             </div>
                             <div class="service-text-p">
-                                <p class="text-center">lorem ipsum dolor sit amet, consectetur pro adipisici consectetur debits adipisicing
-                                    lacus consectetur Business Directory.</p>
+                                
                             </div>
                         </div>
                     </article>
@@ -145,28 +141,42 @@
                     <div class="col-lg-3 col-md-6 team-pro" data-aos="fade-up" data-aos-delay="150">
                         <div class="team-wrap">
                             <div class="team-img">
-                                <img src="images/team/t-5.jpg" alt="" />
+                                <img src="images/team/Tarin.jpg" alt="" />
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 team-pro" data-aos="fade-up" data-aos-delay="250">
                         <div class="team-wrap">
                             <div class="team-img">
-                                <img src="images/team/t-6.jpg" alt="" />
+                                <img src="images/team/Jawwad.jpg" alt="" />
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 team-pro pb-none" data-aos="fade-up" data-aos-delay="350">
                         <div class="team-wrap">
                             <div class="team-img">
-                                <img src="images/team/t-7.jpg" alt="" />
+                                <img src="images/team/Aysha.jpg" alt="" />
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 team-pro" data-aos="fade-up" data-aos-delay="450">
                         <div class="team-wrap">
                             <div class="team-img">
-                                <img src="images/team/t-8.jpg" alt="" />
+                                <img src="images/team/Rafi.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 team-pro" data-aos="fade-up" data-aos-delay="450">
+                        <div class="team-wrap">
+                            <div class="team-img">
+                                <img src="images/team/Mimo.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 team-pro" data-aos="fade-up" data-aos-delay="450">
+                        <div class="team-wrap">
+                            <div class="team-img">
+                                <img src="images/team/Pranto.jpg" alt="" />
                             </div>
                         </div>
                     </div>
@@ -176,124 +186,7 @@
         <!-- END SECTION AGENTS -->
 
         <!-- START SECTION TESTIMONIALS -->
-        <section class="testimonials home18 bg-white">
-            <div class="container">
-                <div class="sec-title">
-                    <h2><span>Clients </span>Testimonials</h2>
-                    <p>We collect reviews from our customers.</p>
-                </div>
-                <div class="owl-carousel style1">
-                    <div class="test-1 pb-0 pt-0">
-                        <img src="images/testimonials/ts-1.jpg" alt="">
-                        <h3 class="mt-3 mb-0">Lisa Smith</h3>
-                        <h6 class="mt-1">New York</h6>
-                        <ul class="starts text-center mb-2">
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                    </div>
-                    <div class="test-1 pb-0 pt-0">
-                        <img src="images/testimonials/ts-2.jpg" alt="">
-                        <h3 class="mt-3 mb-0">Jhon Morris</h3>
-                        <h6 class="mt-1">Los Angeles</h6>
-                        <ul class="starts text-center mb-2">
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star-o"></i>
-                            </li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                    </div>
-                    <div class="test-1 pt-0">
-                        <img src="images/testimonials/ts-3.jpg" alt="">
-                        <h3 class="mt-3 mb-0">Mary Deshaw</h3>
-                        <h6 class="mt-1">Chicago</h6>
-                        <ul class="starts text-center mb-2">
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                    </div>
-                    <div class="test-1 pt-0">
-                        <img src="images/testimonials/ts-4.jpg" alt="">
-                        <h3 class="mt-3 mb-0">Gary Steven</h3>
-                        <h6 class="mt-1">Philadelphia</h6>
-                        <ul class="starts text-center mb-2">
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star-o"></i>
-                            </li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                    </div>
-                    <div class="test-1 pt-0">
-                        <img src="images/testimonials/ts-5.jpg" alt="">
-                        <h3 class="mt-3 mb-0">Cristy Mayer</h3>
-                        <h6 class="mt-1">San Francisco</h6>
-                        <ul class="starts text-center mb-2">
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                    </div>
-                    <div class="test-1 pt-0">
-                        <img src="images/testimonials/ts-6.jpg" alt="">
-                        <h3 class="mt-3 mb-0">Ichiro Tasaka</h3>
-                        <h6 class="mt-1">Houston</h6>
-                        <ul class="starts text-center mb-2">
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star-o"></i>
-                            </li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
         <!-- END SECTION TESTIMONIALS -->
 
         <!-- START FOOTER -->
@@ -303,23 +196,23 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
                             <div class="netabout">
-                                <a href="index-2.html" class="logo">
+                                <a href="#" class="logo">
                                     <img src="images/logo-footer.svg" alt="netcom">
                                 </a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt architecto soluta laboriosam, perspiciatis, aspernatur officiis esse.</p>
+                                
                             </div>
                             <div class="contactus">
                                 <ul>
                                     <li>
                                         <div class="info">
                                             <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            <p class="in-p">95 South Park Avenue, USA</p>
+                                            <p class="in-p">11no Road Banani, Bangladesh</p>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="info">
                                             <i class="fa fa-phone" aria-hidden="true"></i>
-                                            <p class="in-p">+456 875 369 208</p>
+                                            <p class="in-p">+8801733344444</p>
                                         </div>
                                     </li>
                                     <li>
@@ -336,11 +229,11 @@
                                 <h3>Navigation</h3>
                                 <div class="nav-footer">
                                     <ul>
-                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="Customer_Dashboard.php">Home</a></li>
                                     </ul>
                                     <ul class="nav-right">
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li class="no-mgb"><a href="contact-us.html">Contact Us</a></li>
+                                        <li><a href="about.php">About Us</a></li>
+                                        <li class="no-mgb"><a href="">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>
