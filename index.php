@@ -44,6 +44,8 @@ include "includes/functions.php";
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" id="color" href="css/colors/darkblue.css">
+    <link rel="stylesheet" href="css/advance_search.css">
+    <link rel="stylesheet" href="css/advance_search1.css">
 </head>
 
 <body class="homepage-23 the-search">
@@ -85,14 +87,14 @@ include "includes/functions.php";
                                         <a class="nav-link" data-toggle="tab" href="#tabs_2">For Rent</a>
                                     </li>
                                 </ul>
-                                <form action="Customer_Buy_list_search.php" method="post" id="test10">
+                                <form action="Customer_Buy_list_search.php" method="post" id="index1">
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="tabs_1">
                                             <div class="rld-main-search">
                                                 <div class="row">                   
                                                 <!-- Form Bathrooms -->                                                       
                                                     <div class="rld-single-select">
-                                                        <select class="select single-select mr-0" name="bath" form="test10">
+                                                        <select class="select single-select mr-0" name="bath" form="index1">
                                                             <option value="null">Bathroom</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
@@ -105,7 +107,7 @@ include "includes/functions.php";
                                             
                                                 <!-- Form Bedrooms -->                                                       
                                                     <div class="rld-single-select">
-                                                        <select class="select single-select mr-0" name="bed" form="test10">
+                                                        <select class="select single-select mr-0" name="bed" form="index1">
                                                             <option value="null">Bedroom</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
@@ -117,7 +119,7 @@ include "includes/functions.php";
                                                 <!--/ End Form Bedrooms -->
                                                     
                                                     <div class="rld-single-select">
-                                                        <select class="select single-select mr-0" name="addr" id="test10">
+                                                        <select class="select single-select mr-0" name="addr" id="index1">
                                                             <option value="null">Location</option>
                                                             <option value="Banani">Banani</option>
                                                             <option value="Gulshan">Gulshan</option>
@@ -134,31 +136,31 @@ include "includes/functions.php";
                                                     </div>
                                                     <div class="dropdown-filter"><span>Advanced Search</span></div>
                                                     <div class="col-xl-2 col-lg-2 col-md-4 pl-0">
-                                                        <button class="btn btn-yellow" form="test10" name="search" type="submit" formmethod="post">Search Now</button>
+                                                        <button class="btn btn-yellow" form="index1" name="search" type="submit" formmethod="post">Search Now</button>
                                                     </div>
                                                     <div class="explore__form-checkbox-list full-filter">
                                                         <div class="row">
-                                                            <div class="col-lg-3 col-md-3 py-1 pr-30 pl-0 ">
-                                                                <div class="rld-single-select">
-                                                                    <select class="select single-select mr-0" name="bath" form="test">
-                                                                        <option value="0">Price Range</option>
-                                                                        <option value="1">৳500000+</option>
-                                                                        <option value="2">৳750000+</option>
-                                                                        <option value="3">৳1000000+</option>
-                                                                        <option value="4">৳2000000+</option>                                                       
-                                                                    </select>
-                                                                </div>
-                                                                <div class="rld-single-select">
-                                                                <select class="select single-select mr-0" name="bath" form="test">
-                                                                    <option value="0">Size Range</option>
-                                                                    <option value="1">1500sqft</option>
-                                                                    <option value="2">1700sqft</option>
-                                                                    <option value="3">2000sqft</option>
-                                                                    <option value="4">2500sqft</option>
-                                                                    <option value="5">3000sqft</option>
-                                                                </select>
-                                                                </div>
-                                                            </div>                                                      
+                                                        <div class="col-lg-10 col-md-12 col-sm-12 py-1 pr-30 mr-5 sld">
+                                                        <!-- Price Fields -->
+                                                        <div class="main-search-field-2">
+                                                            <!-- Area Range -->
+                                                            <div class="slidecontainer">
+                                                                <label>Area Size</label>
+                                                                <input type="range" name="area" form="index1" min="0" max="2500" value="0" class="slider" id="myRange" method="post">
+                                                                <p><span id="demo" ></span> Sqft</p>
+                                                                <div class="clearfix"></div>
+                                                            </div>
+                                                            <br>
+                                                            <!-- Price Range -->
+                                                            <div class="slidecontainer1">
+                                                                <label>Price Range</label>
+                                                                <input type="range" name="price" form="index1" min="0" max="10000000" value="0" class="slider" id="myRange1" method="post">
+                                                                <p><span id="demo1" ></span> BDT</p> 
+                                                                
+                                                                <div class="clearfix"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>                                                      
                                                         </div>
                                                     </div>
                                                 </div>
@@ -167,14 +169,14 @@ include "includes/functions.php";
                                 </form>
 
                                 <div class="tab-pane fade " id="tabs_2">
-                                    <form action="Customer_Rent_list_search.php" method="post" id="test1">
+                                    <form action="Customer_Rent_list_search.php" method="post" id="index2">
                                         <div class="rld-main-search">
                                             <div class="row">
                                                 
                                                     <!-- Form Bathrooms -->
                                                     
                                                         <div class="rld-single-select">
-                                                            <select class="select single-select mr-0" name="bath" form="test1">
+                                                            <select class="select single-select mr-0" name="bath" form="index2">
                                                                 <option value="null">Bathroom</option>
                                                                 <option value="1">1</option>
                                                                 <option value="2">2</option>
@@ -191,7 +193,7 @@ include "includes/functions.php";
                                                     <!-- Form Bedrooms -->
                                                     
                                                         <div class="rld-single-select">
-                                                            <select class="select single-select mr-0" name="bed" form="test1">
+                                                            <select class="select single-select mr-0" name="bed" form="index2">
                                                                 <option value="null">Bedroom</option>
                                                                 <option value="1">1</option>
                                                                 <option value="2">2</option>
@@ -205,7 +207,7 @@ include "includes/functions.php";
                                                     <!--/ End Form Bedrooms -->
                                                 
                                                 <div class="rld-single-select">
-                                                    <select class="select single-select mr-0" name="addr" form="test1">
+                                                    <select class="select single-select mr-0" name="addr" form="index2">
                                                         <option value="null">Location</option>
                                                         <option value="Banani">Banani</option>
                                                         <option value="Gulshan">Gulshan</option> 
@@ -221,31 +223,31 @@ include "includes/functions.php";
                                                 </div>
                                                 <div class="dropdown-filter"><span>Advanced Search</span></div>
                                                 <div class="col-xl-2 col-lg-2 col-md-4 pl-0">
-                                                    <button class="btn btn-yellow" form="test1" name="search" type="submit" formmethod="post">Search Now</button>
+                                                    <button class="btn btn-yellow" form="index2" name="search" type="submit" formmethod="post">Search Now</button>
                                                 </div>
                                                 <div class="explore__form-checkbox-list full-filter">
                                                     <div class="row">
-                                                        <div class="col-lg-3 col-md-3 py-1 pr-30 pl-0 ">
-                                                            <div class="rld-single-select">
-                                                                <select class="select single-select mr-0" name="bath" form="test">
-                                                                    <option value="0">Price Range</option>
-                                                                    <option value="1">৳500000+</option>
-                                                                    <option value="2">৳750000+</option>
-                                                                    <option value="3">৳1000000+</option>
-                                                                    <option value="4">৳2000000+</option>                                                       
-                                                                </select>
+                                                    <div class="col-lg-10 col-md-12 col-sm-12 py-1 pr-30 mr-5 sld">
+                                                        <!-- Price Fields -->
+                                                        <div class="main-search-field-2">
+                                                            <!-- Area Range -->
+                                                            <div class="slidecontainer">
+                                                                <label>Area Size</label>
+                                                                <input type="range" name="area" form="index2" min="0" max="2500" value="0" class="slider" id="myRange2" method="post">
+                                                                <p><span id="demo2" ></span> Sqft</p>
+                                                                <div class="clearfix"></div>
                                                             </div>
-                                                            <div class="rld-single-select">
-                                                            <select class="select single-select mr-0" name="bath" form="test">
-                                                                <option value="0">Size Range</option>
-                                                                <option value="1">1500sqft</option>
-                                                                <option value="2">1700sqft</option>
-                                                                <option value="3">2000sqft</option>
-                                                                <option value="4">2500sqft</option>
-                                                                <option value="5">3000sqft</option>
-                                                            </select>
+                                                            <br>
+                                                            <!-- Price Range -->
+                                                            <div class="slidecontainer1">
+                                                                <label>Price Range</label>
+                                                                <input type="range" name="price" form="index2" min="0" max="95000" value="0" class="slider" id="myRange3" method="post">
+                                                                <p><span id="demo3" ></span> BDT</p> 
+                                                                
+                                                                <div class="clearfix"></div>
                                                             </div>
-                                                        </div>                                                      
+                                                        </div>
+                                                    </div>                                                      
                                                     </div>
                                                 </div>
                                             </div>
@@ -695,6 +697,10 @@ include "includes/functions.php";
     <script src="js/searched.js"></script>
     <script src="js/range.js"></script>
     <script src="js/color-switcher.js"></script>
+    <script src="js/advance_search.js"></script>
+    <script src="js/advance_search1.js"></script>
+    <script src="js/advance_search2.js"></script>
+    <script src="js/advance_search3.js"></script>
     <script>
         $(window).on('scroll load', function() {
             $("#header.cloned #logo img").attr("src", $('#header #logo img').attr('data-sticky-logo'));
