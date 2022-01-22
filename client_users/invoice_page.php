@@ -10,13 +10,13 @@ include "../includes/functions.php";
 
 $username = $_SESSION['username'];
 $name = $_SESSION['name'];
-if(isset($_GET['i_no'])) 
-$i_no=$_GET['i_no'];
+if(isset($_GET['i_no'])){
+$i_no = $_GET['i_no'];
 
 
+}
 
-
-
+$invoice = $i_no;
 
 
 ?>
@@ -77,9 +77,19 @@ $i_no=$_GET['i_no'];
 
                     <div class="col-lg-9 col-md-12 col-xs-12 py-0 pl-0 user-dash2">
                         <!-- Print Button -->
+                
+                        <form action="../pdf.php" method="post" id="test22">
+
+                        
+                        
+                        
+
                         <div class="print-button-container">
-                            <a href="javascript:window.print()" class="print-button">Print this invoice</a>
+                           <!-- <a href="javascript:window.print()" class="print-button">Print this invoice</a> -->
+                           <!--<a href="../pdf.php" class="print-button">Print this invoice</a>-->
+                           <button class="print-button" form="test22" name="print" formmethod="post">Print This invoice</button>
                         </div>
+                        
                         <div class="invoice mb-0">
                             <div class="card border-0">
                                 <div class="card-body p-0">
@@ -97,6 +107,7 @@ $i_no=$_GET['i_no'];
 
                                                     $b_month=$row['billing_month'];
                                                     $flat_no= $row['flat_no'];
+                                                    
                                                     $building_name= $row['building_name'];
 
                                                     $stmt1 = query("SELECT * 
@@ -107,8 +118,10 @@ $i_no=$_GET['i_no'];
 
                                                     $table1=$stmt1->fetchAll(); 
                                                     $row1=$table1[0];?>
+                                                    
 
                                             <p class="text-muted">Due to: <?php echo $row['due_date'] ?> </p>
+                                            
                                         </div>
                                     </div>
                                     <hr class="my-5">
@@ -126,6 +139,10 @@ $i_no=$_GET['i_no'];
                                                 <p class="mb-0"> <?php echo $row2['occupation']?></p>
                                                 <p class="mb-0"><?php echo $row2['present_address']?></p>
                                                 <p class="mb-0"><?php echo $row2['mobile_number']?></p>
+
+                                                
+                            
+                                                
                                         </div>
 
  <!--                                        <div class="col-md-6 text-right">
@@ -164,11 +181,29 @@ $i_no=$_GET['i_no'];
                                                         <td><?php echo $row['arrear']?></td>
                                                         <td><?php echo $row['due_charge']?></td>
                                                         <td><?php echo $row['total_bill']?></td>
+                                                        
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
+
+                                    <input type="hidden" value="<?php echo $name; ?>" name="name" required />
+                                    <input type="hidden" value="<?php echo $invoice; ?>" name="invoice" required />
+                                    <input type="hidden" value="<?php echo $row['due_date'] ?>" name="due_date" required />
+
+                                    <input type="hidden" value="<?php echo $row2['occupation'] ?>" name="occupation" required />
+                                    <input type="hidden" value="<?php echo $row2['present_address'] ?>" name="present_address" required />
+                                    <input type="hidden" value="<?php echo $row2['mobile_number'] ?>" name="mobile_number" required />
+
+                                    <input type="hidden" value="<?php echo $row1['gas_bill'] ?>" name="gas_bill" required />
+                                    <input type="hidden" value="<?php echo $row1['electricity_bill'] ?>" name="electricity_bill" required />
+                                    <input type="hidden" value="<?php echo $row1['water_bill'] ?>" name="water_bill" required />
+                                    <input type="hidden" value="<?php echo $row1['additional_bill'] ?>" name="additional_bill" required />
+                                    <input type="hidden" value="<?php echo $row1['service_charge'] ?>" name="service_charge" required />
+                                    <input type="hidden" value="<?php echo $row['arrear'] ?>" name="arrear" required />
+                                    <input type="hidden" value="<?php echo $row['due_charge'] ?>" name="due_charge" required />
+                                    <input type="hidden" value="<?php echo $row['total_bill'] ?>" name="total_bill" required />
 
                                     <div class="d-flex flex-row-reverse bg-dark text-white p-4">
                                         <div class="py-3 px-5 text-left">
@@ -179,6 +214,7 @@ $i_no=$_GET['i_no'];
                                 </div>
                             </div>
                         </div>
+</form>
                     </div>
                 </div>
             </div>
