@@ -23118,6 +23118,7 @@ input[type="radio"] {
 textarea {
   height: 130px;
   background-color: #282d32;
+  color: white;
 }
 
 input.border,

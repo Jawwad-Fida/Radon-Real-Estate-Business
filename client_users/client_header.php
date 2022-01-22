@@ -43,7 +43,7 @@ include "../includes/functions.php";
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/styles.css">
-    
+    <link rel="stylesheet" id="color" href="css/default.css">
 
 </head>
 

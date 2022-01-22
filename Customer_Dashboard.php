@@ -464,55 +464,6 @@ include "includes/functions.php";
     </section>
     <!-- END SECTION RECENTLY PROPERTIES -->
 
-    <!-- START SECTION SERVICES -->
-    <section class="services-home">
-        <div class="container">
-            <div class="section-title">
-                <h3>Property</h3>
-                <h2>Services</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-12 m-top-0 m-bottom-40" data-aos="fade-up" data-aos-delay="150">
-                    <div class="service bg-light-2 border-1 border-light box-shadow-1 box-shadow-2-hover">
-                        <div class="media">
-                            <i class="fa fa-home bg-base text-white rounded-100 box-shadow-1 p-top-5 p-bottom-5 p-right-5 p-left-5"></i>
-                        </div>
-                        <div class="agent-section p-top-35 p-bottom-30 p-right-25 p-left-25">
-                            <h4 class="m-bottom-15 text-bold-700">Houses</h4>
-                            <p>Nonec pede justo fringilla vel aliquet nec vulputate eget arcu in enim justo rhoncus ut imperdiet venenatis vitae justo.</p>
-                            <a class="text-base text-base-dark-hover text-size-13" href="properties-full-list.html">Read More <i class="fa fa-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12 m-top-40 m-bottom-40" data-aos="fade-up" data-aos-delay="250">
-                    <div class="service bg-light-2 border-1 border-light box-shadow-1 box-shadow-2-hover">
-                        <div class="media">
-                            <i class="fas fa-building bg-base text-white rounded-100 box-shadow-1 p-top-5 p-bottom-5 p-right-5 p-left-5"></i>
-                        </div>
-                        <div class="agent-section p-top-35 p-bottom-30 p-right-25 p-left-25">
-                            <h4 class="m-bottom-15 text-bold-700">Apartments</h4>
-                            <p>Nonec pede justo fringilla vel aliquet nec vulputate eget arcu in enim justo rhoncus ut imperdiet venenatis vitae justo.</p>
-                            <a class="text-base text-base-dark-hover text-size-13" href="properties-full-list.html">Read More <i class="fa fa-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12 m-top-40 m-bottom-40 commercial" data-aos="fade-up" data-aos-delay="350">
-                    <div class="service bg-light-2 border-1 border-light box-shadow-1 box-shadow-2-hover">
-                        <div class="media">
-                            <i class="fas fa-warehouse bg-base text-white rounded-100 box-shadow-1 p-top-5 p-bottom-5 p-right-5 p-left-5"></i>
-                        </div>
-                        <div class="agent-section p-top-35 p-bottom-30 p-right-25 p-left-25">
-                            <h4 class="m-bottom-15 text-bold-700">Commercial</h4>
-                            <p>Nonec pede justo fringilla vel aliquet nec vulputate eget arcu in enim justo rhoncus ut imperdiet venenatis vitae justo.</p>
-                            <a class="text-base text-base-dark-hover text-size-13" href="properties-full-list.html">Read More <i class="fa fa-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END SECTION SERVICES -->
-
     <!-- START SECTION POPULAR PLACES -->
     <?php
     $a=array("Banani","Gulshan-1","Gulshan-2","Dhanmondi","Badda","Baridhara","Motijheel","Wari","Uttara","Farmgate","Mirpur");
@@ -600,7 +551,6 @@ include "includes/functions.php";
             </div>
         </div>
     </section>
-    ?>
     <!-- END SECTION POPULAR PLACES -->
 
     <!-- START SECTION AGENTS -->
@@ -658,57 +608,6 @@ include "includes/functions.php";
     </section>
     <!-- END SECTION AGENTS -->
 
-    <!-- START SECTION TESTIMONIALS -->
-    <section class="testimonials bg-gray">
-        <div class="container">
-            <div class="section-title">
-                <h3>Happy</h3>
-                <h2>Customers</h2>
-            </div>
-            <div class="owl-carousel style1">
-                <div class="test-1" data-aos="zoom-in">
-                    <h3>Lisa Smith</h3>
-                    <img src="images/testimonials/ts-1.jpg" alt="">
-                    <h6 class="mt-2">New York</h6>
-                    <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                </div>
-                <div class="test-1" data-aos="zoom-in">
-                    <h3>Jhon Morris</h3>
-                    <img src="images/testimonials/ts-2.jpg" alt="">
-                    <h6 class="mt-2">Los Angeles</h6>
-
-                    <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                </div>
-                <div class="test-1" data-aos="zoom-in">
-                    <h3>Mary Deshaw</h3>
-                    <img src="images/testimonials/ts-3.jpg" alt="">
-                    <h6 class="mt-2">Chicago</h6>
-
-                    <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                </div>
-                <div class="test-1" data-aos="zoom-in">
-                    <h3>Gary Steven</h3>
-                    <img src="images/testimonials/ts-4.jpg" alt="">
-                    <h6 class="mt-2">Philadelphia</h6>
-
-                    <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                </div>
-                <div class="test-1" data-aos="zoom-in">
-                    <h3>Cristy Mayer</h3>
-                    <img src="images/testimonials/ts-5.jpg" alt="">
-                    <h6 class="mt-2">San Francisco</h6>
-                    <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                </div>
-                <div class="test-1" data-aos="zoom-in">
-                    <h3>Ichiro Tasaka</h3>
-                    <img src="images/testimonials/ts-6.jpg" alt="">
-                    <h6 class="mt-2">Houston</h6>
-                    <p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END SECTION TESTIMONIALS -->
 
 
     <!-- START FOOTER -->
