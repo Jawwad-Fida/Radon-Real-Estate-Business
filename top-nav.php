@@ -89,7 +89,7 @@
 
             <div class="right-side d-none d-none d-lg-none d-xl-flex sign ml-0">
                 <!-- Header Widget -->
-
+                
                 <?php if (is_logged_in() == false) : ?>
                     <div class="header-widget sign-in">
                         <a href="login.php">Login</a>

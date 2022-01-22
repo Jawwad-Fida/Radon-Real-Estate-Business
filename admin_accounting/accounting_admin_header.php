@@ -41,8 +41,8 @@ include "../includes/functions.php";
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" id="color" href="css/default.css">
+    <link rel="stylesheet" href="css/styles.css">    
+    <link rel="stylesheet" id="color" href="css/default.css">  
 </head>
 
 <body class="maxw1600 m0a dashboard-bd">

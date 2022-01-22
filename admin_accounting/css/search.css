@@ -149,6 +149,7 @@
 }
 
 .nice-select .option {
+    background-color: #282d32;
     cursor: pointer;
     font-weight: 400;
     line-height: 40px;

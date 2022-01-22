@@ -103,11 +103,6 @@ if (isset($_POST['reset_submit'])) {
 </section>
 <!-- END SECTION USER PROFILE -->
 
-<div class="second-footer ad mt-3">
-    <div class="container">
-    </div>
-</div>
-
 <!-- START PRELOADER -->
 <div id="preloader">
     <div id="status">

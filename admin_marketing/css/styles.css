@@ -86,7 +86,7 @@ Version      : 1.2
 /*------ 1. TYPOGRAPHY ------*/
 /*-----------------------------------*/
 html {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 body {
@@ -210,7 +210,7 @@ img {
 }
 
 .bg-white {
-  background: #fff !important;
+  background: #212529 !important;
 }
 
 .bg-gray {
@@ -16395,7 +16395,7 @@ div.datedropper.my-style.picker-lkd .pick-submit {
 
 .sidebar-widget .author__title {
   font-size: 18px;
-  color: #222;
+  color: #c18847;
   font-weight: 600;
   margin-top: 24px;
   margin-bottom: 2px;
@@ -16516,7 +16516,7 @@ div.datedropper.my-style.picker-lkd .pick-submit {
 }
 
 .widget-boxed-header h4 {
-  color: #222 !important;
+  color: #c18847 !important;
   font-size: 18px;
   font-weight: 600;
   margin: 0;
@@ -16537,7 +16537,7 @@ div.datedropper.my-style.picker-lkd .pick-submit {
 }
 
 .widget-boxed {
-  background: #fff;
+  background: #212529;
 }
 
 .agent-contact-form-sidebar {
@@ -18419,9 +18419,9 @@ a.button {
 /*------ 54. INNER PAGE DASHBOARD ----*/
 /*------------------------------------*/
 .user-page.section-padding {
-  padding: 1rem 0;
+  padding: 3rem 0;
   margin-top: 90px;
-  background: #f5f7fb;
+  background: #282d32;
 }
 
 .user-page.section-padding.pt-55 {
@@ -18532,7 +18532,7 @@ a.button {
 }
 
 .dashborad-box {
-  background: #fff;
+  background: #282d32;
   padding: 30px;
   margin-bottom: 2.5rem;
   -webkit-box-shadow: 0 0 20px rgba(38, 38, 38, 0.2);
@@ -18601,7 +18601,7 @@ a.button {
 }
 
 .dashboard-bd .my-address {
-  background: #fff;
+  background: #212529;
   padding: 30px;
 }
 
@@ -18866,7 +18866,7 @@ body.dashboard-bd {
 }
 
 .header-user-menu ul li a {
-  color: #50596E;
+  color: white;
   float: left;
   width: 100%;
   font-size: 15px;
@@ -18879,7 +18879,7 @@ body.dashboard-bd {
 .dashborad-box .title {
   position: relative;
   padding-bottom: 15px;
-  color: #222;
+  color: #c18847;
   margin-bottom: 15px;
 }
 
@@ -19232,7 +19232,7 @@ body.dashboard-bd {
 }
 
 .my-address label {
-  color: #222;
+  color: #c18847;
 }
 
 .my-address .form-group {
@@ -19293,8 +19293,8 @@ body.dashboard-bd {
 .user-page .heading {
   margin-bottom: 1.5rem;
   text-transform: capitalize;
-  background: #fff;
-  color: #222;
+  background: #212529;
+  color: #c18847;
   font-weight: 500;
 }
 
@@ -21589,6 +21589,7 @@ a.btn_1 {
 .inner-pages .form-control {
   padding: .7rem;
   border: 1px solid #dddddd;
+  background-color: #282d32;
 }
 
 @media screen and (max-width: 767px) {
@@ -22087,7 +22088,7 @@ form label.error {
 /*------------------------------------*/
 .inner-pages .royal-add-property-area {
   padding: 6rem 0;
-  background: #f5f7fb none repeat scroll 0 0;
+  background: #282d32 none repeat scroll 0 0;
 }
 
 .inner-pages .royal-complete-order-head {
@@ -22109,12 +22110,12 @@ form label.error {
   border-bottom: 1px solid #ddd;
   margin-bottom: 40px;
   padding-bottom: 25px;
-  color: #FF385C;
+  color: #c18847;
   text-transform: capitalize;
 }
 
 .inner-pages .property-form-group label {
-  color: #333;
+  color: #c18847;
   display: inline-block;
   font-size: 15px;
   font-weight: 600;
@@ -22126,6 +22127,8 @@ form label.error {
   height: 50px;
   padding: 10px;
   width: 100%;
+  background-color: #282d32;
+  color: white;
 }
 
 .inner-pages .property-form-group p.no-mb,
@@ -22156,7 +22159,7 @@ form label.error {
 }
 
 .inner-pages .single-add-property {
-  background: #fff none repeat scroll 0 0;
+  background: #212529 none repeat scroll 0 0;
   margin-bottom: 30px;
   padding: 30px;
 }
@@ -23056,7 +23059,7 @@ form label.error {
 }
 
 input[type="file"] {
-  background: white;
+  background: #212529;
   border: none;
   padding: 5px 0px 5px 0px;
   width: auto;
@@ -23114,6 +23117,7 @@ input[type="radio"] {
 
 textarea {
   height: 130px;
+  background-color: #282d32;
 }
 
 input.border,

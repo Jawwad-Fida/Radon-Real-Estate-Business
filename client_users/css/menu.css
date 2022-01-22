@@ -27,7 +27,7 @@ img {
     position: relative;
     z-index: 999;
     padding: 22px 0 80px 0;
-    background-color: #c18847
+    background-color:#c18847;
 }
 /* Header Widget */
 .header-widget {
@@ -384,6 +384,8 @@ a.button.border, a.button {
     top: 0;
     left: 100%;
     margin: 0 0 0 10px;
+    
+    
 }
 #navigation ul ul {
     margin: 10px 0 0 0;
@@ -682,11 +684,13 @@ a.button.border, a.button {
     width: 20px;
     position: relative;
     display: inline-block;
+    
 }
 .user-menu.active ul {
     visibility: visible;
     opacity: 1;
     transform: translate3d(0, 0, 0);
+    background-color: #282d32;
 }
 /* Mobile Fixes for User Menu */
 @media only screen and (max-width: 1366px) and (min-width: 1240px) {

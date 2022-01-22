@@ -197,13 +197,6 @@ if (isset($_POST['add_submit']) && isset($_GET['d_building']) && isset($_GET['d_
         </section>
         <!-- END SECTION USER PROFILE -->
 
-        <!-- START FOOTER -->
-        <footer class="first-footer">
-            <div class="second-footer">
-                <div class="container">
-                </div>
-            </div>
-        </footer>
 
         <a data-scroll href="#wrapper" class="go-up"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
         <!-- END FOOTER -->
