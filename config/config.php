@@ -12,10 +12,8 @@ $STORE_PASSWORD = getenv('Store_Password');
 $STORE_NAME = getenv('Store_Name');
 
 if (!defined('PROJECT_PATH')) {
-    define('PROJECT_PATH', 'http://localhost/Radon/'); // Replace this value with your project path
+    define('PROJECT_PATH', 'http://localhost/phpDemo/Radon/'); // Replace this value with your project path
 }
-
-// http://localhost/phpDemo/Radon/
 
 if (!defined('API_DOMAIN_URL')) {
     define('API_DOMAIN_URL', 'https://sandbox.sslcommerz.com'); //sandbox url, change it when going live
