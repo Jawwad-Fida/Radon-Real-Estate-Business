@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2022 at 07:51 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.1
+-- Generation Time: Jan 23, 2022 at 06:07 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -78,9 +78,15 @@ CREATE TABLE `apartment` (
 
 INSERT INTO `apartment` (`apartment_id`, `building_id`, `building_name`, `flat_no`, `no_of_bedroom`, `no_of_bathroom`, `image`, `buy_price`, `rent_price`, `area`, `status`, `type`, `apartment_status`, `features`, `division`, `address`, `client_username`, `build_num`) VALUES
 (1, 20, 'Blue Garden', 'A1', 3, 2, 'images/apartment_images/fp-11.jpg', 2500000, 60000, 1600, 'Not Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Dhanmondi', '', 'BLU73'),
-(2, 20, 'Blue Garden', 'A3', 3, 3, 'images/apartment_images/p-3.jpg', 4500000, 27000, 2300, 'Not Booked', 'House', 'Rent', 'Air Conditioning,Gym,Alarm,Microwave,', 'Dhaka', 'Dhanmondi', '', 'BLU73'),
+(2, 20, 'Blue Garden', 'A3', 3, 3, 'images/apartment_images/p-3.jpg', 4500000, 27000, 2300, 'Booked', 'House', 'Rent', 'Air Conditioning,Gym,Alarm,Microwave,', 'Dhaka', 'Dhanmondi', 'tazree5961', 'BLU73'),
 (3, 20, 'Blue Garden', 'A2', 3, 3, 'images/apartment_images/p-5.jpg', 3600000, 25000, 1600, 'Not Booked', 'Commercial', 'Buy', 'Central Heating,Laundry Room,Gym,Alarm,Window Covering,Refrigerator,', 'Dhaka', 'Dhanmondi', '', 'BLU73'),
-(4, 21, 'Glass House', 'B2', 4, 3, 'images/apartment_images/fp-12.jpg', 4850000, 36000, 2600, 'Not Booked', 'House', 'Rent', 'Air Conditioning,Gym,Alarm,Refrigerator,TV Cable & WIFI,Microwave,', 'Dhaka', 'Dhanmondi', '', 'GLH21');
+(6, 21, 'Glass House', 'B3', 3, 2, 'images/apartment_images/fp-1.jpg', 4000000, 27000, 2100, 'Not Booked', 'House', 'Buy', 'Laundry Room,Alarm,Window Covering,TV Cable & WIFI,', 'Dhaka', 'Gulshan', '', 'GLH21'),
+(7, 22, 'Sigma House', 'C1', 3, 2, 'images/apartment_images/fp-11.jpg', 3000000, 22000, 2300, 'Not Booked', 'House', 'Rent', 'Swimming Pool,Central Heating,Laundry Room,TV Cable & WIFI,Microwave,', 'Dhaka', 'Banani', '', 'SH75'),
+(8, 22, 'Sigma House', 'C2', 2, 2, 'images/apartment_images/p-3.jpg', 3500000, 24000, 2300, 'Not Booked', 'House', 'Buy', 'Swimming Pool,Central Heating,Laundry Room,Alarm,TV Cable & WIFI,Microwave,', 'Dhaka', 'Banani', '', 'SH75'),
+(9, 23, 'Garden House', 'D1', 4, 2, 'images/apartment_images/b-10.jpg', 4600000, 21000, 1900, 'Not Booked', 'House', 'Rent', 'Air Conditioning,Central Heating,TV Cable & WIFI,', 'Dhaka', 'Badda', '', 'GDH10'),
+(10, 23, 'Garden House', 'D2', 3, 3, 'images/apartment_images/fp-11.jpg', 4300000, 26000, 2000, 'Not Booked', 'House', 'Buy', 'Air Conditioning,Central Heating,Laundry Room,Window Covering,TV Cable & WIFI,', 'Dhaka', 'Badda', '', 'GDH10'),
+(11, 21, 'Glass House', 'B1', 3, 1, 'images/apartment_images/fp-1.jpg', 4000000, 25000, 1900, 'Booked', 'House', 'Rent', 'Laundry Room,Gym,Alarm,Refrigerator,TV Cable & WIFI,Microwave,', 'Dhaka', 'Gulshan', 'mahbub7310', 'GLH21'),
+(12, 21, 'Glass House', 'B2', 3, 1, 'images/apartment_images/b-10.jpg', 3000000, 21000, 2000, 'Not Booked', 'House', 'Rent', 'Swimming Pool,Central Heating,TV Cable & WIFI,', 'Dhaka', 'Gulshan', '', 'GLH21');
 
 -- --------------------------------------------------------
 
@@ -124,7 +130,9 @@ CREATE TABLE `building` (
 
 INSERT INTO `building` (`building_id`, `building_name`, `no_of_flats`, `address`, `build_info`, `division`, `no_of_floors`, `build_num`) VALUES
 (20, 'Blue Garden', 5, 'Dhanmondi', 'Loren Ipsum', 'Dhaka', 15, 'BLU73'),
-(21, 'Glass House', 3, 'Gulshan', 'Loren Ipsum', 'Dhaka', 10, 'GLH21');
+(21, 'Glass House', 3, 'Gulshan', 'Loren Ipsum', 'Dhaka', 10, 'GLH21'),
+(22, 'Sigma House', 4, 'Banani', 'Nice positioning , near main road , beautiful architecture', 'Dhaka', 11, 'SH75'),
+(23, 'Garden House', 3, 'Badda', 'Nice building with lots of facilities', 'Dhaka', 9, 'GDH10');
 
 -- --------------------------------------------------------
 
@@ -149,6 +157,14 @@ CREATE TABLE `clients` (
   `flat_number` varchar(255) DEFAULT NULL,
   `client_type` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `clients`
+--
+
+INSERT INTO `clients` (`client_id`, `user_id`, `name`, `username`, `mobile_number`, `email`, `identity_num`, `occupation`, `present_address`, `permanent_address`, `gender`, `nationality`, `building_name`, `flat_number`, `client_type`) VALUES
+(16, 24, 'Jannatul Tazree', 'tazree5961', '01521124258', 'tazreesmrity20@gmail.com', '', 'Employer', 'Dhanmondi', 'Eastern Bonobithi Apartment Block-L, Road 1/A,Banashree', 'female', 'Bangladeshi', 'Blue Garden', 'A3', 'Rent'),
+(17, 25, 'Mahbub Alam', 'mahbub7310', '01677615892', 'alammahbub789@gmail.com', '', 'Employer', 'Gulshan', '375,baganbari,south badda(green heaven society)', 'male', 'Bangladeshi', 'Glass House', 'B1', 'Rent');
 
 -- --------------------------------------------------------
 
@@ -278,7 +294,9 @@ INSERT INTO `users` (`user_id`, `user_role`, `name`, `username`, `user_email`, `
 (18, 'admin', 'Fahad Al Rafi', 'rafi', 'rafi@gmail.com', '$2y$10$QIEDFK.YTQaW1eGDG76Eq./4TuiFE24D6zALN4v5Wi345VVz9Ffa2', 'images/admin_images/Rafi.jpg', '1998-05-22', '', ''),
 (21, 'customer', 'Jesmine Akhter', 'jesmine', 'jesmine@hotmail.com', '$2y$10$5Bl/EA1xhr4PdnS0VcBimOG3IA7PpeeFKnFymj4nuGYyuF/hI4M.W', 'client_users/images/user_images/t-8.jpg', '1968-01-01', 'h$9wb', ''),
 (22, 'customer', 'Shafiqul Islam', 'shafique', 'shafique@gmail.com', '$2y$10$wZPTL4JKsT178W5QFpzAPeVbrUQf5yKc115cbFt/8c8MHlZov5jwe', 'client_users/images/user_images/t-1.jpg', '1968-01-01', 'rpfs(', ''),
-(23, 'customer', 'Afia Mohona', 'afia', 'afia@gmail.com', '$2y$10$RIj.lgfBGMX3Z.9BL5KST.HH86RFQa9URDd4wcr//xQO0siGb9xqC', 'client_users/images/user_images/afia.jpg', '1968-01-01', '53z8b', '');
+(23, 'customer', 'Afia Mohona', 'afia', 'afia@gmail.com', '$2y$10$RIj.lgfBGMX3Z.9BL5KST.HH86RFQa9URDd4wcr//xQO0siGb9xqC', 'client_users/images/user_images/afia.jpg', '1968-01-01', '53z8b', ''),
+(24, 'client', 'Jannatul Tazree', 'tazree5961', 'tazreesmrity20@gmail.com', '$2y$10$xduTx5QqRoNfJ9eMvTzKNOdSKyJCc/eHbkT8eboJzJfJwYPQGfikm', '', '1993-09-07', '(1q2c', ''),
+(25, 'client', 'Mahbub Alam', 'mahbub7310', 'alammahbub789@gmail.com', '$2y$10$IR5PkYMuBaXm9.rxFWGr6OZ5FDNwRk.wxLoC3oESO/MuO6X51ZSV2', '', '1983-08-09', '(xmf3', '');
 
 -- --------------------------------------------------------
 
@@ -393,7 +411,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `apartment`
 --
 ALTER TABLE `apartment`
-  MODIFY `apartment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `apartment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `appointment`
@@ -405,13 +423,13 @@ ALTER TABLE `appointment`
 -- AUTO_INCREMENT for table `building`
 --
 ALTER TABLE `building`
-  MODIFY `building_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `building_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `complaint`
@@ -423,7 +441,7 @@ ALTER TABLE `complaint`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `invoice`
@@ -441,7 +459,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `utility_bill`
