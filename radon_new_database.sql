@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2022 at 06:07 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Generation Time: Jan 23, 2022 at 04:21 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -295,8 +295,8 @@ INSERT INTO `users` (`user_id`, `user_role`, `name`, `username`, `user_email`, `
 (21, 'customer', 'Jesmine Akhter', 'jesmine', 'jesmine@hotmail.com', '$2y$10$5Bl/EA1xhr4PdnS0VcBimOG3IA7PpeeFKnFymj4nuGYyuF/hI4M.W', 'client_users/images/user_images/t-8.jpg', '1968-01-01', 'h$9wb', ''),
 (22, 'customer', 'Shafiqul Islam', 'shafique', 'shafique@gmail.com', '$2y$10$wZPTL4JKsT178W5QFpzAPeVbrUQf5yKc115cbFt/8c8MHlZov5jwe', 'client_users/images/user_images/t-1.jpg', '1968-01-01', 'rpfs(', ''),
 (23, 'customer', 'Afia Mohona', 'afia', 'afia@gmail.com', '$2y$10$RIj.lgfBGMX3Z.9BL5KST.HH86RFQa9URDd4wcr//xQO0siGb9xqC', 'client_users/images/user_images/afia.jpg', '1968-01-01', '53z8b', ''),
-(24, 'client', 'Jannatul Tazree', 'tazree5961', 'tazreesmrity20@gmail.com', '$2y$10$xduTx5QqRoNfJ9eMvTzKNOdSKyJCc/eHbkT8eboJzJfJwYPQGfikm', '', '1993-09-07', '(1q2c', ''),
-(25, 'client', 'Mahbub Alam', 'mahbub7310', 'alammahbub789@gmail.com', '$2y$10$IR5PkYMuBaXm9.rxFWGr6OZ5FDNwRk.wxLoC3oESO/MuO6X51ZSV2', '', '1983-08-09', '(xmf3', '');
+(24, 'client', 'Jannatul Tazree', 'tazree5961', 'tazreesmrity20@gmail.com', '$2y$10$xduTx5QqRoNfJ9eMvTzKNOdSKyJCc/eHbkT8eboJzJfJwYPQGfikm', 'images/user_images/t-8.jpg', '1993-09-07', '(1q2c', ''),
+(25, 'client', 'Mahbub Alam', 'mahbub7310', 'alammahbub789@gmail.com', '$2y$10$IR5PkYMuBaXm9.rxFWGr6OZ5FDNwRk.wxLoC3oESO/MuO6X51ZSV2', 'images/user_images/t-1.jpg', '1983-08-09', '(xmf3', '');
 
 -- --------------------------------------------------------
 
