@@ -56,7 +56,7 @@ if($_SESSION['admin_type'] != 'marketing'){
                     </div>
                     <ul>
                         <li><a href="user-profile.php"> Edit profile</a></li>
-                        <li><a href="#"> Payments</a></li>
+                        
                         <li><a href="change_password.php"> Change Password</a></li>
                         <li><a href="../includes/logout.php">Log Out</a></li>
                     </ul>

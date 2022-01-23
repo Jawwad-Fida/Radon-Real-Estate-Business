@@ -206,13 +206,13 @@
                                     <li>
                                         <div class="info">
                                             <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            <p class="in-p">11no Road Banani, Bangladesh</p>
+                                            <p class="in-p">11no Road, Banani, Dhaka, Bangladesh</p>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="info">
                                             <i class="fa fa-phone" aria-hidden="true"></i>
-                                            <p class="in-p">+8801733344444</p>
+                                            <p class="in-p">+880-17333-44444</p>
                                         </div>
                                     </li>
                                     <li>

@@ -129,9 +129,9 @@ $invoice = $i_no;
                                                                        $row2=$table2[0];
                                                 ?>
 
-                                                <p class="mb-0"> <?php echo $row2['occupation']?></p>
-                                                <p class="mb-0"><?php echo $row2['present_address']?></p>
-                                                <p class="mb-0"><?php echo $row2['mobile_number']?></p>
+                                                <p class="mb-0">Occupation: <?php echo $row2['occupation']?></p>
+                                                <p class="mb-0">Present Address: <?php echo $row2['present_address']?></p>
+                                                <p class="mb-0">Mobile Number: <?php echo $row2['mobile_number']?></p>
                  
                                         </div>
                                     </div>
