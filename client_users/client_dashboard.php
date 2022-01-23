@@ -29,7 +29,11 @@
                                         <h6 class="number">
                                         <?php                                
                                         $client_username = $_SESSION['name'];
-                                        $stmt = query("SELECT * FROM invoice WHERE client_username = '$client_username'");
+                                        $current_month= date('Y-m');
+                                        $stmt = query("SELECT * 
+                                                       FROM  invoice 
+                                                       WHERE billing_month = '$current_month' 
+                                                       And client_username = '$client_username' ");
                                         $row = $stmt->fetch(PDO::FETCH_ASSOC);
                                         
                                         ?>
@@ -48,7 +52,7 @@
                                     <div class="info">
                                         <h6 class="number">
                                         </h6>
-                                        <p class="type ml-1">Total Arrear</p>
+                                        <p class="type ml-1">Arrear</p>
                                         <p class="type ml-1"><?php echo $row['arrear']?></p>
                                     </div>
                                 </div>

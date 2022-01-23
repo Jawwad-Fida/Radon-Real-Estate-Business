@@ -76,20 +76,13 @@ $invoice = $i_no;
                     <?php include "left_sidebar.php" ?>
 
                     <div class="col-lg-9 col-md-12 col-xs-12 py-0 pl-0 user-dash2">
-                        <!-- Print Button -->
-                
+                        <!-- Print Button -->        
                         <form action="../pdf.php" method="post" id="test22">
-
-                        
-                        
-                        
-
                         <div class="print-button-container">
                            <!-- <a href="javascript:window.print()" class="print-button">Print this invoice</a> -->
                            <!--<a href="../pdf.php" class="print-button">Print this invoice</a>-->
                            <button class="print-button" form="test22" name="print" formmethod="post">Print This invoice</button>
-                        </div>
-                        
+                        </div>             
                         <div class="invoice mb-0">
                             <div class="card border-0">
                                 <div class="card-body p-0">
@@ -139,19 +132,8 @@ $invoice = $i_no;
                                                 <p class="mb-0"> <?php echo $row2['occupation']?></p>
                                                 <p class="mb-0"><?php echo $row2['present_address']?></p>
                                                 <p class="mb-0"><?php echo $row2['mobile_number']?></p>
-
-                                                
-                            
-                                                
+                 
                                         </div>
-
- <!--                                        <div class="col-md-6 text-right">
-                                            <h3 class="font-weight-bold mb-4">Payment Details</h3>
-                                            <p class="mb-1"><span class="text-muted">VAT: </span> 1425782</p>
-                                            <p class="mb-1"><span class="text-muted">VAT ID: </span> 10253642</p>
-                                            <p class="mb-1"><span class="text-muted">Payment Type: </span> Root</p>
-                                            <p class="mb-1"><span class="text-muted">Name: </span> John Doe</p>
-                                        </div> -->
                                     </div>
 
                                     <div class="row p-5 the-five">

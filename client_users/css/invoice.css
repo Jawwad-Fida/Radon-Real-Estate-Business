@@ -36,7 +36,7 @@ body {
     color: #fff !important;
 }
 .font-weight-bold {
-    color: #333;
+    color: #100000;
     font-weight: 600 !important;
 }
 @media only screen and (max-width: 575px) {

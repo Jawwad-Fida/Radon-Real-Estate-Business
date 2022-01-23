@@ -92,10 +92,8 @@ include "includes/functions.php";
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="tabs_1">
                                             <div class="rld-main-search">
-                                                <div class="row">
-                                                    <div class="col-lg-2 col-md-3 py-1 pl-0 pr-0">
-                                                        <!-- Form Bathrooms -->
-                                                        <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
+                                                <div class="row">                                                  
+                                                        <!-- Form Bathrooms -->                                                       
                                                             <div class="rld-single-select">
                                                                 <select class="select single-select mr-0" name="bath" form="dash">
                                                                     <option value="null">Bathroom</option>
@@ -104,15 +102,10 @@ include "includes/functions.php";
                                                                     <option value="3">3</option>
                                                                     <option value="4">4</option>
                                                                     <option value="5">5</option>
-
                                                                 </select>
-                                                            </div>
-                                                        </div>
-                                                        <!--/ End Form Bathrooms -->
-                                                    </div>
-                                                    <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
-                                                        <!-- Form Bedrooms -->
-                                                        <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
+                                                            </div>                                                       
+                                                        <!--/ End Form Bathrooms -->                                                                                                       
+                                                        <!-- Form Bedrooms -->                                       
                                                             <div class="rld-single-select">
                                                                 <select class="select single-select mr-0" name="bed" form="dash">
                                                                     <option value="null">Bedroom</option>
@@ -121,12 +114,9 @@ include "includes/functions.php";
                                                                     <option value="3">3</option>
                                                                     <option value="4">4</option>
                                                                     <option value="5">5</option>
-
                                                                 </select>
-                                                            </div>
-                                                        </div>
-                                                        <!--/ End Form Bedrooms -->
-                                                    </div>
+                                                            </div>                                                       
+                                                        <!--/ End Form Bedrooms -->                                                  
                                                     <div class="rld-single-select" ><span></span>
                                                         <select class="select single-select mr-0" name="addr" id="dash">
                                                             <option value="null">Location</option>
@@ -181,11 +171,8 @@ include "includes/functions.php";
                                 <div class="tab-pane fade " id="tabs_2">
                                     <form action="Customer_Rent_list_search.php" method="post" id="dash1">
                                         <div class="rld-main-search">
-                                            <div class="row">
-
-                                                <div class="col-lg-2 col-md-3 py-1 pl-0 pr-0">
-                                                    <!-- Form Bathrooms -->
-                                                    <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
+                                            <div class="row">                                              
+                                                    <!-- Form Bathrooms -->                                                   
                                                         <div class="rld-single-select">
                                                             <select class="select single-select mr-0" name="bath" form="dash1">
                                                                 <option value="null">Bathroom</option>
@@ -194,15 +181,10 @@ include "includes/functions.php";
                                                                 <option value="3">3</option>
                                                                 <option value="4">4</option>
                                                                 <option value="5">5</option>
-
                                                             </select>
-                                                        </div>
-                                                    </div>
-                                                    <!--/ End Form Bathrooms -->
-                                                </div>
-                                                <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
-                                                    <!-- Form Bedrooms -->
-                                                    <div class="col-lg-2 col-md-3 py-1 pr-30 pl-0 ">
+                                                        </div>                                                 
+                                                    <!--/ End Form Bathrooms -->                                                                                              
+                                                    <!-- Form Bedrooms -->                                                 
                                                         <div class="rld-single-select">
                                                             <select class="select single-select mr-0" name="bed" form="dash1">
                                                                 <option value="null">Bedroom</option>
@@ -213,10 +195,8 @@ include "includes/functions.php";
                                                                 <option value="5">5</option>
 
                                                             </select>
-                                                        </div>
-                                                    </div>
-                                                    <!--/ End Form Bedrooms -->
-                                                </div>
+                                                        </div>                                  
+                                                    <!--/ End Form Bedrooms -->                                              
                                                 <div class="rld-single-select">
                                                     <select class="select single-select mr-0" name="addr" form="dash1">
                                                         <option value="null">Location</option>
