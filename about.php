@@ -229,7 +229,7 @@
                                 <h3>Navigation</h3>
                                 <div class="nav-footer">
                                     <ul>
-                                        <li><a href="Customer_Dashboard.php">Home</a></li>
+                                        <li><a href="#">Home</a></li>
                                     </ul>
                                     <ul class="nav-right">
                                         <li><a href="about.php">About Us</a></li>

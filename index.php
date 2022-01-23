@@ -608,20 +608,20 @@ include "includes/functions.php";
                             <a href="index-2.html" class="logo">
                                 <img src="images/logo-footer.svg" alt="netcom">
                             </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt architecto soluta laboriosam, perspiciatis, aspernatur officiis esse.</p>
+                           
                         </div>
                         <div class="contactus">
                             <ul>
                                 <li>
                                     <div class="info">
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        <p class="in-p">95 South Park Avenue, USA</p>
+                                        <p class="in-p">11no Road Banani, Bangladesh</p>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="info">
                                         <i class="fa fa-phone" aria-hidden="true"></i>
-                                        <p class="in-p">+456 875 369 208</p>
+                                        <p class="in-p">+88017 333 44444</p>
                                     </div>
                                 </li>
                                 <li>
@@ -638,11 +638,11 @@ include "includes/functions.php";
                             <h3>Navigation</h3>
                             <div class="nav-footer">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="index.php">Home</a></li>
                                 </ul>
                                 <ul class="nav-right">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li class="no-mgb"><a href="contact-us.html">Contact Us</a></li>
+                                    <li><a href="about.php">About Us</a></li>
+                                    <li class="no-mgb"><a href="">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -208,7 +208,7 @@ $invoice = $i_no;
                                     <div class="d-flex flex-row-reverse bg-dark text-white p-4">
                                         <div class="py-3 px-5 text-left">
                                             <div class="mb-2"><a href="../example_hosted.php?amount=<?php echo $row['total_bill']; ?>&invoice_id=<?php echo $row['invoice_no']; ?>&invoice_date=<?php echo $row['issue_date']; ?>" onclick="javascript: return confirm('Do want to proceed to payment?');"><i class="fas fa-credit-card"></i></a> </div>
-                                            <div class="h2 font-weight-light">Pay Now</div>
+                                            <div class="h2 font-weight-light"><a href="../example_hosted.php?amount=<?php echo $row['total_bill']; ?>&invoice_id=<?php echo $row['invoice_no']; ?>&invoice_date=<?php echo $row['issue_date']; ?>" onclick="javascript: return confirm('Do want to proceed to payment?');"> Pay Now</a></div>
                                         </div>
                                     </div>
                                 </div>
