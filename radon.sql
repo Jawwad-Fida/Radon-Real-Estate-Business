@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2022 at 07:24 PM
+-- Generation Time: Jan 25, 2022 at 06:12 PM
 -- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.1
+-- PHP Version: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,8 +43,7 @@ INSERT INTO `admins` (`admin_id`, `username`, `user_id`, `identity_num`, `admin_
 (1, 'jawwad', 1, 'nvwsl', 'marketing'),
 (2, 'mimo', 3, 'kjdhn', 'marketing'),
 (3, 'tarin', 17, '', 'finance_and_account'),
-(5, 'rafi', 18, '', 'finance_and_account'),
-(6, 'aysha', 14, '', 'marketing');
+(5, 'rafi', 18, '', 'finance_and_account');
 
 -- --------------------------------------------------------
 
@@ -78,20 +77,16 @@ CREATE TABLE `apartment` (
 --
 
 INSERT INTO `apartment` (`apartment_id`, `building_id`, `building_name`, `flat_no`, `no_of_bedroom`, `no_of_bathroom`, `image`, `buy_price`, `rent_price`, `area`, `status`, `type`, `apartment_status`, `features`, `division`, `address`, `client_username`, `build_num`) VALUES
-(3, 6, 'Rafi Kingdom', 'B2', 4, 5, 'images/apartment_images/fp-11.jpg', 6750000, 50000, 3600, 'Booked', 'Commercial', 'Buy', 'Air Conditioning, Central Heating, Alarm', 'Dhaka', 'Badda', 'pranto0432', 'RAF5'),
-(6, 3, 'JawwadHarem', 'A3', 3, 3, 'images/apartment_images/p-3.jpg', 560000, 20000, 1300, 'Booked', 'House', 'Rent', 'Air Conditioning,Window Covering,', 'Dhaka', 'Dhanmondi', 'pranto3719', 'JH1'),
-(8, 12, 'Kabir Apartments', 'A2', 3, 3, 'images/apartment_images/p-3.jpg', 250000, 50000, 1300, 'Booked', 'House', 'Rent', 'Air Conditioning,Central Heating,Window Covering,TV Cable & WIFI,', 'Barisal', 'Farmgate', 'imran1111', 'KA64'),
-(9, 12, 'Kabir Apartments', 'D1', 4, 4, 'images/apartment_images/p-3.jpg', 3956000, 42000, 2200, 'Not Booked', 'Commercial', 'Buy', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Chittagong', 'Farmgate', '', 'KA64'),
-(10, 3, 'JawwadHarem', 'D4', 4, 4, 'images/apartment_images/p-3.jpg', 3956000, 42000, 2500, 'Booked', 'Commercial', 'Buy', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Farmgate', 'afia7839', 'JH1'),
-(13, 8, 'Tarin Dream Home', 'D3', 2, 2, 'images/apartment_images/p-3.jpg', 1956000, 42000, 1500, 'Not Booked', 'Commercial', 'Rent', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Chittagong', 'Chittagong ', '', 'TAR62'),
-(15, 7, 'Pranto Fanta sea', 'C1', 5, 4, 'images/apartment_images/fp-12.jpg', 9800000, 56000, 2400, 'Not Booked', 'House', 'Buy', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Gulshan', '', 'POT65'),
-(17, 6, 'Rafi Kingdom', 'C5', 4, 4, 'images/apartment_images/fp-12.jpg', 8800000, 46000, 2200, 'Not Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'dhanmondi', '', 'RAF5'),
-(19, 17, 'Mill Home', 'A2', 4, 4, 'images/apartment_images/fp-12.jpg', 8800000, 46000, 2200, 'Not Booked', 'House', 'Buy', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'dhanmondi', '', ''),
-(20, 17, 'Mill Home', 'C2', 5, 4, 'images/apartment_images/fp-12.jpg', 7800000, 56000, 2400, 'Not Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Dhanmondi ', '', ''),
-(21, 18, 'cottage Home', 'D1', 5, 4, 'images/apartment_images/p-3.jpg', 956000, 42000, 2200, 'Not Booked', 'Commercial', 'Buy', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Badda', '', ''),
-(22, 18, 'cottage Home', 'D6', 5, 4, 'images/apartment_images/p-3.jpg', 856000, 42000, 2200, 'Not Booked', 'Commercial', 'Rent', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Badda', '', ''),
-(23, 17, 'Mill Home', 'D4', 5, 4, 'images/apartment_images/fp-12.jpg', 7800000, 56000, 2400, 'Not Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Alarm,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Dhanmondi ', '', ''),
-(24, 18, 'cottage Home', 'D8', 5, 4, 'images/apartment_images/p-3.jpg', 856000, 42000, 2200, 'Not Booked', 'Commercial', 'Rent', 'Air Conditioning,Central Heating,Alarm,Window Covering,TV Cable & WIFI,Microwave,', 'Dhaka', 'Badda', '', '');
+(1, 20, 'Blue Garden', 'A1', 3, 2, 'images/apartment_images/fp-11.jpg', 2500000, 60000, 1600, 'Booked', 'House', 'Rent', 'Air Conditioning,Swimming Pool,Central Heating,Window Covering,Refrigerator,TV Cable & WIFI,', 'Dhaka', 'Dhanmondi', 'nurrafi8601', 'BLU73'),
+(2, 20, 'Blue Garden', 'A3', 3, 3, 'images/apartment_images/p-3.jpg', 4500000, 27000, 2300, 'Booked', 'House', 'Rent', 'Air Conditioning,Gym,Alarm,Microwave,', 'Dhaka', 'Dhanmondi', 'tazree5961', 'BLU73'),
+(3, 20, 'Blue Garden', 'A2', 3, 3, 'images/apartment_images/p-5.jpg', 3600000, 25000, 1600, 'Booked', 'Commercial', 'Buy', 'Central Heating,Laundry Room,Gym,Alarm,Window Covering,Refrigerator,', 'Dhaka', 'Dhanmondi', 'shoily7842', 'BLU73'),
+(6, 21, 'Glass House', 'B3', 3, 2, 'images/apartment_images/fp-1.jpg', 4000000, 27000, 2100, 'Not Booked', 'House', 'Buy', 'Laundry Room,Alarm,Window Covering,TV Cable & WIFI,', 'Dhaka', 'Gulshan', '', 'GLH21'),
+(7, 22, 'Sigma House', 'C1', 3, 2, 'images/apartment_images/fp-1.jpg', 3000000, 22000, 2300, 'Not Booked', 'House', 'Rent', 'Swimming Pool,Central Heating,Laundry Room,TV Cable & WIFI,Microwave,', 'Dhaka', 'Banani', '', 'SH75'),
+(8, 22, 'Sigma House', 'C2', 2, 2, 'images/apartment_images/fp-1.jpg', 3500000, 24000, 2300, 'Not Booked', 'House', 'Buy', 'Swimming Pool,Central Heating,Laundry Room,Alarm,TV Cable & WIFI,Microwave,', 'Dhaka', 'Banani', '', 'SH75'),
+(9, 23, 'Garden House', 'D1', 4, 2, 'images/apartment_images/b-10.jpg', 4600000, 21000, 1900, 'Not Booked', 'House', 'Rent', 'Air Conditioning,Central Heating,TV Cable & WIFI,', 'Dhaka', 'Badda', '', 'GDH10'),
+(10, 23, 'Garden House', 'D2', 3, 3, 'images/apartment_images/fp-11.jpg', 4300000, 26000, 2000, 'Not Booked', 'House', 'Buy', 'Air Conditioning,Central Heating,Laundry Room,Window Covering,TV Cable & WIFI,', 'Dhaka', 'Badda', '', 'GDH10'),
+(11, 21, 'Glass House', 'B1', 3, 1, 'images/apartment_images/fp-1.jpg', 4000000, 25000, 1900, 'Booked', 'House', 'Rent', 'Laundry Room,Gym,Alarm,Refrigerator,TV Cable & WIFI,Microwave,', 'Dhaka', 'Gulshan', 'mahbub7310', 'GLH21'),
+(12, 21, 'Glass House', 'B2', 3, 1, 'images/apartment_images/b-10.jpg', 3000000, 21000, 2000, 'Not Booked', 'House', 'Rent', 'Swimming Pool,Central Heating,TV Cable & WIFI,', 'Dhaka', 'Gulshan', '', 'GLH21');
 
 -- --------------------------------------------------------
 
@@ -117,13 +112,16 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`appointment_id`, `customer_id`, `customer_name`, `email`, `appoint_date`, `appoint_time`, `message`, `building_name`, `flat_no`, `request_status`) VALUES
-(1, 2, 'Jesmine Akhter', 'jesmine@gmail.com', '12/30/2021', '11:08:00', 'bsbsvscav', 'Jawwad\'s Harem', 'B2', 'Rejected'),
-(2, 2, 'Jesmine Akhter', 'jesmine@gmail.com', '12/29/2021', '06:09:00', 'vsvsvsv', 'Jawwad\'s Harem', 'B2', 'Confirmed'),
-(3, 2, 'Jesmine Akhter', 'jesmine@gmail.com', '12/29/2021', '05:09:00', 'cacac', 'Jawwad\'s Harem', 'B2', 'Confirmed'),
-(4, 4, 'Pranto Podder', 'ppodder@gmail.com', '12/31/2021', '05:12:00', 'go', 'Jawwad\'s Harem', 'B2', 'Rejected'),
-(5, 4, 'Pranto Podder', 'ppodder@gmail.com', '12/29/2021', '02:56:00', 'gone', 'Jawwad\'s Harem', 'B2', 'Confirmed'),
-(6, 2, 'Jesmine Akhter', 'jesmine@gmail.com', '12/29/2021', '03:06:00', 'go', 'Jawwad\'s Harem', 'B2', 'Confirmed'),
-(7, 2, 'Jesmine Akhter', 'jesmine@gmail.com', '12/29/2021', '03:08:00', 'go', 'Jawwad\'s Harem', 'B2', 'Pending');
+(1, 15, 'Nur Rafi', 'nur@gmail.com', '01/24/2022', '05:30:00', 'I want to visit this apartment', 'Blue Garden', 'A2', 'Pending'),
+(2, 16, 'Nur Rafi', 'nur@gmail.com', '01/23/2022', '09:08:00', 'I want visit', 'Glass House', 'B3', 'Pending'),
+(3, 16, 'Nur Rafi', 'nur@gmail.com', '01/23/2022', '09:26:00', 'i want visit the apartment', 'Glass House', 'B3', 'Pending'),
+(4, 17, 'Nur Rafi', 'nur@gmail.com', '01/23/2022', '09:52:00', 'i want to visit', 'Glass House', 'B3', 'Pending'),
+(5, 18, 'Nur Rafi', 'nur@gmail.com', '01/23/2022', '11:44:00', 'I want visit the flat', 'Glass House', 'B3', 'Confirmed'),
+(6, 19, 'Nur Rafi', 'nur@gmail.com', '01/24/2022', '12:13:00', 'I want visit the flat', 'Glass House', 'B3', 'Pending'),
+(7, 11, 'Shafiqul Islam', 'shafique@gmail.com', '01/24/2022', '12:28:00', 'I want to visit', 'Glass House', 'B3', 'Confirmed'),
+(8, 20, 'Zohora Nipa', 'zohora@gmail.com', '01/24/2022', '12:40:00', 'I want to viaist', 'Glass House', 'B3', 'Rejected'),
+(9, 21, 'Zareen propa', 'propa@gmail.com', '01/24/2022', '01:06:00', 'I awnt to visit', 'Glass House', 'B3', 'Confirmed'),
+(10, 22, 'Shoily Akter', 'shoily@gmail.com', '01/24/2022', '01:31:00', 'I want to visit', 'Glass House', 'B3', 'Confirmed');
 
 -- --------------------------------------------------------
 
@@ -147,15 +145,10 @@ CREATE TABLE `building` (
 --
 
 INSERT INTO `building` (`building_id`, `building_name`, `no_of_flats`, `address`, `build_info`, `division`, `no_of_floors`, `build_num`) VALUES
-(3, 'JawwadHarem', 3, 'Madani Avenue, Badda', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at iaculis massa, ut tempus turpis.', 'Dhaka', 10, 'JH1'),
-(5, 'Test Case 2', 2, 'Test Case 2', 'Test Case 2 - Chittagong', 'Chittagong', 5, ''),
-(6, 'Rafi Kingdom', 2, 'Testing', 'Testing', 'Dhaka', 5, 'RAF5'),
-(7, 'Pranto Fanta sea', 2, 'Testing', 'Testing', 'Dhaka', 5, 'POT65'),
-(8, 'Tarin Dream Home', 15, 'Chittagong - Hill Tracks', 'Loren Ipsum', 'Chittagong', 5, 'TAR62'),
-(12, 'Kabir Apartments', 4, 'Cox Bazar', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra dolor nibh, id volutpat enim rutrum et. Sed tristique mi leo, a tristique orci tristique vel. Phasellus ac ante ut tortor iaculis maximus nec quis felis.', 'Chittagong', 10, 'KA64'),
-(17, 'Mill Home', 20, 'Dhanmondi ', '', 'Dhaka', 10, 'TAR63'),
-(18, 'cottage Home', 30, 'Badda', '', 'Dhaka', 10, 'TAR67'),
-(19, 'Hasan Blue Housing', 4, 'Gulshan', 'Loren Ipsum', 'Dhaka', 10, 'HAS01');
+(20, 'Blue Garden', 5, 'Dhanmondi', 'Loren Ipsum', 'Dhaka', 15, 'BLU73'),
+(21, 'Glass House', 3, 'Gulshan', 'Loren Ipsum', 'Dhaka', 10, 'GLH21'),
+(22, 'Sigma House', 4, 'Banani', 'Nice positioning , near main road , beautiful architecture', 'Dhaka', 11, 'SH75'),
+(23, 'Garden House', 4, 'Badda', 'Nice building with lots of facilities', 'Dhaka', 9, 'GDH10');
 
 -- --------------------------------------------------------
 
@@ -186,11 +179,14 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`client_id`, `user_id`, `name`, `username`, `mobile_number`, `email`, `identity_num`, `occupation`, `present_address`, `permanent_address`, `gender`, `nationality`, `building_name`, `flat_number`, `client_type`) VALUES
-(10, 7, 'Shafiqul Islam', 'shafique1273', '01775423659', 'shafiqul@yahoo.com', '', 'Banker', 'Shankor, West Dhanmondi', 'Titas, Comilla', 'male', 'Bangladeshi', NULL, NULL, NULL),
-(12, 8, 'Pranto Podder', 'pranto3719', '01753699568', 'ppodder@gmail.com', '', 'House Husband', 'Farmgate', 'Rohingya', 'male', 'Bangladeshi', 'JawwadHarem', 'A3', 'Rent'),
-(13, 13, 'Aufi Islam', 'aufi9517', '01715633256', 'aufi@gmail.com', '', 'Businessman', 'Gulshan', 'Badda', 'male', 'Bangladeshi', NULL, NULL, NULL),
-(14, 11, 'Imran Sarker', 'imran1111', '01715633256', 'imran@gmail.com', '', 'E sports Gamer', 'Farmgate', 'Comilla', 'male', 'Bangladeshi', 'cottage Home', 'D4', 'Rent'),
-(15, 12, 'Afia Mohona', 'afia7839', '01714588523', 'aifa@gmail.com', '', 'Housewife', 'Farmgate', 'Mymensingh', 'female', 'Bangladeshi', 'JawwadHarem', 'D4', 'Buy');
+(16, 24, 'Jannatul Tazree', 'tazree5961', '01521124258', 'tazreesmrity20@gmail.com', '', 'Employer', 'Dhanmondi', 'Eastern Bonobithi Apartment Block-L, Road 1/A,Banashree', 'female', 'Bangladeshi', 'Blue Garden', 'A3', 'Rent'),
+(17, 25, 'Mahbub Alam', 'mahbub7310', '01677615892', 'alammahbub789@gmail.com', '', 'Employer', 'Gulshan', '375,baganbari,south badda(green heaven society)', 'male', 'Bangladeshi', 'Glass House', 'B1', 'Rent'),
+(19, 23, 'Afia Mohona', 'afia8206', '01452755413', 'afia@gmail.com', '', 'Doctor', 'Dhanmondi', 'Chittagong Hill Tracks', 'male', 'Bangladeshi', 'Blue Garden', 'A2', 'Buy'),
+(26, 30, 'Nur Rafi', 'nurrafi8601', '0123456', 'nur@gmail.com', '', 'Software Engineer', 'Dhanmondi', 'Dhaka', 'male', 'Bangladeshi', 'Blue Garden', 'A1', 'Rent'),
+(27, 22, 'Shafiqul Islam', 'shafique1346', '01745633258', 'shafique@gmail.com', '', 'Banker', 'Dhanmondi', 'Titas, Comilla', 'male', 'Bangladeshi', 'Blue Garden', 'A2', 'Buy'),
+(28, 31, 'Zohora Nipa', 'zohora2695', '09762345', 'zohora@gmail.com', '', 'Software Engineer', 'Dhanmondi', 'Dhaka', 'male', 'Bangladeshi', 'Blue Garden', 'A2', 'Buy'),
+(29, 32, 'Zareen propa', 'propa5294', '00987654', 'propa@gmail.com', '', 'Software Engineer', 'Dhanmondi', 'Dhaka', 'male', 'Bangladeshi', 'Blue Garden', 'A2', 'Buy'),
+(30, 33, 'Shoily Akter', 'shoily7842', '12345', 'shoily@gmail.com', '', 'Software Engineer', 'Dhanmondi', 'Dhaka', 'male', 'Bangladeshi', 'Blue Garden', 'A2', 'Buy');
 
 -- --------------------------------------------------------
 
@@ -219,11 +215,9 @@ CREATE TABLE `complaint` (
 --
 
 INSERT INTO `complaint` (`complaint_id`, `client_id`, `name`, `mobile_number`, `email`, `build_num`, `flat_no`, `complaint_issue`, `complaint_date`, `complaint_details`, `username`, `admin_response`, `admin_reply`) VALUES
-(1, 15, 'Afia Mohona', '01714588523', 'aifa@gmail.com', 'JH1', 'D4', 'Wrong Utility Bill Calculations', '2022-01-15', 'Loren Ipsum', 'afia7839', 'Responded', ''),
-(2, 15, 'Afia Mohona', '01714588523', 'aifa@gmail.com', 'JH1', 'D4', 'Light is not working', '2022-01-15', 'Loren Ipsum', 'afia7839', 'Responded', ''),
-(3, 15, 'Afia Mohona', '01714588523', 'aifa@gmail.com', 'JH1', 'D4', 'My bill got hijacked', '2022-01-15', 'Pranto took my bill and ate a burger with it.', 'afia7839', 'Responded', ''),
-(4, 15, 'Afia Mohona', '01714588523', 'aifa@gmail.com', 'JH1', 'D4', 'My bill got hijacked', '2022-01-15', 'falfkjsafsaf', 'afia7839', 'Responded', ''),
-(5, 15, 'Afia Mohona', '01714588523', 'aifa@gmail.com', 'JH1', 'D4', 'My bill got hijacked', '2022-01-15', 'aaaaaaaaaaaaaaf', 'afia7839', 'Responded', 'we will handle it');
+(1, 18, 'Jesmine Akhter', '01753699852', 'jesmine@hotmail.com', 'BLU73', 'A1', 'Water tap issue', '2022-01-23', 'Dirty Water is comming from tap', 'jesmine3501', 'Responded', 'We wil send help'),
+(2, 26, 'Nur Rafi', '0123456', 'nur@gmail.com', 'BLU73', 'A1', 'Water tap issue', '2022-01-23', 'Dirty water', 'nurrafi8601', 'Responded', 'we will send help'),
+(3, 26, 'Nur Rafi', '0123456', 'nur@gmail.com', 'BLU73', 'A1', 'Water tap issue', '2022-01-23', 'Dirty Water', 'nurrafi8601', 'Responded', 'we will send hekp');
 
 -- --------------------------------------------------------
 
@@ -246,13 +240,6 @@ CREATE TABLE `customers` (
   `division` varchar(50) NOT NULL,
   `age` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `customers`
---
-
-INSERT INTO `customers` (`customer_id`, `username`, `user_id`, `mobile_number`, `email`, `identity_num`, `occupation`, `present_address`, `permanent_address`, `gender`, `nationality`, `division`, `age`) VALUES
-(5, 'sumayta', 9, '01756322569', 'sumayta@gmail.com', '0stzr', 'Businesswoman', 'Gulshan', 'Badda', 'female', 'Bangladeshi', 'Dhaka', 42);
 
 -- --------------------------------------------------------
 
@@ -280,8 +267,10 @@ CREATE TABLE `invoice` (
 --
 
 INSERT INTO `invoice` (`invoice_no`, `building_name`, `flat_no`, `client_username`, `billing_month`, `issue_date`, `due_date`, `current_bill`, `arrear`, `due_charge`, `status`, `total_bill`) VALUES
-(9, 'JawwadHarem', 'D4', 'Afia Mohona', '2022-01', '2022-01-13', '2022-01-20', 8500, 0, 0, 'Paid', 8500),
-(11, 'JawwadHarem', 'D4', 'Afia Mohona', '2022-02', '2022-02-17', '2022-02-20', 8500, 8500, 500, 'unpaid', 17500);
+(1, 'Blue Garden', 'A1', 'Jesmine Akhter', '2022-01', '2022-01-20', '2022-01-31', 8500, 0, 0, 'unpaid', 8500),
+(2, 'Blue Garden', 'A1', 'Jesmine Akhter', '2022-02', '2022-02-23', '2022-02-28', 8500, 8500, 500, 'Paid', 17500),
+(3, 'Blue Garden', 'A1', 'Nur Rafi', '2022-03', '2022-03-23', '2022-03-30', 8500, 8500, 500, 'Paid', 17500),
+(4, 'Blue Garden', 'A1', 'Nur Rafi', '2022-06', '2022-03-24', '2022-01-20', 8500, 8500, 500, 'Paid', 17500);
 
 -- --------------------------------------------------------
 
@@ -312,7 +301,11 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `invoice_id`, `invoice_date`, `name`, `email`, `phone`, `amount`, `address`, `status`, `transaction_id`, `bank_transaction_id`, `payment_type`, `building_name`, `flat_no`, `currency`) VALUES
-(2, 9, '2022-01-13', 'Afia Mohona', 'aifa@gmail.com', '01714588523', 8500, 'Farmgate', 'Success', 'SSLCZ_TEST_61e9669227993', '2201201942350S2RbFw6SrPoW6Y', 'STANDARD CHARTERED BANK', 'JawwadHarem', 'D4', 'BDT');
+(1, 2, '2022-02-23', 'Jesmine Akhter', 'jesmine@hotmail.com', '01753699852', 17500, 'Dhanmondi', 'Success', 'SSLCZ_TEST_61ed348cc268d', '2201231657250IjZRLDClAT3qNj', 'BKash Mobile Banking', 'Blue Garden', 'A1', 'BDT'),
+(2, 3, '2022-03-23', 'Nur Rafi', 'nur@gmail.com', '0123456', 17500, 'Dhanmondi', 'Success', 'SSLCZ_TEST_61ed9c2a68937', '220124019311PaEbTxUEJsEHB2', 'BKash Mobile Banking', 'Blue Garden', 'A1', 'BDT'),
+(3, 3, '2022-03-23', 'Nur Rafi', 'nur@gmail.com', '0123456', 17500, 'Dhanmondi', 'Success', 'SSLCZ_TEST_61eda2f449662', '220124048270vSDGLLoIL2b1nf', 'BKash Mobile Banking', 'Blue Garden', 'A1', 'BDT'),
+(4, 4, '2022-03-24', 'Nur Rafi', 'nur@gmail.com', '0123456', 17500, 'Dhanmondi', 'Success', 'SSLCZ_TEST_61eda8939bbb3', '220124112240gvSExEYnTalALQ', 'BKash Mobile Banking', 'Blue Garden', 'A1', 'BDT'),
+(5, 4, '2022-03-24', 'Nur Rafi', 'nur@gmail.com', '0123456', 17500, 'Dhanmondi', 'Success', 'SSLCZ_TEST_61edae784e8ef', '220124137330P4ykRqp0UK7Stw', 'BKash Mobile Banking', 'Blue Garden', 'A1', 'BDT');
 
 -- --------------------------------------------------------
 
@@ -340,16 +333,17 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `user_role`, `name`, `username`, `user_email`, `user_password`, `user_image`, `date_of_birth`, `identity_num`, `token`) VALUES
 (1, 'admin', 'Mohammed Jawwadul Islam', 'jawwad', 'skyabyss13@gmail.com', '$2y$10$lE8jP2Y3GGirM5wztOBKVuOI.UgrG8qfP/y7TFQ30H3QFlvaMnQXW', 'images/admin_images/Jawwad.jpg', '1998-05-22', 'nvwsl', ''),
 (3, 'admin', 'Moumy Kabir', 'mimo', 'mimo@gmail.com', '$2y$10$ad/K2kxyOUx1tVjgAR3ec.ztD5ONd5OltZnGt1eTce2sbxkjx3PTa', 'images/admin_images/Mimo.jpg', '1998-12-06', 'kjdhn', ''),
-(6, 'client', 'Jesmine Akhter', 'jesmine', 'jesmine@gmail.com', '$2y$10$C6.MklCtWJ/yqYYXSKOfZObj0sGMzgm24CQHyzDPSmUv3YttPni1S', '', '1972-05-05', 'srq3o', ''),
-(7, 'client', 'Shafiqul Islam', 'shafique1273', 'shafiqul@yahoo.com', '$2y$10$rurmIwKfz/K5PdXYHdoZ/.lYEyKXfcUQNPp7f4QbWl70Ier25gI3C', '', '1968-01-27', 's17id', ''),
-(8, 'client', 'Pranto Podder', 'pranto3719', 'ppodder@gmail.com', '$2y$10$4ggMP/5Kdj/8qQqlfevAZunfMx9U.WT6HfGxSlwujHcsyzfQt.L0u', '', '1974-02-20', 't0j5u', ''),
-(9, 'customer', 'Sumayta Khan', 'sumayta', 'sumayta@gmail.com', '$2y$10$EktqzCBeBoJMHxCzxIPfHOZAPFwz212Ungvx144q0rrxDWWkvHLwK', 'images/user_images/sumayta.jpg', '1972-06-28', '0stzr', ''),
-(11, 'client', 'Imran Sarker', 'imran1111', 'imran@gmail.com', '$2y$10$ho.CFkF5zy3p.TrhI1GubelhoVa3T3feyEhTITEVCtCJf7BM02Rci', 'images/user_images/imran.jpg', '1968-01-01', '4iq9r', ''),
-(12, 'client', 'Afia Mohona', 'afia7839', 'aifa@gmail.com', '$2y$10$5SyqDFopSr6CM8mprKYGQu/7jVU9r81cuBwcWp7sDvIgxUbo.D/G.', 'images/user_images/afia.jpg', '1968-01-01', 'l(gtf', ''),
-(13, 'client', 'Aufi Islam', 'aufi9517', 'aufi@gmail.com', '$2y$10$3D4C0S2RHS3LqvTo684zv.KQZepkKtikeaBkd.SK9XDUtv1.65UX6', '', '1968-01-01', '/85mf', ''),
-(14, 'admin', 'Aysha Siddika', 'aysha', 'aysha@gmail.com', '12345', '', '1998-05-22', '', ''),
 (17, 'admin', 'Nafisa Tarin', 'tarin', 'tarin@gmail.com', '$2y$10$UVIyy74cC0sEaB/FwPce5OVqsMWT.S45REncde28c5JJ0KkIjd3aW', 'images/admin_images/Tarin.jpg', '1998-05-22', '', ''),
-(18, 'admin', 'Fahad Al Rafi', 'rafi', 'rafi@gmail.com', '$2y$10$QIEDFK.YTQaW1eGDG76Eq./4TuiFE24D6zALN4v5Wi345VVz9Ffa2', 'images/admin_images/Rafi.jpg', '1998-05-22', '', '');
+(18, 'admin', 'Fahad Al Rafi', 'rafi', 'rafi@gmail.com', '$2y$10$QIEDFK.YTQaW1eGDG76Eq./4TuiFE24D6zALN4v5Wi345VVz9Ffa2', 'images/admin_images/Rafi.jpg', '1998-05-22', '', ''),
+(21, 'client', 'Jesmine Akhter', 'jesmine3501', 'jesmine@hotmail.com', '$2y$10$sjVfZtQJDgjSWjCpTyMBV.jYWQxKTMBGHq2twZ4CoszktLaKNadoG', 'client_users/images/user_images/t-8.jpg', '1968-01-01', 'h$9wb', ''),
+(22, 'client', 'Shafiqul Islam', 'shafique1346', 'shafique@gmail.com', '$2y$10$3xTcU0eoWwhuVjZ.8DmPHuxclbMcaTbgau6dYuBdHslxuqMrZSOem', 'client_users/images/user_images/t-1.jpg', '1968-01-01', 'rpfs(', ''),
+(23, 'client', 'Afia Mohona', 'afia8206', 'afia@gmail.com', '$2y$10$hsabmIruTi8k/detJ4f3LOt2whL7ECnhzPLWQQmjNnvc22KZmqpkC', 'client_users/images/user_images/afia.jpg', '1968-01-01', '53z8b', ''),
+(24, 'client', 'Jannatul Tazree', 'tazree5961', 'tazreesmrity20@gmail.com', '$2y$10$xduTx5QqRoNfJ9eMvTzKNOdSKyJCc/eHbkT8eboJzJfJwYPQGfikm', '', '1993-09-07', '(1q2c', ''),
+(25, 'client', 'Mahbub Alam', 'mahbub7310', 'alammahbub789@gmail.com', '$2y$10$IR5PkYMuBaXm9.rxFWGr6OZ5FDNwRk.wxLoC3oESO/MuO6X51ZSV2', '', '1983-08-09', '(xmf3', ''),
+(30, 'client', 'Nur Rafi', 'nurrafi8601', 'nur@gmail.com', '$2y$10$t7pBhJ6A4EkZiCARXlBGXuRY7IqC6aEq4YwaY7Ksf41D5eNhpO7Gu', '', '1968-01-17', 'i1uvq', ''),
+(31, 'client', 'Zohora Nipa', 'zohora2695', 'zohora@gmail.com', '$2y$10$saoaHHMKU.X0N5UDTgt6xOcYAwQnMUR6EMnHxZIUGTCHziw7ACnAe', '', '1968-01-27', '8/9)f', ''),
+(32, 'client', 'Zareen propa', 'propa5294', 'propa@gmail.com', '$2y$10$B/N.xn8g9XXG6W4KKLu0telcZnSEOrVhrDyRoWpxtuZ9AEutk42GK', '', '1968-01-11', 'ys(aw', ''),
+(33, 'client', 'Shoily Akter', 'shoily7842', 'shoily@gmail.com', '$2y$10$7yjTINJ80QrUOJBVsepAQ.P75GUPUEE3n9MA4OfNCwwSV5q3V8EGS', '', '1968-01-18', 'j46eu', '');
 
 -- --------------------------------------------------------
 
@@ -376,16 +370,11 @@ CREATE TABLE `utility_bill` (
 --
 
 INSERT INTO `utility_bill` (`utility_id`, `building_name`, `flat_no`, `month`, `flat_status`, `rent`, `water_bill`, `gas_bill`, `electricity_bill`, `additional_bill`, `service_charge`) VALUES
-(6, 'Mill Home', 'A3', '2022-01-08', 'buy', 0, 1000, 1200, 10000, 5000, 5000),
-(7, 'Mill Home', 'C2', '2022-01-08', 'Rent', 80000, 800, 1200, 6000, 1000, 5000),
-(8, 'Mill Home', 'D4', '2022-01-08', 'Rent', 80000, 800, 1200, 6000, 1000, 5000),
-(9, 'cottage Home', 'D1', '2022-01-08', 'Buy', 0, 1000, 1500, 7000, 1000, 5000),
-(10, 'cottage Home', 'D6', '2022-01-08', 'Rent', 70000, 1000, 1500, 7000, 1000, 5000),
-(11, 'cottage Home', 'D8', '2022-01-08', 'Rent', 70000, 1200, 1000, 8000, 1000, 5000),
-(18, 'JawwadHarem', 'A3', '2022-01', 'Rent', NULL, 1000, 1000, 1000, 500, 5000),
-(19, 'JawwadHarem', 'A3', '2022-02', 'Rent', NULL, 1000, 1000, 1000, 500, 5000),
-(22, 'JawwadHarem', 'D4', '2022-01', 'Buy', NULL, 1000, 1000, 1000, 500, 5000),
-(23, 'JawwadHarem', 'D4', '2022-02', 'Buy', NULL, 1000, 1000, 1000, 500, 5000);
+(1, 'Blue Garden', 'A1', '2022-01', 'Rent', NULL, 1000, 1000, 1000, 500, 5000),
+(2, 'Blue Garden', 'A1', '2022-02', 'Rent', NULL, 1000, 1000, 1000, 500, 5000),
+(3, 'Blue Garden', 'A1', '2022-03', 'Rent', NULL, 1000, 1000, 1000, 500, 5000),
+(4, 'Blue Garden', 'A1', '2022-05', 'Rent', NULL, 1000, 1000, 1000, 500, 5000),
+(5, 'Blue Garden', 'A1', '2022-06', 'Rent', NULL, 1000, 1000, 1000, 500, 5000);
 
 --
 -- Indexes for dumped tables
@@ -480,61 +469,61 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `apartment`
 --
 ALTER TABLE `apartment`
-  MODIFY `apartment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `apartment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `building`
 --
 ALTER TABLE `building`
-  MODIFY `building_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `building_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
-  MODIFY `complaint_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `complaint_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `invoice_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `utility_bill`
 --
 ALTER TABLE `utility_bill`
-  MODIFY `utility_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `utility_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
