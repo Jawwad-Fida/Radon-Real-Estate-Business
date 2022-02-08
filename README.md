@@ -76,7 +76,10 @@ PHP dotenv was created by [Vance Lucas](https://github.com/vlucas) and [Graham C
 
 ![Account Admin building info](https://user-images.githubusercontent.com/64092765/153046826-2ecef465-a0c7-40f9-933a-1aff99c307d4.jpeg)
 
+![Customer buy list](https://user-images.githubusercontent.com/64092765/153047049-20ee151e-e54a-4fb2-b3b6-cdcefa061682.PNG)
 
+![Customer login page](https://user-images.githubusercontent.com/64092765/153047057-62366ea2-7a70-4e7a-ae3b-3b8eb47a50dc.PNG)
 
+![single propertry details](https://user-images.githubusercontent.com/64092765/153047063-1ec3656b-e684-44fe-b3d0-9fd49459f41c.jpeg)
 
 
