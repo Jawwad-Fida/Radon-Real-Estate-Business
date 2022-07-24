@@ -2,6 +2,9 @@
 # RADON - Real Estate Business
 
 ## System Analysis and Design Project - B.Sc. in Computer Science and Engineering (CSE)
+
+### Course Superviser: -  Rafi ur Rashid
+
 ### Created by: - Mohammed Jawwadul Islam, Nafisa Akter, Md Fahad Al Rafi, Pranto Podder, Aysha Siddika, Moumy Kabir
 
 #### Date of Completion: - Fall 2021 Trimester (Nov 2021 - Jan 2022)
