@@ -1,28 +1,47 @@
 
 # RADON - Real Estate Business
 
-## System Analysis and Design Project - B.Sc. in Computer Science and Engineering (CSE)
+- A platform where customers are able to Buy/Rent apartments or properties and also able to track their monthly invoices and utility bills. Various real estate businesses will be able to host their apartments or properties here as well as track their customers' monthly utility bills.
+- System Analysis and Design Project - B.Sc. in Computer Science and Engineering (CSE).
+- PHP Application.
 
-### Course Superviser: -  Rafi ur Rashid
+## Course Superviser: -  Rafi ur Rashid
 
-### Created by: - Mohammed Jawwadul Islam, Nafisa Akter, Md Fahad Al Rafi, Pranto Podder, Aysha Siddika, Moumy Kabir
+## Contributors
 
-#### Date of Completion: - Fall 2021 Trimester (Nov 2021 - Jan 2022)
-
-## Contact Us
-#### [Linkedin of Jawwad](https://www.linkedin.com/in/jawwadfida/)  
-#### [Linkedin of Fahad](https://www.linkedin.com/in/md-fahad-al-al-rafi-14b968111/)
-#### [Linkedin of Pranto](https://www.linkedin.com/in/pranto-podder-b78b97162/)
-#### [Linkedin of Aysha](https://www.linkedin.com/in/aysha-siddika-577ba5224/)
-#### [Linkedin of Moumy](https://www.linkedin.com/in/moumy-kabir-156a0a232/) 
-#### [Facebook of Nafisa](https://www.facebook.com/nafisaakter.tarin) 
-
+- **Team Members:** [Mohammed Jawwadul Islam](https://www.linkedin.com/in/jawwadfida/), [Mohammad Fahad Al Rafi](https://www.linkedin.com/in/md-fahad-al-al-rafi-14b968111/), [Moumy Kabir](https://www.linkedin.com/in/pranto-podder-b78b97162/), [Pranto Podder](https://www.linkedin.com/in/aysha-siddika-577ba5224/), [Aysha Siddika](https://www.linkedin.com/in/moumy-kabir-156a0a232/), Nafisa Akhter
+- **Project Duration:** Fall 2021 Trimester (Nov 2021 - Jan 2022)
 
 ## Tools used:
       1) Front-end: HTML, CSS, Boostrap, Javascript
       2) Back-end: PHP PDO
       3) Database: MySQL
-      4) Various APIs and Composer packages 
+      4) Various APIs and Composer packages
+      
+## Features
+
+- **Users:** Customer, Client, Marketing Admin, Finance and Accounts Admin
+
+### Customer
+      1)  Search Apartment Based on location, no. of bedrooms and bathrooms.
+      2)  Advanced Search based on a range of price and sq ft area.
+      3)  Buy & Rent Apartments 
+      4)  Book appointment with Marketing Admin to see apartment physically (Mail).
+      
+### Marketing Admin 
+      1)  CRUD Appartment information
+      2)  CRUD Building or Property information
+      3)  Assist customers during their appointment
+      
+### Client
+      1)  View Invoice
+      2)  Pay Innvoice and Utility Bills (Payment Gateway + Mail Confirmation)
+      3)  Contact Finance and Accounts Admin (Mail)
+
+### Finance and Accounts Admin
+      1)  Authorization (Customer to Client)
+      2)  CRUD Utility Bills for apartments
+      3)  CRUD Invoice for clients
 
 
 ## Installation Details
@@ -38,7 +57,6 @@
       
       The credentials that you need to set up are: Mailtrap credentials, SSLCommerz Credentials. 
        
-
 ### API's and Composer packages used: -
       phpmailer package and mailtrap API - smtp fake testing server
       PHP dotenv package - protecting credentials online (creating .env file)
@@ -46,6 +64,12 @@
       PHP mPDF library - to generate and download pdf documents. 
       
 ## Project video link - [Youtube](https://youtu.be/QWQO_P_CYhA)
+
+## SRS and Project Report
+
+[SRS Report](https://github.com/Jawwad-Fida/Radon-Real-Estate-Business/files/9604572/SAD.SRS-Report.pdf)
+
+[Project Report](https://github.com/Jawwad-Fida/Radon-Real-Estate-Business/files/9604577/SAD.Lab.Project.Report.pdf)
 
 ## Credits
 
