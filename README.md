@@ -63,35 +63,39 @@ PHP dotenv was created by [Vance Lucas](https://github.com/vlucas) and [Graham C
 
 ### 4) [PHP mPDF library](https://github.com/sslcommerz)
 
-## Screenshots 
+## Screenshots
 
-![view buy or rent apartment](https://user-images.githubusercontent.com/64092765/153046725-2156581f-e8ee-4ddd-8640-187293135f68.jpeg)
+<img src="https://user-images.githubusercontent.com/64092765/153046725-2156581f-e8ee-4ddd-8640-187293135f68.jpeg" width="75%">
 
-![Marketing Admin Dashboard](https://user-images.githubusercontent.com/64092765/153046742-9e2a8c35-0147-48ff-a595-ce2f136c063b.PNG)
+<img src="https://user-images.githubusercontent.com/64092765/153046742-9e2a8c35-0147-48ff-a595-ce2f136c063b.PNG" width="75%">
 
-![Add property](https://user-images.githubusercontent.com/64092765/153046755-f2090e13-9285-4d59-b936-611b69e41022.jpeg)
+<img src="https://user-images.githubusercontent.com/64092765/153046755-f2090e13-9285-4d59-b936-611b69e41022.jpeg" width="75%">
 
-![Authorize to client](https://user-images.githubusercontent.com/64092765/153046766-c1699178-3100-4254-bfb5-02518949ffdf.PNG)
+<img src="https://user-images.githubusercontent.com/64092765/153046766-c1699178-3100-4254-bfb5-02518949ffdf.PNG" width="75%">
 
-![add utility](https://user-images.githubusercontent.com/64092765/153046808-1605d23d-7284-4e31-8398-67cba9eed48c.PNG)
+<img src="https://user-images.githubusercontent.com/64092765/153046808-1605d23d-7284-4e31-8398-67cba9eed48c.PNG" width="75%">
 
-![utility information](https://user-images.githubusercontent.com/64092765/153046816-de8f3d3f-5edf-4f3f-b4b8-61dad7549491.PNG)
+<img src="https://user-images.githubusercontent.com/64092765/153046816-de8f3d3f-5edf-4f3f-b4b8-61dad7549491.PNG" width="75%">
 
-![client invoice list](https://user-images.githubusercontent.com/64092765/153046819-9e358fb9-8829-4c99-8985-87bf7d553998.jpeg)
+<img src="https://user-images.githubusercontent.com/64092765/153046819-9e358fb9-8829-4c99-8985-87bf7d553998.jpeg" width="75%">
 
-![Account Admin building info](https://user-images.githubusercontent.com/64092765/153046826-2ecef465-a0c7-40f9-933a-1aff99c307d4.jpeg)
+<img src="https://user-images.githubusercontent.com/64092765/153046826-2ecef465-a0c7-40f9-933a-1aff99c307d4.jpeg" width="75%">
 
-![Customer buy list](https://user-images.githubusercontent.com/64092765/153047049-20ee151e-e54a-4fb2-b3b6-cdcefa061682.PNG)
+<img src="https://user-images.githubusercontent.com/64092765/153047049-20ee151e-e54a-4fb2-b3b6-cdcefa061682.PNG" width="75%">
 
-![Customer login page](https://user-images.githubusercontent.com/64092765/153047057-62366ea2-7a70-4e7a-ae3b-3b8eb47a50dc.PNG)
+<img src="https://user-images.githubusercontent.com/64092765/153047057-62366ea2-7a70-4e7a-ae3b-3b8eb47a50dc.PNG" width="75%">
 
-![single propertry details](https://user-images.githubusercontent.com/64092765/153047063-1ec3656b-e684-44fe-b3d0-9fd49459f41c.jpeg)
+<img src="https://user-images.githubusercontent.com/64092765/153047063-1ec3656b-e684-44fe-b3d0-9fd49459f41c.jpeg" width="75%">
 
 # Champion in CSE Project Show - Fall 21
 
 ### [United International University - CSE Project Show Fall 21 Results](https://www.facebook.com/1553781141561120/posts/3066187696987116/) 
 
-![champion](https://user-images.githubusercontent.com/64092765/183291734-607410d2-f823-4244-be33-7d199be8a515.png)
+<img src="https://user-images.githubusercontent.com/64092765/183291734-607410d2-f823-4244-be33-7d199be8a515.png" width="50%">
+
+<img src="https://user-images.githubusercontent.com/64092765/191178164-967eb9b3-c04a-4676-a735-e4a45adf97b8.jpg" width="50%">
+
+
 
 
 
