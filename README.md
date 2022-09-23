@@ -111,9 +111,7 @@ PHP dotenv was created by [Vance Lucas](https://github.com/vlucas) and [Graham C
 
 <img src="https://user-images.githubusercontent.com/64092765/153047063-1ec3656b-e684-44fe-b3d0-9fd49459f41c.jpeg" width="75%">
 
-# Champion in CSE Project Show - Fall 21
-
-### [United International University - CSE Project Show Fall 21 Results](https://www.facebook.com/1553781141561120/posts/3066187696987116/) 
+# [Champion in UIU CSE Project Show Fall 2021 - System Analysis and Design Laboratory](https://www.facebook.com/1553781141561120/posts/3066187696987116/)
 
 <img src="https://user-images.githubusercontent.com/64092765/183291734-607410d2-f823-4244-be33-7d199be8a515.png" width="50%">
 
