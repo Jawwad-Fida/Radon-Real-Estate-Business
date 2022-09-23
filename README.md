@@ -113,7 +113,7 @@ PHP dotenv was created by [Vance Lucas](https://github.com/vlucas) and [Graham C
 
 # [Champion in UIU CSE Project Show Fall 2021 - System Analysis and Design Laboratory](https://www.facebook.com/1553781141561120/posts/3066187696987116/)
 
-<img src="https://user-images.githubusercontent.com/64092765/183291734-607410d2-f823-4244-be33-7d199be8a515.png" width="50%">
+<img src="https://user-images.githubusercontent.com/64092765/183291734-607410d2-f823-4244-be33-7d199be8a515.png" width="75%">
 
 <img src="https://user-images.githubusercontent.com/64092765/191178164-967eb9b3-c04a-4676-a735-e4a45adf97b8.jpg" width="50%">
 
