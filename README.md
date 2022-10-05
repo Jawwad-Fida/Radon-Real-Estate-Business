@@ -5,11 +5,10 @@
 - System Analysis and Design Project - B.Sc. in Computer Science and Engineering (CSE).
 - PHP Application.
 
-## Course Superviser: -  Rafi ur Rashid
-
 ## Contributors
 
 - **Team Members:** [Mohammed Jawwadul Islam](https://www.linkedin.com/in/jawwadfida/), [Mohammad Fahad Al Rafi](https://www.linkedin.com/in/md-fahad-al-al-rafi-14b968111/), [Moumy Kabir](https://www.linkedin.com/in/pranto-podder-b78b97162/), [Pranto Podder](https://www.linkedin.com/in/aysha-siddika-577ba5224/), [Aysha Siddika](https://www.linkedin.com/in/moumy-kabir-156a0a232/), Nafisa Akhter
+- **Course Superviser:** [Rafi ur Rashid](https://github.com/Rafi-ur-Rashid)
 - **Project Duration:** Fall 2021 Trimester (Nov 2021 - Jan 2022)
 
 ## Tools used:
